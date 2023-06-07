@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading</title>
+  </head>
+  <body>
+    <div id="app">
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+        }
+    
+        .loading {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 30px;
+          height: 30px;
+          border: 2px solid #000;
+          border-top-color: transparent;
+          border-radius: 100%;
+    
+          animation: circle infinite 0.75s linear;
+        }
+    
+        @keyframes circle {
+          0% {
+            transform: rotate(0);
+          }
+    
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+      <div class="loading"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
