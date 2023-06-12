@@ -1,0 +1,27 @@
+{
+  "title": "Guizhan Builds",
+  "header": {
+    "theme-switcher": {
+      "tooltip": "Switch to {next} theme (current theme is {current})",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
+  "footer": {
+    "github": "GitHub",
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy Policy"
+  },
+  "pages": {
+    "home": {
+      "title": "Projects"
+    },
+    "terms": {
+      "title": "Terms and Conditions"
+    },
+    "privacy": {
+      "title": "Privacy Policy"
+    }
+  }
+}

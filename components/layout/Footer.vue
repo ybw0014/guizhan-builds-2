@@ -1,0 +1,35 @@
+<template>
+  <footer class="bg-default">
+    <div class="footer-items">
+      <div class="footer-items__list">
+        <a href="https://github.com/ybw0014/guizhan-builds-2" class="link-box" target="_blank" rel="noreferrer noopener">
+          {{ $t('footer.github') }}
+        </a>
+        <NuxtLink :to="{ name: 'terms' }" class="link-box">{{ $t('footer.terms') }}</NuxtLink>
+        <NuxtLink :to="{ name: 'privacy' }" class="link-box">{{ $t('footer.privacy') }}</NuxtLink>
+      </div>
+      <p class="font-bold">
+        &copy; {{ new Date().getFullYear() }}
+        <a href="https://ybw0014.dev/" target="_blank" rel="noreferrer noopener">ybw0014</a>
+      </p>
+    </div>
+  </footer>
+</template>
+
+<style scoped lang="scss">
+footer {
+  @apply mt-10 flex relative justify-center;
+}
+
+.footer-items {
+  @apply flex flex-wrap flex-row-reverse grow gap-4 justify-around items-center my-3 container text-sm;
+
+  .footer-items__list {
+    @apply flex flex-row flex-wrap justify-center gap-1;
+
+    & > * {
+      @apply flex items-center rounded-md px-6 py-2 transition-colors;
+    }
+  }
+}
+</style>

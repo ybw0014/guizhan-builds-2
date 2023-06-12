@@ -1,0 +1,27 @@
+{
+  "title": "鬼斩构建站",
+  "header": {
+    "theme-switcher": {
+      "tooltip": "切换为{next}主题（当前主题：{current}）",
+      "system": "跟随系统",
+      "light": "日间",
+      "dark": "夜间"
+    }
+  },
+  "footer": {
+    "github": "GitHub",
+    "terms": "服务条款",
+    "privacy": "隐私协议"
+  },
+  "pages": {
+    "home": {
+      "title": "项目列表"
+    },
+    "terms": {
+      "title": "服务条款"
+    },
+    "privacy": {
+      "title": "隐私协议"
+    }
+  }
+}

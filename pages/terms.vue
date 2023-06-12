@@ -2,12 +2,10 @@
 const { t } = useI18n()
 
 useHead({
-  title: t('pages.home.title'),
+  title: t('pages.terms.title'),
 })
 </script>
 
 <template>
-  <div>
-    <h1>Home</h1>
-  </div>
+  <div>terms</div>
 </template>
