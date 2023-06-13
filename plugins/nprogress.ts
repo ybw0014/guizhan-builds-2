@@ -2,6 +2,7 @@ import NProgress from 'nprogress'
 import { nextTick } from 'vue'
 import { defineNuxtPlugin, useRouter } from '#imports'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let progressBarTimeout: any
 
 const startProgressBar = () => {

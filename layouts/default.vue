@@ -13,7 +13,7 @@ useHead({
 </script>
 
 <template>
-  <main :data-page="route.name" class="text-default">
+  <main :data-page="route.name">
     <LayoutHeader />
     <LayoutContainer>
       <slot />

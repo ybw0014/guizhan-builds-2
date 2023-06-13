@@ -12,8 +12,8 @@
       <div class="grow"></div>
       <!-- 右侧顶部菜单 -->
       <div class="flex items-center gap-2">
-        <ThemeSwitcher class="link-box" />
-        <LanguageSwitcher class="link-box" />
+        <ThemeSwitcher />
+        <LanguageSwitcher />
       </div>
     </nav>
   </header>

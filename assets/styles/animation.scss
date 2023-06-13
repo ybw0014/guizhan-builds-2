@@ -1,0 +1,18 @@
+.dropdown-menu-enter-active {
+  @apply transition ease-out duration-100;
+}
+.dropdown-menu-enter-from {
+  @apply transform opacity-0 scale-95;
+}
+.dropdown-menu-enter-to {
+  @apply transform opacity-100 scale-100;
+}
+.dropdown-menu-leave-active {
+  @apply transition ease-in duration-75;
+}
+.dropdown-menu-leave-from {
+  @apply transform opacity-100 scale-100;
+}
+.dropdown-menu-leave-to {
+  @apply transform opacity-0 scale-95;
+}

@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/robots',
     '@nuxtjs/i18n',
+    '@nuxt/content',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     'nuxt-icon',
@@ -19,7 +20,7 @@ export default defineNuxtConfig({
     port: 3333,
   },
   css: [
-    '@/assets/styles/main.scss'
+    '@/assets/styles/main.scss',
   ],
   app: {
     head: {

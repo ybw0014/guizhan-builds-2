@@ -35,7 +35,13 @@ function switchThemePreference() {
 </script>
 
 <template>
-  <a href="javascript:void(0)" @click="switchThemePreference" class="theme-switcher" :title="modeTooltip" v-if="pageLoaded">
+  <a
+    href="javascript:void(0)"
+    @click="switchThemePreference"
+    class="theme-switcher link-box"
+    :title="modeTooltip"
+    v-if="pageLoaded"
+  >
     <Icon :name="currentIcon" class="icon" />
   </a>
 </template>

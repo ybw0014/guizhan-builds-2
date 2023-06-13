@@ -4,16 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'animation';
+
 body {
-  @apply bg-[#f4f4f5] dark:bg-[#18181b];
+  @apply text-base;
+  @apply bg-[#f4f4f5] text-[#262626];
+  @apply dark:bg-[#18181b] dark:text-[#e0e6f0];
 }
 
 .bg-default {
-  @apply bg-[#fafafa] dark:bg-[#1b1d1e];
-}
-
-.text-default {
-  @apply text-[#262626] dark:text-[#e0e6f0];
+  @apply bg-[#fafafa] dark:bg-[#27272a];
 }
 
 .link-box {

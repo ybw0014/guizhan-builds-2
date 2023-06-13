@@ -1,3 +1,3 @@
 import debug from 'debug'
 
-export const settingsLog = debug('builds:settings')
+export const componentLog = debug('component')
