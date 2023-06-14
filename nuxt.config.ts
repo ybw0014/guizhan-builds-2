@@ -61,4 +61,17 @@ export default defineNuxtConfig({
       alwaysRedirect: true
     },
   },
+  content: {
+    markdown: {
+      remarkPlugins: [
+        'remark-heading-id',
+      ],
+      rehypePlugins: {
+        'rehype-external-links': {
+          target: '_blank',
+          rel: ['noopener', 'noreferrer'],
+        }
+      }
+    },
+  },
 })

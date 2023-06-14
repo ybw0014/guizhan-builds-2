@@ -1,0 +1,35 @@
+/*
+  Markdown article
+*/
+article {
+  @apply px-2 py-4 text-base leading-7;
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold w-full pb-1 border-b;
+    
+    a {
+      @apply border-none font-semibold;
+    }
+  }
+
+  h1 {
+    @apply text-3xl mt-6;
+  }
+
+  h2 {
+    @apply text-2xl mt-4;
+  }
+
+  p, ul {
+    @apply py-2;
+  }
+
+  ul {
+    @apply list-inside list-disc;
+  }
+
+  a {
+    @apply font-medium border-b border-black;
+    @apply dark:border-slate-200;
+  }
+}

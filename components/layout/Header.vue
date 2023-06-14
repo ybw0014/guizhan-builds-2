@@ -24,7 +24,7 @@ header {
   @apply shadow-md text-base py-2;
 }
 nav {
-  @apply mx-auto container flex flex-wrap justify-center gap-2;
+  @apply mx-2 md:mx-auto container flex flex-wrap justify-center gap-2 w-auto;
 }
 .brand {
   @apply flex gap-2 font-semibold py-2;

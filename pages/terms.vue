@@ -7,5 +7,5 @@ useHead({
 </script>
 
 <template>
-  <div>terms</div>
+  <MarkdownContent page="terms" />
 </template>

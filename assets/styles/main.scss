@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 @import 'animation';
+@import 'markdown';
 
 body {
   @apply text-base;
@@ -17,5 +18,5 @@ body {
 }
 
 .link-box {
-  @apply hover:text-blue-700 hover:bg-blue-100 dark:hover:bg-inherit;
+  @apply hover:text-blue-700 hover:bg-blue-100 dark:hover:bg-inherit transition-colors duration-150;
 }

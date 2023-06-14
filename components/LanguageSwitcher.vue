@@ -7,9 +7,6 @@ const currentLocale = computed(() => locale.value)
 const availableLocales = computed(() => {
   return locales.value as LocaleObject[]
 })
-function switchLocale(code: string) {
-  setLocale(code)
-}
 </script>
 
 <template>
@@ -21,7 +18,7 @@ function switchLocale(code: string) {
     <Transition name="dropdown-menu">
       <MenuItems class="menu-items bg-default">
         <MenuItem v-for="locale in availableLocales" :key="locale.code">
-          <a href="javascript:void(0)" class="menu-item link-box" @click="switchLocale(locale.code)">
+          <a href="javascript:void(0)" class="menu-item link-box" @click="setLocale(locale.code)">
             <Icon name="ic:round-check" v-if="currentLocale === locale.code" /> {{ locale.name }}
           </a>
         </MenuItem>

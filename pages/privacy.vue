@@ -7,5 +7,5 @@ useHead({
 </script>
 
 <template>
-  <div>privacy</div>
+  <MarkdownContent page="privacy" />
 </template>
