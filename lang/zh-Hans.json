@@ -1,6 +1,10 @@
 {
   "title": "鬼斩构建站",
   "header": {
+    "nav": {
+      "projects": "项目列表",
+      "authors": "作者列表"
+    },
     "theme-switcher": {
       "tooltip": "切换为{next}主题（当前主题：{current}）",
       "system": "跟随系统",
@@ -14,8 +18,17 @@
     "privacy": "隐私政策"
   },
   "pages": {
-    "home": {
-      "title": "项目列表"
+    "projects": {
+      "title": "项目列表",
+      "subTitle": "在此搜索项目并下载构建结果。",
+      "query": "在 {0} 个项目中搜索...",
+      "sortType": {
+        "name": "名称",
+        "newest": "最新"
+      }
+    },
+    "authors": {
+      "title": "作者列表"
     },
     "terms": {
       "title": "服务条款"

@@ -8,7 +8,7 @@
 @import 'markdown';
 
 body {
-  @apply text-base;
+  @apply text-base font-sans;
   @apply bg-[#f4f4f5] text-[#262626];
   @apply dark:bg-[#18181b] dark:text-[#e0e6f0];
 }
@@ -18,5 +18,21 @@ body {
 }
 
 .link-box {
-  @apply hover:text-blue-700 hover:bg-blue-100 dark:hover:bg-inherit transition-colors duration-150;
+  @apply hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors duration-150;
+
+  &.active {
+    @apply bg-blue-500 text-white dark:hover:bg-blue-500;
+  }
+}
+
+.menu-items {
+  @apply absolute z-10 mt-2 w-28 py-2 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none;
+}
+
+.menu-item {
+  @apply block px-4 py-2 text-sm;
+}
+
+.form-input {
+  @apply rounded-md;
 }

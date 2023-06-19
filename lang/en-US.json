@@ -1,6 +1,10 @@
 {
   "title": "Guizhan Builds",
   "header": {
+    "nav": {
+      "projects": "Projects",
+      "authors": "Authors"
+    },
     "theme-switcher": {
       "tooltip": "Switch to {next} theme (current theme is {current})",
       "system": "System",
@@ -14,8 +18,18 @@
     "privacy": "Privacy Policy"
   },
   "pages": {
-    "home": {
-      "title": "Projects"
+    "projects": {
+      "title": "Projects",
+      "subTitle": "Search projects and download build artifacts.",
+      "query": "Search in {0} projects...",
+      "sortType": {
+        "name": "Name",
+        "newest": "Newest"
+      }
+    },
+    "authors": {
+      "title": "Authors",
+      "query": "Search author..."
     },
     "terms": {
       "title": "Terms and Conditions"

@@ -2,7 +2,7 @@
   Markdown article
 */
 article {
-  @apply px-2 py-4 text-base leading-7;
+  @apply text-base leading-7;
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold w-full pb-1 border-b;

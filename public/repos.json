@@ -1,0 +1,38 @@
+{
+	"SlimefunGuguProject/ExoticGarden:master": {
+		"type": "maven",
+		"alias": ["ybw0014/ExoticGarden-CN:master", "ybw0014/ExoticGarden:master"],
+		"buildOptions": {
+			"name": "ExoticGarden",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "ExoticGarden",
+			"author": "@TheBusyBiscuit"
+		}
+	},
+	"SlimefunGuguProject/ColoredEnderChest:master": {
+		"type": "maven",
+		"alias": ["ybw0014/ColoredEnderChest-CN:master"],
+		"buildOptions": {
+			"name": "ColoredEnderChest",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "ColoredEnderChest",
+			"author": "@TheBusyBiscuit"
+		}
+	},
+	"SlimefunGuguProject/luckyblocks-sf:master": {
+		"type": "maven",
+		"alias": ["baoad/luckyblocks-sf:master"],
+		"buildOptions": {
+			"name": "SlimefunLuckyBlocks",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "SlimefunLuckyBlocks",
+			"author": "@TheBusyBiscuit"
+		}
+	}
+}

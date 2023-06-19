@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     'nuxt-icon',
+    'nuxt-lodash',
   ],
   devtools: { enabled: true },
   devServer: {
@@ -26,8 +27,9 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
+          type: 'text/css',
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap',
+          href: 'https://gzassets.cn/fonts/AlibabaPuHuiTi.css',
         },
       ],
     },

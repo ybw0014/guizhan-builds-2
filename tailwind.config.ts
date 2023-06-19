@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default <Partial<Config>>{
   darkMode: ['class', '.dark-mode'],
@@ -11,7 +12,11 @@ export default <Partial<Config>>{
     './app.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['AlibabaPuHuiTi', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms'), require('@headlessui/tailwindcss')],
 }

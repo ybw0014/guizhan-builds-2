@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+:[/A-Za-z0-9_-]+$": {
+      "type": "object",
+      "required": ["type", "buildOptions"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "buildOptions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "target": {
+              "type": "object",
+              "required": ["name", "version"],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              }
+            },
+            "hidden": {
+              "type": "boolean"
+            },
+            "customDir": {
+              "type": "string"
+            },
+            "repo": {
+              "type": "string"
+            },
+            "gradle": {
+              "type": "object"
+            }
+          }
+        },
+        "dependencies": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+              "^[0-9]+$": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
