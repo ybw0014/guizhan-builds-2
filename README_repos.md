@@ -13,7 +13,7 @@
     "displayOptions": {
       "hidden": false,
       "name": "SlimeTinker",
-      "author": "Sefiraat",
+      "author": ["@Sefiraat"],
       "keywords": ["匠魂", "粘液匠魂"],
       "requirements": {
         "java": {
@@ -32,4 +32,25 @@
 | `buildOptions.name` | （必要）构建时的项目名称，通常为项目的英文名称 |
 | `buildOptions.version` | （必要）构建时的项目版本，支持变量。详见下方版本变量。 |
 | `displayOptions.hidden` | （可选）是否隐藏项目，隐藏后将不会在构建站的搜索结果中显示，但直接访问地址仍然可以访问。 |
+| `displayOptions.name` | （可选）项目的显示名称（不会用于搜索）。 |
+| `displayOptions.author` | （可选）项目的作者列表。以`@`开头为GitHub用户，会链接到GitHub。 |
+| `displayOptions.keywords` | （可选）项目的关键词列表，搜索内容如果包含关键词的某一部分，则项目会被列入搜索列表中。 |
+| `displayOptions.requirements` | （可选）项目的运行要求。详见下方运行要求。 |
+
+## 版本变量
+
+变量会在构建时被实时替换。
+
+| 变量 | 说明 |
+| --- | --- |
+| `{version}` | 项目的构建站版本号，从1开始的自增整数。 |
+| `{git_commit}` | 构建项目基于的提交hash（commit hash），前7位。 |
+| `{Year}` | 构建项目时的完整年份。 |
+| `{year}` | 构建项目时的年份，后2位。 |
+| `{Month}` | 构建项目时的完整月份，前面有补0。 |
+| `{month}` | 构建项目时的月份，前面无补0。 |
+| `{Day}` | 构建项目时处于当前月份中的第几天，前面有补0。 |
+| `{day}` | 构建项目时处于当前月份中的第几天，前面有补0。 |
+
+## 运行要求
 

@@ -1,11 +1,17 @@
 declare module 'guizhan-builds-data' {
+  import { RouteLocationRaw } from 'vue-router'
+
   interface ProjectBuildOptions {
     name: string
     version: string
   }
 
   interface ProjectDisplayOptions {
-    dependencies: Record<string, Record<string, string>>
+    hidden?: boolean
+    name: string
+    author: string
+    keywords?: Array<string>
+    requirements?: Record<string, Record<string, string>>
   }
 
   interface RawProject {
@@ -20,5 +26,11 @@ declare module 'guizhan-builds-data' {
     author: string
     repository: string
     branch: string
+  }
+
+  interface Author {
+    name: string
+    href: string | RouteLocationRaw
+    target?: '_blank' | '_self'
   }
 }

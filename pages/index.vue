@@ -13,10 +13,11 @@ const sortTypes = computed(() => [
   { id: 'name', label: t('pages.projects.sortType.name') },
   { id: 'newest', label: t('pages.projects.sortType.newest') },
 ])
-const activeSortType = ref<string>((route.query.sort as string) || sortTypes.value[0].id)
+const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id)
 const page = ref(route.query.page ? Number(route.query.page) : 1)
 const projects = ref<Project[] | null>()
 const filteredList = ref<Project[] | null>()
+const projectList = ref()
 
 const p = await useProjects()
 if (p) {
@@ -31,7 +32,7 @@ const queryParams = computed(() => {
     params.q = query.value
   }
   if (activeSortType.value) {
-    params.sort = activeSortType.value
+    params.sortBy = activeSortType.value
   }
   if (page.value > 1) {
     params.page = page.value
@@ -49,17 +50,21 @@ watchDebounced(
   { deep: true, debounce: 250 }
 )
 
+function updatePage(newPage: number) {
+  page.value = newPage
+}
+
 function filterList() {
   if (!projects.value) {
     return
   }
-  let filtered: Project[]
+  let filtered: Project[] = _.filter(projects.value, (project: Project) => !project.displayOptions?.hidden)
   if (query.value) {
-    filtered = _.filter(projects.value, (project: Project) => {
-      return project.repository.toLowerCase().includes(query.value.toLowerCase())
+    filtered = _.filter(projects.value, (project: Project): boolean => {
+      const q = query.value.toLowerCase()
+      return (project.repository.toLowerCase().includes(q) ||
+        project.displayOptions?.keywords?.some((keyword: string) => keyword.toLowerCase().includes(q))) as boolean
     })
-  } else {
-    filtered = projects.value
   }
   switch (activeSortType.value) {
     case 'name':
@@ -121,10 +126,10 @@ function filterList() {
       </a>
     </div>
   </div>
-  <div class="flex items-start">
+  <div class="flex items-start justify-center mt-4">
     <!-- 项目列表 -->
-    <div v-if="filteredList" class="w-full min-w-0 mb-5 flex flex-col gap-2 lg:mb-0">
-      <ProjectList ref="projectList" :projects="filteredList" />
+    <div v-if="filteredList" class="w-full max-w-4xl min-w-0 mb-5 flex flex-col gap-2 lg:mb-0">
+      <ProjectList ref="projectList" :projects="filteredList" :page="page" @update:page="updatePage" />
     </div>
   </div>
 </template>

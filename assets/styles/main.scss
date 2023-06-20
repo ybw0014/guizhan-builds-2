@@ -15,6 +15,10 @@ body {
 
 .bg-default {
   @apply bg-[#fafafa] dark:bg-[#27272a];
+
+  &.hoverable {
+    @apply hover:bg-[#e2e8f0] dark:hover:bg-[#334155];
+  }
 }
 
 .link-box {

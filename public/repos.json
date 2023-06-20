@@ -8,7 +8,16 @@
 		},
 		"displayOptions": {
 			"name": "ExoticGarden",
-			"author": "@TheBusyBiscuit"
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["异域花园"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/ColoredEnderChest:master": {
@@ -20,7 +29,8 @@
 		},
 		"displayOptions": {
 			"name": "ColoredEnderChest",
-			"author": "@TheBusyBiscuit"
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["彩色末影箱"]
 		}
 	},
 	"SlimefunGuguProject/luckyblocks-sf:master": {
@@ -32,7 +42,151 @@
 		},
 		"displayOptions": {
 			"name": "SlimefunLuckyBlocks",
-			"author": "@TheBusyBiscuit"
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["幸运方块"]
+		}
+	},
+	"SlimefunGuguProject/HotbarPets:master": {
+		"type": "maven",
+		"alias": ["ybw0014/HotbarPets-CN:master"],
+		"buildOptions": {
+			"name": "HotbarPets",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "HotbarPets",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["背包宠物"]
+		}
+	},
+	"SlimefunGuguProject/SoulJars:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SoulJars-CN:master"],
+		"buildOptions": {
+			"name": "SoulJars",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "SoulJars",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["灵魂罐"]
+		}
+	},
+	"SlimefunGuguProject/ElectricSpawners:master": {
+		"type": "maven",
+		"alias": ["ybw0014/ElectricSpawners-CN:master"],
+		"buildOptions": {
+			"name": "ElectricSpawners",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "ElectricSpawners",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["电力刷怪笼"]
+		}
+	},
+	"SlimefunGuguProject/PrivateStorage:master": {
+		"type": "maven",
+		"alias": ["ybw0014/PrivateStorage-CN:master"],
+		"buildOptions": {
+			"name": "PrivateStorage",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "PrivateStorage",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["私人存储", "私有存储"]
+		}
+	},
+	"SlimefunGuguProject/ExtraGear:master": {
+		"type": "maven",
+		"alias": ["ybw0014/ExtraGear-CN:master"],
+		"buildOptions": {
+			"name": "ExtraGear",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "ExtraGear",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["更多装备", "额外装备"]
+		}
+	},
+	"SlimefunGuguProject/SlimefunOreChunks:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SlimefunOreChunks-CN:master"],
+		"buildOptions": {
+			"name": "SlimefunOreChunks",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "SlimefunOreChunks",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["粘液矿石块", "粘液矿物块"]
+		}
+	},
+	"SlimefunGuguProject/DyedBackpacks:master": {
+		"type": "maven",
+		"alias": ["baoad/DyedBackpacks:master"],
+		"buildOptions": {
+			"name": "DyedBackpacks",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "DyedBackpacks",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["染色背包"]
+		}
+	},
+	"SlimefunGuguProject/SlimyTreeTaps:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SlimyTreeTaps-CN:master"],
+		"buildOptions": {
+			"name": "SlimyTreeTaps",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "SlimyTreeTaps",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["粘液木龙头"]
+		}
+	},
+	"SlimefunGuguProject/MobCapturer:master": {
+		"type": "maven",
+		"alias": ["ybw0014/MobCapturer-CN:master"],
+		"buildOptions": {
+			"name": "MobCapturer",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "MobCapturer",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["生物捕捉"]
+		}
+	},
+	"SlimefunGuguProject/LiteXpansion:master": {
+		"type": "maven",
+		"alias": ["ybw0014/LiteXpansion-CN:master"],
+		"buildOptions": {
+			"name": "LiteXpansion",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "LiteXpansion",
+			"author": ["@TheBusyBiscuit"],
+			"keywords": ["生物捕捉"]
+		}
+	},
+	"SlimefunGuguProject/EcoPower:master": {
+		"type": "maven",
+		"alias": ["ybw0014/EcoPower-CN:master"],
+		"buildOptions": {
+			"name": "EcoPower",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "EcoPower",
+			"author": ["@TheBusyBiscuit", "@poma123"],
+			"keywords": ["环保能源"]
 		}
 	}
 }

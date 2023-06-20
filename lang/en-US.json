@@ -17,6 +17,13 @@
     "terms": "Terms and Conditions",
     "privacy": "Privacy Policy"
   },
+  "pagination": {
+    "first": "First Page",
+    "prev": "Previous Page",
+    "page": "Page {page}",
+    "next": "Next Page",
+    "last": "Last Page"
+  },
   "pages": {
     "projects": {
       "title": "Projects",
@@ -25,7 +32,8 @@
       "sortType": {
         "name": "Name",
         "newest": "Newest"
-      }
+      },
+      "noResult": "No results found."
     },
     "authors": {
       "title": "Authors",

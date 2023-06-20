@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
     'nuxt-icon',
     'nuxt-lodash',
+    'nuxt-lazy-load',
   ],
   devtools: { enabled: true },
   devServer: {
