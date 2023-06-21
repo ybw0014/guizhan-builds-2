@@ -33,7 +33,7 @@
 | `buildOptions.version` | （必要）构建时的项目版本，支持变量。详见下方版本变量。 |
 | `displayOptions.hidden` | （可选）是否隐藏项目，隐藏后将不会在构建站的搜索结果中显示，但直接访问地址仍然可以访问。 |
 | `displayOptions.name` | （可选）项目的显示名称（不会用于搜索）。 |
-| `displayOptions.author` | （可选）项目的作者列表。以`@`开头为GitHub用户，会链接到GitHub。 |
+| `displayOptions.authors` | （可选）项目的作者列表。以`@`开头为GitHub用户，会链接到GitHub。 |
 | `displayOptions.keywords` | （可选）项目的关键词列表，搜索内容如果包含关键词的某一部分，则项目会被列入搜索列表中。 |
 | `displayOptions.requirements` | （可选）项目的运行要求。详见下方运行要求。 |
 

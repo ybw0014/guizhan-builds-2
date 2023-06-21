@@ -43,7 +43,10 @@
       }
     },
     "authors": {
-      "title": "作者列表"
+      "title": "作者列表",
+      "username": "作者名",
+      "name": "作者",
+      "projects": "项目数量"
     },
     "terms": {
       "title": "服务条款"

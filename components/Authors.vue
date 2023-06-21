@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Project, Author } from 'guizhan-builds-data'
-import { RouteLocationRaw } from 'vue-router'
+import { useAuthor } from '~/composables/useAuthor'
 import _ from 'lodash'
 
 const props = defineProps<{
@@ -8,49 +8,17 @@ const props = defineProps<{
 }>()
 
 const authors: ComputedRef<Author[]> = computed(() => {
-  const authors = props.project.displayOptions?.author || props.project.author
+  const authors = props.project.displayOptions?.authors || props.project.author
   if (_.isArray(authors)) {
     const result: Author[] = []
     authors.forEach((author) => {
-      result.push(getAuthor(author))
+      result.push(useAuthor(author))
     })
     return result
   } else {
-    return [getAuthor(authors)]
+    return [useAuthor(authors)]
   }
 })
-
-function getAuthor(author: string): Author {
-  if (author.startsWith('@')) {
-    // 指向作者 GitHub 页面
-    return getGitHubAuthor(author)
-  } else {
-    // 指向作者站内页面
-    return getLocalAuthor(author)
-  }
-}
-
-function getGitHubAuthor(name: string): Author {
-  const author = name.slice(1)
-  return {
-    name: author,
-    href: `https://github.com/${author}`,
-    target: '_blank',
-  }
-}
-
-function getLocalAuthor(name: string): Author {
-  return {
-    name: name,
-    href: {
-      name: 'author',
-      params: {
-        author: name,
-      },
-    } as RouteLocationRaw,
-    target: '_self',
-  }
-}
 </script>
 
 <template>

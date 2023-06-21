@@ -44,7 +44,9 @@
     },
     "authors": {
       "title": "Authors",
-      "query": "Search author..."
+      "username": "Username",
+      "name": "Author",
+      "projects": "Number of Projects"
     },
     "terms": {
       "title": "Terms and Conditions"

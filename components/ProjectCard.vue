@@ -60,7 +60,7 @@ const branch: string | null = ['main', 'master'].includes(props.project.branch) 
 
 <style scoped lang="scss">
 .project-card {
-  @apply rounded-md w-full border border-gray-300 p-4 overflow-auto cursor-pointer flex flex-col gap-2;
+  @apply shadow-md rounded-md w-full border border-gray-300 p-4 cursor-pointer flex flex-col gap-2 overflow-x-hidden;
   @apply dark:border-gray-800;
 
   .plugin-name {

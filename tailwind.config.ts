@@ -18,5 +18,5 @@ export default <Partial<Config>>{
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@headlessui/tailwindcss')],
+  plugins: [require('@headlessui/tailwindcss')],
 }

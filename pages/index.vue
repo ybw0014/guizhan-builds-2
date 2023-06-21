@@ -14,11 +14,13 @@ const sortTypes = computed(() => [
   { id: 'newest', label: t('pages.projects.sortType.newest') },
 ])
 const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id)
+const activeFilter = ref<string[]>([])
 const page = ref(route.query.page ? Number(route.query.page) : 1)
 const projects = ref<Project[] | null>()
 const filteredList = ref<Project[] | null>()
-const projectList: Ref<Element | null> = ref(null)
-const pageResetAnchor: Ref<Element | null> = ref(null)
+const projectList = ref<Element | null>(null)
+const pageResetAnchor = ref<Element | null>(null)
+// const mcVersions = await useMinecraftVersions('1.16.5')
 
 const p = await useProjects()
 if (p) {

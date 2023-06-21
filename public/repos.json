@@ -43,7 +43,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["异域花园"],
 			"requirements": {
 				"java": {
@@ -63,7 +63,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["彩色末影箱"],
 			"requirements": {
 				"java": {
@@ -84,7 +84,7 @@
 		},
 		"displayOptions": {
 			"name": "SlimefunLuckyBlocks",
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["幸运方块"],
 			"requirements": {
 				"java": {
@@ -104,7 +104,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["背包宠物"],
 			"requirements": {
 				"java": {
@@ -124,7 +124,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["灵魂罐"],
 			"requirements": {
 				"java": {
@@ -144,7 +144,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["电力刷怪笼"],
 			"requirements": {
 				"java": {
@@ -164,7 +164,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["私人存储", "私有存储"],
 			"requirements": {
 				"java": {
@@ -184,7 +184,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["更多装备", "额外装备"],
 			"requirements": {
 				"java": {
@@ -204,7 +204,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["粘液矿石块", "粘液矿物块"],
 			"requirements": {
 				"java": {
@@ -224,7 +224,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["染色背包"],
 			"requirements": {
 				"java": {
@@ -244,7 +244,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["粘液木龙头"],
 			"requirements": {
 				"java": {
@@ -264,7 +264,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["生物捕捉"],
 			"requirements": {
 				"java": {
@@ -284,7 +284,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit"],
+			"authors": ["@TheBusyBiscuit"],
 			"keywords": ["工业"],
 			"requirements": {
 				"java": {
@@ -304,7 +304,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@TheBusyBiscuit", "@poma123"],
+			"authors": ["@TheBusyBiscuit", "@poma123"],
 			"keywords": ["环保能源"],
 			"requirements": {
 				"java": {
@@ -324,7 +324,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@Walshy", "@TheBusyBiscuit"],
+			"authors": ["@Walshy", "@TheBusyBiscuit"],
 			"keywords": ["硬核粘液"],
 			"requirements": {
 				"java": {
@@ -344,7 +344,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@J3fftw1"],
+			"authors": ["@J3fftw1"],
 			"keywords": ["消音器"],
 			"requirements": {
 				"java": {
@@ -366,7 +366,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@Sfiguz7"],
+			"authors": ["@Sfiguz7"],
 			"keywords": ["额外工具"],
 			"requirements": {
 				"java": {
@@ -386,7 +386,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"author": ["@Sfiguz7"],
+			"authors": ["@Sfiguz7"],
 			"keywords": ["末地科技"],
 			"requirements": {
 				"java": {
@@ -407,7 +407,7 @@
 		},
 		"displayOptions": {
 			"name": "SFCalc",
-			"author": ["@Seggan"],
+			"authors": ["@Seggan"],
 			"keywords": ["计算器"],
 			"requirements": {
 				"java": {
@@ -427,7 +427,7 @@
 		},
 		"displayOptions": {
 			"name": "MoreTools",
-			"author": ["@LinoxGH"],
+			"authors": ["@LinoxGH"],
 			"keywords": ["更多工具"],
 			"requirements": {
 				"java": {
@@ -448,7 +448,7 @@
 		},
 		"displayOptions": {
 			"name": "FluffyMachines",
-			"author": ["@Seggan"],
+			"authors": ["@Seggan"],
 			"keywords": ["计算器"],
 			"requirements": {
 				"java": {

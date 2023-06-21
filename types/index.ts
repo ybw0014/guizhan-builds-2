@@ -10,8 +10,8 @@ declare module 'guizhan-builds-data' {
   interface ProjectDisplayOptions {
     hidden?: boolean
     name?: string
-    author?: string
-    keywords?: Array<string>
+    authors?: string[]
+    keywords?: string[]
     requirements?: Record<string, Record<string, string>>
   }
 
@@ -29,9 +29,10 @@ declare module 'guizhan-builds-data' {
     branch: string
   }
 
-  interface Author {
+  interface Author extends Record<string, any> {
     name: string
     href: string | RouteLocationRaw
     target: '_blank' | '_self'
+    projects: number
   }
 }
