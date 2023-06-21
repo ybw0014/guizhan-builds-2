@@ -1,28 +1,36 @@
 {
   "title": "鬼斩构建站",
-  "header": {
-    "nav": {
-      "projects": "项目列表",
-      "authors": "作者列表"
+  "components": {
+    "header": {
+      "nav": {
+        "projects": "项目列表",
+        "authors": "作者列表"
+      },
+      "theme-switcher": {
+        "tooltip": "切换为{next}主题（当前主题：{current}）",
+        "system": "跟随系统",
+        "light": "日间",
+        "dark": "夜间"
+      }
     },
-    "theme-switcher": {
-      "tooltip": "切换为{next}主题（当前主题：{current}）",
-      "system": "跟随系统",
-      "light": "日间",
-      "dark": "夜间"
+    "footer": {
+      "github": "GitHub",
+      "terms": "服务条款",
+      "privacy": "隐私政策"
+    },
+    "pagination": {
+      "first": "第一页",
+      "prev": "上一页",
+      "page": "第{page}页",
+      "next": "下一页",
+      "last": "最后一页"
+    },
+    "projectList": {
+      "noResult": "没有找到符合条件的项目。"
+    },
+    "projectRequirements": {
+      "title": "最低要求"
     }
-  },
-  "footer": {
-    "github": "GitHub",
-    "terms": "服务条款",
-    "privacy": "隐私政策"
-  },
-  "pagination": {
-    "first": "第一页",
-    "prev": "上一页",
-    "page": "第{page}页",
-    "next": "下一页",
-    "last": "最后一页"
   },
   "pages": {
     "projects": {
@@ -31,9 +39,8 @@
       "query": "在 {0} 个项目中搜索...",
       "sortType": {
         "name": "名称",
-        "newest": "最新"
-      },
-      "noResult": "没有找到符合条件的项目。"
+        "newest": "最近添加"
+      }
     },
     "authors": {
       "title": "作者列表"

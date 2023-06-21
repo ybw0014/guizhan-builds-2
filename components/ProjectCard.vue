@@ -6,8 +6,8 @@ const props = defineProps<{
 }>()
 
 const name = ref(props.project.displayOptions?.name || props.project.repository)
-const authors = ref(props.project.displayOptions?.author || props.project.author)
 const keywords = ref(props.project.displayOptions?.keywords?.slice(0, 2))
+const branch: string | null = ['main', 'master'].includes(props.project.branch) ? null : props.project.branch
 </script>
 
 <template>
@@ -15,12 +15,18 @@ const keywords = ref(props.project.displayOptions?.keywords?.slice(0, 2))
     <div class="flex gap-2">
       <!-- 左侧 logo -->
       <div class="flex flex-col justify-center">
-        <Icon name="clarity:plugin-line" class="logo" />
+        <ProjectLogo :project="props.project" />
       </div>
       <!-- 项目名称与作者 -->
       <div class="flex flex-col">
-        <div class="plugin-name">{{ name }}</div>
-        <Authors :authors="authors" />
+        <div class="plugin-name">
+          {{ name }}
+          <span v-if="branch !== null" class="plugin-branch">
+            <Icon name="ph:git-branch-light" />
+            {{ branch }}
+          </span>
+        </div>
+        <Authors :project="project" />
         <div v-if="keywords" class="flex plugin-tag">
           <div class="flex flex-col justify-center mr-1">
             <Icon name="mdi:tag-outline" />
@@ -35,25 +41,34 @@ const keywords = ref(props.project.displayOptions?.keywords?.slice(0, 2))
       </div>
       <!-- 中间留空区域 -->
       <div class="grow"></div>
-      <!-- 右侧关键词信息 -->
-      <div class="shrink-0 flex">
-        
+      <!-- 右侧信息 -->
+      <div class="shrink-0 flex gap-2">
+        <div class="md:flex hidden">
+          <ProjectRequirements :requirements="props.project.displayOptions?.requirements" :vertical="true" />
+        </div>
+        <div class="flex flex-col justify-center">
+          <BuildStatus :project="props.project" />
+        </div>
       </div>
+    </div>
+    <!-- 小屏幕右侧信息 -->
+    <div class="flex md:hidden">
+      <ProjectRequirements :requirements="props.project.displayOptions?.requirements" />
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .project-card {
-  @apply rounded-md w-full border border-gray-300 p-4 overflow-auto cursor-pointer;
+  @apply rounded-md w-full border border-gray-300 p-4 overflow-auto cursor-pointer flex flex-col gap-2;
   @apply dark:border-gray-800;
-
-  .logo {
-    @apply w-12 h-12 rounded-md;
-  }
 
   .plugin-name {
     @apply font-semibold text-lg;
+  }
+
+  .plugin-branch {
+    @apply ml-2 font-light text-base;
   }
 
   .plugin-tag {

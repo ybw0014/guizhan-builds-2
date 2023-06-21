@@ -16,9 +16,9 @@ const nextMode = computed(() => modes[(modes.indexOf(currentMode.value) + 1) % m
 const modeTooltip = computed(() => {
   const current = currentMode.value
   const next = nextMode.value
-  return t('header.theme-switcher.tooltip', {
-    next: t(`header.theme-switcher.${next}`),
-    current: t(`header.theme-switcher.${current}`),
+  return t('components.header.theme-switcher.tooltip', {
+    next: t(`components.header.theme-switcher.${next}`),
+    current: t(`components.header.theme-switcher.${current}`),
   })
 })
 

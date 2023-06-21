@@ -4,12 +4,13 @@ declare module 'guizhan-builds-data' {
   interface ProjectBuildOptions {
     name: string
     version: string
+    customDir?: string
   }
 
   interface ProjectDisplayOptions {
     hidden?: boolean
-    name: string
-    author: string
+    name?: string
+    author?: string
     keywords?: Array<string>
     requirements?: Record<string, Record<string, string>>
   }
@@ -31,6 +32,6 @@ declare module 'guizhan-builds-data' {
   interface Author {
     name: string
     href: string | RouteLocationRaw
-    target?: '_blank' | '_self'
+    target: '_blank' | '_self'
   }
 }

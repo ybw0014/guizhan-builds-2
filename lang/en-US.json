@@ -1,28 +1,36 @@
 {
   "title": "Guizhan Builds",
-  "header": {
-    "nav": {
-      "projects": "Projects",
-      "authors": "Authors"
+  "components": {
+    "header": {
+      "nav": {
+        "projects": "Projects",
+        "authors": "Authors"
+      },
+      "theme-switcher": {
+        "tooltip": "Switch to {next} theme (current theme is {current})",
+        "system": "System",
+        "light": "Light",
+        "dark": "Dark"
+      }
     },
-    "theme-switcher": {
-      "tooltip": "Switch to {next} theme (current theme is {current})",
-      "system": "System",
-      "light": "Light",
-      "dark": "Dark"
+    "footer": {
+      "github": "GitHub",
+      "terms": "Terms and Conditions",
+      "privacy": "Privacy Policy"
+    },
+    "pagination": {
+      "first": "First Page",
+      "prev": "Previous Page",
+      "page": "Page {page}",
+      "next": "Next Page",
+      "last": "Last Page"
+    },
+    "projectList": {
+      "noResult": "No results found."
+    },
+    "projectRequirements": {
+      "title": "Min. Req."
     }
-  },
-  "footer": {
-    "github": "GitHub",
-    "terms": "Terms and Conditions",
-    "privacy": "Privacy Policy"
-  },
-  "pagination": {
-    "first": "First Page",
-    "prev": "Previous Page",
-    "page": "Page {page}",
-    "next": "Next Page",
-    "last": "Last Page"
   },
   "pages": {
     "projects": {
@@ -31,9 +39,8 @@
       "query": "Search in {0} projects...",
       "sortType": {
         "name": "Name",
-        "newest": "Newest"
-      },
-      "noResult": "No results found."
+        "newest": "Recently Added"
+      }
     },
     "authors": {
       "title": "Authors",

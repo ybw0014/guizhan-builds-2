@@ -1,4 +1,40 @@
 {
+	"StarWishsama/Slimefun4:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Slimefun",
+			"version": "{git_commit}-canary"
+		},
+		"displayOptions": {
+			"keywords": ["粘液科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"StarWishsama/Slimefun4:release": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Slimefun",
+			"version": "{Year}.{Month}-release"
+		},
+		"displayOptions": {
+			"keywords": ["粘液科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
 	"SlimefunGuguProject/ExoticGarden:master": {
 		"type": "maven",
 		"alias": ["ybw0014/ExoticGarden-CN:master", "ybw0014/ExoticGarden:master"],
@@ -7,7 +43,6 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "ExoticGarden",
 			"author": ["@TheBusyBiscuit"],
 			"keywords": ["异域花园"],
 			"requirements": {
@@ -28,9 +63,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "ColoredEnderChest",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["彩色末影箱"]
+			"keywords": ["彩色末影箱"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/luckyblocks-sf:master": {
@@ -43,7 +85,15 @@
 		"displayOptions": {
 			"name": "SlimefunLuckyBlocks",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["幸运方块"]
+			"keywords": ["幸运方块"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/HotbarPets:master": {
@@ -54,9 +104,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "HotbarPets",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["背包宠物"]
+			"keywords": ["背包宠物"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/SoulJars:master": {
@@ -67,9 +124,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "SoulJars",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["灵魂罐"]
+			"keywords": ["灵魂罐"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/ElectricSpawners:master": {
@@ -80,9 +144,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "ElectricSpawners",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["电力刷怪笼"]
+			"keywords": ["电力刷怪笼"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/PrivateStorage:master": {
@@ -93,9 +164,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "PrivateStorage",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["私人存储", "私有存储"]
+			"keywords": ["私人存储", "私有存储"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/ExtraGear:master": {
@@ -106,9 +184,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "ExtraGear",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["更多装备", "额外装备"]
+			"keywords": ["更多装备", "额外装备"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/SlimefunOreChunks:master": {
@@ -119,9 +204,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "SlimefunOreChunks",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["粘液矿石块", "粘液矿物块"]
+			"keywords": ["粘液矿石块", "粘液矿物块"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/DyedBackpacks:master": {
@@ -132,9 +224,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "DyedBackpacks",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["染色背包"]
+			"keywords": ["染色背包"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/SlimyTreeTaps:master": {
@@ -145,9 +244,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "SlimyTreeTaps",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["粘液木龙头"]
+			"keywords": ["粘液木龙头"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/MobCapturer:master": {
@@ -158,9 +264,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "MobCapturer",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["生物捕捉"]
+			"keywords": ["生物捕捉"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/LiteXpansion:master": {
@@ -171,9 +284,16 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "LiteXpansion",
 			"author": ["@TheBusyBiscuit"],
-			"keywords": ["生物捕捉"]
+			"keywords": ["工业"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	},
 	"SlimefunGuguProject/EcoPower:master": {
@@ -184,9 +304,160 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"name": "EcoPower",
 			"author": ["@TheBusyBiscuit", "@poma123"],
-			"keywords": ["环保能源"]
+			"keywords": ["环保能源"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/HardcoreSlimefun:main": {
+		"type": "maven",
+		"alias": ["ybw0014/HardcoreSlimefun-CN:main"],
+		"buildOptions": {
+			"name": "HardcoreSlimefun",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"author": ["@Walshy", "@TheBusyBiscuit"],
+			"keywords": ["硬核粘液"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SoundMuffler:master": {
+		"type": "maven",
+		"alias": ["baoad/SoundMuffler:master"],
+		"buildOptions": {
+			"name": "SoundMuffler",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"author": ["@J3fftw1"],
+			"keywords": ["消音器"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				},
+				"ProtocolLib": {
+					"1": "服务器MC版本对应的最新可用版本"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/ExtraTools:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "ExtraTools",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"author": ["@Sfiguz7"],
+			"keywords": ["额外工具"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/TranscEndence:master": {
+		"type": "maven",
+		"alias": ["baoad/TranscEndence:master"],
+		"buildOptions": {
+			"name": "TranscEndence",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"author": ["@Sfiguz7"],
+			"keywords": ["末地科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SFCalc:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SFCalc:master"],
+		"buildOptions": {
+			"name": "SFCalc",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "SFCalc",
+			"author": ["@Seggan"],
+			"keywords": ["计算器"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/MoreTools:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "MoreTools",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "MoreTools",
+			"author": ["@LinoxGH"],
+			"keywords": ["更多工具"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/FluffyMachines:master": {
+		"type": "maven",
+		"alias": ["baoad/FluffyMachines:master"],
+		"buildOptions": {
+			"name": "FluffyMachines",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "FluffyMachines",
+			"author": ["@Seggan"],
+			"keywords": ["计算器"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
 		}
 	}
 }

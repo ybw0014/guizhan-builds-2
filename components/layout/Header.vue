@@ -29,7 +29,7 @@ const navLinks = [
                 :class="['nav-link menu-item link-box', navLink.link === route.name ? 'active' : '']"
                 @click="close"
               >
-                {{ $t(`header.nav.${navLink.label}`) }}
+                {{ $t(`components.header.nav.${navLink.label}`) }}
               </NuxtLink>
             </PopoverPanel>
           </Transition>
@@ -47,7 +47,7 @@ const navLinks = [
             :to="{ name: navLink.link }"
             :class="{ 'nav-link': true, active: navLink.link === route.name }"
           >
-            {{ $t(`header.nav.${navLink.label}`) }}
+            {{ $t(`components.header.nav.${navLink.label}`) }}
           </NuxtLink>
         </div>
       </div>

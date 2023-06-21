@@ -17,7 +17,8 @@ const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.v
 const page = ref(route.query.page ? Number(route.query.page) : 1)
 const projects = ref<Project[] | null>()
 const filteredList = ref<Project[] | null>()
-const projectList = ref()
+const projectList: Ref<Element | null> = ref(null)
+const pageResetAnchor: Ref<Element | null> = ref(null)
 
 const p = await useProjects()
 if (p) {
@@ -51,7 +52,13 @@ watchDebounced(
 )
 
 function updatePage(newPage: number) {
+  if (page.value === newPage) {
+    return
+  }
   page.value = newPage
+  if (process.client && pageResetAnchor.value) {
+    window.scrollBy(0, pageResetAnchor.value.getBoundingClientRect().y)
+  }
 }
 
 function filterList() {
@@ -83,7 +90,7 @@ function filterList() {
     <Title>{{ t('pages.projects.title') }}</Title>
   </Head>
   <div class="flex flex-col gap-4 items-center">
-    <h1 class="text-3xl font-bold mt-4">{{ t('pages.projects.title') }}</h1>
+    <h1 ref="pageResetAnchor" class="text-3xl font-bold mt-4">{{ t('pages.projects.title') }}</h1>
     <h2 class="text-xl">{{ t('pages.projects.subTitle') }}</h2>
     <!-- 搜索框 -->
     <div class="relative rounded-md flex shadow-md w-full max-w-screen-md">

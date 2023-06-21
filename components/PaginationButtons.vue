@@ -51,7 +51,7 @@ const pageOptions = computed(() => {
       class="pagination-button"
       :style="visible(page !== 1)"
       :disabled="page === 1"
-      :aria-label="t('pagination.first')"
+      :aria-label="t('components.pagination.first')"
       @click="gotoPage(1)"
     >
       <Icon name="ic:round-first-page" class="icon" />
@@ -61,7 +61,7 @@ const pageOptions = computed(() => {
       class="pagination-button"
       :style="visible(page !== 1)"
       :disabled="page === 1"
-      :aria-label="t('pagination.prev')"
+      :aria-label="t('components.pagination.prev')"
       @click="gotoPage(page - 1)"
     >
       <Icon name="ic:baseline-chevron-left" class="icon" />
@@ -72,7 +72,7 @@ const pageOptions = computed(() => {
       v-for="option in pageOptions"
       :key="option"
       :disabled="page === option"
-      :aria-label="t('pagination.page', { page: option })"
+      :aria-label="t('components.pagination.page', { page: option })"
       @click="gotoPage(option)"
     >
       {{ option }}
@@ -82,7 +82,7 @@ const pageOptions = computed(() => {
       class="pagination-button"
       :style="visible(page !== pages)"
       :disabled="page === pages"
-      :aria-label="t('pagination.next')"
+      :aria-label="t('components.pagination.next')"
       @click="gotoPage(page + 1)"
     >
       <Icon name="ic:baseline-chevron-right" class="icon" />
@@ -92,7 +92,7 @@ const pageOptions = computed(() => {
       class="pagination-button"
       :style="visible(page !== pages)"
       :disabled="page === pages"
-      :aria-label="t('pagination.last')"
+      :aria-label="t('components.pagination.last')"
       @click="gotoPage(pages)"
     >
       <Icon name="ic:round-last-page" class="icon" />

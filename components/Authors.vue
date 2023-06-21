@@ -1,21 +1,22 @@
 <script setup lang="ts">
-import { Author } from 'guizhan-builds-data'
+import { Project, Author } from 'guizhan-builds-data'
 import { RouteLocationRaw } from 'vue-router'
 import _ from 'lodash'
 
 const props = defineProps<{
-  authors: string[] | string
+  project: Project
 }>()
 
 const authors: ComputedRef<Author[]> = computed(() => {
-  if (_.isArray(props.authors)) {
+  const authors = props.project.displayOptions?.author || props.project.author
+  if (_.isArray(authors)) {
     const result: Author[] = []
-    props.authors.forEach((author) => {
+    authors.forEach((author) => {
       result.push(getAuthor(author))
     })
     return result
   } else {
-    return [getAuthor(props.authors)]
+    return [getAuthor(authors)]
   }
 })
 
@@ -44,9 +45,10 @@ function getLocalAuthor(name: string): Author {
     href: {
       name: 'author',
       params: {
-        name: name,
+        author: name,
       },
     } as RouteLocationRaw,
+    target: '_self',
   }
 }
 </script>
