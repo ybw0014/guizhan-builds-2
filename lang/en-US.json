@@ -32,15 +32,20 @@
       "title": "Min. Req."
     }
   },
+  "sortTypes": {
+    "name": "Name",
+    "newest": "Recently Added"
+  },
+  "error": {
+    "401": "Unauthorized",
+    "403": "Forbidden",
+    "404": "Not Found"
+  },
   "pages": {
     "projects": {
       "title": "Projects",
       "subTitle": "Search projects and download build artifacts.",
-      "query": "Search in {0} projects...",
-      "sortType": {
-        "name": "Name",
-        "newest": "Recently Added"
-      }
+      "query": "Search in {0} projects..."
     },
     "authors": {
       "title": "Authors",
@@ -53,6 +58,12 @@
     },
     "privacy": {
       "title": "Privacy Policy"
+    },
+    "author": {
+      "title": "{author}",
+      "numProjects": "{num} Project(s)",
+      "searchName": "Search in projects...",
+      "sortBy": "Sort by"
     }
   }
 }

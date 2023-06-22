@@ -1,9 +1,4 @@
 @import 'variables';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import 'animation';
 @import 'markdown';
 
@@ -19,6 +14,10 @@ body {
   &.hoverable {
     @apply hover:bg-[#e2e8f0] dark:hover:bg-[#334155];
   }
+}
+
+.card {
+  @apply shadow-md rounded-md w-full p-4 flex flex-col gap-2 overflow-x-hidden;
 }
 
 .link-box {

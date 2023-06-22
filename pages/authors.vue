@@ -2,18 +2,22 @@
 import InputText from '~/components/ui/InputText.vue'
 import { Project, Author } from 'guizhan-builds-data'
 import { Header } from '~/types/dataTable'
-import { useAuthor } from '~/composables/useAuthor'
+import { useAuthors } from '~/composables/useAuthor'
+import { watchDebounced } from '@vueuse/core'
+import _ from 'lodash'
 
 const { t } = useI18n()
-const route = useRoute()
-const router = useRouter()
 
 const query = ref()
 const projects = ref<Project[] | null>()
+const authors = ref<Author[]>([])
+const filteredList = ref<Author[]>([])
 
 const p = await useProjects()
 if (p) {
   projects.value = p
+  authors.value = useAuthors(p)
+  filterList()
 }
 
 const headers: Header[] = [
@@ -29,31 +33,25 @@ const headers: Header[] = [
   },
 ]
 
-const authors = computed(() => {
-  if (!projects.value) {
-    return
+watchDebounced(
+  query,
+  () => {
+    filteredList.value = []
+    return filterList()
+  },
+  { deep: true, debounce: 250 }
+)
+
+function filterList() {
+  let filtered: Author[] = authors.value
+  if (query.value) {
+    filtered = _.filter(authors.value, (author: Author) => {
+      const q = query.value.toLowerCase()
+      return _.includes(author.name.toLowerCase(), q)
+    })
   }
-  const authors: Map<string, Author> = new Map()
-  projects.value.forEach((project) => {
-    if (!authors.has(project.author)) {
-      authors.set(project.author, useAuthor(project.author, 1))
-    } else {
-      const author = authors.get(project.author) as Author
-      author.projects++
-    }
-    if (project.displayOptions?.authors) {
-      project.displayOptions.authors.forEach((author) => {
-        if (!authors.has(author)) {
-          authors.set(author, useAuthor(author, 1))
-        } else {
-          const author1 = authors.get(author) as Author
-          author1.projects++
-        }
-      })
-    }
-  })
-  return Array.from(authors.values())
-})
+  filteredList.value = filtered
+}
 </script>
 
 <template>
@@ -63,9 +61,9 @@ const authors = computed(() => {
   <div class="flex flex-col gap-4">
     <PageTitle>{{ t('pages.authors.title') }}</PageTitle>
     <InputText v-model="query" :label="t('pages.authors.username')" />
-    <DataTable :headers="headers" :items="authors" :sizePerPage="15">
+    <DataTable :headers="headers" :items="filteredList" :sizePerPage="15">
       <template #col-name="{ item }">
-        <NuxtLink :to="item.href" class="author-link" :target="item.target">
+        <NuxtLink :to="{ name: 'author', params: { author: item.name } }" class="author-link">
           {{ item.name }}
         </NuxtLink>
       </template>

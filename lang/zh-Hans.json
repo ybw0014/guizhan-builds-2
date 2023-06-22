@@ -32,15 +32,20 @@
       "title": "最低要求"
     }
   },
+  "sortTypes": {
+    "name": "名称",
+    "newest": "最近添加"
+  },
+  "error": {
+    "401": "未授权",
+    "403": "禁止访问",
+    "404": "页面不存在"
+  },
   "pages": {
     "projects": {
       "title": "项目列表",
       "subTitle": "在此搜索项目并下载构建结果。",
-      "query": "在 {0} 个项目中搜索...",
-      "sortType": {
-        "name": "名称",
-        "newest": "最近添加"
-      }
+      "query": "在 {0} 个项目中搜索..."
     },
     "authors": {
       "title": "作者列表",
@@ -53,6 +58,12 @@
     },
     "privacy": {
       "title": "隐私政策"
+    },
+    "author": {
+      "title": "{author}",
+      "numProjects": "{num} 个项目",
+      "searchName": "在项目中搜索...",
+      "sortBy": "排序方式"
     }
   }
 }

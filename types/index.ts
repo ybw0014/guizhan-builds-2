@@ -31,8 +31,6 @@ declare module 'guizhan-builds-data' {
 
   interface Author extends Record<string, any> {
     name: string
-    href: string | RouteLocationRaw
-    target: '_blank' | '_self'
     projects: number
   }
 }

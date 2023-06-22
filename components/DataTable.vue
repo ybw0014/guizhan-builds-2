@@ -1,6 +1,5 @@
 <script setup lang="ts" generic="T extends Record<string, any>">
 import { Header } from '~/types/dataTable'
-
 const props = withDefaults(
   defineProps<{
     headers: Header[]
@@ -14,7 +13,6 @@ const props = withDefaults(
   }
 )
 
-const sorted = ref<T[]>()
 const sliced = ref<T[]>()
 const page = ref(1)
 const activeSorter = ref<string>(props.initSort)
@@ -38,27 +36,24 @@ const totalPages = computed(() => {
   }
   return Math.ceil(sorted.value.length / props.sizePerPage)
 })
-
-onMounted(() => {
-  calcSorted()
-  calcSliced()
-})
-watch(activeSorter, calcSorted)
-watch(sorted, calcSliced)
-watch(page, calcSliced)
-
-function calcSorted() {
+const sorted = computed<T[]>(() => {
   if (!props.items) {
-    return
+    return []
   }
-  sorted.value = [...props.items].sort((a, b) => {
+  return [...props.items].sort((a, b) => {
     if (activeSortOrder.value === 0) return 0
     const field = activeSortCol.value
     if (a[field] > b[field]) return -activeSortOrder.value
     if (a[field] < b[field]) return activeSortOrder.value
     return 0
   })
-}
+})
+
+onMounted(() => {
+  calcSliced()
+})
+watch(sorted, calcSliced)
+watch(page, calcSliced)
 
 function sort(header: Header) {
   if (!header.sortable) {

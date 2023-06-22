@@ -11,7 +11,7 @@ const branch: string | null = ['main', 'master'].includes(props.project.branch) 
 </script>
 
 <template>
-  <div class="project-card bg-default hoverable">
+  <div class="project-card card bg-default hoverable">
     <div class="flex gap-2">
       <!-- 左侧 logo -->
       <div class="flex flex-col justify-center">
@@ -60,15 +60,14 @@ const branch: string | null = ['main', 'master'].includes(props.project.branch) 
 
 <style scoped lang="scss">
 .project-card {
-  @apply shadow-md rounded-md w-full border border-gray-300 p-4 cursor-pointer flex flex-col gap-2 overflow-x-hidden;
-  @apply dark:border-gray-800;
+  @apply cursor-pointer border border-gray-300 dark:border-gray-800;
 
   .plugin-name {
     @apply font-semibold text-lg;
   }
 
   .plugin-branch {
-    @apply ml-2 font-light text-base;
+    @apply ml-2 font-light text-base whitespace-nowrap;
   }
 
   .plugin-tag {

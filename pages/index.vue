@@ -10,17 +10,15 @@ const router = useRouter()
 
 const query = ref<string>((route.query.q as string) || '')
 const sortTypes = computed(() => [
-  { id: 'name', label: t('pages.projects.sortType.name') },
-  { id: 'newest', label: t('pages.projects.sortType.newest') },
+  { id: 'name', label: t('sortTypes.name') },
+  { id: 'newest', label: t('sortTypes.newest') },
 ])
 const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id)
-const activeFilter = ref<string[]>([])
 const page = ref(route.query.page ? Number(route.query.page) : 1)
 const projects = ref<Project[] | null>()
 const filteredList = ref<Project[] | null>()
 const projectList = ref<Element | null>(null)
 const pageResetAnchor = ref<Element | null>(null)
-// const mcVersions = await useMinecraftVersions('1.16.5')
 
 const p = await useProjects()
 if (p) {
@@ -29,7 +27,6 @@ if (p) {
 }
 
 const queryParams = computed(() => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const params: Record<string, any> = {}
   if (query.value) {
     params.q = query.value
@@ -69,7 +66,7 @@ function filterList() {
   }
   let filtered: Project[] = _.filter(projects.value, (project: Project) => !project.displayOptions?.hidden)
   if (query.value) {
-    filtered = _.filter(projects.value, (project: Project): boolean => {
+    filtered = _.filter(projects.value, (project: Project) => {
       const q = query.value.toLowerCase()
       return (project.repository.toLowerCase().includes(q) ||
         project.displayOptions?.keywords?.some((keyword: string) => keyword.toLowerCase().includes(q))) as boolean

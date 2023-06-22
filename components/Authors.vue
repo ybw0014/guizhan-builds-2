@@ -24,7 +24,7 @@ const authors: ComputedRef<Author[]> = computed(() => {
 <template>
   <div>
     <span v-for="(author, index) in authors" :key="author.name">
-      <NuxtLink :to="author.href" class="author-link" :target="author.target">
+      <NuxtLink :to="{ name: 'author', params: { author: author.name } }" class="author-link">
         {{ author.name }}
       </NuxtLink>
       <span v-if="index + 1 < authors.length">, </span>
