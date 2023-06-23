@@ -7,11 +7,5 @@ const props = defineProps<{
 </script>
 
 <template>
-  <Icon name="clarity:plugin-line" class="logo" />
+  <img src="/images/default_plugin.webp" class="rounded-md" />
 </template>
-
-<style scoped lang="scss">
-.logo {
-  @apply w-12 h-12 rounded-md;
-}
-</style>

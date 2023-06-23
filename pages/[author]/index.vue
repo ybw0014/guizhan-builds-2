@@ -96,6 +96,10 @@ function filterList() {
   }
   filteredList.value = filtered
 }
+
+definePageMeta({
+  name: 'author',
+})
 </script>
 
 <template>
@@ -105,10 +109,10 @@ function filterList() {
   <div class="flex flex-col items-center">
     <div class="flex flex-col gap-4 w-full max-w-4xl">
       <div ref="pageResetAnchor" class="card bg-default author-card">
-        <GitHubAvatar :username="author" class="w-24 h-24" />
+        <GitHubAvatar :username="author" class="w-12 h-12 md:w-24 md:h-24" />
         <div class="flex flex-col">
-          <div class="author-name">{{ author }}</div>
-          <div class="author-links">
+          <div class="text-xl px-1">{{ author }}</div>
+          <div class="px-1 author-links">
             <NuxtLink :to="`https://github.com/${author}`" target="_blank">
               <Icon name="mdi:github" class="w-6 h-6" />
             </NuxtLink>
@@ -122,7 +126,13 @@ function filterList() {
       <hr class="w-full my-1 border-gray-400 dark:border-gray-500" />
       <div class="flex gap-4">
         <InputText v-model="query" :label="t('pages.author.searchName')" />
-        <InputSelect v-model="activeSortType" :values="sortTypes" item-text="label" item-value="id" :label="t('pages.author.sortBy')" />
+        <InputSelect
+          v-model="activeSortType"
+          :values="sortTypes"
+          item-text="label"
+          item-value="id"
+          :label="t('pages.author.sortBy')"
+        />
       </div>
       <div v-if="filteredList" class="min-w-0 mb-5 flex flex-col gap-2 lg:mb-0">
         <ProjectList ref="projectList" :projects="filteredList" :page="page" @update:page="updatePage" />
@@ -133,10 +143,7 @@ function filterList() {
 
 <style scoped lang="scss">
 .author-card {
-  @apply max-w-4xl flex flex-row gap-4 border-t-4 border-blue-500;
-}
-.author-name {
-  @apply text-xl;
+  @apply flex flex-row gap-4 border-t-4 border-blue-500;
 }
 .author-links a {
   @apply hover:text-blue-600 dark:hover:text-blue-400;

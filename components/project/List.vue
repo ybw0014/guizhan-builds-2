@@ -4,10 +4,15 @@ const { t } = useI18n()
 
 const sizePerPage = 10
 
-const props = defineProps<{
-  projects: Project[]
-  page: number
-}>()
+const props = withDefaults(
+  defineProps<{
+    projects: Project[]
+    page?: number
+  }>(),
+  {
+    page: 1,
+  }
+)
 const emit = defineEmits<{
   (e: 'update:page', page: number): void
 }>()

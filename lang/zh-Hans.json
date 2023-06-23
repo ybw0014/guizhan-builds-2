@@ -30,6 +30,9 @@
     },
     "projectRequirements": {
       "title": "最低要求"
+    },
+    "projectHeader": {
+      "download": "下载最新版"
     }
   },
   "sortTypes": {
@@ -39,7 +42,8 @@
   "error": {
     "401": "未授权",
     "403": "禁止访问",
-    "404": "页面不存在"
+    "404": "页面不存在",
+    "unknown": "未知错误"
   },
   "pages": {
     "projects": {
@@ -64,6 +68,12 @@
       "numProjects": "{num} 个项目",
       "searchName": "在项目中搜索...",
       "sortBy": "排序方式"
+    },
+    "repo": {
+      "title": "{repo}"
+    },
+    "project": {
+      "title": "{name} ({branch})"
     }
   }
 }

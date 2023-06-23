@@ -1,6 +1,4 @@
 declare module 'guizhan-builds-data' {
-  import { RouteLocationRaw } from 'vue-router'
-
   interface ProjectBuildOptions {
     name: string
     version: string

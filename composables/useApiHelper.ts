@@ -21,6 +21,19 @@ export async function useProjects(): Promise<Project[]> {
   return projects
 }
 
+export async function useProject(author: string, repository: string, branch: string): Promise<Project | undefined> {
+  const projects = await useProjects()
+  return projects.find((p) => {
+    if (p.author === author && p.repository === repository && p.branch === branch) {
+      return true
+    }
+    if (_.isArray(p.alias)) {
+      return p.alias.find((alias: string) => `${author}/${repository}:${branch}` === alias)
+    }
+    return false
+  })
+}
+
 export async function useMinecraftVersions(minimumVersion: string): Promise<string[]> {
   const { data } = await useExternalApi('mcVersions', 'https://bmclapi2.bangbang93.com/mc/game/version_manifest_v2.json')
   const response = data.value as MinecraftVersionResponse

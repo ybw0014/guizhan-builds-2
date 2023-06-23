@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Project } from 'guizhan-builds-data'
+const router = useRouter()
 
 const props = defineProps<{
   project: Project
@@ -8,26 +9,37 @@ const props = defineProps<{
 const name = ref(props.project.displayOptions?.name || props.project.repository)
 const keywords = ref(props.project.displayOptions?.keywords?.slice(0, 2))
 const branch: string | null = ['main', 'master'].includes(props.project.branch) ? null : props.project.branch
+
+function handleCardClick() {
+  router.push({
+    name: 'project',
+    params: {
+      author: props.project.author,
+      repo: props.project.repository,
+      branch: props.project.branch,
+    },
+  })
+}
 </script>
 
 <template>
-  <div class="project-card card bg-default hoverable">
+  <div class="project-card card bg-default hoverable" @click="handleCardClick">
     <div class="flex gap-2">
       <!-- 左侧 logo -->
       <div class="flex flex-col justify-center">
-        <ProjectLogo :project="props.project" />
+        <ProjectLogo :project="props.project" class="w-12 h-12" />
       </div>
       <!-- 项目名称与作者 -->
       <div class="flex flex-col">
-        <div class="plugin-name">
+        <div class="font-semibold text-lg">
           {{ name }}
-          <span v-if="branch !== null" class="plugin-branch">
+          <span v-if="branch !== null" class="ml-2 font-light text-base whitespace-nowrap">
             <Icon name="ph:git-branch-light" />
             {{ branch }}
           </span>
         </div>
         <Authors :project="project" />
-        <div v-if="keywords" class="flex plugin-tag">
+        <div v-if="keywords" class="flex text-sm text-gray-600 dark:text-gray-400">
           <div class="flex flex-col justify-center mr-1">
             <Icon name="mdi:tag-outline" />
           </div>
@@ -61,17 +73,5 @@ const branch: string | null = ['main', 'master'].includes(props.project.branch) 
 <style scoped lang="scss">
 .project-card {
   @apply cursor-pointer border border-gray-300 dark:border-gray-800;
-
-  .plugin-name {
-    @apply font-semibold text-lg;
-  }
-
-  .plugin-branch {
-    @apply ml-2 font-light text-base whitespace-nowrap;
-  }
-
-  .plugin-tag {
-    @apply text-sm text-gray-600 dark:text-gray-400;
-  }
 }
 </style>

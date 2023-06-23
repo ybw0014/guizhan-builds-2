@@ -27,7 +27,7 @@ module.exports = {
     semi: ['error', 'never'],
     'no-undef': ['off'],
     'vue/multi-word-component-names': ['off'],
-
+    '@typescript-eslint/no-explicit-any': ['off'],
     'prettier/prettier': [
       'warn',
       {
