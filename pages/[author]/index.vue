@@ -17,28 +17,11 @@ const sortTypes = computed(() => [
 ])
 const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id)
 const page = ref(route.query.page ? Number(route.query.page) : 1)
-const projects = ref<Project[] | null>()
 const filteredList = ref<Project[] | null>()
 const pageResetAnchor = ref<Element | null>(null)
 
-const p = await useProjects()
-if (p) {
-  const authorProjects = p.filter((project) => {
-    if (project.author == author.value) {
-      return true
-    }
-    if (project.displayOptions?.authors) {
-      return project.displayOptions.authors.includes(author.value)
-    }
-    return false
-  })
-  if (authorProjects.length == 0) {
-    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
-  } else {
-    projects.value = authorProjects
-    filterList()
-  }
-}
+const projects = await useAuthorProjects(author.value)
+await verify()
 
 const queryParams = computed(() => {
   const params: Record<string, any> = {}
@@ -63,6 +46,14 @@ watchDebounced(
   },
   { deep: true, debounce: 250 }
 )
+
+async function verify() {
+  if (!projects.value || projects.value.length === 0) {
+    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
+  } else {
+    filterList()
+  }
+}
 
 function updatePage(newPage: number) {
   if (page.value === newPage) {

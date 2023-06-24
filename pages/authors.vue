@@ -1,24 +1,17 @@
 <script setup lang="ts">
 import InputText from '~/components/ui/InputText.vue'
-import { Project, Author } from 'guizhan-builds-data'
+import { Author } from 'guizhan-builds-data'
 import { Header } from '~/types/dataTable'
-import { useAuthors } from '~/composables/useAuthor'
 import { watchDebounced } from '@vueuse/core'
 import _ from 'lodash'
 
 const { t } = useI18n()
 
 const query = ref()
-const projects = ref<Project[] | null>()
-const authors = ref<Author[]>([])
 const filteredList = ref<Author[]>([])
+const authors = await useAuthors()
 
-const p = await useProjects()
-if (p) {
-  projects.value = p
-  authors.value = useAuthors(p)
-  filterList()
-}
+filterList()
 
 const headers: Header[] = [
   {
@@ -43,6 +36,9 @@ watchDebounced(
 )
 
 function filterList() {
+  if (!authors.value) {
+    return
+  }
   let filtered: Author[] = authors.value
   if (query.value) {
     filtered = _.filter(authors.value, (author: Author) => {

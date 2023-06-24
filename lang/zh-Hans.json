@@ -32,7 +32,13 @@
       "title": "最低要求"
     },
     "projectHeader": {
-      "download": "下载最新版"
+      "download": "下载最新构建"
+    },
+    "projectNav": {
+      "introduction": "介绍",
+      "builds": "所有构建",
+      "issues": "问题追踪器",
+      "source": "源代码"
     }
   },
   "sortTypes": {
@@ -74,6 +80,9 @@
     },
     "project": {
       "title": "{name} ({branch})"
+    },
+    "builds": {
+      "title": "所有构建 - {name} ({branch})"
     }
   }
 }

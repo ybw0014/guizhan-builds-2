@@ -1,8 +1,8 @@
-import { Project, RawProject } from 'guizhan-builds-data'
+import { Project, RawProject, Author } from 'guizhan-builds-data'
 import { MinecraftVersionResponse, MinecraftVersion } from '~/types/bmclApi'
 import _ from 'lodash'
 
-export async function useProjects(): Promise<Project[]> {
+export async function useProjects(): Promise<Ref<Project[] | null>> {
   const { data } = await useLocalApi('projects', '/repos.json')
   const rawProjects = data.value as RawProject[]
   const projects: Project[] = []
@@ -18,28 +18,86 @@ export async function useProjects(): Promise<Project[]> {
     }
     projects.push(project)
   })
-  return projects
+  return ref(projects)
 }
 
-export async function useProject(author: string, repository: string, branch: string): Promise<Project | undefined> {
+export async function useAuthors(): Promise<Ref<Author[] | null>> {
   const projects = await useProjects()
-  return projects.find((p) => {
-    if (p.author === author && p.repository === repository && p.branch === branch) {
-      return true
+  const authors: Map<string, Author> = new Map()
+  if (!projects.value) {
+    return ref(null)
+  }
+  projects.value.forEach((project) => {
+    if (!authors.has(project.author)) {
+      authors.set(project.author, useAuthor(project.author, 1))
+    } else {
+      const author = authors.get(project.author) as Author
+      author.projects++
     }
-    if (_.isArray(p.alias)) {
-      return p.alias.find((alias: string) => `${author}/${repository}:${branch}` === alias)
+    if (project.displayOptions?.authors) {
+      project.displayOptions.authors.forEach((author) => {
+        if (!authors.has(author)) {
+          authors.set(author, useAuthor(author, 1))
+        } else {
+          const author1 = authors.get(author) as Author
+          author1.projects++
+        }
+      })
     }
-    return false
   })
+  return ref(Array.from(authors.values()))
 }
 
-export async function useMinecraftVersions(minimumVersion: string): Promise<string[]> {
+export async function useAuthorProjects(author: string): Promise<Ref<Project[] | null>> {
+  const projects = await useProjects()
+  if (!projects.value) {
+    return ref(null)
+  }
+  return ref(
+    projects.value.filter((project) => {
+      if (project.author == author) {
+        return true
+      }
+      if (project.displayOptions?.authors) {
+        return project.displayOptions.authors.includes(author)
+      }
+      return false
+    })
+  )
+}
+
+export async function useProjectRepository(author: string, repository: string): Promise<Ref<Project[] | null>> {
+  const projects = await useProjects()
+  if (!projects.value) {
+    return ref(null)
+  }
+  return ref(projects.value.filter((project) => project.author === author && project.repository === repository))
+}
+
+export async function useProject(author: string, repository: string, branch: string): Promise<Ref<Project | null>> {
+  const projects = await useProjects()
+  if (!projects.value) {
+    return ref(null)
+  }
+  return ref(
+    projects.value.find((p) => {
+      if (p.author === author && p.repository === repository && p.branch === branch) {
+        return true
+      }
+      if (_.isArray(p.alias)) {
+        return p.alias.find((alias: string) => `${author}/${repository}:${branch}` === alias)
+      }
+      return false
+    }) || null
+  )
+}
+
+export async function useMinecraftVersions(minimumVersion: string): Promise<Ref<string[]>> {
   const { data } = await useExternalApi('mcVersions', 'https://bmclapi2.bangbang93.com/mc/game/version_manifest_v2.json')
   const response = data.value as MinecraftVersionResponse
   const versions: string[] = []
   if (!response) {
-    return versions
+    return ref(versions)
   }
   _.forOwn(response.versions, (v) => {
     const version = v as MinecraftVersion
@@ -51,5 +109,5 @@ export async function useMinecraftVersions(minimumVersion: string): Promise<stri
       return false
     }
   })
-  return versions
+  return ref(versions)
 }

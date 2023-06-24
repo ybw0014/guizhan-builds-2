@@ -15,16 +15,12 @@ const sortTypes = computed(() => [
 ])
 const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id)
 const page = ref(route.query.page ? Number(route.query.page) : 1)
-const projects = ref<Project[] | null>()
 const filteredList = ref<Project[] | null>()
 const projectList = ref<Element | null>(null)
 const pageResetAnchor = ref<Element | null>(null)
+const projects = await useProjects()
 
-const p = await useProjects()
-if (p) {
-  projects.value = p
-  filterList()
-}
+filterList()
 
 const queryParams = computed(() => {
   const params: Record<string, any> = {}

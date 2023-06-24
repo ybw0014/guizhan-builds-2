@@ -1,26 +1,22 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-data'
-
 const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 
 const author = ref<string>(route.params.author as string)
 const repo = ref<string>(route.params.repo as string)
-const projects = ref<Project[] | null>()
+const projects = await useProjectRepository(author.value, repo.value)
 
-const p = await useProjects()
-if (p) {
-  projects.value = p.filter((project) => {
-    return project.author === author.value && project.repository === repo.value
-  })
-  if (projects.value.length === 0) {
+await verify()
+
+function verify() {
+  if (!projects.value || projects.value.length === 0) {
     throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
   } else if (projects.value.length === 1) {
     const project = projects.value[0]
     // 如果只有1个结果则直接重定向
     router.replace({
-      name: 'build',
+      name: 'project',
       params: {
         author: project.author,
         repo: project.repository,

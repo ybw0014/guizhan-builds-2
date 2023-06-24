@@ -32,7 +32,13 @@
       "title": "Min. Req."
     },
     "projectHeader": {
-      "download": "Download Latest"
+      "download": "Download Latest Build"
+    },
+    "projectNav": {
+      "introduction": "Introduction",
+      "builds": "Builds",
+      "issues": "Issues",
+      "source": "Source"
     }
   },
   "sortTypes": {
@@ -74,6 +80,9 @@
     },
     "project": {
       "title": "{name} ({branch})"
+    },
+    "builds": {
+      "title": "Builds - {name} ({branch})"
     }
   }
 }

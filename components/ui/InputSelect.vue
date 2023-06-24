@@ -55,3 +55,4 @@ const value = computed({
   @apply absolute flex right-2 self-center;
 }
 </style>
+types/components/ui/InputSelect
