@@ -2,11 +2,21 @@
 import _ from 'lodash'
 const { t } = useI18n()
 
-const props = defineProps<{
-  requirements?: Record<string, Record<string, string>>
-  vertical?: boolean
-}>()
-const req: ComputedRef<Map<string, string>> = computed(() => {
+const props = withDefaults(
+  defineProps<{
+    requirements?: Record<string, Record<string, string>>
+    vertical?: boolean
+    title?: boolean
+    text?: boolean
+    size: 'sm' | 'md' | 'lg' | 'xl'
+  }>(),
+  {
+    title: false,
+    text: false,
+    size: 'md',
+  }
+)
+const req = computed<Map<string, string>>(() => {
   const result: Map<string, string> = new Map()
   if (!props.requirements) {
     return result
@@ -17,24 +27,46 @@ const req: ComputedRef<Map<string, string>> = computed(() => {
   }
   return result
 })
+
+const requirementSize = computed(() => `text-${props.size}`)
+const iconClass = computed(() => {
+  switch (props.size) {
+    case 'sm':
+      return 'w-4 h-4'
+    case 'md':
+      return 'w-5 h-5'
+    case 'lg':
+      return 'w-6 h-6'
+    case 'xl':
+      return 'w-7 h-7'
+  }
+})
 </script>
 
 <template>
   <div v-if="req.size > 0" :class="{ 'project-requirements': true, vertical: props.vertical }">
-    <div class="title">{{ t('components.projectRequirements.title') }}</div>
+    <div v-if="title" class="title">{{ t('components.projectRequirements.title') }}</div>
     <!-- java -->
-    <div v-if="req.has('java')" class="requirement">
-      <span class="icon" aria-label="Java"><Icon name="mdi:language-java" /></span>
+    <div v-if="req.has('java')" :class="['requirement', requirementSize]">
+      <span class="icon">
+        <Icon name="mdi:language-java" :class="iconClass" title="Java" aria-label="Java" />
+        <span v-if="text">Java</span>
+      </span>
       <span>{{ req.get('java') }}</span>
     </div>
     <!-- minecraft -->
-    <div v-if="req.has('minecraft')" class="requirement">
-      <span class="icon" aria-label="Minecraft"><Icon name="arcticons:minecraft" /></span>
+    <div v-if="req.has('minecraft')" :class="['requirement', requirementSize]">
+      <span class="icon">
+        <Icon name="arcticons:minecraft" :class="iconClass" title="Minecraft" aria-label="Minecraft" />
+        <span v-if="text">Minecraft</span>
+      </span>
       <span>{{ req.get('minecraft') }}</span>
     </div>
     <!-- slimefun -->
-    <div v-if="req.has('slimefun')" class="requirement">
-      <span class="icon" aria-label="Slimefun"><Icon name="ph:package-light" /></span>
+    <div v-if="req.has('slimefun')" :class="['requirement', requirementSize]">
+      <span class="icon">
+        <Icon name="ph:package-light" :class="iconClass" title="Slimefun" aria-label="Slimefun" />
+      </span>
       <span>{{ req.get('slimefun') }}</span>
     </div>
   </div>
@@ -49,14 +81,14 @@ const req: ComputedRef<Map<string, string>> = computed(() => {
   }
 
   .title {
-    @apply text-gray-900 dark:text-gray-100 font-semibold text-sm;
+    @apply text-gray-900 dark:text-gray-100 font-semibold;
   }
 
   .requirement {
-    @apply inline-flex gap-1 text-sm;
+    @apply inline-flex gap-1;
 
     .icon {
-      @apply flex flex-col justify-center text-xl;
+      @apply flex justify-center;
     }
   }
 }

@@ -32,7 +32,14 @@
       "title": "最低要求"
     },
     "projectHeader": {
-      "download": "下载最新构建"
+      "download": "下载最新构建",
+      "warning": {
+        "title": "警告",
+        "content": "你正在从鬼斩构建站下载。如果你继续，则代表你已经同意了服务条款与隐私政策。",
+        "confirm": "确认",
+        "confirmForever": "确认，并不再显示",
+        "cancel": "取消"
+      }
     },
     "projectNav": {
       "introduction": "介绍",
@@ -79,7 +86,12 @@
       "title": "{repo}"
     },
     "project": {
-      "title": "{name} ({branch})"
+      "title": "{name} ({branch})",
+      "readmeWarning": "以下文档来自项目 GitHub 的 README.md。",
+      "readmeFail": "加载 README.md 失败",
+      "buildStatus": "构建状态",
+      "information": "信息",
+      "requirements": "最低要求"
     },
     "builds": {
       "title": "所有构建 - {name} ({branch})"

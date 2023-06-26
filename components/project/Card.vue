@@ -8,7 +8,7 @@ const props = defineProps<{
 
 const name = ref(props.project.displayOptions?.name || props.project.repository)
 const keywords = ref(props.project.displayOptions?.keywords?.slice(0, 2))
-const branch: string | null = ['main', 'master'].includes(props.project.branch) ? null : props.project.branch
+const branch: string | null = isMainBranch(props.project.branch) ? null : props.project.branch
 
 function handleCardClick() {
   router.push({
@@ -56,7 +56,7 @@ function handleCardClick() {
       <!-- 右侧信息 -->
       <div class="shrink-0 flex gap-2">
         <div class="md:flex hidden">
-          <ProjectRequirements :requirements="props.project.displayOptions?.requirements" :vertical="true" />
+          <ProjectRequirements :requirements="props.project.displayOptions?.requirements" :vertical="true" :title="true" />
         </div>
         <div class="flex flex-col justify-center">
           <BuildStatus :project="props.project" />

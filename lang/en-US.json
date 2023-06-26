@@ -32,7 +32,14 @@
       "title": "Min. Req."
     },
     "projectHeader": {
-      "download": "Download Latest Build"
+      "download": "Download Latest Build",
+      "warning": {
+        "title": "Warning",
+        "content": "You are downloading file from Guizhan Builds. By continuing, you agree to our Terms and Conditions and Privacy Policy.",
+        "confirm": "Confirm",
+        "confirmForever": "Confirm, and never show this again",
+        "cancel": "Cancel"
+      }
     },
     "projectNav": {
       "introduction": "Introduction",
@@ -79,7 +86,12 @@
       "title": "{repo}"
     },
     "project": {
-      "title": "{name} ({branch})"
+      "title": "{name} ({branch})",
+      "readmeWarning": "The following document is loaded from README.md on GitHub.",
+      "readmeFail": "Failed to load README.md.",
+      "buildStatus": "Build Status",
+      "information": "Information",
+      "requirements": "Min. Requirements"
     },
     "builds": {
       "title": "Builds - {name} ({branch})"

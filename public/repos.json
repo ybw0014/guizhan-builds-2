@@ -55,11 +55,11 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/ColoredEnderChest:master": {
+	"SlimefunGuguProject/ColoredEnderChests:master": {
 		"type": "maven",
-		"alias": ["ybw0014/ColoredEnderChest-CN:master"],
+		"alias": ["ybw0014/ColoredEnderChests-CN:master"],
 		"buildOptions": {
-			"name": "ColoredEnderChest",
+			"name": "ColoredEnderChests",
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {

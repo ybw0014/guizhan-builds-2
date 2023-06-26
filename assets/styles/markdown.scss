@@ -20,6 +20,14 @@ article {
     @apply text-2xl mt-4;
   }
 
+  h3 {
+    @apply text-xl mt-2;
+  }
+
+  h4 {
+    @apply text-lg mt-1.5;
+  }
+
   p, ul {
     @apply py-2;
   }
@@ -29,7 +37,31 @@ article {
   }
 
   a {
-    @apply font-medium border-b border-black;
+    @apply font-medium border-b border-slate-900;
     @apply dark:border-slate-200;
+
+    &:has(img) {
+      @apply border-none;
+    }
+  }
+
+  li p {
+    @apply inline;
+  }
+
+  p img {
+    @apply inline w-auto h-auto;
+  }
+
+  table {
+    @apply border border-slate-400;
+
+    th, td {
+      @apply border px-3 py-1.5;
+    }
+  }
+
+  summary {
+    @apply cursor-pointer;
   }
 }
