@@ -1,7 +1,7 @@
 import { Project } from 'guizhan-builds-data'
 import { remark } from 'remark'
 import remarkGfm from 'remark-gfm'
-import remarkEmoji from 'remark-emoji'
+import remarkGemoji from 'remark-gemoji'
 import remarkRehype from 'remark-rehype'
 import rehypeRaw from 'rehype-raw'
 import rehypeSanitize from 'rehype-sanitize'
@@ -41,7 +41,7 @@ export async function useGitHubReadmeParsed(project: Project): Promise<Ref<strin
   }
   const parsed = await remark()
     .use(remarkGfm)
-    .use(remarkEmoji)
+    .use(remarkGemoji)
     .use(remarkRehype, {
       allowDangerousHtml: true,
     })

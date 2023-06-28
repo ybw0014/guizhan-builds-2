@@ -29,7 +29,8 @@
       "noResult": "没有找到符合条件的项目。"
     },
     "projectRequirements": {
-      "title": "最低要求"
+      "title": "最低要求",
+      "required": "需要"
     },
     "projectHeader": {
       "download": "下载最新构建",
@@ -91,7 +92,8 @@
       "readmeFail": "加载 README.md 失败",
       "buildStatus": "构建状态",
       "information": "信息",
-      "requirements": "最低要求"
+      "requirements": "最低要求",
+      "authors": "作者"
     },
     "builds": {
       "title": "所有构建 - {name} ({branch})"

@@ -31,4 +31,30 @@ declare module 'guizhan-builds-data' {
     name: string
     projects: number
   }
+
+  interface LegacyBuildInfo {
+    author: string
+    build_timestamp: number
+    commit: string
+    id: number
+    message: string
+    success: boolean
+    target: string
+    timestamp: number
+  }
+
+  interface LegacyBuildsInfo {
+    latest: number // 最新构建commit的时间戳
+    builds: LegacyBuildInfo[]
+  }
+
+  interface BuildInfo extends Omit<LegacyBuildInfo, 'build_timestamp'> {
+    buildTimestamp: number
+    sha1: string
+  }
+
+  interface BuildsInfo {
+    latest: string // 最新构建commit的hash
+    builds: BuildInfo[]
+  }
 }

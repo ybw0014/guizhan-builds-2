@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import _ from 'lodash'
+import LazyLoadImage from '~/components/LazyLoadImage.vue'
 const { t } = useI18n()
 
 const props = withDefaults(
@@ -8,7 +9,7 @@ const props = withDefaults(
     vertical?: boolean
     title?: boolean
     text?: boolean
-    size: 'sm' | 'md' | 'lg' | 'xl'
+    size?: 'sm' | 'md' | 'lg' | 'xl'
   }>(),
   {
     title: false,
@@ -57,10 +58,18 @@ const iconClass = computed(() => {
     <!-- minecraft -->
     <div v-if="req.has('minecraft')" :class="['requirement', requirementSize]">
       <span class="icon">
-        <Icon name="arcticons:minecraft" :class="iconClass" title="Minecraft" aria-label="Minecraft" />
+        <LazyLoadImage source="/images/minecraft.svg" :class="iconClass" title="Minecraft" aria-label="Minecraft" />
         <span v-if="text">Minecraft</span>
       </span>
       <span>{{ req.get('minecraft') }}</span>
+    </div>
+    <!-- paper -->
+    <div v-if="req.has('paper')" :class="['requirement', requirementSize]">
+      <span class="icon">
+        <LazyLoadImage source="/images/paper-256x.webp" :class="iconClass" title="paper" aria-label="paper" />
+        <span v-if="text">Paper</span>
+      </span>
+      <span>{{ t('components.projectRequirements.required') }}</span>
     </div>
     <!-- slimefun -->
     <div v-if="req.has('slimefun')" :class="['requirement', requirementSize]">
@@ -85,7 +94,7 @@ const iconClass = computed(() => {
   }
 
   .requirement {
-    @apply inline-flex gap-1;
+    @apply inline-flex gap-1 items-center;
 
     .icon {
       @apply flex justify-center;

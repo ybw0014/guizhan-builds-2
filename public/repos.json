@@ -475,5 +475,351 @@
 				}
 			}
 		}
+	},
+	"SlimefunGuguProject/SimpleUtils:master": {
+		"type": "maven",
+		"alias": ["baoad/SimpleUtils:master"],
+		"buildOptions": {
+			"name": "SimpleUtils",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Mooy1"],
+			"keywords": ["简易工具"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/FoxyMachines:master": {
+		"type": "maven",
+		"alias": ["ybw0014/FoxyMachines-CN:master", "ybw0014/FoxyMachines:master"],
+		"buildOptions": {
+			"name": "FoxyMachines",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["GallowsDove"],
+			"keywords": ["神秘科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/GlobalWarming:master": {
+		"type": "maven",
+		"alias": ["ybw0014/GlobalWarming-CN:master", "ybw0014/GlobalWarming:master"],
+		"buildOptions": {
+			"name": "GlobalWarming",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["poma123"],
+			"keywords": ["全球变暖"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimefunWarfare:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SlimefunWarfare-CN:master", "ybw0014/SlimefunWarfare:master"],
+		"buildOptions": {
+			"name": "SlimefunWarfare",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Seggan"],
+			"keywords": ["战争工艺"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Liquid:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Liquid",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Seggan"],
+			"keywords": ["液体"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/DynaTech:master": {
+		"type": "maven",
+		"alias": ["ybw0014/DynaTech-CN:master", "ybw0014/DynaTech:master"],
+		"buildOptions": {
+			"name": "DynaTech",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["ProfElements"],
+			"keywords": ["动力科技"],
+			"requirements": {
+				"java": {
+					"12": "16",
+					"1": "11"
+				},
+				"minecraft": {
+					"32": "1.19",
+					"12": "1.17",
+					"1": "1.14"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimyRepair:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimyRepair",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["NCBPFluffyBear"],
+			"keywords": ["粘液物品修复"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimeCustomizer:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimeCustomizer",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["NCBPFluffyBear"],
+			"keywords": ["自定义粘液附属"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"CrispyXYZ/GeneticChickengineering-CN-RC30-Extended:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimeCustomizer",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "GeneticChickengineering",
+			"authors": ["kii-chan-reloaded"],
+			"keywords": ["鸡因工程"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				},
+				"paper": {
+					"1": "Required"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SMG:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SMG",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["waleks647", "Sefiraat"],
+			"keywords": ["简易材料生成器"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SimpleStorage:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SimpleStorage-CN:master", "ybw0014/SimpleStorage:master"],
+		"buildOptions": {
+			"name": "SimpleStorage",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Sefiraat"],
+			"keywords": ["简易存储"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/AlchimiaVitae:master": {
+		"type": "maven",
+		"alias": ["ybw0014/AlchimiaVitae:master"],
+		"buildOptions": {
+			"name": "AlchimiaVitae",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Apeiros-46B"],
+			"keywords": ["炼金术自传"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimeTinker:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SlimeTinker-CN:master", "ybw0014/SlimeTinker:master"],
+		"buildOptions": {
+			"name": "SlimeTinker",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Sefiraat"],
+			"keywords": ["粘液匠魂"],
+			"requirements": {
+				"java": {
+					"39": "16",
+					"1": "8"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/PotionExpansion:master": {
+		"type": "maven",
+		"alias": ["baoad/PotionExpansion:master"],
+		"buildOptions": {
+			"name": "PotionExpansion",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["EpicPlayerA10"],
+			"keywords": ["药剂科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/FlowerPower:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "FlowerPower",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["NCBPFluffyBear"],
+			"keywords": ["源之花"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Galactifun:master": {
+		"type": "maven",
+		"alias": ["baoad/Galactifun:master"],
+		"buildOptions": {
+			"name": "Galactifun",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Seggan", "Mooy1", "GallowsDove", "ProfElements"],
+			"keywords": ["星际科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.17"
+				},
+				"paper": {
+					"1": "Required"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/PotionExpansion:master": {
+		"type": "maven",
+		"alias": ["baoad/PotionExpansion:master"],
+		"buildOptions": {
+			"name": "SlimeTinker",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["EpicPlayerA10"],
+			"keywords": ["药剂科技"],
+			"requirements": {
+				"java": {
+					"39": "16",
+					"1": "8"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
 	}
 }

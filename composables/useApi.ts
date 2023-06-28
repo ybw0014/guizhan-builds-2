@@ -1,4 +1,4 @@
-export async function useLocalApi(key: string, path: string) {
+export async function useLocalApi<T>(path: string) {
   let host: string, protocol: string
   if (process.server) {
     host = useNuxtApp().ssrContext?.event.node.req.headers.host as string
@@ -7,9 +7,9 @@ export async function useLocalApi(key: string, path: string) {
     host = window.location.host
     protocol = window.location.protocol
   }
-  return useAsyncData(key, () => $fetch(`${protocol}//${host}${path}`))
+  return useFetch<T>(`${protocol}//${host}${path}`)
 }
 
-export async function useExternalApi(key: string, path: string) {
-  return useAsyncData(key, () => $fetch(path))
+export async function useExternalApi<T>(path: string) {
+  return useFetch<T>(path)
 }

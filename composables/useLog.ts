@@ -1,6 +1,7 @@
 import debug from 'debug'
 
 export const useFetchLog = debug('fetch')
+export const useNprogressLog = debug('nprogress')
 export const useAuthorListLog = debug('author:list')
 export const useProjectListLog = debug('project:list')
 export const useProjectHeaderLog = debug('project:header')

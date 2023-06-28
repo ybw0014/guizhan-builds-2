@@ -12,6 +12,7 @@ const props = withDefaults(
 
 const image = ref<HTMLImageElement>()
 const isBroken = ref(false)
+const retryTimes = ref(0)
 const imgSource = computed(() => {
   return isBroken.value ? props.brokenImage : props.source
 })
@@ -27,6 +28,10 @@ onMounted(() => {
 })
 
 function handleBrokenImage() {
+  retryTimes.value++
+  if (retryTimes.value > 3) {
+    return
+  }
   isBroken.value = true
   loadImage()
 }
@@ -58,4 +63,5 @@ function loadImage() {
 
 <template>
   <img ref="image" @error="handleBrokenImage" />
+
 </template>

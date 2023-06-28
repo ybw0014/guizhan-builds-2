@@ -16,6 +16,7 @@ const project: Ref<Project> = ref(props.project)
 const name = ref(project.value.repository || '')
 const branch = ref(project.value.branch || '')
 const readme = await useGitHubReadmeParsed(project.value)
+const authors = await useProjectAuthors(project.value)
 
 definePageMeta({
   name: 'project',
@@ -56,8 +57,44 @@ definePageMeta({
           <ProjectRequirements :requirements="project.displayOptions?.requirements" :vertical="true" size="xl" />
         </div>
       </div>
+      <div v-if="authors" class="card bg-default">
+        <h3 class="text-xl font-bold mb-2">
+          {{ t('pages.project.authors') }}
+        </h3>
+        <div class="authors">
+          <NuxtLink
+            v-for="author in authors"
+            :key="author.name"
+            :to="{ name: 'author', params: { author: author.name } }"
+            class="linkbox text-blue-500 hover:underline"
+          >
+            <GitHubAvatar :username="author.name" class="w-12 h-12" />
+            <span>{{ author.name }}</span>
+          </NuxtLink>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.authors {
+  @apply flex flex-col;
+
+  & > * {
+    @apply border border-gray-200 p-2 flex items-center gap-2 dark:border-gray-700;
+
+    &:first-child {
+      @apply rounded-t-md;
+    }
+
+    &:not(:last-child) {
+      @apply border-b-0;
+    }
+
+    &:last-child {
+      @apply rounded-b-md;
+    }
+  }
+}
+</style>

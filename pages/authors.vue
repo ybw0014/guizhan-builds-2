@@ -9,7 +9,7 @@ const { t } = useI18n()
 
 const query = ref()
 const filteredList = ref<Author[]>([])
-const authors = await useAuthors()
+const authors = await useAuthorList()
 
 filterList()
 

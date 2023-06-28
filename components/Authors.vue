@@ -1,28 +1,15 @@
 <script setup lang="ts">
-import { Project, Author } from 'guizhan-builds-data'
-import { useAuthor } from '~/composables/useAuthor'
-import _ from 'lodash'
+import { Project } from 'guizhan-builds-data'
 
 const props = defineProps<{
   project: Project
 }>()
 
-const authors: ComputedRef<Author[]> = computed(() => {
-  const authors = props.project.displayOptions?.authors || props.project.author
-  if (_.isArray(authors)) {
-    const result: Author[] = []
-    authors.forEach((author) => {
-      result.push(useAuthor(author))
-    })
-    return result
-  } else {
-    return [useAuthor(authors)]
-  }
-})
+const authors = await useProjectAuthors(props.project)
 </script>
 
 <template>
-  <div>
+  <div v-if="authors">
     <span v-for="(author, index) in authors" :key="author.name">
       <NuxtLink :to="{ name: 'author', params: { author: author.name } }" class="author-link" @click.stop>
         {{ author.name }}

@@ -29,7 +29,8 @@
       "noResult": "No results found."
     },
     "projectRequirements": {
-      "title": "Min. Req."
+      "title": "Min. Req.",
+      "required": "Required"
     },
     "projectHeader": {
       "download": "Download Latest Build",
@@ -91,7 +92,8 @@
       "readmeFail": "Failed to load README.md.",
       "buildStatus": "Build Status",
       "information": "Information",
-      "requirements": "Min. Requirements"
+      "requirements": "Min. Requirements",
+      "authors": "Authors"
     },
     "builds": {
       "title": "Builds - {name} ({branch})"
