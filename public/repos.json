@@ -6,6 +6,7 @@
 			"version": "{git_commit}-canary"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"keywords": ["粘液科技"],
 			"requirements": {
 				"java": {
@@ -24,6 +25,7 @@
 			"version": "{Year}.{Month}-release"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"keywords": ["粘液科技"],
 			"requirements": {
 				"java": {
@@ -43,6 +45,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["异域花园"],
 			"requirements": {
@@ -63,6 +66,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["彩色末影箱"],
 			"requirements": {
@@ -83,6 +87,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"name": "SlimefunLuckyBlocks",
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["幸运方块"],
@@ -104,6 +109,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["背包宠物"],
 			"requirements": {
@@ -124,6 +130,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["灵魂罐"],
 			"requirements": {
@@ -144,6 +151,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["电力刷怪笼"],
 			"requirements": {
@@ -164,6 +172,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["私人存储", "私有存储"],
 			"requirements": {
@@ -184,6 +193,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["更多装备", "额外装备"],
 			"requirements": {
@@ -204,6 +214,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["粘液矿石块", "粘液矿物块"],
 			"requirements": {
@@ -224,6 +235,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["染色背包"],
 			"requirements": {
@@ -244,6 +256,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["粘液木龙头"],
 			"requirements": {
@@ -264,6 +277,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["生物捕捉"],
 			"requirements": {
@@ -284,6 +298,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["J3fftw1", "WalshyDev"],
 			"keywords": ["工业"],
 			"requirements": {
@@ -304,6 +319,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["TheBusyBiscuit", "poma123"],
 			"keywords": ["环保能源"],
 			"requirements": {
@@ -324,6 +340,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["WalshyDev", "TheBusyBiscuit"],
 			"keywords": ["硬核粘液"],
 			"requirements": {
@@ -344,6 +361,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["J3fftw1"],
 			"keywords": ["消音器"],
 			"requirements": {
@@ -366,6 +384,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Sfiguz7"],
 			"keywords": ["额外工具"],
 			"requirements": {
@@ -386,6 +405,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Sfiguz7"],
 			"keywords": ["末地科技"],
 			"requirements": {
@@ -406,6 +426,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Seggan"],
 			"keywords": ["计算器"],
 			"requirements": {
@@ -425,6 +446,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["LinoxGH"],
 			"keywords": ["更多工具"],
 			"requirements": {
@@ -445,6 +467,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["NCBPFluffyBear"],
 			"keywords": ["蓬松机器"],
 			"requirements": {
@@ -464,6 +487,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Mooy1"],
 			"keywords": ["无尽贪婪"],
 			"requirements": {
@@ -484,6 +508,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Mooy1"],
 			"keywords": ["简易工具"],
 			"requirements": {
@@ -504,6 +529,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["GallowsDove"],
 			"keywords": ["神秘科技"],
 			"requirements": {
@@ -524,6 +550,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["poma123"],
 			"keywords": ["全球变暖"],
 			"requirements": {
@@ -544,6 +571,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Seggan"],
 			"keywords": ["战争工艺"],
 			"requirements": {
@@ -563,6 +591,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Seggan"],
 			"keywords": ["液体"],
 			"requirements": {
@@ -583,6 +612,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["ProfElements"],
 			"keywords": ["动力科技"],
 			"requirements": {
@@ -605,6 +635,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["NCBPFluffyBear"],
 			"keywords": ["粘液物品修复"],
 			"requirements": {
@@ -624,6 +655,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["NCBPFluffyBear"],
 			"keywords": ["自定义粘液附属"],
 			"requirements": {
@@ -643,6 +675,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"name": "GeneticChickengineering",
 			"authors": ["kii-chan-reloaded"],
 			"keywords": ["鸡因工程"],
@@ -666,6 +699,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["waleks647", "Sefiraat"],
 			"keywords": ["简易材料生成器"],
 			"requirements": {
@@ -686,6 +720,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Sefiraat"],
 			"keywords": ["简易存储"],
 			"requirements": {
@@ -706,6 +741,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Apeiros-46B"],
 			"keywords": ["炼金术自传"],
 			"requirements": {
@@ -726,6 +762,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Sefiraat"],
 			"keywords": ["粘液匠魂"],
 			"requirements": {
@@ -747,6 +784,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["EpicPlayerA10"],
 			"keywords": ["药剂科技"],
 			"requirements": {
@@ -761,11 +799,13 @@
 	},
 	"SlimefunGuguProject/FlowerPower:master": {
 		"type": "maven",
+		"alias": ["baoad/FlowerPower:master"],
 		"buildOptions": {
 			"name": "FlowerPower",
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["NCBPFluffyBear"],
 			"keywords": ["源之花"],
 			"requirements": {
@@ -786,6 +826,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
 			"authors": ["Seggan", "Mooy1", "GallowsDove", "ProfElements"],
 			"keywords": ["星际科技"],
 			"requirements": {
@@ -801,20 +842,827 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/PotionExpansion:master": {
+	"SlimefunGuguProject/FN-FAL-s-Amplifications:master": {
 		"type": "maven",
-		"alias": ["baoad/PotionExpansion:master"],
 		"buildOptions": {
-			"name": "SlimeTinker",
+			"name": "FN-FAL-s-Amplifications",
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
-			"authors": ["EpicPlayerA10"],
-			"keywords": ["药剂科技"],
+			"officialList": true,
+			"name": "FNAmplifications",
+			"authors": ["FN-FAL113"],
+			"keywords": ["FN科技"],
 			"requirements": {
 				"java": {
-					"39": "16",
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/ElementManipulation:master": {
+		"type": "maven",
+		"alias": ["haiman233/Element-Manipulation-CN:master"],
+		"buildOptions": {
+			"name": "ElementManipulation",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["lucasGithuber"],
+			"keywords": ["化学工程"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/CrystamaeHistoria:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "CrystamaeHistoria",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["Sefiraat"],
+			"keywords": ["魔法水晶编年史"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.17"
+				},
+				"paper": {
+					"1": "Required"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/DankTech2:master": {
+		"type": "maven",
+		"alias": ["ybw0014/DankTech2:master"],
+		"buildOptions": {
+			"name": "DankTech2",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["Sefiraat"],
+			"keywords": ["无底存储2"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Networks:master": {
+		"type": "maven",
+		"alias": ["ybw0014/Networks-CN:master", "ybw0014/Networks:master"],
+		"buildOptions": {
+			"name": "Networks",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["Sefiraat"],
+			"keywords": ["网络"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"73": "1.19",
+					"1": "1.17"
+				},
+				"Slimefun": {
+					"76": "2023.06",
+					"52": "2022.06",
+					"46": "2022.04",
+					"1": "RC-27"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SfChunkInfo:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SfChunkInfo-CN:master", "ybw0014/SfChunkInfo:master"],
+		"buildOptions": {
+			"name": "SfChunkInfo",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["FN-FAL113"],
+			"keywords": ["区块信息"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/VillagerUtil:master": {
+		"type": "maven",
+		"alias": ["ybw0014/VillagerUtil-CN:master", "ybw0014/VillagerUtil:master"],
+		"buildOptions": {
+			"name": "VillagerUtil",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["Apeiros-46B"],
+			"keywords": ["村民工具"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/MissileWarfare:master": {
+		"type": "maven",
+		"alias": ["haiman233/MissileWarfare-CN:master"],
+		"buildOptions": {
+			"name": "MissileWarfare",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["koiboi-dev", "ColonelKai"],
+			"keywords": ["导弹科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimefunAdvancements:master": {
+		"type": "maven",
+		"alias": ["ybw0014/SlimefunAdvancements-CN:master"],
+		"buildOptions": {
+			"name": "SlimefunAdvancements",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["qwertyuioplkjhgfd"],
+			"keywords": ["粘液科技进度"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Supreme:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Supreme",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["RelativoBR"],
+			"keywords": ["至尊研究院"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Bump:main": {
+		"type": "gradle",
+		"buildOptions": {
+			"name": "Bump",
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"shadowJar": true
+			}
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["bxx2004", "SlimefunGuguProject"],
+			"keywords": ["Bump魔法"],
+			"requirements": {
+				"java": {
+					"26": "16",
 					"1": "8"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Netheopoiesis:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Netheopoiesis",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["Sefiraat", "J3fftw1"],
+			"keywords": ["下界乌托邦"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/RelicsofCthonia:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "RelicsofCthonia",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["FN-FAL113"],
+			"keywords": ["克苏尼亚遗物"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/CompressionCraft:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "CompressionCraft",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["JasperChaseTOQ"],
+			"keywords": ["压缩工艺"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/EMCTech:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "EMCTech",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["Sefiraat"],
+			"keywords": ["EMC科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/WilderNether:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "WilderNether",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["SchnTgaiSpock"],
+			"keywords": ["迷狱生机"],
+			"requirements": {
+				"java": {
+					"1": "17"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/DyeBench:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "DyeBench",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["JasperChaseTOQ"],
+			"keywords": ["染色科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/MiniBlocks:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "MiniBlocks",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["TheRealEzCoins"],
+			"keywords": ["迷你方块"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimeHUD:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimeHUD",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["SchnTgaiSpock"],
+			"keywords": ["方块信息显示"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SpiritsUnchained:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SpiritsUnchained",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["JustAHuman-xD"],
+			"keywords": ["灵魂巧匠"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.19"
+				},
+				"paper": {
+					"1": "Required"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Cultivation:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Cultivation",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["Sefiraat", "J3fftw1"],
+			"keywords": ["农耕工艺"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.19.4"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Gastronomicon:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SpiritsUnchained",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["JustAHuman-xD"],
+			"keywords": ["灵魂巧匠"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.19"
+				},
+				"paper": {
+					"1": "Required"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SmallSpace:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SmallSpace",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["CAPS123987"],
+			"keywords": ["小世界"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Better-Nuclear-Generator:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "BetterNuclearGenerator",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"authors": ["CAPS123987"],
+			"keywords": ["工业反应堆"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"ybw0014/VillagerTrade:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "VillagerTrade",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"keywords": ["村民交易"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"zimzaza4/RedstoneConnector:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "RedstoneConnector",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["红石连接器"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"bxx2004/FutureTech:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "FutureTech",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["未来科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"CTimet/BedrockTechnology:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "BedrockTechnology",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["基岩科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
+	},
+	"ybw0014/GuizhanCraft:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "GuizhanCraft",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["鬼斩科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/UltimateGenerators-RC27:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "UltimateGenerators",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["freeze-dolphin", "LittleQiu233"],
+			"keywords": ["终极发电机"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"JinOuYongGu/EnchanterLimit:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "EnchanterLimit",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["限制附魔机"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/HeadLimiter:master": {
+		"type": "maven",
+		"alias": ["ybw0014/HeadLimiter-CN:master", "ybw0014/HeadLimiter:master"],
+		"buildOptions": {
+			"name": "HeadLimiter",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["J3fftw1"],
+			"keywords": ["头颅限制"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SFMobDrops:main": {
+		"type": "maven",
+		"alias": ["ybw0014/SFMobDrops-CN:main", "ybw0014/SFMobDrops:main"],
+		"buildOptions": {
+			"name": "SFMobDrops",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["WalshyDev"],
+			"keywords": ["粘液生物掉落"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Magmanimous:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Magmanimous",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["NCBPFluffyBear"],
+			"keywords": ["熔岩之息"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/DemonicExpansion:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "DemonicExpansion",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["TheSilentPro"],
+			"keywords": ["魑魅拓展"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18.2"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Nexcavate:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Nexcavate",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["qwertyuioplkjhgfd"],
+			"keywords": ["文明复兴"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/InfernalExpansion:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "InfernalExpansion",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["NotKirzu"],
+			"keywords": ["下界工艺"],
+			"requirements": {
+				"java": {
+					"1": "17"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/ThermalFun:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "ThermalFun",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["mmm1245"],
+			"keywords": ["灼岩科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Drugfun:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Drugfun",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["TheSilentPro"],
+			"keywords": ["自定义药品"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Cringe-Bosses:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Cringe-Bosses",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["CrashCringle12"],
+			"keywords": ["混沌Boss"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Cakecraft:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Cakecraft",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["SchnTgaiSpock"],
+			"keywords": ["蛋糕工艺"],
+			"requirements": {
+				"java": {
+					"1": "16"
 				},
 				"minecraft": {
 					"1": "1.16.5"

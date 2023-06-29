@@ -20,15 +20,17 @@ const downloadConfirm = ref<boolean>(settingsStore.confirmDownload)
 function handleDownload() {
   if (!settingsStore.confirmDownload) {
     downloadModal.value.openModal()
+  } else {
+    download()
   }
-  download()
 }
 function download() {
-  // 
+  alert('开发中')
 }
 function handleDownloadConfirm() {
   settingsStore.setConfirmDownload(downloadConfirm.value)
   downloadModal.value.closeModal()
+  download()
 }
 function handleDownloadCancel() {
   downloadModal.value.closeModal()

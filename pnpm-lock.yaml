@@ -32,12 +32,6 @@ dependencies:
   nprogress:
     specifier: ^0.2.0
     version: 0.2.0
-  pinia:
-    specifier: ^2.1.4
-    version: 2.1.4(typescript@5.1.3)(vue@3.3.4)
-  pinia-plugin-persistedstate:
-    specifier: ^3.1.0
-    version: 3.1.0(pinia@2.1.4)
   qs:
     specifier: ^6.11.2
     version: 6.11.2
@@ -59,6 +53,9 @@ dependencies:
   remark-gfm:
     specifier: ^3.0.1
     version: 3.0.1
+  remark-github:
+    specifier: ^11.2.4
+    version: 11.2.4
   remark-heading-id:
     specifier: ^1.0.0
     version: 1.0.0
@@ -1088,8 +1085,8 @@ packages:
     engines: {node: '>= 14'}
     dev: true
 
-  /@intlify/shared@9.3.0-beta.19:
-    resolution: {integrity: sha512-+lhQggrLvlQ/O5OmIYAc9gadcYXMoaDi0Doef+X/f6TLZFr9PTMjOpBWmpwNNHi026e54jckntUn6GzqDtIN4w==}
+  /@intlify/shared@9.3.0-beta.20:
+    resolution: {integrity: sha512-RucSPqh8O9FFxlYUysQTerSw0b9HIRpyoN1Zjogpm0qLiHK+lBNSa5sh1nCJ4wSsNcjphzgpLQCyR60GZlRV8g==}
     engines: {node: '>= 16'}
     dev: true
 
@@ -2734,6 +2731,7 @@ packages:
 
   /@vue/devtools-api@6.5.0:
     resolution: {integrity: sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==}
+    dev: true
 
   /@vue/reactivity-transform@3.3.4:
     resolution: {integrity: sha512-MXgwjako4nu5WFLAjpBnCj/ieqcjE2aJBINUNQzkZQfzIZA4xn+0fV1tIYBJvvva3N3OvKGofRLvQIwEQPpaXw==}
@@ -8231,6 +8229,7 @@ packages:
       pinia: ^2.0.0
     dependencies:
       pinia: 2.1.4(typescript@5.1.3)(vue@3.3.4)
+    dev: true
 
   /pinia@2.1.4(typescript@5.1.3)(vue@3.3.4):
     resolution: {integrity: sha512-vYlnDu+Y/FXxv1ABo1vhjC+IbqvzUdiUC3sfDRrRyY2CQSrqqaa+iiHmqtARFxJVqWQMCJfXx1PBvFs9aJVLXQ==}
@@ -8248,6 +8247,7 @@ packages:
       typescript: 5.1.3
       vue: 3.3.4
       vue-demi: 0.14.5(vue@3.3.4)
+    dev: true
 
   /pinkie-promise@2.0.1:
     resolution: {integrity: sha512-0Gni6D4UcLTbv9c57DfxDGdr41XfgUjqWZu492f0cIGr16zDU06BWP/RAEvOuo7CQ0CNjHaLlM59YJJFm3NWlw==}
@@ -9062,6 +9062,16 @@ packages:
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color
+
+  /remark-github@11.2.4:
+    resolution: {integrity: sha512-GJjWFpwqdrHHhPWqMbb8+lqFLiHQ9pCzUmXmRrhMFXGpYov5n2ljsZzuWgXlfzArfQYkiKIZczA2I8IHYMHqCA==}
+    dependencies:
+      '@types/mdast': 3.0.11
+      mdast-util-find-and-replace: 2.2.2
+      mdast-util-to-string: 3.2.0
+      unified: 10.1.2
+      unist-util-visit: 4.1.2
+    dev: false
 
   /remark-heading-id@1.0.0:
     resolution: {integrity: sha512-86QaOiL+8jTV9P5Y0S25kSIcykCd/XmnqiFltWZRWKHmsVT4sevN7QJnkpUjkCJUpIeWte/LYH7pVlCTGz89fw==}
@@ -10179,6 +10189,7 @@ packages:
     resolution: {integrity: sha512-XH627E9vkeqhlZFQuL+UsyAXEnibT0kWR2FWONlr4sTjvxyJYnyefgrkyECLzM5NenmKzRAy2rR/OlYLA1HkZw==}
     engines: {node: '>=14.17'}
     hasBin: true
+    dev: true
 
   /ufo@1.1.2:
     resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==}
@@ -10752,6 +10763,7 @@ packages:
         optional: true
     dependencies:
       vue: 3.3.4
+    dev: true
 
   /vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
@@ -10796,7 +10808,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.19
+      '@intlify/shared': 9.3.0-beta.20
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.17)
       '@intlify/vue-router-bridge': 0.8.0(vue@3.3.4)
       ufo: 1.1.2
