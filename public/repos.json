@@ -1632,10 +1632,10 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/Cringe-Bosses:master": {
+	"SlimefunGuguProject/Cringle-Bosses:master": {
 		"type": "maven",
 		"buildOptions": {
-			"name": "Cringe-Bosses",
+			"name": "Cringle-Bosses",
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
@@ -1660,6 +1660,295 @@
 		"displayOptions": {
 			"authors": ["SchnTgaiSpock"],
 			"keywords": ["蛋糕工艺"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/EnderCargo:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "EnderCargo",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Birdo3D"],
+			"keywords": ["末影货运"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimyBees:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimyBees",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["martinbrom"],
+			"keywords": ["林业蜜蜂"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.18"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Endrex:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Endrex",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["nahkd123"],
+			"keywords": ["末地拓展"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Chocohills:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Chocohills",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["zwrumpy"],
+			"keywords": ["虫火谷工艺"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/DracFun:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "DracFun",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["lidanthedev"],
+			"keywords": ["龙之研究"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/NotEnoughAddons:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "NotEnoughAddons",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Fhoz"],
+			"keywords": ["多彩科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/security-slimefun:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "security-slimefun",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "SecuritySlimefun",
+			"authors": ["Agwebberley"],
+			"keywords": ["安全粘液"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/GlobiaMachines:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "GlobiaMachines",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["Fhoz"],
+			"keywords": ["全球机器"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/ObsidianExpansion:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "ObsidianExpansion",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["lucasGithuber"],
+			"keywords": ["黑曜石科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/EzTech:master": {
+		"type": "maven",
+		"alias": ["haiman233/EzTech-CN:master"],
+		"buildOptions": {
+			"name": "EzTech",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["TheRealEzCoins"],
+			"keywords": ["EZ科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/RandomExpansion:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "RandomExpansion",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["lucasGithuber"],
+			"keywords": ["随机扩展"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/Ex-Limus:master": {
+		"type": "maven",
+		"alias": ["haiman233/Ex-Limus-CN:master"],
+		"buildOptions": {
+			"name": "Ex-Limus",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["lucasGithuber"],
+			"keywords": ["新手工具"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/MoneyAndThings:master": {
+		"type": "maven",
+		"alias": ["haiman233/Money-and-Things-SLIMEFUN-CN:master"],
+		"buildOptions": {
+			"name": "MoneyAndThings",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["cullendoran"],
+			"keywords": ["固态货币"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimefunNukes:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimefunNukes",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["aurgiyalgo"],
+			"keywords": ["自定义核弹"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimeChem:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimeChem",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["TheBusyBiscuit"],
+			"keywords": ["粘液化学"],
 			"requirements": {
 				"java": {
 					"1": "16"
