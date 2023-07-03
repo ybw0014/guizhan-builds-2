@@ -928,9 +928,9 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/Networks:master": {
+	"SlimefunGuguProject/Networks:main": {
 		"type": "maven",
-		"alias": ["ybw0014/Networks-CN:master", "ybw0014/Networks:master"],
+		"alias": ["ybw0014/Networks-CN:main", "ybw0014/Networks:main"],
 		"buildOptions": {
 			"name": "Networks",
 			"version": "Build {version} (git {git_commit})"
@@ -956,9 +956,9 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/SfChunkInfo:master": {
+	"SlimefunGuguProject/SfChunkInfo:main": {
 		"type": "maven",
-		"alias": ["ybw0014/SfChunkInfo-CN:master", "ybw0014/SfChunkInfo:master"],
+		"alias": ["ybw0014/SfChunkInfo-CN:main", "ybw0014/SfChunkInfo:main"],
 		"buildOptions": {
 			"name": "SfChunkInfo",
 			"version": "Build {version} (git {git_commit})"
@@ -977,9 +977,9 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/VillagerUtil:master": {
+	"SlimefunGuguProject/VillagerUtil:main": {
 		"type": "maven",
-		"alias": ["ybw0014/VillagerUtil-CN:master", "ybw0014/VillagerUtil:master"],
+		"alias": ["ybw0014/VillagerUtil-CN:main", "ybw0014/VillagerUtil:main"],
 		"buildOptions": {
 			"name": "VillagerUtil",
 			"version": "Build {version} (git {git_commit})"
@@ -1019,9 +1019,9 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/SlimefunAdvancements:master": {
+	"SlimefunGuguProject/SlimefunAdvancements:main": {
 		"type": "maven",
-		"alias": ["ybw0014/SlimefunAdvancements-CN:master"],
+		"alias": ["ybw0014/SlimefunAdvancements-CN:main"],
 		"buildOptions": {
 			"name": "SlimefunAdvancements",
 			"version": "Build {version} (git {git_commit})"
@@ -1040,7 +1040,7 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/Supreme:master": {
+	"SlimefunGuguProject/Supreme:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "Supreme",
@@ -1104,7 +1104,7 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/RelicsofCthonia:master": {
+	"SlimefunGuguProject/RelicsofCthonia:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "RelicsofCthonia",
@@ -1164,7 +1164,7 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/WilderNether:master": {
+	"SlimefunGuguProject/WilderNether:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "WilderNether",
@@ -1267,7 +1267,7 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/Cultivation:master": {
+	"SlimefunGuguProject/Cultivation:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "Cultivation",
