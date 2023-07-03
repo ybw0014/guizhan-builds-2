@@ -64,4 +64,8 @@ article {
   summary {
     @apply cursor-pointer;
   }
+
+  code {
+    @apply relative max-w-full whitespace-pre-wrap;
+  }
 }

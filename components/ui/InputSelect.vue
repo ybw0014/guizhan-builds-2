@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import InputWrapper from '~/components/ui/InputWrapper.vue'
-import { Option } from '~/types/ui/InputSelect'
+import { Option } from '~/types/components/ui/InputSelect'
 
 const { t } = useI18n()
 

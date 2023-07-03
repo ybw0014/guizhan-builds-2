@@ -1,4 +1,5 @@
-import { Project, Author } from 'guizhan-builds-data'
+import { Project } from 'guizhan-builds-2-data'
+import { Author } from 'guizhan-builds-2-data-extra'
 import _ from 'lodash'
 
 export async function useAuthorList(): Promise<Ref<Author[] | null>> {

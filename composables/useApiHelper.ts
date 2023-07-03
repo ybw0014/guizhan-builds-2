@@ -1,4 +1,4 @@
-import { Project, RawProject } from 'guizhan-builds-data'
+import { Project, RawProject } from 'guizhan-builds-2-data'
 import { MinecraftVersionResponse } from '~/types/bmclApi'
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {

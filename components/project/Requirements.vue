@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import _ from 'lodash'
-import LazyLoadImage from '~/components/LazyLoadImage.vue'
 const { t } = useI18n()
 
 const props = withDefaults(

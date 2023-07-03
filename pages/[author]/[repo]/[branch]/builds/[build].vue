@@ -22,8 +22,7 @@ definePageMeta({
   <Head>
     <Title>{{ t('pages.build.title', { name, branch, build }) }}</Title>
   </Head>
-  <div>
-  </div>
+  <div></div>
 </template>
 
 <style scoped lang="scss"></style>

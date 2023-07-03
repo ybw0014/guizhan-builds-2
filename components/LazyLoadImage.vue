@@ -63,5 +63,4 @@ function loadImage() {
 
 <template>
   <img ref="image" @error="handleBrokenImage" />
-
 </template>

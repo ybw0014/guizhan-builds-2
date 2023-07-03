@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-data'
+import { Project } from 'guizhan-builds-2-data'
 
 const props = defineProps<{
   project: Project

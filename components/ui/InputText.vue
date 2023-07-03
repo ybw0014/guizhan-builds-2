@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import InputWrapper from '~/components/ui/InputWrapper.vue'
-
 const props = defineProps<{
   disabled?: boolean
   label?: string

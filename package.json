@@ -39,6 +39,7 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.15.1",
+    "guizhan-builds-2-data": "^0.1.0",
     "nuxt": "^3.6.0",
     "nuxt-icon": "^0.4.1",
     "nuxt-lodash": "^2.5.0",
