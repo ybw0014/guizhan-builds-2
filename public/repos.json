@@ -842,7 +842,7 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/FN-FAL-s-Amplifications:master": {
+	"SlimefunGuguProject/FN-FAL-s-Amplifications:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "FN-FAL-s-Amplifications",
@@ -928,9 +928,9 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/Networks:main": {
+	"SlimefunGuguProject/Networks:master": {
 		"type": "maven",
-		"alias": ["ybw0014/Networks-CN:main", "ybw0014/Networks:main"],
+		"alias": ["ybw0014/Networks-CN:master", "ybw0014/Networks:master"],
 		"buildOptions": {
 			"name": "Networks",
 			"version": "Build {version} (git {git_commit})"
@@ -1104,10 +1104,10 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/RelicsofCthonia:main": {
+	"SlimefunGuguProject/RelicsOfCthonia:main": {
 		"type": "maven",
 		"buildOptions": {
-			"name": "RelicsofCthonia",
+			"name": "RelicsOfCthonia",
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
@@ -1164,7 +1164,7 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/WilderNether:main": {
+	"SlimefunGuguProject/Wildernether:master": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "WilderNether",
@@ -1172,6 +1172,7 @@
 		},
 		"displayOptions": {
 			"officialList": true,
+			"name": "WilderNether",
 			"authors": ["SchnTgaiSpock"],
 			"keywords": ["迷狱生机"],
 			"requirements": {
@@ -1441,7 +1442,7 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/UltimateGenerators-RC27:master": {
+	"SlimefunGuguProject/UltimateGenerators-RC27:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "UltimateGenerators",
@@ -1727,7 +1728,7 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/Chocohills:master": {
+	"SlimefunGuguProject/Chocohills:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "Chocohills",
