@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-data'
+import { Project } from 'guizhan-builds-2-data'
 import { watchDebounced } from '@vueuse/core'
 import InputText from '~/components/ui/InputText.vue'
 import InputSelect from '~/components/ui/InputSelect.vue'

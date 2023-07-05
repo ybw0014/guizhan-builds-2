@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-data'
+import { Project } from 'guizhan-builds-2-data'
 
 const { t } = useI18n()
 const route = useRoute()
@@ -15,6 +15,9 @@ const build = ref(route.params.build as string)
 
 definePageMeta({
   name: 'build',
+  validate: async (route) => {
+    return /^\d+$/.test(route.params.build as string) && parseInt(route.params.build as string) > 0
+  },
 })
 </script>
 

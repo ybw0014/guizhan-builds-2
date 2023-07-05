@@ -27,7 +27,7 @@ const sourceLink = computed<string | null>(() => {
     <ProjectNavItem :to="{ name: 'project' }" :active="['project'].includes(route.name as string)">
       {{ t('components.projectNav.introduction') }}
     </ProjectNavItem>
-    <ProjectNavItem :to="{ name: 'builds' }" :active="['builds', 'build'].includes(route.name as string)">
+    <ProjectNavItem :to="{ name: 'builds' }" :active="['builds'].includes(route.name as string)">
       {{ t('components.projectNav.builds') }}
     </ProjectNavItem>
     <ProjectNavItem v-if="issuesLink" :href="issuesLink">

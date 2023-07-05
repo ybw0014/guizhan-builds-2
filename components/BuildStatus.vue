@@ -8,11 +8,8 @@ const props = defineProps<{
 
 const imgSource = computed(() => {
   const { project } = props
-  let dir = project.buildOptions?.customDir
-  if (!dir) {
-    dir = `${project.author}/${project.repository}/${project.branch}`
-  }
-  return `/f/${dir}/badge.svg`
+  const dir = `${project.author}/${project.repository}/${project.branch}`
+  return useR2AssetPath(`/${dir}/badge.svg`).value
 })
 </script>
 

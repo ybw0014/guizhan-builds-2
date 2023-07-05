@@ -1,26 +1,17 @@
-import { Project, RawProject } from 'guizhan-builds-2-data'
+import { Project, Projects, useParseProjects, BuildsInfo } from 'guizhan-builds-2-data'
 import { MinecraftVersionResponse } from '~/types/bmclApi'
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {
-  const { data } = await useLocalApi<Record<string, RawProject>>('/repos.json')
-  const projects: Project[] = []
+  const { data } = await useLocalApi<Projects>('/repos.json')
   if (!data.value) {
     return ref(null)
   }
-  for (const repoStr in data.value) {
-    const rawProject = data.value[repoStr]
-    const [author, repoNBranch] = repoStr.split('/')
-    const [repository, branch] = repoNBranch.split(':')
-    const project: Project = {
-      key: repoStr,
-      author,
-      repository,
-      branch,
-      ...(rawProject as RawProject),
-    }
-    projects.push(project)
-  }
-  return ref(projects)
+  return ref(useParseProjects(data.value))
+}
+
+export async function useBuilds(project: Project): Promise<Ref<BuildsInfo | null>> {
+  const { data } = await useR2Asset<BuildsInfo>(`${project.author}/${project.repository}/${project.branch}/builds.json`)
+  return data
 }
 
 export async function useMinecraftVersions(minimumVersion: string): Promise<Ref<string[]>> {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import InputText from '~/components/ui/InputText.vue'
-import { Author } from 'guizhan-builds-data'
+import { Author } from 'guizhan-builds-2-data-extra'
 import { Header } from '~/types/dataTable'
 import { watchDebounced } from '@vueuse/core'
 import _ from 'lodash'

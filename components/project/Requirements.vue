@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import _ from 'lodash'
+import LazyLoadImage from '~/components/LazyLoadImage.vue'
 const { t } = useI18n()
 
 const props = withDefaults(
@@ -8,11 +9,13 @@ const props = withDefaults(
     vertical?: boolean
     title?: boolean
     text?: boolean
+    before?: number
     size?: 'sm' | 'md' | 'lg' | 'xl'
   }>(),
   {
     title: false,
     text: false,
+    before: 0,
     size: 'md',
   }
 )
@@ -22,7 +25,15 @@ const req = computed<Map<string, string>>(() => {
     return result
   }
   for (const [key, value] of Object.entries(props.requirements)) {
-    const latestVer = _.max(Object.keys(value)) || 1
+    const latestVer =
+      _.max(
+        _.filter(Object.keys(value), (val) => {
+          if (props.before === 0) {
+            return true
+          }
+          return parseInt(val) <= props.before
+        })
+      ) || 1
     result.set(key, value[latestVer])
   }
   return result
@@ -47,7 +58,7 @@ const iconClass = computed(() => {
   <div v-if="req.size > 0" :class="{ 'project-requirements': true, vertical: props.vertical }">
     <div v-if="title" class="title">{{ t('components.projectRequirements.title') }}</div>
     <!-- java -->
-    <div v-if="req.has('java')" :class="['requirement', requirementSize]">
+    <div v-if="req.has('java')" :class="['requirement', requirementSize]" v-tippy="'Java'">
       <span class="icon">
         <Icon name="mdi:language-java" :class="iconClass" title="Java" aria-label="Java" />
         <span v-if="text">Java</span>
@@ -55,7 +66,7 @@ const iconClass = computed(() => {
       <span>{{ req.get('java') }}</span>
     </div>
     <!-- minecraft -->
-    <div v-if="req.has('minecraft')" :class="['requirement', requirementSize]">
+    <div v-if="req.has('minecraft')" :class="['requirement', requirementSize]" v-tippy="'Minecraft'">
       <span class="icon">
         <LazyLoadImage source="/images/minecraft.svg" :class="iconClass" title="Minecraft" aria-label="Minecraft" />
         <span v-if="text">Minecraft</span>
@@ -63,7 +74,7 @@ const iconClass = computed(() => {
       <span>{{ req.get('minecraft') }}</span>
     </div>
     <!-- paper -->
-    <div v-if="req.has('paper')" :class="['requirement', requirementSize]">
+    <div v-if="req.has('paper')" :class="['requirement', requirementSize]" v-tippy="'Paper'">
       <span class="icon">
         <LazyLoadImage source="/images/paper-256x.webp" :class="iconClass" title="paper" aria-label="paper" />
         <span v-if="text">Paper</span>
@@ -71,7 +82,7 @@ const iconClass = computed(() => {
       <span>{{ t('components.projectRequirements.required') }}</span>
     </div>
     <!-- slimefun -->
-    <div v-if="req.has('slimefun')" :class="['requirement', requirementSize]">
+    <div v-if="req.has('slimefun')" :class="['requirement', requirementSize]" v-tippy="'Slimefun'">
       <span class="icon">
         <Icon name="ph:package-light" :class="iconClass" title="Slimefun" aria-label="Slimefun" />
       </span>

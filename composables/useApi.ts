@@ -13,3 +13,7 @@ export async function useLocalApi<T>(path: string) {
 export async function useExternalApi<T>(path: string) {
   return useFetch<T>(path)
 }
+
+export async function useR2Asset<T>(path: string) {
+  return useFetch<T>(useR2AssetPath(path).value)
+}

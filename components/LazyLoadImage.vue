@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    source: string
+    source: string | URL
     brokenImage?: string
   }>(),
   {
@@ -13,8 +13,14 @@ const props = withDefaults(
 const image = ref<HTMLImageElement>()
 const isBroken = ref(false)
 const retryTimes = ref(0)
-const imgSource = computed(() => {
-  return isBroken.value ? props.brokenImage : props.source
+const imgSource = computed<string>(() => {
+  if (isBroken.value) {
+    return props.brokenImage
+  } else if (props.source instanceof URL) {
+    return props.source.toString()
+  } else {
+    return props.source
+  }
 })
 
 onMounted(() => {

@@ -47,6 +47,12 @@
       "builds": "Builds",
       "issues": "Issues",
       "source": "Source"
+    },
+    "projectBuilds": {
+      "noResult": "No results found."
+    },
+    "projectBuildCard": {
+      "build": "Build #{build}"
     }
   },
   "sortTypes": {
@@ -96,7 +102,11 @@
       "authors": "Authors"
     },
     "builds": {
-      "title": "Builds - {name} ({branch})"
+      "title": "Builds - {name} ({branch})",
+      "notFound": "No available builds."
+    },
+    "build": {
+      "title": "Build #{build} - {name} ({branch})"
     }
   }
 }

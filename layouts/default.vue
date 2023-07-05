@@ -7,7 +7,7 @@ const { t } = useI18n()
 useHead({
   titleTemplate: (titleChunk) => {
     const siteTitle = t('title')
-    return titleChunk ? `${titleChunk} | ${siteTitle}` : siteTitle
+    return titleChunk ? `${titleChunk} - ${siteTitle}` : siteTitle
   },
 })
 </script>

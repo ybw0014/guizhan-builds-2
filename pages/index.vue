@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-import { Project } from 'guizhan-builds-data'
+import { Project } from 'guizhan-builds-2-data'
 import { watchDebounced } from '@vueuse/core'
 import _ from 'lodash'
 

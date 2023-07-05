@@ -8,6 +8,6 @@
 
 <style scoped lang="scss">
 .page-container {
-  @apply flex justify-center min-h-[80vh] px-2 py-4;
+  @apply flex justify-center min-h-[85vh] px-2 py-4;
 }
 </style>
