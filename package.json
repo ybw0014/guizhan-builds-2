@@ -1,5 +1,6 @@
 {
-  "name": "nuxt-app",
+  "name": "guizhan-builds-2-frontend",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "nuxt build",
