@@ -106,7 +106,9 @@
       "notFound": "没有可用的构建"
     },
     "build": {
-      "title": "构建 #{build} - {name} ({branch})"
+      "title": "构建 #{build} - {name} ({branch})",
+      "build": "构建 #{build}",
+      "download": "下载构建"
     }
   }
 }

@@ -106,7 +106,9 @@
       "notFound": "No available builds."
     },
     "build": {
-      "title": "Build #{build} - {name} ({branch})"
+      "title": "Build #{build} - {name} ({branch})",
+      "build": "Build #{build}",
+      "download": "Download"
     }
   }
 }

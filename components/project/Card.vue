@@ -23,7 +23,7 @@ function handleCardClick() {
 </script>
 
 <template>
-  <div class="project-card card bg-default hoverable" @click="handleCardClick">
+  <div class="card bg-default hoverable cursor-pointer border" @click="handleCardClick">
     <div class="flex gap-2">
       <!-- 左侧 logo -->
       <div class="flex flex-col justify-center">
@@ -71,7 +71,4 @@ function handleCardClick() {
 </template>
 
 <style scoped lang="scss">
-.project-card {
-  @apply cursor-pointer border border-gray-300 dark:border-gray-800;
-}
 </style>

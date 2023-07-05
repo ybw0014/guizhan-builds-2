@@ -25,7 +25,31 @@ definePageMeta({
   <Head>
     <Title>{{ t('pages.build.title', { name, branch, build }) }}</Title>
   </Head>
-  <div></div>
+  <div class="flex flex-col md:flex-row gap-4">
+    <div class="flex gap-2 grow">
+      <div class="text-3xl">
+        {{ t('pages.build.build', { name, branch, build }) }}
+      </div>
+      <div class="grow"></div>
+      <button class="build-button primary">
+        <Icon name="mdi:download-outline" class="text-xl" />
+        {{ t('pages.build.download') }}
+      </button>
+    </div>
+    <div class="flex basis-80">
+      <div class="card bg-default border">
+        
+      </div>
+    </div>
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.build-button {
+  @apply rounded-md p-3 bg-gray-200 font-semibold whitespace-nowrap dark:bg-gray-600;
+
+  &.primary {
+    @apply bg-blue-500 text-white;
+  }
+}
+</style>
