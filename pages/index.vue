@@ -11,7 +11,7 @@ const router = useRouter()
 const query = ref<string>((route.query.q as string) || '')
 const sortTypes = computed(() => [
   { id: 'name', label: t('sortTypes.name') },
-  { id: 'newest', label: t('sortTypes.newest') },
+  { id: 'newest', label: t('sortTypes.newest') }
 ])
 const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id)
 const page = ref(route.query.page ? Number(route.query.page) : 1)
@@ -103,7 +103,7 @@ function filterList() {
                 href="javascript:void(0)"
                 :class="{
                   'menu-item link-box': true,
-                  active: activeSortType === sortType.id,
+                  active: activeSortType === sortType.id
                 }"
                 class="px-4 py-2 text-left"
                 @click="activeSortType = sortType.id"

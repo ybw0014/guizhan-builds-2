@@ -63,6 +63,6 @@ export async function useProjectAuthors(project: Project): Promise<Ref<Author[] 
 export function useAuthor(author: string, projects = 0): Author {
   return {
     name: author,
-    projects,
+    projects
   }
 }

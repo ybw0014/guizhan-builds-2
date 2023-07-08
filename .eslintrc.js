@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
+    node: true
   },
   extends: [
     'eslint:recommended',
@@ -10,14 +10,14 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:nuxt/recommended',
     'plugin:prettier/recommended',
-    'prettier',
+    'prettier'
   ],
   overrides: [],
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
@@ -28,6 +28,6 @@ module.exports = {
     'no-undef': ['off'],
     'vue/multi-word-component-names': ['off'],
     '@typescript-eslint/no-explicit-any': ['off'],
-    'prettier/prettier': ['warn'],
-  },
+    'prettier/prettier': ['warn']
+  }
 }

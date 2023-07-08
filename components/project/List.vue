@@ -10,7 +10,7 @@ const props = withDefaults(
     page?: number
   }>(),
   {
-    page: 1,
+    page: 1
   }
 )
 const emit = defineEmits<{

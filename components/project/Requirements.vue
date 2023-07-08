@@ -16,7 +16,7 @@ const props = withDefaults(
     title: false,
     text: false,
     before: 0,
-    size: 'md',
+    size: 'md'
   }
 )
 const req = computed<Map<string, string>>(() => {

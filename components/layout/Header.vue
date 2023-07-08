@@ -5,7 +5,7 @@ const route = useRoute()
 
 const navLinks = [
   { link: 'index', label: 'projects' },
-  { link: 'authors', label: 'authors' },
+  { link: 'authors', label: 'authors' }
 ]
 </script>
 

@@ -19,7 +19,7 @@ const readme = await useGitHubReadmeParsed(project.value)
 const authors = await useProjectAuthors(project.value)
 
 definePageMeta({
-  name: 'project',
+  name: 'project'
 })
 </script>
 
@@ -82,19 +82,8 @@ definePageMeta({
   @apply flex flex-col;
 
   & > * {
-    @apply border border-gray-200 p-2 flex items-center gap-2 dark:border-gray-700;
-
-    &:first-child {
-      @apply rounded-t-md;
-    }
-
-    &:not(:last-child) {
-      @apply border-b-0;
-    }
-
-    &:last-child {
-      @apply rounded-b-md;
-    }
+    @apply border-x border-t border-gray-200 p-2 flex items-center gap-2 dark:border-gray-700;
+    @apply first:rounded-t-md last:rounded-b-md last:border-b;
   }
 }
 </style>

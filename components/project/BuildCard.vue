@@ -15,8 +15,8 @@ function handleCardClick() {
       author: props.project.author,
       repo: props.project.repository,
       branch: props.project.branch,
-      build: props.build.id,
-    },
+      build: props.build.id
+    }
   })
 }
 </script>
@@ -26,10 +26,9 @@ function handleCardClick() {
     <div class="flex flex-col gap-2">
       <div class="text-lg font-semibold">
         {{ t('components.projectBuildCard.build', { build: build.id }) }}
-        <Icon name="mdi:tick-circle" class="text-green-500" v-if="build.success" />
-        <Icon name="mdi:close-circle" class="text-red-500" v-else />
+        <BuildStatusIcon :success="build.success" />
       </div>
-      <div class="text-sm text-gray-600 dark:text-gray-400">{{ new Date(build.buildTimestamp).toLocaleString() }}</div>
+      <div class="text-sm text-gray-600 dark:text-gray-400">{{ $dayjs(build.buildTimestamp).format('lll') }}</div>
       <ProjectRequirements :requirements="props.project.displayOptions?.requirements" :title="true" :before="build.id" />
     </div>
   </div>

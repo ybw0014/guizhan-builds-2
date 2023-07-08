@@ -2,15 +2,15 @@
   <footer class="bg-default">
     <div class="footer-items">
       <div class="footer-items__list">
-        <a href="https://github.com/ybw0014/guizhan-builds-2" class="link-box" target="_blank" rel="noreferrer noopener">
+        <NuxtLink :href="useExternalLinkHelper('https://github.com/ybw0014/guizhan-builds-2')" class="link-box" target="_blank">
           {{ $t('components.footer.github') }}
-        </a>
+        </NuxtLink>
         <NuxtLink :to="{ name: 'terms' }" class="link-box">{{ $t('components.footer.terms') }}</NuxtLink>
         <NuxtLink :to="{ name: 'privacy' }" class="link-box">{{ $t('components.footer.privacy') }}</NuxtLink>
       </div>
       <p class="font-bold">
         &copy; {{ new Date().getFullYear() }}
-        <a href="https://ybw0014.dev/" target="_blank" rel="noreferrer noopener">ybw0014</a>
+        <NuxtLink :href="useExternalLinkHelper('https://ybw0014.dev/')" target="_blank">ybw0014</NuxtLink>
       </p>
     </div>
   </footer>

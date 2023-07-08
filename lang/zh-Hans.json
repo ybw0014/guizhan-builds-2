@@ -33,14 +33,7 @@
       "required": "需要"
     },
     "projectHeader": {
-      "download": "下载最新构建",
-      "warning": {
-        "title": "警告",
-        "content": "你正在从鬼斩构建站下载。如果你继续，则代表你已经同意了服务条款与隐私政策。",
-        "confirm": "确认",
-        "confirmForever": "确认，并不再显示",
-        "cancel": "取消"
-      }
+      "download": "下载最新构建"
     },
     "projectNav": {
       "introduction": "介绍",
@@ -66,6 +59,14 @@
     "unknown": "未知错误"
   },
   "pages": {
+    "external": {
+      "title": "外部链接警告",
+      "content": "你正在访问外部链接。鬼斩构建站不对任何外部链接的内容进行负责。",
+      "trust": "信任该域名并继续",
+      "continue": "仅继续",
+      "cancel": "取消",
+      "redirecting": "正在重定向..."
+    },
     "projects": {
       "title": "项目列表",
       "subTitle": "在此搜索项目并下载构建结果。",
@@ -108,7 +109,17 @@
     "build": {
       "title": "构建 #{build} - {name} ({branch})",
       "build": "构建 #{build}",
-      "download": "下载构建"
+      "buildAt": "构建于 {time}",
+      "logs": "日志",
+      "download": "下载构建",
+      "commitAt": "{author} 于 {time} 提交",
+      "warning": {
+        "title": "警告",
+        "content": "你正在从鬼斩构建站下载。如果你继续，则代表你已经同意了服务条款与隐私政策。",
+        "confirm": "确认",
+        "confirmForever": "确认，并不再显示",
+        "cancel": "取消"
+      }
     }
   }
 }

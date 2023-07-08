@@ -6,7 +6,7 @@ const props = withDefaults(
   }>(),
   {
     source: '',
-    brokenImage: '',
+    brokenImage: ''
   }
 )
 

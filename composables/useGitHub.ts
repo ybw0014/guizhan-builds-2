@@ -5,7 +5,7 @@ import remarkGemoji from 'remark-gemoji'
 import remarkRehype from 'remark-rehype'
 import rehypeRaw from 'rehype-raw'
 import rehypeSanitize from 'rehype-sanitize'
-import rehypeExternalLinks from 'rehype-external-links'
+import rehypeExternalLinks from '~/plugins/rehype/rehype-external-links'
 import rehypeStringify from 'rehype-stringify'
 
 export function isMainBranch(branch: string): boolean {
@@ -43,14 +43,11 @@ export async function useGitHubReadmeParsed(project: Project): Promise<Ref<strin
     .use(remarkGfm)
     .use(remarkGemoji)
     .use(remarkRehype, {
-      allowDangerousHtml: true,
+      allowDangerousHtml: true
     })
     .use(rehypeRaw)
     .use(rehypeSanitize)
-    .use(rehypeExternalLinks, {
-      target: '_blank',
-      rel: ['noopener', 'noreferrer'],
-    })
+    .use(rehypeExternalLinks)
     .use(rehypeStringify)
     .process(readme.value)
   return ref(String(parsed.value))

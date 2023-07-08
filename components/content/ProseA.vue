@@ -10,14 +10,11 @@ const isExternal = computed(() => {
 </script>
 
 <template>
-  <NuxtLink :href="props.href" :target="props.target">
+  <NuxtLink v-if="isExternal" :to="{ name: 'external', query: { link: props.href } }" target="_blank">
     <slot />
-    <Icon name="dashicons:external" class="external-icon" v-if="isExternal" />
+    <Icon name="dashicons:external" class="font-normal w-4 h-4 ml-1 text-gray-400" />
+  </NuxtLink>
+  <NuxtLink v-else :href="props.href" :target="props.target">
+    <slot />
   </NuxtLink>
 </template>
-
-<style scoped lang="scss">
-.external-icon {
-  @apply font-normal w-4 h-4 ml-1 text-gray-400;
-}
-</style>

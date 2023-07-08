@@ -13,44 +13,42 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     'nuxt-icon',
-    'nuxt-lodash',
+    'nuxt-lodash'
   ],
   devtools: { enabled: true },
   devServer: {
-    host: '0.0.0.0',
+    host: '0.0.0.0'
   },
-  css: [
-    '@/assets/styles/main.scss',
-  ],
+  css: ['@/assets/styles/main.scss'],
   app: {
     head: {
       link: [
         {
           type: 'text/css',
           rel: 'stylesheet',
-          href: 'https://gzassets.cn/fonts/AlibabaPuHuiTi.css',
-        },
-      ],
-    },
+          href: 'https://gzassets.cn/fonts/AlibabaPuHuiTi.css'
+        }
+      ]
+    }
   },
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {},
-    },
+      autoprefixer: {}
+    }
   },
   i18n: {
     locales: [
       {
         code: 'en',
         name: 'English',
-        file: 'en-US.json',
+        file: 'en-US.json'
       },
       {
         code: 'zh',
         name: '简体中文',
-        file: 'zh-Hans.json',
-      },
+        file: 'zh-Hans.json'
+      }
     ],
     lazy: true,
     strategy: 'no_prefix',
@@ -61,18 +59,19 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_lang',
       alwaysRedirect: true
     },
+    onLanguageSwitched: () => {
+      refreshNuxtData()
+    }
   },
   content: {
     markdown: {
-      remarkPlugins: [
-        'remark-heading-id',
-      ],
+      remarkPlugins: ['remark-heading-id'],
       rehypePlugins: {
         'rehype-external-links': {
           target: '_blank',
-          rel: ['noopener', 'noreferrer'],
+          rel: ['noopener', 'noreferrer']
         }
       }
-    },
+    }
   }
 })

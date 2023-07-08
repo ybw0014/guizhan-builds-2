@@ -20,14 +20,14 @@ function verify() {
       params: {
         author: project.author,
         repo: project.repository,
-        branch: project.branch,
-      },
+        branch: project.branch
+      }
     })
   }
 }
 
 definePageMeta({
-  name: 'repo',
+  name: 'repo'
 })
 </script>
 

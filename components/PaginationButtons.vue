@@ -9,7 +9,7 @@ const emit = defineEmits<{
 }>()
 const page = computed({
   get: () => props.page,
-  set: (value) => emit('update:page', value),
+  set: (value) => emit('update:page', value)
 })
 
 function gotoPage(newPage: number) {
@@ -102,7 +102,7 @@ const pageOptions = computed(() => {
 
 <style scoped lang="scss">
 .pagination-button {
-  @apply rounded-md bg-blue-500 hover:bg-blue-600 text-white px-2 align-middle cursor-pointer text-lg;
+  @apply rounded-md bg-blue-500 hover:bg-blue-600 text-white py-0 px-2 align-middle cursor-pointer text-lg;
 
   &:disabled {
     @apply bg-gray-400 cursor-not-allowed;

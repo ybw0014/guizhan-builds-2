@@ -2,6 +2,7 @@
 import { Project } from 'guizhan-builds-2-data'
 import _ from 'lodash'
 import { watchDebounced } from '@vueuse/core'
+import { RouteParams } from 'vue-router'
 
 const { t } = useI18n()
 const route = useRoute()
@@ -39,8 +40,43 @@ function updatePage(newPage: number) {
   page.value = newPage
 }
 
+onMounted(async () => {
+  if (route.query.download) {
+    await handleDownload(route.params)
+  }
+})
+
+onBeforeRouteUpdate((to, from, next) => {
+  if (to.name !== from.name) {
+    next()
+    return
+  }
+  if (to.query.download) {
+    handleDownload(to.params)
+    return
+  }
+  next()
+})
+
+async function handleDownload(params: RouteParams) {
+  const latestSuccessfulBuild = await useLatestSuccessfulBuild(props.project)
+  if (!latestSuccessfulBuild.value) {
+    return
+  }
+  router.replace({
+    name: 'build',
+    params: {
+      ...params,
+      build: latestSuccessfulBuild.value.id
+    },
+    query: {
+      download: 1
+    }
+  })
+}
+
 definePageMeta({
-  name: 'builds',
+  name: 'builds'
 })
 </script>
 

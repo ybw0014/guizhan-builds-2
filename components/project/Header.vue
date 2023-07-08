@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { Project } from 'guizhan-builds-2-data'
-import FormCheckBox from '~/components/ui/FormCheckbox.vue'
-import { useSettingsStore } from '~/stores/useSettingsStore'
 
 const { t } = useI18n()
-const settingsStore = useSettingsStore()
+const route = useRoute()
+const router = useRouter()
 
 const props = defineProps<{
   project: Project
@@ -14,26 +13,15 @@ const author = ref(props.project.author)
 const repo = ref(props.project.repository)
 const name = ref(props.project.displayOptions?.name || props.project.repository)
 const branch = ref(props.project.branch)
-const downloadModal = ref()
-const downloadConfirm = ref<boolean>(settingsStore.confirmDownload)
 
-function handleDownload() {
-  if (!settingsStore.confirmDownload) {
-    downloadModal.value.openModal()
-  } else {
-    download()
-  }
-}
-function download() {
-  alert('开发中')
-}
-function handleDownloadConfirm() {
-  settingsStore.setConfirmDownload(downloadConfirm.value)
-  downloadModal.value.closeModal()
-  download()
-}
-function handleDownloadCancel() {
-  downloadModal.value.closeModal()
+async function download() {
+  const latestSuccessfulBuild = await useLatestSuccessfulBuild(props.project)
+  const { build: _, ...params } = route.params
+  router.push({
+    name: 'builds',
+    params: params,
+    query: { download: latestSuccessfulBuild.value ? 1 : 0 }
+  })
 }
 </script>
 
@@ -59,42 +47,16 @@ function handleDownloadCancel() {
     </div>
     <div class="grow"></div>
     <div class="flex flex-col justify-center">
-      <button ref="downloadBtn" class="project-header-button primary" @click="handleDownload">
+      <button ref="downloadBtn" class="button primary" @click="download">
         <Icon name="mdi:download-outline" class="text-xl" />
         {{ t('components.projectHeader.download') }}
       </button>
     </div>
   </div>
-  <CustomModal ref="downloadModal">
-    <template #title>
-      {{ t('components.projectHeader.warning.title') }}
-    </template>
-    <template #content>
-      {{ t('components.projectHeader.warning.content') }}
-    </template>
-    <template #footer>
-      <FormCheckBox v-model="downloadConfirm" :label="t('components.projectHeader.warning.confirmForever')" />
-      <div class="flex gap-2 flex-wrap mt-4">
-        <button type="button" class="project-header-button primary" @click="handleDownloadConfirm">
-          {{ t('components.projectHeader.warning.confirm') }}
-        </button>
-        <button type="button" class="project-header-button" @click="handleDownloadCancel">
-          {{ t('components.projectHeader.warning.cancel') }}
-        </button>
-      </div>
-    </template>
-  </CustomModal>
 </template>
 
 <style scoped lang="scss">
 .project-header {
   @apply flex flex-col md:flex-row gap-4 border-t-4 border-blue-500;
-}
-.project-header-button {
-  @apply rounded-md p-3 bg-gray-200 font-semibold whitespace-nowrap dark:bg-gray-600;
-
-  &.primary {
-    @apply bg-blue-500 text-white;
-  }
 }
 </style>

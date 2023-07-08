@@ -6,7 +6,7 @@ const props = withDefaults(
     open?: boolean
   }>(),
   {
-    open: false,
+    open: false
   }
 )
 

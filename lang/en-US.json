@@ -33,14 +33,7 @@
       "required": "Required"
     },
     "projectHeader": {
-      "download": "Download Latest Build",
-      "warning": {
-        "title": "Warning",
-        "content": "You are downloading file from Guizhan Builds. By continuing, you agree to our Terms and Conditions and Privacy Policy.",
-        "confirm": "Confirm",
-        "confirmForever": "Confirm, and never show this again",
-        "cancel": "Cancel"
-      }
+      "download": "Download Latest Build"
     },
     "projectNav": {
       "introduction": "Introduction",
@@ -66,6 +59,14 @@
     "unknown": "Unknown Error"
   },
   "pages": {
+    "external": {
+      "title": "External Link Warning",
+      "content": "You are about to visit an external link. Guizhan Builds is not responsible for the content of external sites.",
+      "trust": "Trust this domain and continue",
+      "continue": "Continue once",
+      "cancel": "Cancel",
+      "redirecting": "Redirecting..."
+    },
     "projects": {
       "title": "Projects",
       "subTitle": "Search projects and download build artifacts.",
@@ -108,7 +109,17 @@
     "build": {
       "title": "Build #{build} - {name} ({branch})",
       "build": "Build #{build}",
-      "download": "Download"
+      "buildAt": "Built at {time}",
+      "logs": "Logs",
+      "download": "Download",
+      "commitAt": "{author} committed at {time}",
+      "warning": {
+        "title": "Warning",
+        "content": "You are downloading file from Guizhan Builds. By continuing, you agree to our Terms and Conditions and Privacy Policy.",
+        "confirm": "Confirm",
+        "confirmForever": "Confirm, and never show this again",
+        "cancel": "Cancel"
+      }
     }
   }
 }

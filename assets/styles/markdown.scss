@@ -4,9 +4,14 @@
 article {
   @apply text-base leading-7;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-semibold w-full pb-1 border-b;
-    
+
     a {
       @apply border-none font-semibold;
     }
@@ -28,7 +33,8 @@ article {
     @apply text-lg mt-1.5;
   }
 
-  p, ul {
+  p,
+  ul {
     @apply py-2;
   }
 
@@ -56,7 +62,8 @@ article {
   table {
     @apply border border-slate-400;
 
-    th, td {
+    th,
+    td {
       @apply border px-3 py-1.5;
     }
   }

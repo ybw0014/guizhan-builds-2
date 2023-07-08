@@ -1,4 +1,4 @@
-import { Project } from 'guizhan-builds-2-data'
+import { Project, BuildInfo } from 'guizhan-builds-2-data'
 import _ from 'lodash'
 
 export async function useProjectRepository(author: string, repository: string): Promise<Ref<Project[] | null>> {
@@ -25,4 +25,28 @@ export async function useProject(author: string, repository: string, branch: str
       return false
     }) || null
   )
+}
+
+export async function useBuild(project: Project, buildId: number): Promise<Ref<BuildInfo | null>> {
+  const builds = await useBuilds(project)
+  if (!builds.value) {
+    return ref(null)
+  }
+  return ref(builds.value.builds.find((build) => build.id === buildId) || null)
+}
+
+export async function useLatestBuild(project: Project): Promise<Ref<BuildInfo | null>> {
+  const builds = await useBuilds(project)
+  if (!builds.value) {
+    return ref(null)
+  }
+  return ref(_.last(builds.value.builds) || null)
+}
+
+export async function useLatestSuccessfulBuild(project: Project): Promise<Ref<BuildInfo | null>> {
+  const builds = await useBuilds(project)
+  if (!builds.value) {
+    return ref(null)
+  }
+  return ref(builds.value.builds.findLast((build) => build.success) || null)
 }

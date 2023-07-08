@@ -30,10 +30,10 @@ const sourceLink = computed<string | null>(() => {
     <ProjectNavItem :to="{ name: 'builds' }" :active="['builds'].includes(route.name as string)">
       {{ t('components.projectNav.builds') }}
     </ProjectNavItem>
-    <ProjectNavItem v-if="issuesLink" :href="issuesLink">
+    <ProjectNavItem v-if="issuesLink" :to="useExternalLinkHelper(issuesLink)">
       {{ t('components.projectNav.issues') }}
     </ProjectNavItem>
-    <ProjectNavItem v-if="sourceLink" :href="sourceLink">
+    <ProjectNavItem v-if="sourceLink" :to="useExternalLinkHelper(sourceLink)">
       {{ t('components.projectNav.source') }}
     </ProjectNavItem>
   </nav>

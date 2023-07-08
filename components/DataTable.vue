@@ -9,7 +9,7 @@ const props = withDefaults(
   }>(),
   {
     initSort: '',
-    sizePerPage: 10,
+    sizePerPage: 10
   }
 )
 

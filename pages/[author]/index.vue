@@ -13,7 +13,7 @@ const author = ref<string>(route.params.author as string)
 const query = ref()
 const sortTypes = computed(() => [
   { id: 'name', label: t('sortTypes.name') },
-  { id: 'newest', label: t('sortTypes.newest') },
+  { id: 'newest', label: t('sortTypes.newest') }
 ])
 const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id)
 const page = ref(route.query.page ? Number(route.query.page) : 1)
@@ -89,7 +89,7 @@ function filterList() {
 }
 
 definePageMeta({
-  name: 'author',
+  name: 'author'
 })
 </script>
 

@@ -3,7 +3,7 @@ const modes: Array<string> = ['system', 'light', 'dark']
 const icons: Record<string, string> = {
   system: 'grommet-icons:system',
   light: 'ph:sun-fill',
-  dark: 'ph:moon-stars-fill',
+  dark: 'ph:moon-stars-fill'
 }
 
 const { t } = useI18n()
@@ -18,7 +18,7 @@ const modeTooltip = computed(() => {
   const next = nextMode.value
   return t('components.header.theme-switcher.tooltip', {
     next: t(`components.header.theme-switcher.${next}`),
-    current: t(`components.header.theme-switcher.${current}`),
+    current: t(`components.header.theme-switcher.${current}`)
   })
 })
 

@@ -17,13 +17,13 @@ const headers: Header[] = [
   {
     name: 'name',
     title: t('pages.authors.name'),
-    sortable: true,
+    sortable: true
   },
   {
     name: 'projects',
     title: t('pages.authors.projects'),
-    sortable: true,
-  },
+    sortable: true
+  }
 ]
 
 watchDebounced(

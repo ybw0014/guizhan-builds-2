@@ -9,14 +9,14 @@ export default <Partial<Config>>{
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
-    './app.vue',
+    './app.vue'
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['AlibabaPuHuiTi', ...defaultTheme.fontFamily.sans],
-      },
-    },
+        sans: ['AlibabaPuHuiTi', ...defaultTheme.fontFamily.sans]
+      }
+    }
   },
-  plugins: [require('@headlessui/tailwindcss')],
+  plugins: [require('@headlessui/tailwindcss')]
 }

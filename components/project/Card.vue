@@ -16,8 +16,8 @@ function handleCardClick() {
     params: {
       author: props.project.author,
       repo: props.project.repository,
-      branch: props.project.branch,
-    },
+      branch: props.project.branch
+    }
   })
 }
 </script>
@@ -70,5 +70,4 @@ function handleCardClick() {
   </div>
 </template>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

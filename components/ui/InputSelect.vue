@@ -17,7 +17,7 @@ const props = withDefaults(
   {
     itemValue: 'value',
     itemText: 'text',
-    i18nText: false,
+    i18nText: false
   }
 )
 
@@ -26,7 +26,7 @@ const emit = defineEmits<{
 }>()
 const value = computed({
   get: () => props.modelValue,
-  set: (val) => emit('update:modelValue', val),
+  set: (val) => emit('update:modelValue', val)
 })
 </script>
 
@@ -43,7 +43,7 @@ const value = computed({
         {{ props.i18nText ? t(val[itemText] || val) : val[itemText] || val }}
       </option>
     </select>
-    <Icon name="mdi:menu-down" class="input-select-icon" />
+    <Icon name="mdi:menu-down" class="absolute flex right-2 self-center" />
   </InputWrapper>
 </template>
 
@@ -51,8 +51,4 @@ const value = computed({
 .input-select {
   @apply outline-none flex-grow appearance-none bg-transparent w-full py-0.5 border-none text-black dark:text-white;
 }
-.input-select-icon {
-  @apply absolute flex right-2 self-center;
-}
 </style>
-types/components/ui/InputSelect
