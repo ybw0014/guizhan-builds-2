@@ -15,25 +15,27 @@ const navLinks = [
       <!-- 左侧顶部菜单 -->
       <div class="flex items-center gap-4">
         <!-- 小屏幕导航 -->
-        <Popover as="div" class="relative inline-block sm:hidden">
-          <PopoverButton class="button link-box">
-            <Icon name="ic:round-menu" class="icon" />
-          </PopoverButton>
+        <div>
+          <Popover as="div" class="relative inline-block sm:hidden">
+            <PopoverButton class="button link-box">
+              <Icon name="ic:round-menu" class="icon" />
+            </PopoverButton>
 
-          <Transition name="dropdown-menu">
-            <PopoverPanel v-slot="{ close }" class="nav-sidebar menu-items left-0 bg-default">
-              <NuxtLink
-                v-for="navLink in navLinks"
-                :key="navLink.link"
-                :to="{ name: navLink.link }"
-                :class="['nav-link menu-item link-box', navLink.link === route.name ? 'active' : '']"
-                @click="close"
-              >
-                {{ $t(`components.header.nav.${navLink.label}`) }}
-              </NuxtLink>
-            </PopoverPanel>
-          </Transition>
-        </Popover>
+            <Transition name="dropdown-menu">
+              <PopoverPanel v-slot="{ close }" class="nav-sidebar menu-items left-0 bg-default">
+                <NuxtLink
+                  v-for="navLink in navLinks"
+                  :key="navLink.link"
+                  :to="{ name: navLink.link }"
+                  :class="['nav-link menu-item link-box', navLink.link === route.name ? 'active' : '']"
+                  @click="close"
+                >
+                  {{ $t(`components.header.nav.${navLink.label}`) }}
+                </NuxtLink>
+              </PopoverPanel>
+            </Transition>
+          </Popover>
+        </div>
         <!-- 首页链接 -->
         <NuxtLink :to="{ name: 'index' }" class="brand">
           <img src="/images/brand.jpg" class="brand-image" />
