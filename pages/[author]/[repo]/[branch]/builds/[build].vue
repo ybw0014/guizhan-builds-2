@@ -102,7 +102,7 @@ definePageMeta({
         <span>{{ build.message }}</span>
       </div>
     </div>
-    <div class="flex basis-80">
+    <div class="flex basis-80 shrink-0">
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
           {{ t('pages.project.requirements') }}
@@ -145,5 +145,3 @@ definePageMeta({
     </template>
   </CustomModal>
 </template>
-
-<style scoped lang="scss"></style>
