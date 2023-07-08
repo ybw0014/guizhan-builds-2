@@ -3,22 +3,19 @@ import { RouteLocationRaw } from 'vue-router'
 
 defineProps<{
   to?: RouteLocationRaw
-  href?: string
   active?: boolean
 }>()
-
-const router = useRouter()
 </script>
 
 <template>
-  <div v-if="to || href" class="mb-[-2px]">
-    <a v-if="to" href="javascript:void(0)" @click="router.push(to)" :class="{ 'project-nav-item': true, active: active }">
-      <slot></slot>
-    </a>
-    <a v-else-if="href" :href="href" :class="{ 'project-nav-item': true, active: active }" target="_blank">
+  <div v-if="to" class="mb-[-2px]">
+    <NuxtLink v-if="typeof to === 'string'" :to="to" :class="{ 'project-nav-item': true, active: active }" target="_blank">
       <slot></slot>
       <Icon name="dashicons:external" class="icon ml-1" />
-    </a>
+    </NuxtLink>
+    <NuxtLink v-else :to="to" :class="{ 'project-nav-item': true, active: active }">
+      <slot></slot>
+    </NuxtLink>
   </div>
 </template>
 
