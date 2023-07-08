@@ -89,7 +89,7 @@ definePageMeta({
         </div>
       </div>
       <div class="card bg-default flex-col items-center">
-        <span class="text-gray-400 dark:text-gray-600">
+        <span class="text-gray-400">
           {{ t('pages.build.commitAt', { author: build.author, time: $dayjs(build.timestamp).format('lll') }) }}
           (<a
             :href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`"
