@@ -62,6 +62,11 @@ async function checkOrder() {
   if (!queryBtn.value) return;
   if (!orderId.value) return;
 
+  if (!/^\d+$/.test(orderId.value)) {
+    devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.malformedOrderId");
+    return;
+  }
+
   queryBtn.value.disabled = true;
   devCheckErrMsg.value = "";
 
