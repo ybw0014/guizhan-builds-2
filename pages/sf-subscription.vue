@@ -86,6 +86,10 @@ async function checkOrder() {
   devDownloadLink.value = downloadLink.value;
   queryBtn.value.disabled = false;
 }
+
+function devDownload() {
+  window.open(devDownloadLink.value, "_blank", "noopener noreferrer");
+}
 </script>
 
 <template>
@@ -152,6 +156,9 @@ async function checkOrder() {
             <button ref="queryBtn" type="button" class="button primary" @click="checkOrder">
               {{ t('pages.sfSubscription.devCheck.query') }}
             </button>
+            <button v-if="devDownloadLink" type="button" class="button primary" @click="devDownload">
+                {{ t('pages.sfSubscription.devCheck.download') }}
+              </button>
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mt-4">
