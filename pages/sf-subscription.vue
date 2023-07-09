@@ -72,7 +72,6 @@ async function checkOrder() {
 
   // 查询订单
   const downloadUUID = await useSubValidation(orderId.value);
-  console.log(downloadUUID.value);
   if (!downloadUUID.value) {
     devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.invalidOrderId");
     queryBtn.value.disabled = false;
@@ -81,7 +80,6 @@ async function checkOrder() {
 
   // 获取下载链接
   const downloadLink = await useSubDownload(downloadUUID.value);
-  console.log(downloadLink.value);
   if (!downloadLink.value) {
     devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.cannotGetLink");
     queryBtn.value.disabled = false;
