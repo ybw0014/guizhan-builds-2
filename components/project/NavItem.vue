@@ -1,5 +1,10 @@
 <script setup lang="ts">
+/**
+ * 此处链接必须使用点击事件 + router.push()，否则会出现路由参数丢失导致页面失效的问题
+ */
 import { RouteLocationRaw } from "vue-router";
+
+const router = useRouter();
 
 defineProps<{
   to?: RouteLocationRaw
@@ -9,12 +14,9 @@ defineProps<{
 
 <template>
   <div v-if="to" class="mb-[-2px]">
-    <NuxtLink v-if="typeof to === 'string'" :to="to" :class="{ 'project-nav-item': true, active: active }" target="_blank">
+    <NuxtLink href="javascript:void(0)" :class="{ 'project-nav-item': true, active: active }" target="_blank" @click="router.push(to)">
       <slot></slot>
-      <Icon name="dashicons:external" class="icon ml-1" />
-    </NuxtLink>
-    <NuxtLink v-else :to="to" :class="{ 'project-nav-item': true, active: active }">
-      <slot></slot>
+      <Icon v-if="typeof to === 'string'" name="dashicons:external" class="icon ml-1" />
     </NuxtLink>
   </div>
 </template>
