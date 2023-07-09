@@ -128,7 +128,7 @@ async function checkOrder() {
         </ul>
       </section>
     </div>
-    <div class="text-gray-500 self-start text-sm">
+    <div class="text-gray-500 text-sm">
       * {{ t('pages.sfSubscription.footnotes') }}
     </div>
   </div>
