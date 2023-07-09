@@ -6,6 +6,7 @@ import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
+import rehypeHighlight from "rehype-highlight";
 import rehypeExternalLinks from "~/plugins/rehype/rehype-external-links";
 import rehypeGithubLinks from "~/plugins/rehype/rehype-github-links";
 
@@ -49,11 +50,12 @@ export async function useGitHubReadmeParsed(project: Project): Promise<Ref<strin
     .use(rehypeRaw)
     .use(rehypeSanitize)
     .use(rehypeExternalLinks)
-    .use(rehypeStringify)
+    .use(rehypeHighlight)
     .use(rehypeGithubLinks, {
       repo: `${project.author}/${project.repository}`,
       branch: project.branch
     })
+    .use(rehypeStringify)
     .process(readme.value);
   return ref(String(parsed.value));
 }

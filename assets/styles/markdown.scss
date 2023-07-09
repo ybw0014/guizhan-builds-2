@@ -2,7 +2,7 @@
   Markdown article
 */
 article {
-  @apply text-base leading-7;
+  @apply text-base leading-7 text-gray-900 dark:text-gray-300;
 
   h1,
   h2,
@@ -10,7 +10,7 @@ article {
   h4,
   h5,
   h6 {
-    @apply font-semibold w-full pb-1 border-b;
+    @apply font-semibold w-full pb-1 border-b border-gray-300 dark:border-gray-600;
 
     a {
       @apply border-none font-semibold;
@@ -55,7 +55,7 @@ article {
     @apply inline;
   }
 
-  p img {
+  img {
     @apply inline w-auto h-auto;
   }
 
@@ -72,7 +72,15 @@ article {
     @apply cursor-pointer;
   }
 
+  code, pre {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-md;
+  }
+
   code {
-    @apply relative max-w-full whitespace-pre-wrap;
+    @apply relative max-w-full whitespace-break-spaces text-sm p-1;
+  }
+
+  pre {
+    @apply p-2 leading-4;
   }
 }
