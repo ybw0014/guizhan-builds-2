@@ -4,7 +4,8 @@
     "header": {
       "nav": {
         "projects": "Projects",
-        "authors": "Authors"
+        "authors": "Authors",
+        "sfSubscription": ""
       },
       "theme-switcher": {
         "tooltip": "Switch to {next} theme (current theme is {current})",
@@ -121,6 +122,48 @@
         "confirm": "Confirm",
         "confirmForever": "Confirm, and never show this again",
         "cancel": "Cancel"
+      }
+    },
+    "sfSubscription": {
+      "title": "Slimefun Subscription",
+      "description": "Get the latest development builds of Slimefun Chinese version, even prior technical support!",
+      "download": "Download Now",
+      "subscribe": "Subscribe",
+      "subscribeAlready": "Already subscribed?",
+      "subscription": {
+        "free": "Free",
+        "monthly": "Monthly",
+        "seasonly": "Seasonly",
+        "annually": "Annually"
+      },
+      "price": {
+        "free": "",
+        "monthly": "/ Month",
+        "seasonly": "/ Season",
+        "annually": "/ Year"
+      },
+      "priviledge": {
+        "canaryBuilds": "Access public Canary builds",
+        "devBuilds": "Access development builds",
+        "issuesSupport": "Isuues support",
+        "techSupport": "Technical Support",
+        "priorTechSupport": "Prior Technical Support",
+        "newFeatures": "New Features"
+      },
+      "footnotes": "The prices listed on this page are just for reference, the actual price in Afdian shall prevail.",
+      "devCheck": {
+        "title": "Get the development builds",
+        "description": "Provide a valid Afdian order number, you will have access to development builds after validation. Find your order number by Afdian Avatar -> Orders.",
+        "navigateToOrders": "Navigate to Afdian Orders",
+        "label": "Afdian Order No.",
+        "query": "Validate",
+        "download": "Download Dev. Build",
+        "error": {
+          "malformedOrderId": "Invalid order number format",
+          "invalidOrderId": "Invalid order",
+          "cannotGetLink": "Cannot request download link"
+        },
+        "close": "Close"
       }
     }
   }

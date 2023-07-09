@@ -3,21 +3,31 @@ import { Dialog, DialogPanel, DialogTitle, TransitionRoot, TransitionChild } fro
 
 const props = withDefaults(
   defineProps<{
-    open?: boolean
+    open?: boolean,
+    bgClose?: boolean
   }>(),
   {
-    open: false
+    open: false,
+    bgClose: true
   }
 );
 
 const isOpen = ref<boolean>(props.open);
 
-function openModal() {
+function openModal(callback?: () => void) {
   isOpen.value = true;
+  callback && callback();
 }
 
-function closeModal() {
+function closeModal(callback?: () => void) {
   isOpen.value = false;
+  callback && callback();
+}
+
+function bgClick() {
+  if (props.bgClose) {
+    closeModal();
+  }
 }
 
 defineExpose({ openModal, closeModal });
@@ -30,7 +40,7 @@ defineExpose({ openModal, closeModal });
         <div class="fixed inset-0 bg-black !bg-opacity-25" />
       </TransitionChild>
 
-      <div class="fixed inset-0 overflow-y-auto" @click="closeModal">
+      <div class="fixed inset-0 overflow-y-auto" @click="bgClick">
         <div class="flex min-h-full items-center justify-center p-4 text-center">
           <TransitionChild as="template" name="modal">
             <DialogPanel class="custom-modal-panel bg-default" @click.stop>
@@ -53,6 +63,6 @@ defineExpose({ openModal, closeModal });
 
 <style scroped lang="scss">
 .custom-modal-panel {
-  @apply w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all;
+  @apply w-full max-w-lg transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all;
 }
 </style>

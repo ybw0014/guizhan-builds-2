@@ -10,3 +10,4 @@ export const useProjectIntroLog = debug("project:intro");
 export const useProjectReadmeLog = debug("project:readme");
 export const useProjectBuildsLog = debug("project:builds");
 export const useProjectBuildLog = debug("project:build");
+export const useSubLog = debug("subscription");

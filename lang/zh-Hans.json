@@ -4,7 +4,8 @@
     "header": {
       "nav": {
         "projects": "项目列表",
-        "authors": "作者列表"
+        "authors": "作者列表",
+        "sfSubscription": "粘液科技订阅计划"
       },
       "theme-switcher": {
         "tooltip": "切换为{next}主题（当前主题：{current}）",
@@ -121,6 +122,48 @@
         "confirm": "确认",
         "confirmForever": "确认，并不再显示",
         "cancel": "取消"
+      }
+    },
+    "sfSubscription": {
+      "title": "粘液科技订阅计划",
+      "description": "提前获取中文版粘液科技的最新内容与问题修复，甚至是优先技术支持！",
+      "download": "立即获取",
+      "subscribe": "订阅",
+      "subscribeAlready": "已经订阅？",
+      "subscription": {
+        "free": "免费",
+        "monthly": "月度",
+        "seasonly": "季度",
+        "annually": "年度"
+      },
+      "price": {
+        "free": "",
+        "monthly": "/ 月",
+        "seasonly": "/ 季度",
+        "annually": "/ 年"
+      },
+      "priviledge": {
+        "canaryBuilds": "获取公开版构建",
+        "devBuilds": "获取开发版构建",
+        "issuesSupport": "问题追踪器支持",
+        "techSupport": "技术支持",
+        "priorTechSupport": "优先技术支持",
+        "newFeatures": "提前获取新功能",
+      },
+      "footnotes": "订阅价格仅供参考，以爱发电内实际价格为准。",
+      "devCheck": {
+        "title": "获取开发版构建",
+        "description": "在下方输入有效的爱发电订单号，经过验证后可下载开发版构建。你可以通过 爱发电右上角头像 -> 订单 页面找到你的订阅订单号。",
+        "navigateToOrders": "点击打开爱发电订单页面",
+        "label": "爱发电订单号",
+        "query": "验证订单",
+        "download": "下载开发版构建",
+        "error": {
+          "malformedOrderId": "订单号格式不正确",
+          "invalidOrderId": "订单不存在或已过期",
+          "cannotGetLink": "无法获取下载链接，请稍后再试"
+        },
+        "close": "关闭"
       }
     }
   }
