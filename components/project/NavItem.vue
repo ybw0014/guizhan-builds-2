@@ -6,15 +6,24 @@ import { RouteLocationRaw } from "vue-router";
 
 const router = useRouter();
 
-defineProps<{
+const props = defineProps<{
   to?: RouteLocationRaw
   active?: boolean
 }>();
+
+function navigate() {
+  if (typeof props.to === "string") {
+    window.open(props.to, "_blank", "noopener noreferrer");
+  } else {
+    router.push(props.to as RouteLocationRaw);
+  }
+}
+
 </script>
 
 <template>
   <div v-if="to" class="mb-[-2px]">
-    <NuxtLink href="javascript:void(0)" :class="{ 'project-nav-item': true, active: active }" target="_blank" @click="router.push(to)">
+    <NuxtLink href="javascript:void(0)" :class="{ 'project-nav-item': true, active: active }" @click="navigate">
       <slot></slot>
       <Icon v-if="typeof to === 'string'" name="dashicons:external" class="icon ml-1" />
     </NuxtLink>
