@@ -5,65 +5,65 @@ const props = withDefaults(
     brokenImage?: string
   }>(),
   {
-    source: '',
-    brokenImage: ''
+    source: "",
+    brokenImage: ""
   }
-)
+);
 
-const image = ref<HTMLImageElement>()
-const isBroken = ref(false)
-const retryTimes = ref(0)
+const image = ref<HTMLImageElement>();
+const isBroken = ref(false);
+const retryTimes = ref(0);
 const imgSource = computed<string>(() => {
   if (isBroken.value) {
-    return props.brokenImage
+    return props.brokenImage;
   } else if (props.source instanceof URL) {
-    return props.source.toString()
+    return props.source.toString();
   } else {
-    return props.source
+    return props.source;
   }
-})
+});
 
 onMounted(() => {
   if (process.client) {
-    if (window['IntersectionObserver']) {
-      createObserver()
+    if (window.IntersectionObserver) {
+      createObserver();
     } else {
-      loadImage()
+      loadImage();
     }
   }
-})
+});
 
 function handleBrokenImage() {
-  retryTimes.value++
+  retryTimes.value++;
   if (retryTimes.value > 3) {
-    return
+    return;
   }
-  isBroken.value = true
-  loadImage()
+  isBroken.value = true;
+  loadImage();
 }
 
 function createObserver() {
-  const img = image.value
+  const img = image.value;
   if (!img) {
-    return
+    return;
   }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        loadImage()
-        observer.unobserve(img)
+        loadImage();
+        observer.unobserve(img);
       }
-    })
-  })
-  observer.observe(img)
+    });
+  });
+  observer.observe(img);
 }
 
 function loadImage() {
-  const img = image.value
+  const img = image.value;
   if (!img) {
-    return
+    return;
   }
-  img.src = imgSource.value
+  img.src = imgSource.value;
 }
 </script>
 

@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data'
+import { Project } from "guizhan-builds-2-data";
 
-const { t } = useI18n()
-const route = useRoute()
-const router = useRouter()
+const { t } = useI18n();
+const route = useRoute();
+const router = useRouter();
 
 const props = defineProps<{
   project: Project
-}>()
+}>();
 
-const author = ref(props.project.author)
-const repo = ref(props.project.repository)
-const name = ref(props.project.displayOptions?.name || props.project.repository)
-const branch = ref(props.project.branch)
+const author = ref(props.project.author);
+const repo = ref(props.project.repository);
+const name = ref(props.project.displayOptions?.name || props.project.repository);
+const branch = ref(props.project.branch);
 
 async function download() {
-  const latestSuccessfulBuild = await useLatestSuccessfulBuild(props.project)
-  const { build: _, ...params } = route.params
+  const latestSuccessfulBuild = await useLatestSuccessfulBuild(props.project);
+  const { build, ...params } = route.params;
   router.push({
-    name: 'builds',
-    params: params,
+    name: "builds",
+    params,
     query: { download: latestSuccessfulBuild.value ? 1 : 0 }
-  })
+  });
 }
 </script>
 

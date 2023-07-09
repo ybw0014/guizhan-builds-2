@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data'
-const router = useRouter()
+import { Project } from "guizhan-builds-2-data";
+const router = useRouter();
 
 const props = defineProps<{
   project: Project
-}>()
+}>();
 
-const name = ref(props.project.displayOptions?.name || props.project.repository)
-const keywords = ref(props.project.displayOptions?.keywords?.slice(0, 2))
-const branch: string | null = isMainBranch(props.project.branch) ? null : props.project.branch
+const name = ref(props.project.displayOptions?.name || props.project.repository);
+const keywords = ref(props.project.displayOptions?.keywords?.slice(0, 2));
+const branch: string | null = isMainBranch(props.project.branch) ? null : props.project.branch;
 
 function handleCardClick() {
   router.push({
-    name: 'project',
+    name: "project",
     params: {
       author: props.project.author,
       repo: props.project.repository,
       branch: props.project.branch
     }
-  })
+  });
 }
 </script>
 
@@ -69,5 +69,3 @@ function handleCardClick() {
     </div>
   </div>
 </template>
-
-<style scoped lang="scss"></style>

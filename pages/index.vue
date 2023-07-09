@@ -1,82 +1,82 @@
 <script setup lang="ts">
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-import { Project } from 'guizhan-builds-2-data'
-import { watchDebounced } from '@vueuse/core'
-import _ from 'lodash'
+import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
+import { Project } from "guizhan-builds-2-data";
+import { watchDebounced } from "@vueuse/core";
+import _ from "lodash";
 
-const { t } = useI18n()
-const route = useRoute()
-const router = useRouter()
+const { t } = useI18n();
+const route = useRoute();
+const router = useRouter();
 
-const query = ref<string>((route.query.q as string) || '')
+const query = ref<string>((route.query.q as string) || "");
 const sortTypes = computed(() => [
-  { id: 'name', label: t('sortTypes.name') },
-  { id: 'newest', label: t('sortTypes.newest') }
-])
-const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id)
-const page = ref(route.query.page ? Number(route.query.page) : 1)
-const filteredList = ref<Project[] | null>()
-const projectList = ref<Element | null>(null)
-const pageResetAnchor = ref<Element | null>(null)
-const projects = await useProjects()
+  { id: "name", label: t("sortTypes.name") },
+  { id: "newest", label: t("sortTypes.newest") }
+]);
+const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id);
+const page = ref(route.query.page ? Number(route.query.page) : 1);
+const filteredList = ref<Project[] | null>();
+const projectList = ref<Element | null>(null);
+const pageResetAnchor = ref<Element | null>(null);
+const projects = await useProjects();
 
-filterList()
+filterList();
 
 const queryParams = computed(() => {
-  const params: Record<string, any> = {}
+  const params: Record<string, any> = {};
   if (query.value) {
-    params.q = query.value
+    params.q = query.value;
   }
   if (activeSortType.value) {
-    params.sortBy = activeSortType.value
+    params.sortBy = activeSortType.value;
   }
   if (page.value > 1) {
-    params.page = page.value
+    params.page = page.value;
   }
-  return params
-})
+  return params;
+});
 
 watchDebounced(
   queryParams,
   async () => {
-    filteredList.value = null
-    await router.replace({ query: queryParams.value })
-    return filterList()
+    filteredList.value = null;
+    await router.replace({ query: queryParams.value });
+    return filterList();
   },
   { deep: true, debounce: 250 }
-)
+);
 
 function updatePage(newPage: number) {
   if (page.value === newPage) {
-    return
+    return;
   }
-  page.value = newPage
+  page.value = newPage;
   if (process.client && pageResetAnchor.value) {
-    window.scrollBy(0, pageResetAnchor.value.getBoundingClientRect().y)
+    window.scrollBy(0, pageResetAnchor.value.getBoundingClientRect().y);
   }
 }
 
 function filterList() {
   if (!projects.value) {
-    return
+    return;
   }
-  let filtered: Project[] = _.filter(projects.value, (project: Project) => !project.displayOptions?.hidden)
+  let filtered: Project[] = _.filter(projects.value, (project: Project) => !project.displayOptions?.hidden);
   if (query.value) {
     filtered = _.filter(projects.value, (project: Project) => {
-      const q = query.value.toLowerCase()
+      const q = query.value.toLowerCase();
       return (project.repository.toLowerCase().includes(q) ||
-        project.displayOptions?.keywords?.some((keyword: string) => keyword.toLowerCase().includes(q))) as boolean
-    })
+        project.displayOptions?.keywords?.some((keyword: string) => keyword.toLowerCase().includes(q))) as boolean;
+    });
   }
   switch (activeSortType.value) {
-    case 'name':
-      filtered = _.sortBy(filtered, (project: Project) => project.repository.toLowerCase())
-      break
-    case 'newest':
-      filtered = _.cloneDeep(filtered).reverse()
-      break
+    case "name":
+      filtered = _.sortBy(filtered, (project: Project) => project.repository.toLowerCase());
+      break;
+    case "newest":
+      filtered = _.cloneDeep(filtered).reverse();
+      break;
   }
-  filteredList.value = filtered
+  filteredList.value = filtered;
 }
 </script>
 

@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data'
-import { useGitHubReadmeParsed } from '~/composables/useGitHub'
+import { Project } from "guizhan-builds-2-data";
+import { useGitHubReadmeParsed } from "~/composables/useGitHub";
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const props = defineProps<{
   project: Project
-}>()
+}>();
 
 if (!props.project) {
-  throw createError({ statusCode: 500, statusMessage: 'Project does not exist.' })
+  throw createError({ statusCode: 500, statusMessage: "Project does not exist." });
 }
-const project: Ref<Project> = ref(props.project)
+const project: Ref<Project> = ref(props.project);
 
-const name = ref(project.value.repository || '')
-const branch = ref(project.value.branch || '')
-const readme = await useGitHubReadmeParsed(project.value)
-const authors = await useProjectAuthors(project.value)
+const name = ref(project.value.repository || "");
+const branch = ref(project.value.branch || "");
+const readme = await useGitHubReadmeParsed(project.value);
+const authors = await useProjectAuthors(project.value);
 
 definePageMeta({
-  name: 'project'
-})
+  name: "project"
+});
 </script>
 
 <template>

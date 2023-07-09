@@ -1,70 +1,70 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data'
-import _ from 'lodash'
-import { watchDebounced } from '@vueuse/core'
-import { RouteParams } from 'vue-router'
+import { Project } from "guizhan-builds-2-data";
+import _ from "lodash";
+import { watchDebounced } from "@vueuse/core";
+import { RouteParams } from "vue-router";
 
-const { t } = useI18n()
-const route = useRoute()
-const router = useRouter()
+const { t } = useI18n();
+const route = useRoute();
+const router = useRouter();
 
 const props = defineProps<{
   project: Project
-}>()
+}>();
 
-const page = ref(route.query.page ? Number(route.query.page) : 1)
+const page = ref(route.query.page ? Number(route.query.page) : 1);
 
-const builds = await useBuilds(props.project)
-const reversedBuilds = builds.value ? _.reverse(_.clone(builds.value.builds)) : []
+const builds = await useBuilds(props.project);
+const reversedBuilds = builds.value ? _.reverse(_.clone(builds.value.builds)) : [];
 
 const queryParams = computed(() => {
-  const params: Record<string, any> = {}
+  const params: Record<string, any> = {};
   if (page.value > 1) {
-    params.page = page.value
+    params.page = page.value;
   }
-  return params
-})
+  return params;
+});
 
 watchDebounced(
   queryParams,
   async () => {
-    await router.replace({ query: queryParams.value })
+    await router.replace({ query: queryParams.value });
   },
   { deep: true, debounce: 250 }
-)
+);
 
 function updatePage(newPage: number) {
   if (page.value === newPage) {
-    return
+    return;
   }
-  page.value = newPage
+  page.value = newPage;
 }
 
 onMounted(async () => {
   if (route.query.download) {
-    await handleDownload(route.params)
+    await handleDownload(route.params);
   }
-})
+});
 
 onBeforeRouteUpdate((to, from, next) => {
   if (to.name !== from.name) {
-    next()
-    return
+    next();
+    return;
   }
   if (to.query.download) {
-    handleDownload(to.params)
-    return
+    handleDownload(to.params);
+    return;
   }
-  next()
-})
+  next();
+});
 
 async function handleDownload(params: RouteParams) {
-  const latestSuccessfulBuild = await useLatestSuccessfulBuild(props.project)
+  const latestSuccessfulBuild = await useLatestSuccessfulBuild(props.project);
   if (!latestSuccessfulBuild.value) {
-    return
+    return;
   }
   router.replace({
-    name: 'build',
+    name: "build",
     params: {
       ...params,
       build: latestSuccessfulBuild.value.id
@@ -72,12 +72,12 @@ async function handleDownload(params: RouteParams) {
     query: {
       download: 1
     }
-  })
+  });
 }
 
 definePageMeta({
-  name: 'builds'
-})
+  name: "builds"
+});
 </script>
 
 <template>

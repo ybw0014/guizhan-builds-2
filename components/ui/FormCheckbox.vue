@@ -3,20 +3,20 @@ const props = defineProps<{
   modelValue?: boolean
   label?: string
   disabled?: boolean
-}>()
+}>();
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: boolean | boolean[] | string[] | [] | undefined): void
-}>()
+  (e: "update:modelValue", value: boolean | boolean[] | string[] | [] | undefined): void
+}>();
 const value = computed({
   get: () => props.modelValue,
-  set: (val) => emit('update:modelValue', val)
-})
+  set: (val) => emit("update:modelValue", val)
+});
 </script>
 
 <template>
   <label class="form-checkbox">
-    <input type="checkbox" v-model="value" :value="value" :disabled="disabled" class="input-checkbox" />
+    <input v-model="value" type="checkbox" :value="value" :disabled="disabled" class="input-checkbox" />
     <span v-if="label">{{ label }}</span>
   </label>
 </template>

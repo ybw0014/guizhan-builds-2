@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data'
+import { Project } from "guizhan-builds-2-data";
 
 const props = defineProps<{
   project: Project
-}>()
+}>();
 
-const { t } = useI18n()
-const route = useRoute()
+const { t } = useI18n();
+const route = useRoute();
 
 const issuesLink = computed<string | null>(() => {
   if (!props.project) {
-    return null
+    return null;
   }
-  return `https://github.com/${props.project.author}/${props.project.repository}/issues`
-})
+  return `https://github.com/${props.project.author}/${props.project.repository}/issues`;
+});
 const sourceLink = computed<string | null>(() => {
   if (!props.project) {
-    return null
+    return null;
   }
-  return `https://github.com/${props.project.author}/${props.project.repository}/tree/${props.project.branch}`
-})
+  return `https://github.com/${props.project.author}/${props.project.repository}/tree/${props.project.branch}`;
+});
 </script>
 
 <template>

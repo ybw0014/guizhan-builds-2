@@ -1,48 +1,48 @@
 <script setup lang="ts">
-import { useSettingsStore } from '~/stores/useSettingsStore'
+import { useSettingsStore } from "~/stores/useSettingsStore";
 
-const { t } = useI18n()
-const route = useRoute()
-const router = useRouter()
-const settingsStore = useSettingsStore()
+const { t } = useI18n();
+const route = useRoute();
+const router = useRouter();
+const settingsStore = useSettingsStore();
 
-const externalLink = Array.isArray(route.query.link) ? route.query.link[0] : route.query.link
+const externalLink = Array.isArray(route.query.link) ? route.query.link[0] : route.query.link;
 const host = computed<string | null>(() => {
   if (!externalLink) {
-    return null
+    return null;
   }
   try {
-    return new URL(externalLink).host
+    return new URL(externalLink).host;
   } catch (ignored) {
-    return null
+    return null;
   }
-})
+});
 const isTrustedDomain = computed(() => {
-  return host.value && settingsStore.trustedHosts.includes(host.value)
-})
+  return host.value && settingsStore.trustedHosts.includes(host.value);
+});
 
 if (isTrustedDomain.value) {
-  go()
+  go();
 }
 
 function trust() {
   if (host.value) {
-    settingsStore.addTrustedHost(host.value)
+    settingsStore.addTrustedHost(host.value);
   }
-  go()
+  go();
 }
 
 function go() {
   if (process.client) {
-    location.href = externalLink as string
+    location.href = externalLink as string;
   }
 }
 
 async function back() {
   if (!window.history.state.back) {
-    window.close()
+    window.close();
   } else {
-    await router.back()
+    await router.back();
   }
 }
 </script>
@@ -62,15 +62,15 @@ async function back() {
       {{ externalLink }}
     </div>
     <div class="flex flex-row gap-2">
-      <button @click="trust" class="button primary">
+      <button class="button primary" @click="trust">
         {{ t('pages.external.trust') }}
       </button>
 
-      <button @click="go" class="button primary">
+      <button class="button primary" @click="go">
         {{ t('pages.external.continue') }}
       </button>
 
-      <button @click="back" class="button secondary">
+      <button class="button secondary" @click="back">
         {{ t('pages.external.cancel') }}
       </button>
     </div>

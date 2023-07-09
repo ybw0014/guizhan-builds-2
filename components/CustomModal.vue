@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Dialog, DialogPanel, DialogTitle, TransitionRoot, TransitionChild } from '@headlessui/vue'
+import { Dialog, DialogPanel, DialogTitle, TransitionRoot, TransitionChild } from "@headlessui/vue";
 
 const props = withDefaults(
   defineProps<{
@@ -8,19 +8,19 @@ const props = withDefaults(
   {
     open: false
   }
-)
+);
 
-const isOpen = ref<boolean>(props.open)
+const isOpen = ref<boolean>(props.open);
 
 function openModal() {
-  isOpen.value = true
+  isOpen.value = true;
 }
 
 function closeModal() {
-  isOpen.value = false
+  isOpen.value = false;
 }
 
-defineExpose({ openModal, closeModal })
+defineExpose({ openModal, closeModal });
 </script>
 
 <template>

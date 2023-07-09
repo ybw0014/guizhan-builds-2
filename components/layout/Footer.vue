@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-default">
+  <footer class="bg-default mt-10 flex relative justify-center">
     <div class="footer-items">
       <div class="footer-items__list">
         <NuxtLink :href="useExternalLinkHelper('https://github.com/ybw0014/guizhan-builds-2')" class="link-box" target="_blank">
@@ -17,10 +17,6 @@
 </template>
 
 <style scoped lang="scss">
-footer {
-  @apply mt-10 flex relative justify-center;
-}
-
 .footer-items {
   @apply flex flex-wrap flex-row-reverse grow gap-4 justify-around items-center my-3 container text-sm;
 

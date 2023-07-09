@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { LocaleObject } from 'vue-i18n-routing'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { LocaleObject } from "vue-i18n-routing";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 
-const { locale, setLocale, locales } = useI18n()
-const currentLocale = computed(() => locale.value)
+const { locale, setLocale, locales } = useI18n();
+const currentLocale = computed(() => locale.value);
 const availableLocales = computed(() => {
-  return locales.value as LocaleObject[]
-})
+  return locales.value as LocaleObject[];
+});
 </script>
 
 <template>
@@ -17,13 +17,13 @@ const availableLocales = computed(() => {
 
     <Transition name="dropdown-menu">
       <MenuItems class="menu-items right-0 bg-default border-t-2 border-blue-500">
-        <MenuItem v-for="locale in availableLocales" :key="locale.code">
+        <MenuItem v-for="aLocale in availableLocales" :key="aLocale.code">
           <a
             href="javascript:void(0)"
-            :class="{ 'menu-item link-box': true, active: currentLocale == locale.code }"
-            @click="setLocale(locale.code)"
+            :class="{ 'menu-item link-box': true, active: currentLocale == aLocale.code }"
+            @click="setLocale(aLocale.code)"
           >
-            {{ locale.name }}
+            {{ aLocale.name }}
           </a>
         </MenuItem>
       </MenuItems>

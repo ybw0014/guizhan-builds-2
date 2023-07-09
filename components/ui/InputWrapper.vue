@@ -4,7 +4,7 @@ defineProps<{
   label?: string
   maxlength?: number
   value: any
-}>()
+}>();
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="T extends Record<string, any>">
-import { Header } from '~/types/dataTable'
+import { Header } from "~/types/dataTable";
 const props = withDefaults(
   defineProps<{
     headers: Header[]
@@ -8,92 +8,92 @@ const props = withDefaults(
     initSort?: string
   }>(),
   {
-    initSort: '',
+    initSort: "",
     sizePerPage: 10
   }
-)
+);
 
-const sliced = ref<T[]>()
-const page = ref(1)
-const activeSorter = ref<string>(props.initSort)
+const sliced = ref<T[]>();
+const page = ref(1);
+const activeSorter = ref<string>(props.initSort);
 const activeSortCol = computed(() => {
-  if (activeSorter.value.startsWith('-')) {
-    return activeSorter.value.substring(1)
+  if (activeSorter.value.startsWith("-")) {
+    return activeSorter.value.substring(1);
   } else {
-    return activeSorter.value
+    return activeSorter.value;
   }
-})
+});
 const activeSortOrder = computed(() => {
   if (!activeSorter.value) {
-    return 0
+    return 0;
   } else {
-    return activeSorter.value.startsWith('-') ? -1 : 1
+    return activeSorter.value.startsWith("-") ? -1 : 1;
   }
-})
+});
 const totalPages = computed(() => {
   if (!sorted.value) {
-    return 0
+    return 0;
   }
-  return Math.ceil(sorted.value.length / props.sizePerPage)
-})
+  return Math.ceil(sorted.value.length / props.sizePerPage);
+});
 const sorted = computed<T[]>(() => {
   if (!props.items) {
-    return []
+    return [];
   }
   return [...props.items].sort((a, b) => {
-    if (activeSortOrder.value === 0) return 0
-    const field = activeSortCol.value
-    if (a[field] > b[field]) return -activeSortOrder.value
-    if (a[field] < b[field]) return activeSortOrder.value
-    return 0
-  })
-})
+    if (activeSortOrder.value === 0) return 0;
+    const field = activeSortCol.value;
+    if (a[field] > b[field]) return -activeSortOrder.value;
+    if (a[field] < b[field]) return activeSortOrder.value;
+    return 0;
+  });
+});
 
 onMounted(() => {
-  calcSliced()
-})
-watch(sorted, calcSliced)
-watch(page, calcSliced)
+  calcSliced();
+});
+watch(sorted, calcSliced);
+watch(page, calcSliced);
 
 function sort(header: Header) {
   if (!header.sortable) {
-    return
+    return;
   }
   if (activeSortCol.value === header.name) {
     if (activeSortOrder.value === 1) {
-      activeSorter.value = `-${header.name}`
+      activeSorter.value = `-${header.name}`;
     } else {
-      activeSorter.value = ''
+      activeSorter.value = "";
     }
   } else {
-    activeSorter.value = header.name
+    activeSorter.value = header.name;
   }
 }
 
 function recalcPage() {
   if (totalPages.value === 0) {
-    return
+    return;
   }
   if (page.value > totalPages.value) {
-    page.value = totalPages.value
+    page.value = totalPages.value;
   }
   if (page.value < 1) {
-    page.value = 1
+    page.value = 1;
   }
 }
 
 function calcSliced() {
   if (!sorted.value) {
-    return
+    return;
   }
-  recalcPage()
-  const start = (page.value - 1) * props.sizePerPage
-  const end = start + props.sizePerPage
-  sliced.value = sorted.value.slice(start, end)
+  recalcPage();
+  const start = (page.value - 1) * props.sizePerPage;
+  const end = start + props.sizePerPage;
+  sliced.value = sorted.value.slice(start, end);
 }
 
 function updatePage(newPage: number) {
-  page.value = newPage
+  page.value = newPage;
 }
 </script>
 
@@ -104,10 +104,10 @@ function updatePage(newPage: number) {
         <th v-for="header in headers" :key="header.name" @click="sort(header)">
           {{ header.title }}
           <span v-if="header.sortable" class="ml-1">
-            <Icon name="iconoir:sort" v-if="activeSortCol !== header.name" />
+            <Icon v-if="activeSortCol !== header.name" name="iconoir:sort" />
             <span v-else>
-              <Icon name="iconoir:sort-down" v-if="activeSortOrder === 1" />
-              <Icon name="iconoir:sort-up" v-else />
+              <Icon v-if="activeSortOrder === 1" name="iconoir:sort-down" />
+              <Icon v-else name="iconoir:sort-up" />
             </span>
           </span>
         </th>

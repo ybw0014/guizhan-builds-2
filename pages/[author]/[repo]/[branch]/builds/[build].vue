@@ -1,66 +1,66 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data'
-import FormCheckBox from '~/components/ui/FormCheckbox.vue'
-import { useSettingsStore } from '~/stores/useSettingsStore'
+import { Project } from "guizhan-builds-2-data";
+import FormCheckBox from "~/components/ui/FormCheckbox.vue";
+import { useSettingsStore } from "~/stores/useSettingsStore";
 
-const { t } = useI18n()
-const route = useRoute()
-const settingsStore = useSettingsStore()
+const { t } = useI18n();
+const route = useRoute();
+const settingsStore = useSettingsStore();
 
 const props = defineProps<{
   project: Project
-}>()
+}>();
 
-const name = ref(props.project?.repository || '')
-const branch = ref(props.project?.branch || '')
-const buildId = ref(parseInt(route.params.build as string))
+const name = ref(props.project?.repository || "");
+const branch = ref(props.project?.branch || "");
+const buildId = ref(parseInt(route.params.build as string));
 
-const build = await useBuild(props.project, buildId.value)
+const build = await useBuild(props.project, buildId.value);
 
 if (!build.value) {
-  throw createError({ statusCode: 404 })
+  throw createError({ statusCode: 404 });
 }
 
-const downloadModal = ref()
-const downloadConfirm = ref<boolean>(settingsStore.confirmDownload)
+const downloadModal = ref();
+const downloadConfirm = ref<boolean>(settingsStore.confirmDownload);
 
 onMounted(() => {
   if (route.query.download) {
-    handleDownload()
+    handleDownload();
   }
-})
+});
 
 function handleDownload() {
   if (!settingsStore.confirmDownload) {
-    downloadModal.value.openModal()
+    downloadModal.value.openModal();
   } else {
-    download()
+    download();
   }
 }
 function handleDownloadConfirm() {
-  settingsStore.setConfirmDownload(downloadConfirm.value)
-  downloadModal.value.closeModal()
-  download()
+  settingsStore.setConfirmDownload(downloadConfirm.value);
+  downloadModal.value.closeModal();
+  download();
 }
 function handleDownloadCancel() {
-  downloadModal.value.closeModal()
+  downloadModal.value.closeModal();
 }
 
 function getBuildRes(filename: string) {
-  return useR2AssetPath(`${props.project.author}/${props.project.repository}/${props.project.branch}/${filename}`).value
+  return useR2AssetPath(`${props.project.author}/${props.project.repository}/${props.project.branch}/${filename}`).value;
 }
 
 function download() {
-  const path = getBuildRes(build.value?.target || '')
-  window.open(path, '_blank')
+  const path = getBuildRes(build.value?.target || "");
+  window.open(path, "_blank");
 }
 
 definePageMeta({
-  name: 'build',
+  name: "build",
   validate: async (route) => {
-    return /^\d+$/.test(route.params.build as string) && parseInt(route.params.build as string) > 0
+    return /^\d+$/.test(route.params.build as string) && parseInt(route.params.build as string) > 0;
   }
-})
+});
 </script>
 
 <template>

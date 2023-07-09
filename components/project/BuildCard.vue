@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { Project, BuildInfo } from 'guizhan-builds-2-data'
-const { t } = useI18n()
-const router = useRouter()
+import { Project, BuildInfo } from "guizhan-builds-2-data";
+const { t } = useI18n();
+const router = useRouter();
 
 const props = defineProps<{
   project: Project
   build: BuildInfo
-}>()
+}>();
 
 function handleCardClick() {
   router.push({
-    name: 'build',
+    name: "build",
     params: {
       author: props.project.author,
       repo: props.project.repository,
       branch: props.project.branch,
       build: props.build.id
     }
-  })
+  });
 }
 </script>
 

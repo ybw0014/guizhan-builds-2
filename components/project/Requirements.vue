@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import _ from 'lodash'
-import LazyLoadImage from '~/components/LazyLoadImage.vue'
-const { t } = useI18n()
+import _ from "lodash";
+import LazyLoadImage from "~/components/LazyLoadImage.vue";
+const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
@@ -10,55 +10,55 @@ const props = withDefaults(
     title?: boolean
     text?: boolean
     before?: number
-    size?: 'sm' | 'md' | 'lg' | 'xl'
+    size?: "sm" | "md" | "lg" | "xl"
   }>(),
   {
     title: false,
     text: false,
     before: 0,
-    size: 'md'
+    size: "md"
   }
-)
+);
 const req = computed<Map<string, string>>(() => {
-  const result: Map<string, string> = new Map()
+  const result: Map<string, string> = new Map();
   if (!props.requirements) {
-    return result
+    return result;
   }
   for (const [key, value] of Object.entries(props.requirements)) {
     const latestVer =
       _.max(
         _.filter(Object.keys(value), (val) => {
           if (props.before === 0) {
-            return true
+            return true;
           }
-          return parseInt(val) <= props.before
+          return parseInt(val) <= props.before;
         })
-      ) || 1
-    result.set(key, value[latestVer])
+      ) || 1;
+    result.set(key, value[latestVer]);
   }
-  return result
-})
+  return result;
+});
 
-const requirementSize = computed(() => `text-${props.size}`)
+const requirementSize = computed(() => `text-${props.size}`);
 const iconClass = computed(() => {
   switch (props.size) {
-    case 'sm':
-      return 'w-4 h-4'
-    case 'md':
-      return 'w-5 h-5'
-    case 'lg':
-      return 'w-6 h-6'
-    case 'xl':
-      return 'w-7 h-7'
+    case "sm":
+      return "w-4 h-4";
+    case "md":
+      return "w-5 h-5";
+    case "lg":
+      return "w-6 h-6";
+    case "xl":
+      return "w-7 h-7";
   }
-})
+});
 </script>
 
 <template>
   <div v-if="req.size > 0" :class="{ 'project-requirements': true, vertical: props.vertical }">
     <div v-if="title" class="title">{{ t('components.projectRequirements.title') }}</div>
     <!-- java -->
-    <div v-if="req.has('java')" :class="['requirement', requirementSize]" v-tippy="'Java'">
+    <div v-if="req.has('java')" v-tippy="'Java'" :class="['requirement', requirementSize]">
       <span class="icon">
         <Icon name="mdi:language-java" :class="iconClass" title="Java" aria-label="Java" />
         <span v-if="text">Java</span>
@@ -66,7 +66,7 @@ const iconClass = computed(() => {
       <span>{{ req.get('java') }}</span>
     </div>
     <!-- minecraft -->
-    <div v-if="req.has('minecraft')" :class="['requirement', requirementSize]" v-tippy="'Minecraft'">
+    <div v-if="req.has('minecraft')" v-tippy="'Minecraft'" :class="['requirement', requirementSize]">
       <span class="icon">
         <LazyLoadImage source="/images/minecraft.svg" :class="iconClass" title="Minecraft" aria-label="Minecraft" />
         <span v-if="text">Minecraft</span>
@@ -74,7 +74,7 @@ const iconClass = computed(() => {
       <span>{{ req.get('minecraft') }}</span>
     </div>
     <!-- paper -->
-    <div v-if="req.has('paper')" :class="['requirement', requirementSize]" v-tippy="'Paper'">
+    <div v-if="req.has('paper')" v-tippy="'Paper'" :class="['requirement', requirementSize]">
       <span class="icon">
         <LazyLoadImage source="/images/paper-256x.webp" :class="iconClass" title="paper" aria-label="paper" />
         <span v-if="text">Paper</span>
@@ -82,7 +82,7 @@ const iconClass = computed(() => {
       <span>{{ t('components.projectRequirements.required') }}</span>
     </div>
     <!-- slimefun -->
-    <div v-if="req.has('slimefun')" :class="['requirement', requirementSize]" v-tippy="'Slimefun'">
+    <div v-if="req.has('slimefun')" v-tippy="'Slimefun'" :class="['requirement', requirementSize]">
       <span class="icon">
         <Icon name="ph:package-light" :class="iconClass" title="Slimefun" aria-label="Slimefun" />
       </span>

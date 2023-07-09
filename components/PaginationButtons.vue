@@ -1,48 +1,48 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t } = useI18n();
 const props = defineProps<{
   page: number
   pages: number
-}>()
+}>();
 const emit = defineEmits<{
-  (e: 'update:page', page: number): void
-}>()
+  (e: "update:page", page: number): void
+}>();
 const page = computed({
   get: () => props.page,
-  set: (value) => emit('update:page', value)
-})
+  set: (value) => emit("update:page", value)
+});
 
 function gotoPage(newPage: number) {
-  page.value = newPage
+  page.value = newPage;
 }
 
 function visible(condition: boolean) {
-  return condition ? '' : 'visibility: hidden'
+  return condition ? "" : "visibility: hidden";
 }
 
 const pageOptions = computed(() => {
-  const options = []
+  const options = [];
   if (props.pages <= 5) {
     for (let i = 1; i <= props.pages; i++) {
-      options.push(i)
+      options.push(i);
     }
   } else {
-    let low = page.value - 1
-    let high = page.value + 3
+    let low = page.value - 1;
+    let high = page.value + 3;
     while (low < 1) {
-      low++
-      high++
+      low++;
+      high++;
     }
     while (high > props.pages) {
-      low--
-      high--
+      low--;
+      high--;
     }
     for (let i = low; i <= high; i++) {
-      options.push(i)
+      options.push(i);
     }
   }
-  return options
-})
+  return options;
+});
 </script>
 
 <template>
@@ -68,9 +68,9 @@ const pageOptions = computed(() => {
     </button>
 
     <button
-      class="pagination-button"
       v-for="option in pageOptions"
       :key="option"
+      class="pagination-button"
       :disabled="page === option"
       :aria-label="t('components.pagination.page', { page: option })"
       @click="gotoPage(option)"
