@@ -154,7 +154,7 @@
       "devCheck": {
         "title": "Get the development builds",
         "description": "Provide a valid Afdian order number, you will have access to development builds after validation. Find your order number by Afdian Avatar -> Orders.",
-        "navigateToOrders": "Navigate to ",
+        "navigateToOrders": "Navigate to Afdian Orders",
         "label": "Afdian Order No.",
         "query": "Validate",
         "download": "Download Dev. Build",
