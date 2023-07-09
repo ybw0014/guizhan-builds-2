@@ -40,3 +40,7 @@ body {
 .form-input {
   @apply rounded-md;
 }
+
+.a-link {
+  @apply text-blue-500 hover:underline transition-colors;
+}

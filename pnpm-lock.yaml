@@ -71,6 +71,9 @@ dependencies:
   remark-rehype:
     specifier: ^10.1.0
     version: 10.1.0
+  unist-util-map:
+    specifier: ^4.0.0
+    version: 4.0.0
   vue-tippy:
     specifier: ^6.2.0
     version: 6.2.0(vue@3.3.4)
@@ -10060,6 +10063,12 @@ packages:
     resolution: {integrity: sha512-u9njyyfEh43npf1M+yGKDGVPbY/JWEemg5nH05ncKPfi+kBbKBJoTdsogMu33uhytuLlv9y0O7GH7fEdwLdLQw==}
     dependencies:
       '@types/unist': 2.0.6
+
+  /unist-util-map@4.0.0:
+    resolution: {integrity: sha512-HJs1tpkSmRJUzj6fskQrS5oYhBYlmtcvy4SepdDEEsL04FjBrgF0Mgggvxc1/qGBGgW7hRh9+UBK1aqTEnBpIA==}
+    dependencies:
+      '@types/unist': 3.0.0
+    dev: false
 
   /unist-util-position@4.0.4:
     resolution: {integrity: sha512-kUBE91efOWfIVBo8xzh/uZQ7p9ffYRtUbMRZBNFYwf0RK8koUMx6dGUfwylLOKmaT2cs4wSW96QoYUSXAyEtpg==}

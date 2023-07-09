@@ -77,7 +77,7 @@ definePageMeta({
           </div>
           <div class="text-md text-gray-600 dark:text-gray-400">
             {{ t('pages.build.buildAt', { time: $dayjs(build.buildTimestamp).format('lll') }) }}
-            <a :href="getBuildRes(`Build-${buildId}.log`)" class="text-blue-500" target="_blank">{{ t('pages.build.logs') }}</a>
+            <a :href="getBuildRes(`Build-${buildId}.log`)" class="a-link" target="_blank">{{ t('pages.build.logs') }}</a>
           </div>
         </div>
         <div class="grow"></div>
@@ -93,7 +93,7 @@ definePageMeta({
           {{ t('pages.build.commitAt', { author: build.author, time: $dayjs(build.timestamp).format('lll') }) }}
           (<a
             :href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`"
-            class="text-blue-500"
+            class="a-link"
             target="_blank"
           >
             {{ build.commit.slice(0, 7) }} </a
@@ -102,7 +102,7 @@ definePageMeta({
         <span>{{ build.message }}</span>
       </div>
     </div>
-    <div class="flex basis-80 shrink-0">
+    <div class="flex flex-col basis-80 shrink-0 gap-4">
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
           {{ t('pages.project.requirements') }}
@@ -114,6 +114,19 @@ definePageMeta({
             size="xl"
             :before="buildId"
           />
+        </div>
+      </div>
+      <div class="card bg-default">
+        <h3 class="text-xl font-bold mb-2">
+          {{ t('pages.build.checksum') }}
+          <ExternalLink link="https://emn178.github.io/online-tools/sha1_checksum.html" class="text-sm font-normal a-link">
+            {{ t('pages.build.checksumLink') }}
+          </ExternalLink>
+        </h3>
+        <div class="flex break-words">
+          <div class="w-full">
+            SHA1: {{ build.sha1 }}
+          </div>
         </div>
       </div>
     </div>
@@ -129,8 +142,8 @@ definePageMeta({
     <template #footer>
       <div class="flex flex-col gap-2">
         <div class="flex flex-col">
-          <NuxtLink :to="{ name: 'terms' }" class="text-blue-500" target="_blank">{{ t('pages.terms.title') }}</NuxtLink>
-          <NuxtLink :to="{ name: 'privacy' }" class="text-blue-500" target="_blank">{{ t('pages.privacy.title') }}</NuxtLink>
+          <NuxtLink :to="{ name: 'terms' }" class="a-link" target="_blank">{{ t('pages.terms.title') }}</NuxtLink>
+          <NuxtLink :to="{ name: 'privacy' }" class="a-link" target="_blank">{{ t('pages.privacy.title') }}</NuxtLink>
         </div>
         <FormCheckBox v-model="downloadConfirm" :label="t('pages.build.warning.confirmForever')" />
         <div class="flex gap-2 flex-wrap mt-4">
