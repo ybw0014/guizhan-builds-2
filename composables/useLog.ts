@@ -1,7 +1,5 @@
 import debug from "debug";
 
-debug.enable("subscription");
-
 export const useFetchLog = debug("fetch");
 export const useNprogressLog = debug("nprogress");
 export const useAuthorListLog = debug("author:list");
