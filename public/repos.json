@@ -1882,9 +1882,9 @@
 			}
 		}
 	},
-	"SlimefunGuguProject/Ex-Limus:master": {
+	"SlimefunGuguProject/Ex-Limus:main": {
 		"type": "maven",
-		"alias": ["haiman233/Ex-Limus-CN:master"],
+		"alias": ["haiman233/Ex-Limus-CN:main"],
 		"buildOptions": {
 			"name": "Ex-Limus",
 			"version": "Build {version} (git {git_commit})"
