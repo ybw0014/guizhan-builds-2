@@ -1,5 +1,6 @@
 import { Project, Projects, useParseProjects, BuildsInfo } from "guizhan-builds-2-data";
 import { MinecraftVersionResponse } from "~/types/bmclApi";
+import { OrderValidationResponse, DownloadResponse } from "types/sfSubscription";
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {
   const { data } = await useLocalApi<Projects>("/repos.json");
@@ -14,7 +15,7 @@ export async function useBuilds(project: Project): Promise<Ref<BuildsInfo | null
   return data;
 }
 
-export async function useMinecraftVersions(minimumVersion: string): Promise<Ref<string[]>> {
+export async function useMinecraftVersions(minimumVersion: string): Promise<Ref<string[] | null>> {
   const { data } = await useExternalApi<MinecraftVersionResponse>(
     "https://bmclapi2.bangbang93.com/mc/game/version_manifest_v2.json"
   );
@@ -34,4 +35,26 @@ export async function useMinecraftVersions(minimumVersion: string): Promise<Ref<
     }
   }
   return ref(versions);
+}
+
+export async function useSubValidation(orderId: string): Promise<Ref<string | null>> {
+  const { data } = await useExternalApi<OrderValidationResponse>(
+    `https://afdian-validator.norain.city/validate/${orderId}`
+  );
+  useSubLog(`validation response: ${data.value}`);
+  if (!data.value || data.value.code !== 200) {
+    return ref(null);
+  }
+  return ref(data.value.data.uuid);
+}
+
+export async function useSubDownload(uuid: string): Promise<Ref<string | null>> {
+  const { data } = await useExternalApi<DownloadResponse>(
+    `https://afdian-validator.norain.city/download/${uuid}`
+  );
+  useSubLog(`validation response: ${data.value}`);
+  if (!data.value || data.value.code !== 200) {
+    return ref(null);
+  }
+  return ref(data.value.data);
 }

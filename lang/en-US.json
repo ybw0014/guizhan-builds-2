@@ -4,7 +4,8 @@
     "header": {
       "nav": {
         "projects": "Projects",
-        "authors": "Authors"
+        "authors": "Authors",
+        "sfSubscription": ""
       },
       "theme-switcher": {
         "tooltip": "Switch to {next} theme (current theme is {current})",
