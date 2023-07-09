@@ -1977,5 +1977,23 @@
 				}
 			}
 		}
+	},
+	"ybw0014/GuizhanLibPlugin:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "GuizhanLibPlugin",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["鬼斩前置库"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
 	}
 }
