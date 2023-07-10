@@ -1,0 +1,48 @@
+name: Nuxt Build
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Nuxt build
+    runs-on: ubuntu-latest
+
+    env:
+      NITRO_PRESET: cloudflare_pages
+
+    steps:
+      - name: Checking out repository
+        uses: actions/checkout@v3
+
+      - name: Setting up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.12.0'
+
+      - name: Setting up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.6
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Installing dependencies
+        run: pnpm install
+
+      - name: Run nuxt build
+        run: pnpm run build
