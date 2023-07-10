@@ -9,7 +9,7 @@ const props = defineProps<{
 const imgSource = computed(() => {
   const { project } = props;
   const dir = `${project.author}/${project.repository}/${project.branch}`;
-  return useR2AssetPath(`/${dir}/badge.svg`).value;
+  return `/${dir}/badge.svg`;
 });
 </script>
 
