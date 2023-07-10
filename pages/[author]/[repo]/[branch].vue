@@ -25,6 +25,10 @@ async function verify(to: RouteLocationNormalized) {
     await navigateTo(newPath);
   }
 }
+
+definePageMeta({
+  name: "projectFramework"
+});
 </script>
 
 <template>
