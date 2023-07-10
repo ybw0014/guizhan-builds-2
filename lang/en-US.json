@@ -5,7 +5,7 @@
       "nav": {
         "projects": "Projects",
         "authors": "Authors",
-        "sfSubscription": ""
+        "sfSubscription": " "
       },
       "theme-switcher": {
         "tooltip": "Switch to {next} theme (current theme is {current})",
@@ -126,10 +126,10 @@
     },
     "sfSubscription": {
       "title": "Slimefun Subscription",
-      "description": "Get the latest development builds of Slimefun Chinese version, even prior technical support!",
+      "description": "Get the latest development builds of Slimefun Chinese version, even premium technical support!",
       "download": "Download Now",
       "subscribe": "Subscribe",
-      "subscribeAlready": "Already subscribed?",
+      "subscribeAlready": "Already subscribed? Download latest DEV build here!",
       "subscription": {
         "free": "Free",
         "monthly": "Monthly",
@@ -147,17 +147,18 @@
         "devBuilds": "Access development builds",
         "issuesSupport": "Isuues support",
         "techSupport": "Technical Support",
-        "priorTechSupport": "Prior Technical Support",
+        "priorTechSupport": "Premium Technical Support",
         "newFeatures": "New Features"
       },
       "footnotes": "The prices listed on this page are just for reference, the actual price in Afdian shall prevail.",
       "devCheck": {
-        "title": "Get the development builds",
-        "description": "Provide a valid Afdian order number, you will have access to development builds after validation. Find your order number by Afdian Avatar -> Orders.",
+        "title": "Get the latest development build",
+        "description": "Provide a valid Afdian order number, you will have access to the latest development build after validation. Find your order number by Afdian Avatar - Orders.",
         "navigateToOrders": "Navigate to Afdian Orders",
         "label": "Afdian Order No.",
         "query": "Validate",
         "download": "Download Dev. Build",
+        "lastUpdate": "Last updated on {time}",
         "error": {
           "malformedOrderId": "Invalid order number format",
           "invalidOrderId": "Invalid order",

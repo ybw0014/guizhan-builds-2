@@ -129,7 +129,7 @@
       "description": "提前获取中文版粘液科技的最新内容与问题修复，甚至是优先技术支持！",
       "download": "立即获取",
       "subscribe": "订阅",
-      "subscribeAlready": "已经订阅？",
+      "subscribeAlready": "已经订阅？在此下载最新开发版",
       "subscription": {
         "free": "免费",
         "monthly": "月度",
@@ -148,16 +148,17 @@
         "issuesSupport": "问题追踪器支持",
         "techSupport": "技术支持",
         "priorTechSupport": "优先技术支持",
-        "newFeatures": "提前获取新功能",
+        "newFeatures": "提前获取新功能"
       },
       "footnotes": "订阅价格仅供参考，以爱发电内实际价格为准。",
       "devCheck": {
-        "title": "获取开发版构建",
-        "description": "在下方输入有效的爱发电订单号，经过验证后可下载开发版构建。你可以通过 爱发电右上角头像 -> 订单 页面找到你的订阅订单号。",
+        "title": "获取最新的开发版构建",
+        "description": "在下方输入有效的爱发电订单号，经过验证后可下载最新开发版构建。你可以通过 爱发电右上角头像 - 订单 页面找到你的订阅订单号。",
         "navigateToOrders": "点击打开爱发电订单页面",
         "label": "爱发电订单号",
         "query": "验证订单",
         "download": "下载开发版构建",
+        "lastUpdate": "最后更新于 {time}",
         "error": {
           "malformedOrderId": "订单号格式不正确",
           "invalidOrderId": "订单不存在或已过期",

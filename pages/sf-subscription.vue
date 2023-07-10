@@ -34,9 +34,10 @@ const subscriptions = [
 
 const devModal = ref();
 const queryBtn = ref();
-const orderId = ref("");
-const devCheckErrMsg = ref("");
-const devDownloadLink = ref("");
+const orderId = ref<string>("");
+const devCheckErrMsg = ref<string>("");
+const devDownloadLink = ref<string>("");
+const lastUpdate = ref<number | null>();
 
 function getFree() {
   router.push({ name: "builds", params: { author: "StarWishsama", repo: "Slimefun4", branch: "master" }});
@@ -50,7 +51,13 @@ onMounted(() => {
 });
 
 function getDevBuilds() {
-  devModal.value.openModal();
+  devModal.value.openModal(() => {
+    if (lastUpdate.value) return;
+    setTimeout(async () => {
+      const lastUpdateRes = await useSubLastUpdate();
+      lastUpdate.value = lastUpdateRes.value;
+    }, 1);
+  });
   devCheckErrMsg.value = "";
 }
 
@@ -102,6 +109,9 @@ function devDownload() {
   <div class="flex flex-col gap-12 mt-14 items-center">
     <div class="text-2xl font-semibold">{{ t('pages.sfSubscription.title') }}</div>
     <div class="text-lg text-gray-600 dark:text-gray-400">{{ t('pages.sfSubscription.description') }}</div>
+    <div class="text-lg">
+      <a href="#getdev" class="a-link" @click="getDevBuilds">{{ t('pages.sfSubscription.subscribeAlready') }}</a>
+    </div>
     <div class="flex flex-col lg:flex-row gap-6">
       <section v-for="sub in subscriptions" :key="sub.type" class="pricing-card card bg-default">
         <div class="text-base">
@@ -123,9 +133,6 @@ function devDownload() {
           <button v-else class="button primary" @click="subscribe">
             {{ t('pages.sfSubscription.subscribe') }}
           </button>
-        </div>
-        <div v-if="sub.type !== 'free'">
-          <a href="#getdev" class="a-link" @click="getDevBuilds">{{ t('pages.sfSubscription.subscribeAlready') }}</a>
         </div>
         <ul class="divide-y divide-gray-200 text-gray-700 dark:text-gray-300 dark:divide-gray-600">
           <li v-for="priviledge in sub.privileges" :key="priviledge" class="priviledge flex gap-2 items-center py-2">
@@ -160,8 +167,11 @@ function devDownload() {
               {{ t('pages.sfSubscription.devCheck.query') }}
             </button>
             <button v-if="devDownloadLink" type="button" class="button primary" @click="devDownload">
-                {{ t('pages.sfSubscription.devCheck.download') }}
-              </button>
+              {{ t('pages.sfSubscription.devCheck.download') }}
+            </button>
+          </div>
+          <div v-if="lastUpdate" class="text-gray-500 text-sm">
+            {{ t('pages.sfSubscription.devCheck.lastUpdate', { time: $dayjs(lastUpdate).format('lll') }) }}
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mt-4">
