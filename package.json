@@ -64,6 +64,7 @@
     "guizhan-builds-2-data": "^0.2.0",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
+    "nuxt-cloudflare-analytics": "^1.0.8",
     "pinia": "^2.1.4",
     "qs": "^6.11.2",
     "rehype-highlight": "^6.0.0",

@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
     "nuxt-icon",
-    "nuxt-lodash"
+    "nuxt-lodash",
+    "nuxt-cloudflare-analytics"
   ],
   devtools: { enabled: true },
   devServer: {
@@ -71,5 +72,8 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  cloudflareAnalytics: {
+    token: "643ef977d859464ba3617c7cda04fdf3"
   }
 });
