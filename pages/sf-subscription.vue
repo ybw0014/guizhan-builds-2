@@ -94,7 +94,6 @@ async function checkOrder() {
   }
 
   devDownloadLink.value = downloadLink.value;
-  queryBtn.value.disabled = false;
 }
 
 function devDownload() {
