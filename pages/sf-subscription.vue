@@ -96,8 +96,20 @@ async function checkOrder() {
   devDownloadLink.value = downloadLink.value;
 }
 
-function devDownload() {
-  window.open(devDownloadLink.value, "_blank", "noopener noreferrer");
+async function devDownload() {
+  if (process.client) {
+    // 使用a标签 + download设置文件名
+    const aLink = document.createElement("a");
+    const url = new URL(devDownloadLink.value);
+    const filename = url.pathname.split("/").pop() as string;
+    aLink.href = url.toString();
+    aLink.target = "_blank";
+    aLink.rel = "noopener noreferrer";
+    aLink.setAttribute("download", filename);
+    document.body.appendChild(aLink);
+    aLink.click();
+    document.body.removeChild(aLink);
+  }
 }
 </script>
 
@@ -162,12 +174,16 @@ function devDownload() {
           <InputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
           <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
           <div class="flex gap-2 flex-wrap">
-            <button ref="queryBtn" type="button" class="button primary" @click="checkOrder">
+            <button v-if="!devDownloadLink" ref="queryBtn" type="button" class="button primary" @click="checkOrder">
               {{ t('pages.sfSubscription.devCheck.query') }}
             </button>
             <button v-if="devDownloadLink" type="button" class="button primary" @click="devDownload">
               {{ t('pages.sfSubscription.devCheck.download') }}
             </button>
+          </div>
+          <div v-if="devDownloadLink" class="text-sm">
+            <Icon name="mingcute:alert-line" class="w-6 h-6 text-yellow-500" />
+            {{ t("pages.sfSubscription.devCheck.notice") }}
           </div>
           <div v-if="lastUpdate" class="text-gray-500 text-sm">
             {{ t('pages.sfSubscription.devCheck.lastUpdate', { time: $dayjs(lastUpdate).format('lll') }) }}

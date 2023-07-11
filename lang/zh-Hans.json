@@ -158,11 +158,12 @@
       "footnotes": "订阅价格仅供参考，以爱发电内实际价格为准。",
       "devCheck": {
         "title": "获取最新的开发版构建",
-        "description": "在下方输入有效的爱发电订单号，经过验证后可下载最新开发版构建。你可以通过 爱发电右上角头像 - 订单 页面找到你的订阅订单号。",
-        "navigateToOrders": "点击打开爱发电订单页面",
+        "description": "提供爱发电订单号，经过验证后可下载最新的开发版构建。",
+        "navigateToOrders": "查找爱发电订单",
         "label": "爱发电订单号",
         "query": "验证订单",
         "download": "下载开发版构建",
+        "notice": "下载后如果文件后缀为zip，请手动将后缀改为jar。",
         "lastUpdate": "最后更新于 {time}",
         "error": {
           "malformedOrderId": "订单号格式不正确",
