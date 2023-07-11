@@ -9,7 +9,7 @@
 - **我们**（或“我们的”）：服务提供者，鬼斩（ybw0014）。
 - **您**：使用本服务的个人，或代表个人使用本服务的公司或其他法律实体。
 - **服务**：本网站。
-- **网站**：鬼斩构建站，可从[https://builds2.guizhanss.net](https://builds2.guizhanss.net)访问。
+- **网站**：鬼斩构建站，可从[https://builds.guizhanss.com](https://builds.guizhanss.com)访问。
 
 ## 数据收集 {#data-collection}
 

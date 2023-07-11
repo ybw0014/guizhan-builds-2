@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
+import { useDropZone, useFileDialog } from "@vueuse/core";
+import CryptoJS from "crypto-js";
 import { Project } from "guizhan-builds-2-data";
 import FormCheckBox from "~/components/ui/FormCheckbox.vue";
 import { useSettingsStore } from "~/stores/useSettingsStore";
@@ -22,7 +25,12 @@ if (!build.value) {
 }
 
 const downloadModal = ref();
+const checksumDropzone = ref<HTMLDivElement>();
 const downloadConfirm = ref<boolean>(settingsStore.confirmDownload);
+const checksumResult = ref<string>("");
+
+const { isOverDropZone: isChecksumDropzoneActive } = useDropZone(checksumDropzone, onChecksumFileDrop);
+const { open: openChecksumFile, onChange: onChecksumFileChange } = useFileDialog();
 
 onMounted(() => {
   if (route.query.download) {
@@ -53,6 +61,28 @@ function getBuildRes(filename: string) {
 function download() {
   const path = getBuildRes(build.value?.target || "");
   window.open(path, "_blank");
+}
+
+// Checksum 部分
+
+function onChecksumFileDrop(files: File[] | null) {
+  files && validateChecksum(files[0]);
+}
+
+onChecksumFileChange((files: FileList | null) => {
+  files && validateChecksum(files[0]);
+});
+
+function validateChecksum(file: File) {
+  if (file.size > 64 * 1024 * 1024) { // 64MB
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.readAsArrayBuffer(file);
+  reader.onload = () => {
+    checksumResult.value = CryptoJS.SHA1(CryptoJS.lib.WordArray.create(reader.result as any as number[])).toString();
+  };
 }
 
 definePageMeta({
@@ -118,16 +148,35 @@ definePageMeta({
       </div>
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t('pages.build.checksum') }}
-          <ExternalLink link="https://emn178.github.io/online-tools/sha1_checksum.html" class="text-sm font-normal a-link">
-            {{ t('pages.build.checksumLink') }}
-          </ExternalLink>
+          {{ t('pages.build.checksum.title') }}
         </h3>
         <div class="flex break-words">
           <div class="w-full">
-            SHA1: {{ build.sha1 }}
+            {{ t("pages.build.checksum.sha1", { checksum: build.sha1 }) }}
           </div>
         </div>
+        <Disclosure>
+          <DisclosureButton v-slot="{ open }" class="flex w-full justify-between rounded-lg bg-blue-100 px-4 py-2 text-left text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+            {{ t("pages.build.checksum.check") }}
+            <Icon :name="open ? 'icon-park:up' : 'icon-park:down'" class="h-5 w-5 text-blue-500" />
+          </DisclosureButton>
+          <DisclosurePanel class="text-gray-500 flex flex-col gap-2">
+            <div ref="checksumDropzone" class="flex items-center justify-center w-full" @click="openChecksumFile()">
+              <div for="checksum-file" class="file-dropzone">
+                <div class="flex flex-col gap-3 items-center justify-center p-6">
+                  <Icon name="mdi:file-upload-outline" class="w-10 h-10 text-gray-400" />
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    <span class="font-semibold">{{ t("pages.build.checksum.click") }}</span>
+                    {{ t("pages.build.checksum.drag") }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div v-if="checksumResult" :class="[checksumResult === build.sha1 ? 'text-green-500' : 'text-red-500', 'break-words']">
+              {{ t("pages.build.checksum.sha1", { checksum: checksumResult }) }}
+            </div>
+          </DisclosurePanel>
+        </Disclosure>
       </div>
     </div>
   </div>
@@ -158,3 +207,9 @@ definePageMeta({
     </template>
   </CustomModal>
 </template>
+
+<style scoped lang="scss">
+.file-dropzone {
+  @apply flex flex-col items-center justify-center w-full h-28 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500;
+}
+</style>

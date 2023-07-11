@@ -114,8 +114,13 @@
       "logs": "日志",
       "download": "下载构建",
       "commitAt": "{author} 于 {time} 提交",
-      "checksum": "校验和",
-      "checksumLink": "验证",
+      "checksum": {
+        "title": "校验和",
+        "sha1": "SHA1: {checksum}",
+        "check": "验证",
+        "click": "点击选择文件",
+        "drag": "或拖拽文件到此区域"
+      },
       "warning": {
         "title": "警告",
         "content": "你正在从鬼斩构建站下载。如果你继续，则代表你已经同意了服务条款与隐私政策。",

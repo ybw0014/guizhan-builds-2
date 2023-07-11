@@ -9,7 +9,7 @@ We use Your Personal data to provide and improve the Service. By using the Servi
 - **We** (or "Us", "Our"): the Service provider, Guizhan (ybw0014).
 - **You**: the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 - **Service**: the Website.
-- **Website**: Guizhan Builds, accessible from [https://builds2.guizhanss.net](https://builds2.guizhanss.net).
+- **Website**: Guizhan Builds, accessible from [https://builds.guizhanss.com](https://builds.guizhanss.com).
 
 ## Data Collection
 

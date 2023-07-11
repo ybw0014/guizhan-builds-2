@@ -114,8 +114,13 @@
       "logs": "Logs",
       "download": "Download",
       "commitAt": "{author} committed at {time}",
-      "checksum": "Checksum",
-      "checksumLink": "Validate",
+      "checksum": {
+        "title": "Checksum",
+        "sha1": "SHA1: {checksum}",
+        "check": "Validate",
+        "click": "Click to select file",
+        "drag": "or drag and drop file here"
+      },
       "warning": {
         "title": "Warning",
         "content": "You are downloading file from Guizhan Builds. By continuing, you agree to our Terms and Conditions and Privacy Policy.",
