@@ -7,7 +7,6 @@ export async function useLocalApi<T>(path: string) {
     host = window.location.host;
     protocol = window.location.protocol;
   }
-  console.log(`useLocalApi: ${protocol}//${host}${path}`);
   return useFetch<T>(`${protocol}//${host}${path}`);
 }
 

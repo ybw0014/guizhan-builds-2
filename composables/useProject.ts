@@ -12,6 +12,7 @@ export async function useProjectRepository(author: string, repository: string): 
 export async function useProject(author: string, repository: string, branch: string): Promise<Ref<Project | null>> {
   const projects = await useProjects();
   if (!projects.value) {
+    console.log("no projects");
     return ref(null);
   }
   return ref(
