@@ -3,7 +3,7 @@ import { MinecraftVersionResponse } from "types/bmclApi";
 import { OrderValidationResponse, DownloadResponse, LastUpdateResponse } from "types/sfSubscription";
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {
-  const { data } = await useLocalApi<Projects>("/repos.json");
+  const { data } = await useContentApi<Projects>("repos");
   if (!data.value) {
     return ref(null);
   }

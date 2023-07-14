@@ -10,6 +10,10 @@ export async function useLocalApi<T>(path: string) {
   return useFetch<T>(`${protocol}//${host}${path}`);
 }
 
+export async function useContentApi<T>(path: string) {
+  return useAsyncData<T>(path, () => queryContent<T>(path).findOne());
+}
+
 export async function useExternalApi<T>(path: string) {
   return useFetch<T>(path);
 }
