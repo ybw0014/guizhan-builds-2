@@ -96,7 +96,7 @@
     },
     "project": {
       "title": "{name} ({branch})",
-      "readmeWarning": "The following document is loaded from README.md on GitHub.",
+      "readmeWarning": "The following document is loaded from README.md on GitHub. It may contain a download link to current page, please click on the download button on the top right corner to download.",
       "readmeFail": "Failed to load README.md.",
       "buildStatus": "Build Status",
       "information": "Information",
@@ -163,7 +163,6 @@
         "label": "Afdian Order No.",
         "query": "Validate",
         "download": "Download Dev. Build",
-        "notice": "If the file extension is zip, please manually change it to jar.",
         "lastUpdate": "Last updated on {time}",
         "error": {
           "malformedOrderId": "Invalid order number format",

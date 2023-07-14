@@ -181,10 +181,6 @@ async function devDownload() {
               {{ t('pages.sfSubscription.devCheck.download') }}
             </button>
           </div>
-          <div v-if="devDownloadLink" class="text-sm">
-            <Icon name="mingcute:alert-line" class="w-6 h-6 text-yellow-500" />
-            {{ t("pages.sfSubscription.devCheck.notice") }}
-          </div>
           <div v-if="lastUpdate" class="text-gray-500 text-sm">
             {{ t('pages.sfSubscription.devCheck.lastUpdate', { time: $dayjs(lastUpdate).format('lll') }) }}
           </div>

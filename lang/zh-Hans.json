@@ -96,7 +96,7 @@
     },
     "project": {
       "title": "{name} ({branch})",
-      "readmeWarning": "以下文档来自项目 GitHub 的 README.md。",
+      "readmeWarning": "以下文档来自项目 GitHub 的 README.md。文档中可能包含指向本页面的下载链接，请使用右上角的下载按钮进行下载。",
       "readmeFail": "加载 README.md 失败",
       "buildStatus": "构建状态",
       "information": "信息",
@@ -163,7 +163,6 @@
         "label": "爱发电订单号",
         "query": "验证订单",
         "download": "下载开发版构建",
-        "notice": "下载后如果文件后缀为zip，请手动将后缀改为jar。",
         "lastUpdate": "最后更新于 {time}",
         "error": {
           "malformedOrderId": "订单号格式不正确",
