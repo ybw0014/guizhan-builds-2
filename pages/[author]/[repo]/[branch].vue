@@ -10,7 +10,7 @@ const project = await useProject(author.value, repository.value, branch.value);
 await verify(route);
 
 async function verify(to: RouteLocationNormalized) {
-  if (!project?.value) {
+  if (!project.value) {
     throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
   } else if (
     to.params.author !== project.value.author ||

@@ -10,45 +10,57 @@
         "type": {
           "type": "string"
         },
+        "alias": {
+          "type": "array"
+        },
         "buildOptions": {
           "type": "object",
+          "required": ["name", "version"],
           "additionalProperties": false,
           "properties": {
-            "target": {
-              "type": "object",
-              "required": ["name", "version"],
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "version": {
-                  "type": "string"
-                }
-              }
-            },
-            "hidden": {
-              "type": "boolean"
-            },
-            "customDir": {
+            "name": {
               "type": "string"
             },
-            "repo": {
+            "version": {
               "type": "string"
+            },
+            "maven": {
+              "type": "object"
             },
             "gradle": {
               "type": "object"
             }
           }
         },
-        "dependencies": {
+        "displayOptions": {
           "type": "object",
-          "additionalProperties": {
-            "type": "object",
-            "additionalProperties": false,
-            "patternProperties": {
-              "^[0-9]+$": {
-                "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "officialList": {
+              "type": "boolean"
+            },
+            "hidden": {
+              "type": "boolean"
+            },
+            "name": {
+              "type": "string"
+            },
+            "author": {
+              "type": "array"
+            },
+            "keywords": {
+              "type": "array"
+            },
+            "requirements": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": false,
+                "patternProperties": {
+                  "^[0-9]+$": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }
