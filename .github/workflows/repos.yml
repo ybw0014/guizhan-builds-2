@@ -1,0 +1,27 @@
+name: Copy reops.json
+
+on:
+  push:
+    paths:
+      - 'public/repos.json'
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking out repository
+        uses: actions/checkout@v3
+
+      - name: Copy repos.json
+        run: |
+          cp "$GITHUB_WORKSPACE/public/repos.json" "$GITHUB_WORKSPACE/content/repos.json"
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "chore(repos): copy to content folder"
+          default_author: github_actions
