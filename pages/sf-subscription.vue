@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import InputText from "~/components/ui/InputText.vue";
+import { useCacheStore } from "~/stores/useCacheStore";
 
+const { $dayjsR } = useNuxtApp();
 const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
+const cacheStore = useCacheStore();
 
 const subscriptions = [
   { 
@@ -38,6 +41,7 @@ const orderId = ref<string>("");
 const devCheckErrMsg = ref<string>("");
 const devDownloadLink = ref<string>("");
 const lastUpdate = ref<number | null>();
+const noUpdate = ref(false);
 
 function getFree() {
   router.push({ name: "builds", params: { author: "StarWishsama", repo: "Slimefun4", branch: "master" }});
@@ -51,18 +55,46 @@ onMounted(() => {
 });
 
 function getDevBuilds() {
-  devModal.value.openModal(() => {
-    if (lastUpdate.value) return;
-    setTimeout(async () => {
-      const lastUpdateRes = await useSubLastUpdate();
-      lastUpdate.value = lastUpdateRes.value;
-    }, 1);
+  devModal.value.openModal(async () => {
+    // 获取最后更新时间
+    if (!lastUpdate.value) {
+      setTimeout(async () => {
+        const lastUpdateRes = await useSubLastUpdate();
+        lastUpdate.value = lastUpdateRes.value;
+        checkUpdate();
+      }, 1);
+    } else {
+      checkUpdate();
+    }
+
+    // 如果uuid有缓存，则获取下载链接
+    if (cacheStore.uuidExpireAt !== -1) {
+      useSubLog("has uuid cache");
+      const now = $dayjsR().unix();
+      if (now < cacheStore.uuidExpireAt) {
+        useSubLog("uuid cache not expired");
+        // 直接获取下载链接
+        setTimeout(async () => {
+          await getDownloadLink(cacheStore.uuid);
+        }, 1);
+      } else {
+        useSubLog("uuid cache expired, clearing");
+        cacheStore.setUuidExpireAt(-1);
+        cacheStore.setUuid("");
+      }
+    }
   });
   devCheckErrMsg.value = "";
 }
 
 function closeDevCheck() {
   devModal.value.closeModal();
+}
+
+function checkUpdate() {
+  if (!lastUpdate.value) return;
+  if (cacheStore.lastUpdateAt === -1) return;
+  noUpdate.value = lastUpdate.value <= cacheStore.lastUpdateAt;
 }
 
 async function checkOrder() {
@@ -78,17 +110,31 @@ async function checkOrder() {
   devCheckErrMsg.value = "";
 
   // 查询订单
-  const downloadUUID = await useSubValidation(orderId.value);
-  if (!downloadUUID.value) {
+  const orderData = await useSubValidation(orderId.value);
+  if (!orderData.value || orderData.value.expired) {
     devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.invalidOrderId");
     queryBtn.value.disabled = false;
     return;
   }
 
+  const uuid = orderData.value.uuid as string;
+
+  // 缓存订单信息
+  const uuidExpireAt = $dayjsR().add(1, "hour").unix();
+  cacheStore.setOrderExpireAt(orderData.value.expire_time);
+  cacheStore.setUuid(uuid);
+  cacheStore.setUuidExpireAt(uuidExpireAt);
+
   // 获取下载链接
-  const downloadLink = await useSubDownload(downloadUUID.value);
+  await getDownloadLink(uuid, true);
+}
+
+async function getDownloadLink(uuid: string, errorMsg = false) {
+  const downloadLink = await useSubDownload(uuid);
   if (!downloadLink.value) {
-    devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.cannotGetLink");
+    if (errorMsg) {
+      devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.cannotGetLink");
+    }
     queryBtn.value.disabled = false;
     return;
   }
@@ -97,19 +143,20 @@ async function checkOrder() {
 }
 
 async function devDownload() {
-  if (process.client) {
-    // 使用a标签 + download设置文件名
-    const aLink = document.createElement("a");
-    const url = new URL(devDownloadLink.value);
-    const filename = url.pathname.split("/").pop() as string;
-    aLink.href = url.toString();
-    aLink.target = "_blank";
-    aLink.rel = "noopener noreferrer";
-    aLink.setAttribute("download", filename);
-    document.body.appendChild(aLink);
-    aLink.click();
-    document.body.removeChild(aLink);
-  }
+  cacheStore.setLastUpdateAt(lastUpdate.value || -1);
+
+  // 使用a标签 + download设置文件名
+  const aLink = document.createElement("a");
+  const url = new URL(devDownloadLink.value);
+  const filename = url.pathname.split("/").pop() as string;
+  aLink.href = url.toString();
+  aLink.target = "_blank";
+  aLink.rel = "noopener noreferrer";
+  aLink.setAttribute("download", filename);
+  document.body.appendChild(aLink);
+  aLink.click();
+  document.body.removeChild(aLink);
+  
 }
 </script>
 
@@ -171,18 +218,25 @@ async function devDownload() {
           <a href="https://afdian.net/dashboard/order" target="_blank" class="a-link" tabindex="-1">
             {{ t('pages.sfSubscription.devCheck.navigateToOrders') }}
           </a>
-          <InputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
-          <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
-          <div class="flex gap-2 flex-wrap">
-            <button v-if="!devDownloadLink" ref="queryBtn" type="button" class="button primary" @click="checkOrder">
+          <div v-if="!devDownloadLink" class="flex flex-col gap-4">
+            <InputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
+            <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
+            <button ref="queryBtn" type="button" class="button primary" @click="checkOrder">
+              <Icon name="ic:round-search" class="w-6 h-6" />
               {{ t('pages.sfSubscription.devCheck.query') }}
             </button>
-            <button v-if="devDownloadLink" type="button" class="button primary" @click="devDownload">
+          </div>
+          <div v-else class="flex flex-col gap-4">
+            <button type="button" class="button primary" @click="devDownload">
+              <Icon name="ic:round-download" class="w-6 h-6" />
               {{ t('pages.sfSubscription.devCheck.download') }}
             </button>
           </div>
-          <div v-if="lastUpdate" class="text-gray-500 text-sm">
+          <div v-if="lastUpdate" class="text-gray-500 text-sm flex gap-2">
             {{ t('pages.sfSubscription.devCheck.lastUpdate', { time: $dayjs(lastUpdate).format('lll') }) }}
+            <div v-if="noUpdate">
+              {{ t('pages.sfSubscription.devCheck.noUpdate') }}
+            </div>
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mt-4">

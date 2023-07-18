@@ -10,6 +10,9 @@ export default defineNuxtPlugin(() => {
       dayjs: (cfg?: ConfigType) => {
         useI18n().locale.value === "zh" ? dayjs.locale("zh-cn") : dayjs.locale("en");
         return dayjs(cfg);
+      },
+      dayjsR: (cfg?: ConfigType) => {
+        return dayjs(cfg);
       }
     }
   };

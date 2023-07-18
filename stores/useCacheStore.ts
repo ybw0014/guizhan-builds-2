@@ -3,16 +3,28 @@ import { defineStore } from "pinia";
 export const useCacheStore = defineStore("cache", {
   state: () => {
     return {
-      expireTimestamp: 0,
-      uuid: ""
+      orderNum: "",
+      orderExpireAt: -1,
+      uuid: "",
+      uuidExpireAt: -1,
+      lastUpdateAt: -1
     };
   },
   actions: {
-    setExpireTimestamp(expireTimestamp: number) {
-      this.expireTimestamp = expireTimestamp;
+    setOrderNum(orderNum: string) {
+      this.orderNum = orderNum;
     },
-    setUUID(uuid: string) {
+    setOrderExpireAt(orderExpireAt: number) {
+      this.orderExpireAt = orderExpireAt;
+    },
+    setUuid(uuid: string) {
       this.uuid = uuid;
+    },
+    setUuidExpireAt(uuidExpireAt: number) {
+      this.uuidExpireAt = uuidExpireAt;
+    },
+    setLastUpdateAt(lastUpdateAt: number) {
+      this.lastUpdateAt = lastUpdateAt;
     }
   },
   persist: {
