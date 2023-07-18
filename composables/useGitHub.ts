@@ -4,7 +4,7 @@ import remarkGfm from "remark-gfm";
 import remarkGemoji from "remark-gemoji";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
-import rehypeSanitize from "rehype-sanitize";
+import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import rehypeExternalLinks from "~/plugins/rehype/rehype-external-links";
@@ -48,7 +48,16 @@ export async function useGitHubReadmeParsed(project: Project): Promise<Ref<strin
       allowDangerousHtml: true
     })
     .use(rehypeRaw)
-    .use(rehypeSanitize)
+    .use(rehypeSanitize, {
+      ...defaultSchema,
+      attributes: {
+        ...defaultSchema.attributes,
+        code: [
+          ...(defaultSchema.attributes?.code || []),
+          ["className", "language-java", "language-xml", "language-md"]
+        ]
+      }
+    })
     .use(rehypeExternalLinks)
     .use(rehypeHighlight)
     .use(rehypeGithubLinks, {
