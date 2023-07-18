@@ -3,7 +3,6 @@ import { nextTick } from "vue";
 import "nprogress/nprogress.css";
 import { defineNuxtPlugin, useRouter } from "#imports";
 
- 
 let progressBarTimeout: any;
 
 const startProgressBar = () => {

@@ -9,19 +9,19 @@ const router = useRouter();
 const cacheStore = useCacheStore();
 
 const subscriptions = [
-  { 
+  {
     type: "free",
     icon: "arcticons:canary",
     price: 0,
     privileges: ["canaryBuilds", "issuesSupport"]
   },
-  { 
+  {
     type: "monthly",
     icon: "ic:baseline-brightness-2",
     price: 6,
     privileges: ["devBuilds", "techSupport", "newFeatures"]
   },
-  { 
+  {
     type: "seasonly",
     icon: "ic:baseline-brightness-4",
     price: 15,
@@ -44,7 +44,7 @@ const lastUpdate = ref<number | null>();
 const noUpdate = ref(false);
 
 function getFree() {
-  router.push({ name: "builds", params: { author: "StarWishsama", repo: "Slimefun4", branch: "master" }});
+  router.push({ name: "builds", params: { author: "StarWishsama", repo: "Slimefun4", branch: "master" } });
 }
 function subscribe() {
   window.open("https://afdian.net/a/nora1ncity", "_blank", "noopener noreferrer");
@@ -156,19 +156,18 @@ async function devDownload() {
   document.body.appendChild(aLink);
   aLink.click();
   document.body.removeChild(aLink);
-  
 }
 </script>
 
 <template>
   <Head>
-    <Title>{{ t('pages.sfSubscription.title') }}</Title>
+    <Title>{{ t("pages.sfSubscription.title") }}</Title>
   </Head>
   <div class="flex flex-col gap-12 mt-14 items-center">
-    <div class="text-2xl font-semibold">{{ t('pages.sfSubscription.title') }}</div>
-    <div class="text-lg text-gray-600 dark:text-gray-400">{{ t('pages.sfSubscription.description') }}</div>
+    <div class="text-2xl font-semibold">{{ t("pages.sfSubscription.title") }}</div>
+    <div class="text-lg text-gray-600 dark:text-gray-400">{{ t("pages.sfSubscription.description") }}</div>
     <div class="text-lg">
-      <a href="#getdev" class="a-link" @click="getDevBuilds">{{ t('pages.sfSubscription.subscribeAlready') }}</a>
+      <a href="#getdev" class="a-link" @click="getDevBuilds">{{ t("pages.sfSubscription.subscribeAlready") }}</a>
     </div>
     <div class="flex flex-col lg:flex-row gap-6">
       <section v-for="sub in subscriptions" :key="sub.type" class="pricing-card card bg-default">
@@ -177,19 +176,17 @@ async function devDownload() {
           {{ t(`pages.sfSubscription.subscription.${sub.type}`) }}
         </div>
         <div>
-          <span class="text-3xl font-semibold">
-            ¥ {{ sub.price }}
-          </span>
+          <span class="text-3xl font-semibold"> ¥ {{ sub.price }} </span>
           <span class="ml-2 text-base text-gray-600 dark:text-gray-400">
             {{ t(`pages.sfSubscription.price.${sub.type}`) }}
           </span>
         </div>
         <div class="subscribe">
           <button v-if="sub.type === 'free'" class="button secondary" @click="getFree">
-            {{ t('pages.sfSubscription.download') }}
+            {{ t("pages.sfSubscription.download") }}
           </button>
           <button v-else class="button primary" @click="subscribe">
-            {{ t('pages.sfSubscription.subscribe') }}
+            {{ t("pages.sfSubscription.subscribe") }}
           </button>
         </div>
         <ul class="divide-y divide-gray-200 text-gray-700 dark:text-gray-300 dark:divide-gray-600">
@@ -200,48 +197,46 @@ async function devDownload() {
         </ul>
       </section>
     </div>
-    <div class="text-gray-500 text-sm">
-      * {{ t('pages.sfSubscription.footnotes') }}
-    </div>
+    <div class="text-gray-500 text-sm">* {{ t("pages.sfSubscription.footnotes") }}</div>
   </div>
-  
+
   <CustomModal ref="devModal" :bg-close="false">
     <template #title>
-      {{ t('pages.sfSubscription.devCheck.title') }}
+      {{ t("pages.sfSubscription.devCheck.title") }}
     </template>
     <template #content>
-      {{ t('pages.sfSubscription.devCheck.description') }}
+      {{ t("pages.sfSubscription.devCheck.description") }}
     </template>
     <template #footer>
       <div class="flex flex-col gap-4">
         <div class="flex flex-col gap-4">
           <a href="https://afdian.net/dashboard/order" target="_blank" class="a-link" tabindex="-1">
-            {{ t('pages.sfSubscription.devCheck.navigateToOrders') }}
+            {{ t("pages.sfSubscription.devCheck.navigateToOrders") }}
           </a>
           <div v-if="!devDownloadLink" class="flex flex-col gap-4">
             <InputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
             <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
             <button ref="queryBtn" type="button" class="button primary" @click="checkOrder">
               <Icon name="ic:round-search" class="w-6 h-6" />
-              {{ t('pages.sfSubscription.devCheck.query') }}
+              {{ t("pages.sfSubscription.devCheck.query") }}
             </button>
           </div>
           <div v-else class="flex flex-col gap-4">
             <button type="button" class="button primary" @click="devDownload">
               <Icon name="ic:round-download" class="w-6 h-6" />
-              {{ t('pages.sfSubscription.devCheck.download') }}
+              {{ t("pages.sfSubscription.devCheck.download") }}
             </button>
           </div>
           <div v-if="lastUpdate" class="text-gray-500 text-sm flex gap-2">
-            {{ t('pages.sfSubscription.devCheck.lastUpdate', { time: $dayjs(lastUpdate).format('lll') }) }}
+            {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: $dayjs(lastUpdate).format("lll") }) }}
             <div v-if="noUpdate">
-              {{ t('pages.sfSubscription.devCheck.noUpdate') }}
+              {{ t("pages.sfSubscription.devCheck.noUpdate") }}
             </div>
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mt-4">
           <button type="button" class="button secondary" @click="closeDevCheck">
-            {{ t('pages.sfSubscription.devCheck.close') }}
+            {{ t("pages.sfSubscription.devCheck.close") }}
           </button>
         </div>
       </div>

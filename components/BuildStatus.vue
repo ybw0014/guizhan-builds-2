@@ -3,7 +3,7 @@ import { Project } from "guizhan-builds-2-data";
 import LazyLoadImage from "./LazyLoadImage.vue";
 
 const props = defineProps<{
-  project: Project
+  project: Project;
 }>();
 
 const imgSource = computed(() => {

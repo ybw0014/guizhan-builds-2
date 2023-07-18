@@ -6,7 +6,7 @@ const route = useRoute();
 const router = useRouter();
 
 const props = defineProps<{
-  project: Project
+  project: Project;
 }>();
 
 const author = ref(props.project.author);
@@ -49,7 +49,7 @@ async function download() {
     <div class="flex flex-col justify-center">
       <button ref="downloadBtn" class="button primary" @click="download">
         <Icon name="mdi:download-outline" class="text-xl" />
-        {{ t('components.projectHeader.download') }}
+        {{ t("components.projectHeader.download") }}
       </button>
     </div>
   </div>

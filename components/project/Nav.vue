@@ -2,7 +2,7 @@
 import { Project } from "guizhan-builds-2-data";
 
 const props = defineProps<{
-  project: Project
+  project: Project;
 }>();
 
 const { t } = useI18n();
@@ -25,16 +25,16 @@ const sourceLink = computed<string | null>(() => {
 <template>
   <nav class="mt-3 mb-4 flex flex-wrap border-b-2 border-gray-200 dark:border-gray-800 gap-2">
     <ProjectNavItem :to="{ name: 'project' }" :active="['project'].includes(route.name as string)">
-      {{ t('components.projectNav.introduction') }}
+      {{ t("components.projectNav.introduction") }}
     </ProjectNavItem>
     <ProjectNavItem :to="{ name: 'builds' }" :active="['builds'].includes(route.name as string)">
-      {{ t('components.projectNav.builds') }}
+      {{ t("components.projectNav.builds") }}
     </ProjectNavItem>
     <ProjectNavItem v-if="issuesLink" :to="useExternalLinkHelper(issuesLink)">
-      {{ t('components.projectNav.issues') }}
+      {{ t("components.projectNav.issues") }}
     </ProjectNavItem>
     <ProjectNavItem v-if="sourceLink" :to="useExternalLinkHelper(sourceLink)">
-      {{ t('components.projectNav.source') }}
+      {{ t("components.projectNav.source") }}
     </ProjectNavItem>
   </nav>
 </template>

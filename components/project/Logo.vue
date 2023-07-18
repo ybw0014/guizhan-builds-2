@@ -3,7 +3,7 @@ import { Project } from "guizhan-builds-2-data";
 import LazyLoadImage from "~/components/LazyLoadImage.vue";
 
 defineProps<{
-  project: Project
+  project: Project;
 }>();
 </script>
 

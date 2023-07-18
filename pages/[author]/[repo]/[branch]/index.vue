@@ -5,7 +5,7 @@ import { useGitHubReadmeParsed } from "~/composables/useGitHub";
 const { t } = useI18n();
 
 const props = defineProps<{
-  project: Project
+  project: Project;
 }>();
 
 if (!props.project) {
@@ -25,7 +25,7 @@ definePageMeta({
 
 <template>
   <Head>
-    <Title>{{ t('pages.project.title', { name, branch }) }}</Title>
+    <Title>{{ t("pages.project.title", { name, branch }) }}</Title>
   </Head>
   <div class="flex flex-col md:flex-row gap-4">
     <!-- 左侧项目 README.md -->
@@ -33,17 +33,17 @@ definePageMeta({
       <div v-if="readme">
         <div class="p-4 mb-4 text-md text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300">
           <Icon name="ion:warning-outline" />
-          {{ t('pages.project.readmeWarning') }}
+          {{ t("pages.project.readmeWarning") }}
         </div>
         <article v-html="readme"></article>
       </div>
-      <div v-else>{{ t('pages.project.readmeFail') }}</div>
+      <div v-else>{{ t("pages.project.readmeFail") }}</div>
     </div>
     <!-- 右侧多卡片信息栏 -->
     <div class="flex flex-col gap-4 basis-80">
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t('pages.project.buildStatus') }}
+          {{ t("pages.project.buildStatus") }}
         </h3>
         <div class="flex justify-center">
           <BuildStatus :project="project" />
@@ -51,7 +51,7 @@ definePageMeta({
       </div>
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t('pages.project.requirements') }}
+          {{ t("pages.project.requirements") }}
         </h3>
         <div class="flex">
           <ProjectRequirements :requirements="project.displayOptions?.requirements" :vertical="true" size="xl" />
@@ -59,7 +59,7 @@ definePageMeta({
       </div>
       <div v-if="authors" class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t('pages.project.authors') }}
+          {{ t("pages.project.authors") }}
         </h3>
         <div class="authors">
           <NuxtLink

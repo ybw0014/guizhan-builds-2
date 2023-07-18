@@ -4,7 +4,7 @@ const { t } = useI18n();
 
 <template>
   <Head>
-    <Title>{{ t('pages.privacy.title') }}</Title>
+    <Title>{{ t("pages.privacy.title") }}</Title>
   </Head>
   <MarkdownContent page="privacy" />
 </template>

@@ -2,7 +2,7 @@
 import { NuxtError } from "nuxt/app";
 
 const props = defineProps<{
-  error: NuxtError
+  error: NuxtError;
 }>();
 
 let i18n: any;

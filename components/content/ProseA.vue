@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
-  href: string
-  target?: "_blank" | "_self" | "_parent" | "_top"
+  href: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
 }>();
 
 const isExternal = computed(() => {

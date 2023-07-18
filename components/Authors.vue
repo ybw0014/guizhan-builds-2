@@ -2,7 +2,7 @@
 import { Project } from "guizhan-builds-2-data";
 
 const props = defineProps<{
-  project: Project
+  project: Project;
 }>();
 
 const authors = await useProjectAuthors(props.project);

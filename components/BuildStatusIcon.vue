@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  success: boolean
+  success: boolean;
 }>();
 </script>
 

@@ -7,8 +7,8 @@ import { RouteLocationRaw } from "vue-router";
 const router = useRouter();
 
 const props = defineProps<{
-  to?: RouteLocationRaw
-  active?: boolean
+  to?: RouteLocationRaw;
+  active?: boolean;
 }>();
 
 function navigate() {
@@ -18,7 +18,6 @@ function navigate() {
     router.push(props.to as RouteLocationRaw);
   }
 }
-
 </script>
 
 <template>

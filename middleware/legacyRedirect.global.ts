@@ -7,15 +7,18 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     if (path.length < 5) {
       throw createError({ statusCode: 404, message: "Not Found" });
     }
-    const [ f, author, repo, branch, ...rest ] = path;
+    const [f, author, repo, branch, ...rest] = path;
     const project = await useProject(author, repo, branch);
     if (!project.value) {
       throw createError({ statusCode: 404, message: "Not Found" });
     }
-    navigateTo(new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, "https://builds-r2.gzassets.net/").toString(), {
-      redirectCode: 302,
-      external: true
-    });
+    navigateTo(
+      new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, "https://builds-r2.gzassets.net/").toString(),
+      {
+        redirectCode: 302,
+        external: true
+      }
+    );
   } else if (path[path.length - 1] === "badge.svg") {
     navigateTo(new URL(to.fullPath, "https://builds-r2.gzassets.net/").toString(), {
       redirectCode: 302,

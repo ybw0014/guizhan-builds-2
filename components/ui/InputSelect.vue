@@ -6,13 +6,13 @@ const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
-    disabled?: boolean
-    label?: string
-    modelValue?: string | null
-    values: Option[] | Record<string, any> | string[] | object[]
-    itemValue?: string
-    itemText?: string
-    i18nText?: boolean
+    disabled?: boolean;
+    label?: string;
+    modelValue?: string | null;
+    values: Option[] | Record<string, any> | string[] | object[];
+    itemValue?: string;
+    itemText?: string;
+    i18nText?: boolean;
   }>(),
   {
     label: "",
@@ -24,7 +24,7 @@ const props = withDefaults(
 );
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value?: string | null): void
+  (e: "update:modelValue", value?: string | null): void;
 }>();
 const value = computed({
   get: () => props.modelValue,

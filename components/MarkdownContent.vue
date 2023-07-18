@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  page: string
+  page: string;
 }>();
 const { locale } = useI18n();
 const { data } = await useAsyncData("home", () => queryContent(`/${locale.value}/${props.page}`).findOne());

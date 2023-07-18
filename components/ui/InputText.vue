@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import InputWrapper from "~/components/ui/InputWrapper.vue";
 const props = defineProps<{
-  disabled?: boolean
-  label?: string
-  modelValue?: string | null
+  disabled?: boolean;
+  label?: string;
+  modelValue?: string | null;
 }>();
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value?: string | null): void
+  (e: "update:modelValue", value?: string | null): void;
 }>();
 const value = computed({
   get: () => props.modelValue,

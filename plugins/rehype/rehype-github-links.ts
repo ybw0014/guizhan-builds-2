@@ -4,20 +4,19 @@ import { visit } from "unist-util-visit";
 import _ from "lodash";
 
 export interface Options {
-  repo: string,
-  branch: string,
+  repo: string;
+  branch: string;
 }
 
 interface LinkNode {
-  type: "element"
-  tagName: string
+  type: "element";
+  tagName: string;
   properties: {
-    [attr: string]: string
-  }
+    [attr: string]: string;
+  };
 }
 
-const defaultOptions: Partial<Options> = {
-};
+const defaultOptions: Partial<Options> = {};
 
 const plugin: Plugin<[Options?], Root> = (options?: Partial<Options>) => {
   const finalOptions = _.defaults(options, defaultOptions);

@@ -11,7 +11,7 @@ const route = useRoute();
 const settingsStore = useSettingsStore();
 
 const props = defineProps<{
-  project: Project
+  project: Project;
 }>();
 
 const name = ref(props.project?.repository || "");
@@ -74,7 +74,8 @@ onChecksumFileChange((files: FileList | null) => {
 });
 
 function validateChecksum(file: File) {
-  if (file.size > 64 * 1024 * 1024) { // 64MB
+  if (file.size > 64 * 1024 * 1024) {
+    // 64MB
     return;
   }
 
@@ -95,37 +96,33 @@ definePageMeta({
 
 <template>
   <Head>
-    <Title>{{ t('pages.build.title', { name, branch, build: buildId }) }}</Title>
+    <Title>{{ t("pages.build.title", { name, branch, build: buildId }) }}</Title>
   </Head>
   <div v-if="build" class="flex flex-col md:flex-row gap-4">
     <div class="flex flex-col gap-2 grow">
       <div class="flex grow-0">
         <div class="flex flex-col gap-2">
           <div class="text-3xl">
-            {{ t('pages.build.build', { name, branch, build: buildId }) }}
+            {{ t("pages.build.build", { name, branch, build: buildId }) }}
             <BuildStatusIcon :success="build.success" />
           </div>
           <div class="text-md text-gray-600 dark:text-gray-400">
-            {{ t('pages.build.buildAt', { time: $dayjs(build.buildTimestamp).format('lll') }) }}
-            <a :href="getBuildRes(`Build-${buildId}.log`)" class="a-link" target="_blank">{{ t('pages.build.logs') }}</a>
+            {{ t("pages.build.buildAt", { time: $dayjs(build.buildTimestamp).format("lll") }) }}
+            <a :href="getBuildRes(`Build-${buildId}.log`)" class="a-link" target="_blank">{{ t("pages.build.logs") }}</a>
           </div>
         </div>
         <div class="grow"></div>
         <div class="flex flex-col justify-center">
           <button class="button primary" :disabled="!build.success" @click="handleDownload">
             <Icon name="mdi:download-outline" class="text-xl" />
-            {{ t('pages.build.download') }}
+            {{ t("pages.build.download") }}
           </button>
         </div>
       </div>
       <div class="card bg-default flex-col items-center">
         <span class="text-gray-400">
-          {{ t('pages.build.commitAt', { author: build.author, time: $dayjs(build.timestamp).format('lll') }) }}
-          (<a
-            :href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`"
-            class="a-link"
-            target="_blank"
-          >
+          {{ t("pages.build.commitAt", { author: build.author, time: $dayjs(build.timestamp).format("lll") }) }}
+          (<a :href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`" class="a-link" target="_blank">
             {{ build.commit.slice(0, 7) }} </a
           >):
         </span>
@@ -135,20 +132,15 @@ definePageMeta({
     <div class="flex flex-col basis-80 shrink-0 gap-4">
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t('pages.project.requirements') }}
+          {{ t("pages.project.requirements") }}
         </h3>
         <div class="flex">
-          <ProjectRequirements
-            :requirements="project.displayOptions?.requirements"
-            :vertical="true"
-            size="xl"
-            :before="buildId"
-          />
+          <ProjectRequirements :requirements="project.displayOptions?.requirements" :vertical="true" size="xl" :before="buildId" />
         </div>
       </div>
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t('pages.build.checksum.title') }}
+          {{ t("pages.build.checksum.title") }}
         </h3>
         <div class="flex break-words">
           <div class="w-full">
@@ -156,7 +148,10 @@ definePageMeta({
           </div>
         </div>
         <Disclosure>
-          <DisclosureButton v-slot="{ open }" class="flex w-full justify-between rounded-lg bg-blue-100 px-4 py-2 text-left text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+          <DisclosureButton
+            v-slot="{ open }"
+            class="flex w-full justify-between rounded-lg bg-blue-100 px-4 py-2 text-left text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75"
+          >
             {{ t("pages.build.checksum.check") }}
             <Icon :name="open ? 'icon-park:up' : 'icon-park:down'" class="h-5 w-5 text-blue-500" />
           </DisclosureButton>
@@ -183,24 +178,24 @@ definePageMeta({
 
   <CustomModal ref="downloadModal">
     <template #title>
-      {{ t('pages.build.warning.title') }}
+      {{ t("pages.build.warning.title") }}
     </template>
     <template #content>
-      {{ t('pages.build.warning.content') }}
+      {{ t("pages.build.warning.content") }}
     </template>
     <template #footer>
       <div class="flex flex-col gap-2">
         <div class="flex flex-col">
-          <NuxtLink :to="{ name: 'terms' }" class="a-link" target="_blank">{{ t('pages.terms.title') }}</NuxtLink>
-          <NuxtLink :to="{ name: 'privacy' }" class="a-link" target="_blank">{{ t('pages.privacy.title') }}</NuxtLink>
+          <NuxtLink :to="{ name: 'terms' }" class="a-link" target="_blank">{{ t("pages.terms.title") }}</NuxtLink>
+          <NuxtLink :to="{ name: 'privacy' }" class="a-link" target="_blank">{{ t("pages.privacy.title") }}</NuxtLink>
         </div>
         <FormCheckBox v-model="downloadConfirm" :label="t('pages.build.warning.confirmForever')" />
         <div class="flex gap-2 flex-wrap mt-4">
           <button type="button" class="button primary" @click="handleDownloadConfirm">
-            {{ t('pages.build.warning.confirm') }}
+            {{ t("pages.build.warning.confirm") }}
           </button>
           <button type="button" class="button secondary" @click="handleDownloadCancel">
-            {{ t('pages.build.warning.cancel') }}
+            {{ t("pages.build.warning.cancel") }}
           </button>
         </div>
       </div>

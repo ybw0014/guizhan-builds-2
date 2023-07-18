@@ -82,11 +82,11 @@ function filterList() {
 
 <template>
   <Head>
-    <Title>{{ t('pages.projects.title') }}</Title>
+    <Title>{{ t("pages.projects.title") }}</Title>
   </Head>
   <div class="flex flex-col gap-4 items-center">
-    <h1 ref="pageResetAnchor" class="text-3xl font-bold mt-4">{{ t('pages.projects.title') }}</h1>
-    <h2 class="text-xl">{{ t('pages.projects.subTitle') }}</h2>
+    <h1 ref="pageResetAnchor" class="text-3xl font-bold mt-4">{{ t("pages.projects.title") }}</h1>
+    <h2 class="text-xl">{{ t("pages.projects.subTitle") }}</h2>
     <!-- 搜索框 -->
     <div class="relative rounded-md flex shadow-md w-full max-w-screen-md">
       <!-- 输入 -->

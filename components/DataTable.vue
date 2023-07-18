@@ -2,10 +2,10 @@
 import { Header } from "~/types/dataTable";
 const props = withDefaults(
   defineProps<{
-    headers: Header[]
-    items?: T[]
-    sizePerPage?: number
-    initSort?: string
+    headers: Header[];
+    items?: T[];
+    sizePerPage?: number;
+    initSort?: string;
   }>(),
   {
     initSort: "",

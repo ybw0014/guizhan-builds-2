@@ -1,9 +1,9 @@
 <script setup lang="ts">
 defineProps<{
-  disabled?: boolean
-  label?: string
-  maxlength?: number
-  value: any
+  disabled?: boolean;
+  label?: string;
+  maxlength?: number;
+  value: any;
 }>();
 </script>
 

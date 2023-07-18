@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const props = defineProps<{
-  modelValue?: boolean
-  label?: string
-  disabled?: boolean
+  modelValue?: boolean;
+  label?: string;
+  disabled?: boolean;
 }>();
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value: boolean | boolean[] | string[] | [] | undefined): void
+  (e: "update:modelValue", value: boolean | boolean[] | string[] | [] | undefined): void;
 }>();
 const value = computed({
   get: () => props.modelValue,
@@ -25,7 +25,7 @@ const value = computed({
 .form-checkbox {
   @apply flex items-center gap-2;
 
-  input[type='checkbox'] {
+  input[type="checkbox"] {
     @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600;
   }
 }

@@ -3,7 +3,7 @@ import { Project } from "guizhan-builds-2-data";
 const router = useRouter();
 
 const props = defineProps<{
-  project: Project
+  project: Project;
 }>();
 
 const name = ref(props.project.displayOptions?.name || props.project.repository);

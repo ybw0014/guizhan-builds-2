@@ -40,7 +40,7 @@ const navLinks = [
         <!-- 首页链接 -->
         <NuxtLink :to="{ name: 'index' }" class="brand">
           <img src="/images/brand.jpg" class="brand-image" />
-          {{ $t('title') }}
+          {{ $t("title") }}
         </NuxtLink>
         <!-- 导航 -->
         <div class="nav-links">

@@ -6,16 +6,16 @@ const sizePerPage = 6;
 
 const props = withDefaults(
   defineProps<{
-    project: Project
-    builds: BuildInfo[]
-    page?: number
+    project: Project;
+    builds: BuildInfo[];
+    page?: number;
   }>(),
   {
     page: 1
   }
 );
 const emit = defineEmits<{
-  (e: "update:page", page: number): void
+  (e: "update:page", page: number): void;
 }>();
 
 const slicedBuilds = ref<BuildInfo[] | null>();
@@ -69,6 +69,6 @@ function updatePage(newPage: number) {
     <PaginationButtons v-show="slicedBuilds" :page="page" :pages="totalPages" @update:page="updatePage" />
   </div>
   <div v-else>
-    {{ t('components.projectBuilds.noResult') }}
+    {{ t("components.projectBuilds.noResult") }}
   </div>
 </template>

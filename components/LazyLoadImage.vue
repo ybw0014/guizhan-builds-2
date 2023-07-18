@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    source: string | URL
-    brokenImage?: string
+    source: string | URL;
+    brokenImage?: string;
   }>(),
   {
     source: "",

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const props = defineProps<{
-  page: number
-  pages: number
+  page: number;
+  pages: number;
 }>();
 const emit = defineEmits<{
-  (e: "update:page", page: number): void
+  (e: "update:page", page: number): void;
 }>();
 const page = computed({
   get: () => props.page,

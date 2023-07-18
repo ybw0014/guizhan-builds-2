@@ -4,15 +4,15 @@ import { visit } from "unist-util-visit";
 import _ from "lodash";
 
 export interface Options {
-  prefix?: string[]
+  prefix?: string[];
 }
 
 interface LinkNode {
-  type: "element"
-  tagName: string
+  type: "element";
+  tagName: string;
   properties: {
-    [attr: string]: string
-  }
+    [attr: string]: string;
+  };
 }
 
 const defaultOptions: Partial<Options> = {

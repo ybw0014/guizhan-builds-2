@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  username: string
+  username: string;
 }>();
 
 const imgSource = computed(() => `https://github.com/${props.username}.png`);

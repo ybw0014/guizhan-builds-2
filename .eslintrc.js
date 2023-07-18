@@ -5,7 +5,7 @@ module.exports = {
   },
   parser: "vue-eslint-parser",
   parserOptions: {
-    parser: "@typescript-eslint/parser",
+    parser: "@typescript-eslint/parser"
   },
   extends: [
     "@nuxtjs/eslint-config-typescript",
@@ -15,7 +15,7 @@ module.exports = {
     "plugin:import/typescript",
     "@vue/typescript/recommended",
     "plugin:eslint-comments/recommended",
-    "prettier",
+    "prettier"
   ],
   rules: {
     indent: ["error", 2, { SwitchCase: 1 }],
@@ -28,6 +28,6 @@ module.exports = {
     "vue/multi-word-component-names": ["off"],
     "vue/no-multiple-template-root": ["off"],
     "@typescript-eslint/no-explicit-any": ["off"],
-    "import/no-unresolved": ["off"],
+    "import/no-unresolved": ["off"]
   }
 };

@@ -3,8 +3,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionRoot, TransitionChild } fro
 
 const props = withDefaults(
   defineProps<{
-    open?: boolean,
-    bgClose?: boolean
+    open?: boolean;
+    bgClose?: boolean;
   }>(),
   {
     open: false,
