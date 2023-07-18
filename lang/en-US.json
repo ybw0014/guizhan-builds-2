@@ -164,6 +164,7 @@
         "query": "Validate",
         "download": "Download Dev. Build",
         "lastUpdate": "Last updated on {time}",
+        "noUpdate": "No updates since last download.",
         "error": {
           "malformedOrderId": "Invalid order number format",
           "invalidOrderId": "Invalid order",

@@ -4,11 +4,14 @@ export interface SubResponse {
   data: any
 }
 
+export interface OrderValidationData {
+  expire_time: number
+  expired: boolean
+  uuid: string | null
+}
+
 export interface OrderValidationResponse extends Omit<SubResponse, "data"> {
-  data: {
-    expired: boolean
-    uuid: string | null
-  }
+  data: OrderValidationData
 }
 
 export interface DownloadResponse extends Omit<SubResponse, "data"> {

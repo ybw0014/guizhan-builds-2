@@ -3,25 +3,28 @@ import { defineStore } from "pinia";
 export const useCacheStore = defineStore("cache", {
   state: () => {
     return {
-      confirmDownload: false,
-      trustedHosts: [
-        "github.com",
-        "ybw0014.dev",
-        "discord.gg",
-        "builds.guizhanss.net",
-        "builds.guizhanss.cn",
-        "builds2.guizhanss.net",
-        "builds.guizhanss.com",
-        "builds2.guizhanss.cn"
-      ]
+      orderNum: "",
+      orderExpireAt: -1,
+      uuid: "",
+      uuidExpireAt: -1,
+      lastUpdateAt: -1
     };
   },
   actions: {
-    setConfirmDownload(confirmDownload: boolean) {
-      this.confirmDownload = confirmDownload;
+    setOrderNum(orderNum: string) {
+      this.orderNum = orderNum;
     },
-    addTrustedHost(host: string) {
-      this.trustedHosts.push(host);
+    setOrderExpireAt(orderExpireAt: number) {
+      this.orderExpireAt = orderExpireAt;
+    },
+    setUuid(uuid: string) {
+      this.uuid = uuid;
+    },
+    setUuidExpireAt(uuidExpireAt: number) {
+      this.uuidExpireAt = uuidExpireAt;
+    },
+    setLastUpdateAt(lastUpdateAt: number) {
+      this.lastUpdateAt = lastUpdateAt;
     }
   },
   persist: {
