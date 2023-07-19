@@ -30,8 +30,8 @@ dependencies:
     specifier: ^4.3.4
     version: 4.3.4
   guizhan-builds-2-data:
-    specifier: ^0.3.0
-    version: 0.3.0
+    specifier: ^0.4.0
+    version: 0.4.0
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -5763,8 +5763,8 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /guizhan-builds-2-data@0.3.0:
-    resolution: {integrity: sha512-WvslrAc5FROy3OcUl5DIElsXHcUWiO0+9wQIlrjmy5anyjlvkYR75ql7Bs8b0zxZz9lKYLBdpHr7IhbJReTvtg==}
+  /guizhan-builds-2-data@0.4.0:
+    resolution: {integrity: sha512-ms7OUtA+9oGMPC6dmF3nDnCcnpwLBZA2CCoPJ6Nw4c3EgtXbfPwnkmC0cGFtcG1vcEYARdXrxUnAYEZsDXU1sg==}
     engines: {node: '>=10'}
     dev: false
 
