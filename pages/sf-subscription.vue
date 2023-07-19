@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import InputText from "~/components/ui/InputText.vue";
+import FormCheckbox from "~/components/ui/FormCheckbox.vue";
 import { useCacheStore } from "~/stores/useCacheStore";
 
 const { $dayjsR } = useNuxtApp();
@@ -37,10 +38,11 @@ const subscriptions = [
 
 const devModal = ref();
 const queryBtn = ref();
-const orderId = ref<string>("");
+const orderId = ref<string>(cacheStore.orderNum);
 const devCheckErrMsg = ref<string>("");
 const devDownloadLink = ref<string>("");
 const lastUpdate = ref<number | null>();
+const saveOrder = ref(false);
 const noUpdate = ref(false);
 
 function getFree() {
@@ -108,6 +110,10 @@ async function checkOrder() {
 
   queryBtn.value.disabled = true;
   devCheckErrMsg.value = "";
+
+  if (saveOrder.value) {
+    cacheStore.setOrderNum(orderId.value);
+  }
 
   // 查询订单
   const orderData = await useSubValidation(orderId.value);
@@ -216,6 +222,7 @@ async function devDownload() {
           <div v-if="!devDownloadLink" class="flex flex-col gap-4">
             <InputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
             <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
+            <FormCheckbox v-model="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
             <button ref="queryBtn" type="button" class="button primary" @click="checkOrder">
               <Icon name="ic:round-search" class="w-6 h-6" />
               {{ t("pages.sfSubscription.devCheck.query") }}

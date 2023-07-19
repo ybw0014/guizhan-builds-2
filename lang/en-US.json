@@ -148,9 +148,9 @@
         "annually": "/ Year"
       },
       "priviledge": {
-        "canaryBuilds": "Access public Canary builds",
-        "devBuilds": "Access development builds",
-        "issuesSupport": "Isuues support",
+        "canaryBuilds": "Access Beta builds",
+        "devBuilds": "Access Insider builds",
+        "issuesSupport": "Issues support",
         "techSupport": "Technical Support",
         "priorTechSupport": "Premium Technical Support",
         "newFeatures": "New Features"
@@ -158,11 +158,12 @@
       "footnotes": "The prices listed on this page are just for reference, the actual price in Afdian shall prevail.",
       "devCheck": {
         "title": "Get the latest development build",
-        "description": "Provide an Afdian order number, you will have access to the latest development build after validation.",
+        "description": "Provide an Afdian order number, you will have access to the latest Insider build after validation.",
         "navigateToOrders": "Find my Afdian Orders",
         "label": "Afdian Order No.",
+        "saveOrder": "Save order number in the browser for subsequent queries",
         "query": "Validate",
-        "download": "Download Dev. Build",
+        "download": "Download Insider Build",
         "lastUpdate": "Last updated on {time}",
         "noUpdate": "No updates since last download.",
         "error": {

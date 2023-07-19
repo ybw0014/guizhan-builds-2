@@ -134,7 +134,7 @@
       "description": "提前获取中文版粘液科技的最新内容与问题修复，甚至是优先技术支持！",
       "download": "立即获取",
       "subscribe": "订阅",
-      "subscribeAlready": "已经订阅？在此下载最新开发版",
+      "subscribeAlready": "已经订阅？在此下载最新内测版",
       "subscription": {
         "free": "免费",
         "monthly": "月度",
@@ -148,8 +148,8 @@
         "annually": "/ 年"
       },
       "priviledge": {
-        "canaryBuilds": "获取公开版构建",
-        "devBuilds": "获取开发版构建",
+        "canaryBuilds": "获取公测版(Beta)构建",
+        "devBuilds": "获取内测版(Insider)构建",
         "issuesSupport": "问题追踪器支持",
         "techSupport": "技术支持",
         "priorTechSupport": "优先技术支持",
@@ -157,12 +157,13 @@
       },
       "footnotes": "订阅价格仅供参考，以爱发电内实际价格为准。",
       "devCheck": {
-        "title": "获取最新的开发版构建",
-        "description": "提供爱发电订单号，经过验证后可下载最新的开发版构建。",
+        "title": "获取最新的内测版构建",
+        "description": "提供爱发电订单号，经过验证后可下载最新的内测版构建。",
         "navigateToOrders": "查找爱发电订单",
         "label": "爱发电订单号",
+        "saveOrder": "保存订单号于浏览器中，以方便后续查询",
         "query": "验证订单",
-        "download": "下载开发版构建",
+        "download": "下载内测版构建",
         "lastUpdate": "最后更新于 {time}",
         "noUpdate": "距离上次下载暂无更新",
         "error": {
