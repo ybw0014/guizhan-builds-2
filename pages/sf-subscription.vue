@@ -20,19 +20,19 @@ const subscriptions = [
     type: "monthly",
     icon: "ic:baseline-brightness-2",
     price: 6,
-    privileges: ["devBuilds", "techSupport", "newFeatures"]
+    privileges: ["devBuilds", "newFeatures"]
   },
   {
     type: "seasonly",
     icon: "ic:baseline-brightness-4",
     price: 15,
-    privileges: ["devBuilds", "techSupport", "newFeatures"]
+    privileges: ["devBuilds", "newFeatures"]
   },
   {
     type: "annually",
     icon: "bx:brightness",
     price: 80,
-    privileges: ["devBuilds", "priorTechSupport", "newFeatures"]
+    privileges: ["devBuilds", "techSupport", "newFeatures"]
   }
 ];
 
