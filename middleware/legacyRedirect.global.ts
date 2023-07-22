@@ -1,4 +1,18 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
+  // 获取 host
+  const nuxtApp = useNuxtApp();
+  let host = "";
+  if (process.server) {
+    host = nuxtApp.ssrContext?.event.node.req.headers.host as string;
+  } else {
+    host = window.location.host;
+  }
+  // 设置 r2 host
+  let r2Host = "builds-r2.gzassets.net";
+  if (host === "builds.guizhanss.cn") {
+    r2Host = "builds-r2.gzassets.cn";
+  }
+
   if (!to.path.slice(1).includes("/")) {
     return;
   }
@@ -13,14 +27,14 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       throw createError({ statusCode: 404, message: "Not Found" });
     }
     navigateTo(
-      new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, "https://builds-r2.gzassets.net/").toString(),
+      new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, `https://${r2Host}/`).toString(),
       {
         redirectCode: 302,
         external: true
       }
     );
   } else if (path[path.length - 1] === "badge.svg") {
-    navigateTo(new URL(to.fullPath, "https://builds-r2.gzassets.net/").toString(), {
+    navigateTo(new URL(to.fullPath, `https://${r2Host}/`).toString(), {
       redirectCode: 302,
       external: true
     });
