@@ -141,9 +141,8 @@ function filterList() {
   @apply rounded-l-md md:rounded-md p-4 basis-full min-w-0 border-none dark:bg-gray-700;
 }
 .query-sort {
-  @apply bg-blue-500 text-white rounded-r-md px-2;
+  @apply bg-blue-500 text-white rounded-r-md rounded-l-none px-2;
 }
-
 .sort-type {
   @apply px-4 py-2 rounded-md;
 }
