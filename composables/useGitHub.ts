@@ -24,10 +24,10 @@ export async function useGitHubReadme(project: Project): Promise<Ref<string | nu
 
   // 从 jsdelivr 获取
   const { data: data2 } = await useFetch(`https://cdn.jsdelivr.net/gh/${project.author}/${project.repository}@${project.branch}/README.md`);
+  useProjectReadmeLog(`fetched from cdn.jsdelivr.net, ${data2.value !== null ? "success" : "failed"}`);
   if (data2.value) {
     return ref(data2.value as string);
   }
-  useProjectReadmeLog(`fetched from cdn.jsdelivr.net, ${data2.value !== null ? "success" : "failed"}`);
 
   return ref(null);
 }
