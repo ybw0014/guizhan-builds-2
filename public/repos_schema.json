@@ -51,6 +51,9 @@
             "keywords": {
               "type": "array"
             },
+            "wiki": {
+              "type": "string"
+            },
             "requirements": {
               "type": "object",
               "additionalProperties": {
