@@ -3,17 +3,32 @@
 @import "markdown";
 @import "buttons";
 
+// https://gist.github.com/spemer/a0e218bbb45433bd611e68446523a00b
+body::-webkit-scrollbar {
+  @apply bg-[--color-bg-body] dark:bg-[--color-bg-body-dark] w-2;
+}
+body::-webkit-scrollbar-track {
+  @apply bg-[--color-bg-body] dark:bg-[--color-bg-body-dark];
+}
+body::-webkit-scrollbar-thumb {
+  @apply bg-[#babac0] dark:bg-[#919396] rounded-2xl;
+  @apply border-4 border-[--color-bg-body] dark:border-[--color-bg-body-dark];
+}
+body::-webkit-scrollbar-button {
+  @apply hidden;
+}
+
 body {
   @apply text-base font-sans;
-  @apply bg-[#f4f4f5] text-[#262626];
-  @apply dark:bg-[#18181b] dark:text-[#e0e6f0];
+  @apply bg-[--color-bg-body] text-[--color-text];
+  @apply dark:bg-[--color-bg-body-dark] dark:text-[--color-text-dark];
 }
 
 .bg-default {
-  @apply bg-[#fafafa] dark:bg-[#27272a];
+  @apply bg-[--color-bg-default] dark:bg-[--color-bg-default-dark];
 
   &.hoverable {
-    @apply hover:bg-[#e2e8f0] dark:hover:bg-[#334155];
+    @apply hover:bg-[--color-bg-hover] dark:hover:bg-[--color-bg-hover-dark];
   }
 }
 
