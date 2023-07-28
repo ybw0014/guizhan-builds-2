@@ -12,5 +12,5 @@ max_line_length = 130
 max_line_length = off
 trim_trailing_whitespace = false
 
-[repos.json]
+[*.json]
 indent_style = tab

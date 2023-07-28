@@ -1,178 +1,178 @@
 {
-  "title": "Guizhan Builds",
-  "components": {
-    "header": {
-      "nav": {
-        "projects": "Projects",
-        "authors": "Authors",
-        "sfSubscription": " "
-      },
-      "theme-switcher": {
-        "tooltip": "Switch to {next} theme (current theme is {current})",
-        "system": "System",
-        "light": "Light",
-        "dark": "Dark"
-      }
-    },
-    "footer": {
-      "github": "GitHub",
-      "terms": "Terms and Conditions",
-      "privacy": "Privacy Policy"
-    },
-    "pagination": {
-      "first": "First Page",
-      "prev": "Previous Page",
-      "page": "Page {page}",
-      "next": "Next Page",
-      "last": "Last Page"
-    },
-    "projectList": {
-      "noResult": "No results found."
-    },
-    "projectRequirements": {
-      "title": "Min. Req.",
-      "required": "Required"
-    },
-    "projectHeader": {
-      "download": "Download Latest Build"
-    },
-    "projectNav": {
-      "introduction": "Introduction",
-      "builds": "Builds",
-      "issues": "Issues",
-      "source": "Source"
-    },
-    "projectBuilds": {
-      "noResult": "No results found."
-    },
-    "projectBuildCard": {
-      "build": "Build #{build}"
-    }
-  },
-  "sortTypes": {
-    "name": "Name",
-    "newest": "Recently Added"
-  },
-  "error": {
-    "401": "Unauthorized",
-    "403": "Forbidden",
-    "404": "Not Found",
-    "unknown": "Unknown Error"
-  },
-  "pages": {
-    "external": {
-      "title": "External Link Warning",
-      "content": "You are about to visit an external link. Guizhan Builds is not responsible for the content of external sites.",
-      "trust": "Trust this domain and continue",
-      "continue": "Continue once",
-      "cancel": "Cancel",
-      "redirecting": "Redirecting..."
-    },
-    "projects": {
-      "title": "Projects",
-      "subTitle": "Search projects and download build artifacts.",
-      "query": "Search in {0} projects..."
-    },
-    "authors": {
-      "title": "Authors",
-      "username": "Username",
-      "name": "Author",
-      "projects": "Number of Projects"
-    },
-    "terms": {
-      "title": "Terms and Conditions"
-    },
-    "privacy": {
-      "title": "Privacy Policy"
-    },
-    "author": {
-      "title": "{author}",
-      "numProjects": "{num} Project(s)",
-      "searchName": "Search in projects...",
-      "sortBy": "Sort by"
-    },
-    "repo": {
-      "title": "{repo}"
-    },
-    "project": {
-      "title": "{name} ({branch})",
-      "readmeWarning": "The following document is loaded from README.md on GitHub. It may contain a download link to current page, please click on the download button on the top right corner to download.",
-      "readmeFail": "Failed to load README.md.",
-      "buildStatus": "Build Status",
-      "information": "Information",
-      "requirements": "Min. Requirements",
-      "authors": "Authors"
-    },
-    "builds": {
-      "title": "Builds - {name} ({branch})",
-      "notFound": "No available builds."
-    },
-    "build": {
-      "title": "Build #{build} - {name} ({branch})",
-      "build": "Build #{build}",
-      "buildAt": "Built at {time}",
-      "logs": "Logs",
-      "download": "Download",
-      "commitAt": "{author} committed at {time}",
-      "checksum": {
-        "title": "Checksum",
-        "sha1": "SHA1: {checksum}",
-        "check": "Validate",
-        "click": "Click to select file",
-        "drag": "or drag and drop file here"
-      },
-      "warning": {
-        "title": "Warning",
-        "content": "You are downloading file from Guizhan Builds. By continuing, you agree to our Terms and Conditions and Privacy Policy.",
-        "confirm": "Confirm",
-        "confirmForever": "Confirm, and never show this again",
-        "cancel": "Cancel"
-      }
-    },
-    "sfSubscription": {
-      "title": "Slimefun Subscription",
-      "description": "Get the latest development builds of Slimefun Chinese version, even premium technical support!",
-      "download": "Download Now",
-      "subscribe": "Subscribe",
-      "subscribeAlready": "Already subscribed? Download latest DEV build here!",
-      "subscription": {
-        "free": "Free",
-        "monthly": "Monthly",
-        "seasonly": "Seasonly",
-        "annually": "Annually"
-      },
-      "price": {
-        "free": "",
-        "monthly": "/ Month",
-        "seasonly": "/ Season",
-        "annually": "/ Year"
-      },
-      "priviledge": {
-        "canaryBuilds": "Access Beta builds",
-        "devBuilds": "Access Insider builds",
-        "issuesSupport": "Issues support",
-        "techSupport": "Technical Support",
-        "priorTechSupport": "Premium Technical Support",
-        "newFeatures": "New Features"
-      },
-      "footnotes": "The prices listed on this page are just for reference, the actual price in Afdian shall prevail.",
-      "devCheck": {
-        "title": "Get the latest development build",
-        "description": "Provide an Afdian order number, you will have access to the latest Insider build after validation.",
-        "navigateToOrders": "Find my Afdian Orders",
-        "label": "Afdian Order No.",
-        "saveOrder": "Save order number in the browser for subsequent queries",
-        "query": "Validate",
-        "download": "Download Insider Build",
-        "lastUpdate": "Last updated on {time}",
-        "noUpdate": "No updates since last download.",
-        "error": {
-          "malformedOrderId": "Invalid order number format",
-          "invalidOrderId": "Invalid order",
-          "cannotGetLink": "Cannot request download link"
-        },
-        "close": "Close"
-      }
-    }
-  }
+	"title": "Guizhan Builds",
+	"components": {
+		"header": {
+			"nav": {
+				"projects": "Projects",
+				"authors": "Authors",
+				"sfSubscription": " "
+			},
+			"theme-switcher": {
+				"tooltip": "Switch to {next} theme (current theme is {current})",
+				"system": "System",
+				"light": "Light",
+				"dark": "Dark"
+			}
+		},
+		"footer": {
+			"github": "GitHub",
+			"terms": "Terms and Conditions",
+			"privacy": "Privacy Policy"
+		},
+		"pagination": {
+			"first": "First Page",
+			"prev": "Previous Page",
+			"page": "Page {page}",
+			"next": "Next Page",
+			"last": "Last Page"
+		},
+		"projectList": {
+			"noResult": "No results found."
+		},
+		"projectRequirements": {
+			"title": "Min. Req.",
+			"required": "Required"
+		},
+		"projectHeader": {
+			"download": "Download Latest Build"
+		},
+		"projectNav": {
+			"introduction": "Introduction",
+			"builds": "Builds",
+			"issues": "Issues",
+			"source": "Source"
+		},
+		"projectBuilds": {
+			"noResult": "No results found."
+		},
+		"projectBuildCard": {
+			"build": "Build #{build}"
+		}
+	},
+	"sortTypes": {
+		"name": "Name",
+		"newest": "Recently Added"
+	},
+	"error": {
+		"401": "Unauthorized",
+		"403": "Forbidden",
+		"404": "Not Found",
+		"unknown": "Unknown Error"
+	},
+	"pages": {
+		"external": {
+			"title": "External Link Warning",
+			"content": "You are about to visit an external link. Guizhan Builds is not responsible for the content of external sites.",
+			"trust": "Trust this domain and continue",
+			"continue": "Continue once",
+			"cancel": "Cancel",
+			"redirecting": "Redirecting..."
+		},
+		"projects": {
+			"title": "Projects",
+			"subTitle": "Search projects and download build artifacts.",
+			"query": "Search in {0} projects..."
+		},
+		"authors": {
+			"title": "Authors",
+			"username": "Username",
+			"name": "Author",
+			"projects": "Number of Projects"
+		},
+		"terms": {
+			"title": "Terms and Conditions"
+		},
+		"privacy": {
+			"title": "Privacy Policy"
+		},
+		"author": {
+			"title": "{author}",
+			"numProjects": "{num} Project(s)",
+			"searchName": "Search in projects...",
+			"sortBy": "Sort by"
+		},
+		"repo": {
+			"title": "{repo}"
+		},
+		"project": {
+			"title": "{name} ({branch})",
+			"readmeWarning": "The following document is loaded from README.md on GitHub. It may contain a download link to current page, please click on the download button on the top right corner to download.",
+			"readmeFail": "Failed to load README.md.",
+			"buildStatus": "Build Status",
+			"information": "Information",
+			"requirements": "Min. Requirements",
+			"authors": "Authors"
+		},
+		"builds": {
+			"title": "Builds - {name} ({branch})",
+			"notFound": "No available builds."
+		},
+		"build": {
+			"title": "Build #{build} - {name} ({branch})",
+			"build": "Build #{build}",
+			"buildAt": "Built at {time}",
+			"logs": "Logs",
+			"download": "Download",
+			"commitAt": "{author} committed at {time}",
+			"checksum": {
+				"title": "Checksum",
+				"sha1": "SHA1: {checksum}",
+				"check": "Validate",
+				"click": "Click to select file",
+				"drag": "or drag and drop file here"
+			},
+			"warning": {
+				"title": "Warning",
+				"content": "You are downloading file from Guizhan Builds. By continuing, you agree to our Terms and Conditions and Privacy Policy.",
+				"confirm": "Confirm",
+				"confirmForever": "Confirm, and never show this again",
+				"cancel": "Cancel"
+			}
+		},
+		"sfSubscription": {
+			"title": "Slimefun Subscription",
+			"description": "Get the latest development builds of Slimefun Chinese version, even premium technical support!",
+			"download": "Download Now",
+			"subscribe": "Subscribe",
+			"subscribeAlready": "Already subscribed? Download latest DEV build here!",
+			"subscription": {
+				"free": "Free",
+				"monthly": "Monthly",
+				"seasonly": "Seasonly",
+				"annually": "Annually"
+			},
+			"price": {
+				"free": "",
+				"monthly": "/ Month",
+				"seasonly": "/ Season",
+				"annually": "/ Year"
+			},
+			"priviledge": {
+				"canaryBuilds": "Access Beta builds",
+				"devBuilds": "Access Insider builds",
+				"issuesSupport": "Issues support",
+				"techSupport": "Technical Support",
+				"priorTechSupport": "Premium Technical Support",
+				"newFeatures": "New Features"
+			},
+			"footnotes": "The prices listed on this page are just for reference, the actual price in Afdian shall prevail.",
+			"devCheck": {
+				"title": "Get the latest development build",
+				"description": "Provide an Afdian order number, you will have access to the latest Insider build after validation.",
+				"navigateToOrders": "Find my Afdian Orders",
+				"label": "Afdian Order No.",
+				"saveOrder": "Save order number in the browser for subsequent queries",
+				"query": "Validate",
+				"download": "Download Insider Build",
+				"lastUpdate": "Last updated on {time}",
+				"noUpdate": "No updates since last download.",
+				"error": {
+					"malformedOrderId": "Invalid order number format",
+					"invalidOrderId": "Invalid order",
+					"cannotGetLink": "Cannot request download link"
+				},
+				"close": "Close"
+			}
+		}
+	}
 }
