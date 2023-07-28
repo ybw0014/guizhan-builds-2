@@ -1995,5 +1995,23 @@
 				}
 			}
 		}
+	},
+	"SlimefunGuguProject/SlimeFrame:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimeFrame",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["粘液战甲"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.19"
+				}
+			}
+		}
 	}
 }
