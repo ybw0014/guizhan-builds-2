@@ -40,13 +40,21 @@ export default defineNuxtConfig({
     locales: [
       {
         code: "en",
+        iso: "en-US",
         name: "English",
         file: "en-US.json"
       },
       {
-        code: "zh",
+        code: "zh-Hans",
+        iso: "zh-CN",
         name: "简体中文",
         file: "zh-Hans.json"
+      },
+      {
+        code: "zh-Hant",
+        iso: "zh-TW",
+        name: "繁體中文",
+        file: "zh-Hant.json"
       }
     ],
     lazy: true,
@@ -57,9 +65,6 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: "i18n_lang",
       alwaysRedirect: true
-    },
-    onLanguageSwitched: () => {
-      refreshNuxtData();
     }
   },
   content: {
