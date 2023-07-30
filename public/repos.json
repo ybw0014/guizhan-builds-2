@@ -2014,7 +2014,7 @@
 			}
 		}
 	},
-		"buiawpkgew1/FN-FAL-s-Amplifications-zh:main": {
+	"buiawpkgew1/FN-FAL-s-Amplifications-zh:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "FN-FAL-s-Amplifications",
