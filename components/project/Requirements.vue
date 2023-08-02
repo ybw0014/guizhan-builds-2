@@ -63,7 +63,7 @@ const iconClass = computed(() => {
         <Icon name="mdi:language-java" :class="iconClass" title="Java" aria-label="Java" />
         <span v-if="text">Java</span>
       </span>
-      <span>{{ req.get("java") }}</span>
+      <span>{{ req.get("java") }}+</span>
     </div>
     <!-- minecraft -->
     <div v-if="req.has('minecraft')" v-tippy="'Minecraft'" :class="['requirement', requirementSize]">
@@ -71,7 +71,7 @@ const iconClass = computed(() => {
         <LazyLoadImage source="/images/minecraft.svg" :class="iconClass" title="Minecraft" aria-label="Minecraft" />
         <span v-if="text">Minecraft</span>
       </span>
-      <span>{{ req.get("minecraft") }}</span>
+      <span>{{ req.get("minecraft") }}+</span>
     </div>
     <!-- paper -->
     <div v-if="req.has('paper')" v-tippy="'Paper'" :class="['requirement', requirementSize]">
