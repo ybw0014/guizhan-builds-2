@@ -26,7 +26,7 @@ function handleCardClick() {
   <div class="card bg-default hoverable cursor-pointer border" @click="handleCardClick">
     <div class="flex gap-2">
       <!-- 左侧 logo -->
-      <div class="flex flex-col justify-center">
+      <div class="flex flex-col justify-center shrink-0">
         <ProjectLogo :project="props.project" class="w-12 h-12" />
       </div>
       <!-- 项目名称与作者 -->
