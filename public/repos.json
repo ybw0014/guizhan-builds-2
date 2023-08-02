@@ -2013,5 +2013,26 @@
 				}
 			}
 		}
+	},
+	"buiawpkgew1/FN-FAL-s-Amplifications-zh:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "FN-FAL-s-Amplifications",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"officialList": true,
+			"name": "FNAmplifications",
+			"authors": ["FN-FAL113"],
+			"keywords": ["FN科技"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
 	}
 }
