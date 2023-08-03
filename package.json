@@ -63,7 +63,7 @@
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.9",
     "debug": "^4.3.4",
-    "guizhan-builds-2-data": "^0.4.0",
+    "guizhan-builds-2-data": "^0.5.0",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
     "nuxt-cloudflare-analytics": "^1.0.8",
@@ -80,7 +80,6 @@
     "remark-heading-id": "^1.0.0",
     "remark-parse": "^10.0.2",
     "remark-rehype": "^10.1.0",
-    "unist-util-map": "^4.0.0",
     "vue-tippy": "^6.2.0"
   }
 }

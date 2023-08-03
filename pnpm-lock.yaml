@@ -30,8 +30,8 @@ dependencies:
     specifier: ^4.3.4
     version: 4.3.4
   guizhan-builds-2-data:
-    specifier: ^0.4.0
-    version: 0.4.0
+    specifier: ^0.5.0
+    version: 0.5.0
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -80,9 +80,6 @@ dependencies:
   remark-rehype:
     specifier: ^10.1.0
     version: 10.1.0
-  unist-util-map:
-    specifier: ^4.0.0
-    version: 4.0.0
   vue-tippy:
     specifier: ^6.2.0
     version: 6.2.0(vue@3.3.4)
@@ -1113,6 +1110,11 @@ packages:
 
   /@intlify/shared@9.3.0-beta.24:
     resolution: {integrity: sha512-AKxJ8s7eKIQWkNaf4wyyoLRwf4puCuQgjSChlDJm5JBEt6T8HGgnYTJLRXu6LD/JACn3Qwu6hM/XRX1c9yvjmQ==}
+    engines: {node: '>= 16'}
+    dev: true
+
+  /@intlify/shared@9.3.0-beta.25:
+    resolution: {integrity: sha512-Zg+ECV9RPdp227tCJOgvPb+S3i651nf4kKHsMojSyWCppVK/4NFuDrBG2lIQSQL6Iq5LKVr5MkezHCW2NBTQRg==}
     engines: {node: '>= 16'}
     dev: true
 
@@ -2374,6 +2376,7 @@ packages:
 
   /@types/unist@3.0.0:
     resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
+    dev: true
 
   /@types/web-bluetooth@0.0.17:
     resolution: {integrity: sha512-4p9vcSmxAayx72yn70joFoL44c9MO/0+iVEBIQXe3v2h2SiAsEIo/G5v6ObFWvNKRFjbrVadNf9LqEEZeQPzdA==}
@@ -5750,8 +5753,8 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /guizhan-builds-2-data@0.4.0:
-    resolution: {integrity: sha512-ms7OUtA+9oGMPC6dmF3nDnCcnpwLBZA2CCoPJ6Nw4c3EgtXbfPwnkmC0cGFtcG1vcEYARdXrxUnAYEZsDXU1sg==}
+  /guizhan-builds-2-data@0.5.0:
+    resolution: {integrity: sha512-F7Lw06rWxc0Sm/bEe1jATdv+/LaC4G5qDEBC2GmMXyxF7aj3gvAhKxpXIqpyXRUtt78teiDjFjKaZy7JV0T5/Q==}
     engines: {node: '>=10'}
     dev: false
 
@@ -10420,12 +10423,6 @@ packages:
       '@types/unist': 3.0.0
     dev: true
 
-  /unist-util-map@4.0.0:
-    resolution: {integrity: sha512-HJs1tpkSmRJUzj6fskQrS5oYhBYlmtcvy4SepdDEEsL04FjBrgF0Mgggvxc1/qGBGgW7hRh9+UBK1aqTEnBpIA==}
-    dependencies:
-      '@types/unist': 3.0.0
-    dev: false
-
   /unist-util-position@4.0.4:
     resolution: {integrity: sha512-kUBE91efOWfIVBo8xzh/uZQ7p9ffYRtUbMRZBNFYwf0RK8koUMx6dGUfwylLOKmaT2cs4wSW96QoYUSXAyEtpg==}
     dependencies:
@@ -10973,7 +10970,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.24
+      '@intlify/shared': 9.3.0-beta.25
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.24)
       '@intlify/vue-router-bridge': 0.8.0(vue@3.3.4)
       ufo: 1.1.2
