@@ -20,6 +20,12 @@ const sourceLink = computed<string | null>(() => {
   }
   return `https://github.com/${props.project.author}/${props.project.repository}/tree/${props.project.branch}`;
 });
+const wikiLink = computed<string | null>(() => {
+  if (!props.project) {
+    return null;
+  }
+  return props.project.displayOptions?.wiki ?? null;
+});
 </script>
 
 <template>
@@ -30,11 +36,14 @@ const sourceLink = computed<string | null>(() => {
     <ProjectNavItem :to="{ name: 'builds' }" :active="['builds'].includes(route.name as string)">
       {{ t("components.projectNav.builds") }}
     </ProjectNavItem>
-    <ProjectNavItem v-if="issuesLink" :to="useExternalLinkHelper(issuesLink)">
+    <ProjectNavItem v-if="issuesLink" :to="useExternalLinkHelper(issuesLink)" :external="true">
       {{ t("components.projectNav.issues") }}
     </ProjectNavItem>
-    <ProjectNavItem v-if="sourceLink" :to="useExternalLinkHelper(sourceLink)">
+    <ProjectNavItem v-if="sourceLink" :to="useExternalLinkHelper(sourceLink)" :external="true">
       {{ t("components.projectNav.source") }}
+    </ProjectNavItem>
+    <ProjectNavItem v-if="wikiLink" :to="useExternalLinkHelper(wikiLink)" :external="true">
+      {{ t("components.projectNav.wiki") }}
     </ProjectNavItem>
   </nav>
 </template>

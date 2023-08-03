@@ -40,7 +40,8 @@
 			"introduction": "介绍",
 			"builds": "所有构建",
 			"issues": "问题追踪器",
-			"source": "源代码"
+			"source": "源代码",
+			"wiki": "Wiki"
 		},
 		"projectBuilds": {
 			"noResult": "没有任何构建。"

@@ -40,7 +40,8 @@
 			"introduction": "Introduction",
 			"builds": "Builds",
 			"issues": "Issues",
-			"source": "Source"
+			"source": "Source",
+			"wiki": "Wiki"
 		},
 		"projectBuilds": {
 			"noResult": "No results found."

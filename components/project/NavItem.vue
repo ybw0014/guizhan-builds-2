@@ -6,10 +6,15 @@ import { RouteLocationRaw } from "vue-router";
 
 const router = useRouter();
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   to?: RouteLocationRaw;
   active?: boolean;
-}>();
+  external?: boolean;
+}>(), {
+  to: "/",
+  active: false,
+  external: false,
+});
 
 function navigate() {
   if (typeof props.to === "string") {
@@ -24,7 +29,7 @@ function navigate() {
   <div v-if="to" class="mb-[-2px]">
     <NuxtLink href="javascript:void(0)" :class="{ 'project-nav-item': true, active: active }" @click="navigate">
       <slot></slot>
-      <Icon v-if="typeof to === 'string'" name="dashicons:external" class="icon ml-1" />
+      <Icon v-if="external" name="dashicons:external" class="icon ml-1" />
     </NuxtLink>
   </div>
 </template>

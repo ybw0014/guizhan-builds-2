@@ -40,7 +40,8 @@
 			"introduction": "介紹",
 			"builds": "所有構建",
 			"issues": "問題追蹤器",
-			"source": "原始碼"
+			"source": "原始碼",
+			"wiki": "Wiki"
 		},
 		"projectBuilds": {
 			"noResult": "沒有任何構建。"
