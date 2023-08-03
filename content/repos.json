@@ -8,6 +8,8 @@
 		"displayOptions": {
 			"officialList": true,
 			"keywords": ["粘液科技"],
+			"logo": "Slimefun/logo.png",
+			"wiki": "https://slimefun-wiki.guizhanss.cn/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -27,6 +29,8 @@
 		"displayOptions": {
 			"officialList": true,
 			"keywords": ["粘液科技"],
+			"logo": "Slimefun/logo.png",
+			"wiki": "https://slimefun-wiki.guizhanss.cn/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -48,6 +52,7 @@
 			"officialList": true,
 			"authors": ["TheBusyBiscuit"],
 			"keywords": ["异域花园"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/exotic-garden/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -408,6 +413,7 @@
 			"officialList": true,
 			"authors": ["Sfiguz7"],
 			"keywords": ["末地科技"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/transc-endence/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -490,6 +496,7 @@
 			"officialList": true,
 			"authors": ["Mooy1"],
 			"keywords": ["无尽贪婪"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/infinity-expansion/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -615,6 +622,7 @@
 			"officialList": true,
 			"authors": ["ProfElements"],
 			"keywords": ["动力科技"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/dyna-tech/",
 			"requirements": {
 				"java": {
 					"12": "16",
@@ -658,6 +666,7 @@
 			"officialList": true,
 			"authors": ["NCBPFluffyBear"],
 			"keywords": ["自定义粘液附属"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/slime-customizer/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -765,6 +774,7 @@
 			"officialList": true,
 			"authors": ["Sefiraat"],
 			"keywords": ["粘液匠魂"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/slime-tinker/",
 			"requirements": {
 				"java": {
 					"39": "16",
@@ -894,6 +904,7 @@
 			"officialList": true,
 			"authors": ["Sefiraat"],
 			"keywords": ["魔法水晶编年史"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/crystamae-historia/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -939,6 +950,7 @@
 			"officialList": true,
 			"authors": ["Sefiraat"],
 			"keywords": ["网络"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/networks/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -1030,6 +1042,7 @@
 			"officialList": true,
 			"authors": ["qwertyuioplkjhgfd"],
 			"keywords": ["粘液科技进度"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/slimefun-advancements/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -1050,6 +1063,7 @@
 			"officialList": true,
 			"authors": ["RelativoBR"],
 			"keywords": ["至尊研究院"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/supreme/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -1073,6 +1087,7 @@
 			"officialList": true,
 			"authors": ["bxx2004", "SlimefunGuguProject"],
 			"keywords": ["Bump魔法"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/bump/",
 			"requirements": {
 				"java": {
 					"26": "16",
@@ -1094,6 +1109,7 @@
 			"officialList": true,
 			"authors": ["Sefiraat", "J3fftw1"],
 			"keywords": ["下界乌托邦"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/netheopoiesis/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -1175,6 +1191,7 @@
 			"name": "WilderNether",
 			"authors": ["SchnTgaiSpock"],
 			"keywords": ["迷狱生机"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/wilder-nether/",
 			"requirements": {
 				"java": {
 					"1": "17"
@@ -1509,6 +1526,7 @@
 		"displayOptions": {
 			"authors": ["WalshyDev"],
 			"keywords": ["粘液生物掉落"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/sf-mob-drops/",
 			"requirements": {
 				"java": {
 					"1": "16"
@@ -1931,6 +1949,7 @@
 		"displayOptions": {
 			"authors": ["aurgiyalgo"],
 			"keywords": ["自定义核弹"],
+			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/custom-plugins/Slimefun-Nukes",
 			"requirements": {
 				"java": {
 					"1": "16"
