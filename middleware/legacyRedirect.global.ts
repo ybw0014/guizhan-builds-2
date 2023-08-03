@@ -1,4 +1,4 @@
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware(async (to, _) => {
   // 获取 host
   const nuxtApp = useNuxtApp();
   let host = "";
@@ -21,7 +21,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     if (path.length < 5) {
       throw createError({ statusCode: 404, message: "Not Found" });
     }
-    const [f, author, repo, branch, ...rest] = path;
+    const [, author, repo, branch, ...rest] = path;
     const project = await useProject(author, repo, branch);
     if (!project.value) {
       throw createError({ statusCode: 404, message: "Not Found" });
