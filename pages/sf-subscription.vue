@@ -237,12 +237,14 @@ async function devDownload() {
               {{ t("pages.sfSubscription.devCheck.download") }}
             </button>
           </div>
-          <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex gap-2">
-            {{ t("pages.sfSubscription.devCheck.lastUpdate", {time: $dayjs(lastUpdateTime).format("lll")}) }}
-            {{ t("pages.sfSubscription.devCheck.updateInfo", {updateInfo: lastUpdateCommit}) }}
-            <div v-if="noUpdate">
-              {{ t("pages.sfSubscription.devCheck.noUpdate") }}
+          <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex flex-col gap-2">
+            <div class="flex gap-2">
+              {{ t("pages.sfSubscription.devCheck.lastUpdate", {time: $dayjs(lastUpdateTime).format("lll")}) }}
+              <div v-if="noUpdate">
+                {{ t("pages.sfSubscription.devCheck.noUpdate") }}
+              </div>
             </div>
+            {{ t("pages.sfSubscription.devCheck.updateInfo", {updateInfo: lastUpdateCommit}) }}
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mt-4">
