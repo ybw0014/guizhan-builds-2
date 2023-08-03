@@ -152,7 +152,7 @@ async function getDownloadLink(uuid: string, errorMsg = false) {
 
 async function devDownload() {
   cacheStore.setLastUpdateAt(lastUpdateTime.value || -1);
-  cacheStore.setLastUpdateLog(lastUpdateCommit.value);
+  cacheStore.setLastUpdateCommit(lastUpdateCommit.value);
 
   // 使用a标签 + download设置文件名
   const aLink = document.createElement("a");
@@ -239,12 +239,12 @@ async function devDownload() {
           </div>
           <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex flex-col gap-2">
             <div class="flex gap-2">
-              {{ t("pages.sfSubscription.devCheck.lastUpdate", {time: $dayjs(lastUpdateTime).format("lll")}) }}
+              {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: $dayjs(lastUpdateTime).format("lll") }) }}
               <div v-if="noUpdate">
                 {{ t("pages.sfSubscription.devCheck.noUpdate") }}
               </div>
             </div>
-            {{ t("pages.sfSubscription.devCheck.updateInfo", {updateInfo: lastUpdateCommit}) }}
+            {{ t("pages.sfSubscription.devCheck.updateInfo", { changelog: lastUpdateCommit }) }}
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mt-4">
