@@ -166,6 +166,7 @@
 				"query": "驗證訂單",
 				"download": "下載內測版構建",
 				"lastUpdate": "最後更新於 {time}",
+				"updateInfo": "最新提交記錄 {changelog}",
 				"noUpdate": "距離上次下載暫無更新",
 				"error": {
 					"malformedOrderId": "訂單號格式不正確",

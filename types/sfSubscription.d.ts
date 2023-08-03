@@ -18,6 +18,12 @@ export interface DownloadResponse extends Omit<SubResponse, "data"> {
   data: string | null;
 }
 
+export interface LastUpdateData {
+  last_update: number;
+  commit_info: string | null;
+  sha: string | null;
+}
+
 export interface LastUpdateResponse extends Omit<SubResponse, "data"> {
-  data: number;
+  data: LastUpdateData;
 }

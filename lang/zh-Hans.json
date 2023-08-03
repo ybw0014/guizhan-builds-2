@@ -166,6 +166,7 @@
 				"query": "验证订单",
 				"download": "下载内测版构建",
 				"lastUpdate": "最后更新于 {time}",
+				"updateInfo": "最新提交记录 {changelog}",
 				"noUpdate": "距离上次下载暂无更新",
 				"error": {
 					"malformedOrderId": "订单号格式不正确",
