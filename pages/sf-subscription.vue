@@ -2,7 +2,6 @@
 import InputText from "~/components/ui/InputText.vue";
 import FormCheckbox from "~/components/ui/FormCheckbox.vue";
 import { useCacheStore } from "~/stores/useCacheStore";
-import {LastUpdateData} from "~/types/sfSubscription";
 
 const { $dayjsR } = useNuxtApp();
 const { t } = useI18n();
