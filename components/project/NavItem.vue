@@ -17,8 +17,8 @@ const props = withDefaults(defineProps<{
 });
 
 function navigate() {
-  if (typeof props.to === "string") {
-    window.open(props.to, "_blank", "noopener noreferrer");
+  if (props.external) {
+    window.open(props.to as string, "_blank", "noopener noreferrer");
   } else {
     router.push(props.to as RouteLocationRaw);
   }
