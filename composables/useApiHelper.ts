@@ -1,6 +1,12 @@
 import { Project, Projects, useParseProjects, BuildsInfo } from "guizhan-builds-2-data";
 import { MinecraftVersionResponse } from "types/bmclApi";
-import { OrderValidationData, OrderValidationResponse, DownloadResponse, LastUpdateResponse } from "types/sfSubscription";
+import {
+  OrderValidationData,
+  OrderValidationResponse,
+  DownloadResponse,
+  LastUpdateResponse,
+  LastUpdateData
+} from "types/sfSubscription";
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {
   const { data } = await useContentApi<Projects>("repos");
@@ -56,7 +62,7 @@ export async function useSubDownload(uuid: string): Promise<Ref<string | null>> 
   return ref(data.value.data);
 }
 
-export async function useSubLastUpdate(): Promise<Ref<number | null>> {
+export async function useSubLastUpdate(): Promise<Ref<LastUpdateData | null>> {
   const { data } = await useExternalApi<LastUpdateResponse>("https://afdian-validator.norain.city/last_update");
   useSubLog("last update response:");
   useSubLog(data.value);

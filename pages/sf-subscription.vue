@@ -41,7 +41,8 @@ const queryBtn = ref();
 const orderId = ref<string>(cacheStore.orderNum);
 const devCheckErrMsg = ref<string>("");
 const devDownloadLink = ref<string>("");
-const lastUpdate = ref<number | null>();
+const lastUpdateTime = ref<number | null>();
+const lastUpdateCommit = ref<string>("");
 const saveOrder = ref(false);
 const noUpdate = ref(false);
 
@@ -59,10 +60,11 @@ onMounted(() => {
 function getDevBuilds() {
   devModal.value.openModal(async () => {
     // 获取最后更新时间
-    if (!lastUpdate.value) {
+    if (!lastUpdateTime.value) {
       setTimeout(async () => {
         const lastUpdateRes = await useSubLastUpdate();
-        lastUpdate.value = lastUpdateRes.value;
+        lastUpdateTime.value = lastUpdateRes.value?.last_update;
+        lastUpdateCommit.value = lastUpdateRes.value?.commit_info || "";
         checkUpdate();
       }, 1);
     } else {
@@ -94,9 +96,9 @@ function closeDevCheck() {
 }
 
 function checkUpdate() {
-  if (!lastUpdate.value) return;
+  if (!lastUpdateTime.value) return;
   if (cacheStore.lastUpdateAt === -1) return;
-  noUpdate.value = lastUpdate.value <= cacheStore.lastUpdateAt;
+  noUpdate.value = lastUpdateTime.value <= cacheStore.lastUpdateAt;
 }
 
 async function checkOrder() {
@@ -149,7 +151,8 @@ async function getDownloadLink(uuid: string, errorMsg = false) {
 }
 
 async function devDownload() {
-  cacheStore.setLastUpdateAt(lastUpdate.value || -1);
+  cacheStore.setLastUpdateAt(lastUpdateTime.value || -1);
+  cacheStore.setLastUpdateCommit(lastUpdateCommit.value);
 
   // 使用a标签 + download设置文件名
   const aLink = document.createElement("a");
@@ -234,11 +237,14 @@ async function devDownload() {
               {{ t("pages.sfSubscription.devCheck.download") }}
             </button>
           </div>
-          <div v-if="lastUpdate" class="text-gray-500 text-sm flex gap-2">
-            {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: $dayjs(lastUpdate).format("lll") }) }}
-            <div v-if="noUpdate">
-              {{ t("pages.sfSubscription.devCheck.noUpdate") }}
+          <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex flex-col gap-2">
+            <div class="flex gap-2">
+              {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: $dayjs(lastUpdateTime).format("lll") }) }}
+              <div v-if="noUpdate">
+                {{ t("pages.sfSubscription.devCheck.noUpdate") }}
+              </div>
             </div>
+            {{ t("pages.sfSubscription.devCheck.updateInfo", { changelog: lastUpdateCommit }) }}
           </div>
         </div>
         <div class="flex gap-2 flex-wrap mt-4">

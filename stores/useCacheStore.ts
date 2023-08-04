@@ -7,7 +7,8 @@ export const useCacheStore = defineStore("cache", {
       orderExpireAt: -1,
       uuid: "",
       uuidExpireAt: -1,
-      lastUpdateAt: -1
+      lastUpdateAt: -1,
+      lastUpdateCommit: ""
     };
   },
   actions: {
@@ -25,6 +26,9 @@ export const useCacheStore = defineStore("cache", {
     },
     setLastUpdateAt(lastUpdateAt: number) {
       this.lastUpdateAt = lastUpdateAt;
+    },
+    setLastUpdateCommit(updateCommit: string) {
+      this.lastUpdateCommit = updateCommit;
     }
   },
   persist: {

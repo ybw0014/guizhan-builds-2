@@ -166,6 +166,7 @@
 				"query": "Validate",
 				"download": "Download Insider Build",
 				"lastUpdate": "Last updated on {time}",
+				"updateInfo": "Latest commit log {changelog}",
 				"noUpdate": "No updates since last download.",
 				"error": {
 					"malformedOrderId": "Invalid order number format",
