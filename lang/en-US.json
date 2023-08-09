@@ -26,6 +26,10 @@
 			"next": "Next Page",
 			"last": "Last Page"
 		},
+		"markdownContent": {
+			"loading": "Loading...",
+			"error": "Cannot load content."
+		},
 		"projectList": {
 			"noResult": "No results found."
 		},

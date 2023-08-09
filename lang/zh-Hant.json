@@ -26,6 +26,10 @@
 			"next": "下一頁",
 			"last": "最後一頁"
 		},
+		"markdownContent": {
+			"loading": "內容加載中...",
+			"error": "無法加載內容。"
+		},
 		"projectList": {
 			"noResult": "沒有找到符合條件的項目。"
 		},
