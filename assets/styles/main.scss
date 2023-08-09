@@ -28,7 +28,7 @@ body {
   @apply bg-[--color-bg-default] dark:bg-[--color-bg-default-dark];
 
   &.hoverable {
-    @apply hover:bg-[--color-bg-hover] dark:hover:bg-[--color-bg-hover-dark];
+    @apply hover:bg-[--color-bg-default-hover] dark:hover:bg-[--color-bg-default-hover-dark];
   }
 }
 
