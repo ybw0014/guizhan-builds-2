@@ -11,7 +11,8 @@ const router = useRouter();
 const query = ref<string>((route.query.q as string) || "");
 const sortTypes = computed(() => [
   { id: "name", label: t("sortTypes.name") },
-  { id: "newest", label: t("sortTypes.newest") }
+  { id: "newest", label: t("sortTypes.newest") },
+  { id: "updated", label: t("sortTypes.updated") }
 ]);
 const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id);
 const page = ref(route.query.page ? Number(route.query.page) : 1);
@@ -19,8 +20,9 @@ const filteredList = ref<Project[] | null>();
 const projectList = ref<Element | null>(null);
 const pageResetAnchor = ref<Element | null>(null);
 const projects = await useProjects();
+const buildTime = await useR2Asset<Record<string, number>>("buildTimestamp.json");
 
-filterList();
+await filterList();
 
 const queryParams = computed(() => {
   const params: Record<string, any> = {};
@@ -41,7 +43,7 @@ watchDebounced(
   async () => {
     filteredList.value = null;
     await router.replace({ query: queryParams.value });
-    return filterList();
+    await filterList();
   },
   { deep: true, debounce: 250 }
 );
@@ -56,7 +58,7 @@ function updatePage(newPage: number) {
   }
 }
 
-function filterList() {
+async function filterList() {
   if (!projects.value) {
     return;
   }
@@ -74,6 +76,14 @@ function filterList() {
       break;
     case "newest":
       filtered = _.cloneDeep(filtered).reverse();
+      break;
+    case "updated":
+      if (buildTime.data) {
+        const buildTimestamp = buildTime.data.value as Record<string, number>;
+        filtered = _.sortBy(filtered, (project: Project) => buildTimestamp[project.key]).reverse();
+      } else {
+        filtered = _.cloneDeep(filtered).reverse();
+      }
       break;
   }
   filteredList.value = filtered;

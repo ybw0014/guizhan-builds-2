@@ -56,7 +56,8 @@
 	},
 	"sortTypes": {
 		"name": "Name",
-		"newest": "Recently Added"
+		"newest": "Recently Added",
+		"updated": "Recently Updated"
 	},
 	"error": {
 		"401": "Unauthorized",

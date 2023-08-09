@@ -56,7 +56,8 @@
 	},
 	"sortTypes": {
 		"name": "名稱",
-		"newest": "最近添加"
+		"newest": "最近添加",
+		"updated": "最近更新"
 	},
 	"error": {
 		"401": "未授權",
