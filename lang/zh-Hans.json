@@ -48,6 +48,7 @@
 			"wiki": "Wiki"
 		},
 		"projectBuilds": {
+			"fastAccess": "快速访问构建",
 			"noResult": "没有任何构建。"
 		},
 		"projectBuildCard": {

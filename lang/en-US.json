@@ -48,6 +48,7 @@
 			"wiki": "Wiki"
 		},
 		"projectBuilds": {
+			"fastAccess": "Fast access build",
 			"noResult": "No results found."
 		},
 		"projectBuildCard": {
