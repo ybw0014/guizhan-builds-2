@@ -2022,6 +2022,8 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"officialList": true,
+			"authors": ["VoperAD"],
 			"keywords": ["粘液战甲"],
 			"requirements": {
 				"java": {
