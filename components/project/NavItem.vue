@@ -17,10 +17,12 @@ const props = withDefaults(defineProps<{
 });
 
 function navigate() {
-  if (props.external) {
+  if (typeof props.to === "string") {
     window.open(props.to as string, "_blank", "noopener noreferrer");
+  } else if (props.external) {
+    window.open(router.resolve(props.to).href, "_blank", "noopener noreferrer");
   } else {
-    router.push(props.to as RouteLocationRaw);
+    router.push(props.to);
   }
 }
 </script>
