@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onKeyStroke } from "@vueuse/core";
 const { t } = useI18n();
 const props = defineProps<{
   page: number;
@@ -43,6 +44,20 @@ const pageOptions = computed(() => {
   }
   return options;
 });
+
+// 键盘控制
+onKeyStroke("ArrowLeft", (e) => {
+  e.preventDefault();
+  if (page.value > 1) {
+    gotoPage(page.value - 1);
+  }
+}, { dedupe: false });
+onKeyStroke("ArrowRight", (e) => {
+  e.preventDefault();
+  if (page.value < props.pages) {
+    gotoPage(page.value + 1);
+  }
+}, { dedupe: false });
 </script>
 
 <template>
