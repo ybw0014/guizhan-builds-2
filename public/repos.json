@@ -2076,5 +2076,24 @@
 				}
 			}
 		}
+	},
+	"SlimefunGuguProject/Quaptics:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Quaptics",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"authors": ["LordIdra"],
+			"keywords": ["量子光学"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.19.4"
+				}
+			}
+		}
 	}
 }
