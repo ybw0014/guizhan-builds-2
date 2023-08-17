@@ -152,7 +152,6 @@ async function getDownloadLink(uuid: string, errorMsg = false) {
 
 async function devDownload() {
   cacheStore.setLastUpdateAt(lastUpdateTime.value || -1);
-  cacheStore.setLastUpdateCommit(lastUpdateCommit.value);
 
   // 使用a标签 + download设置文件名
   const aLink = document.createElement("a");
