@@ -153,17 +153,9 @@ async function getDownloadLink(uuid: string, errorMsg = false) {
 async function devDownload() {
   cacheStore.setLastUpdateAt(lastUpdateTime.value || -1);
 
-  // 使用a标签 + download设置文件名
-  const aLink = document.createElement("a");
   const url = new URL(devDownloadLink.value);
   const filename = url.pathname.split("/").pop() as string;
-  aLink.href = url.toString();
-  aLink.target = "_blank";
-  aLink.rel = "noopener noreferrer";
-  aLink.setAttribute("download", filename);
-  document.body.appendChild(aLink);
-  aLink.click();
-  document.body.removeChild(aLink);
+  useNewWinDownload(url, filename);
 }
 </script>
 

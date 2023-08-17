@@ -62,7 +62,7 @@ function getBuildRes(filename: string) {
 
 function download() {
   const path = getBuildRes(build.value?.target || "");
-  window.open(path, "_blank");
+  useNewWinDownload(new URL(path));
 }
 
 // Checksum 部分
