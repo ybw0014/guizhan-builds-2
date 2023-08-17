@@ -17,7 +17,8 @@
       "keywords": ["匠魂", "粘液匠魂"],
       "requirements": {
         "java": {
-
+          "1": "8",
+          "10": "16"
         }
       }
     }
@@ -33,7 +34,9 @@
 | `buildOptions.version`                   | （必要）构建时的项目版本，支持变量。详见下方版本变量。                                   |
 | `displayOptions.hidden`                  | （可选）是否隐藏项目，隐藏后将不会在构建站的搜索结果中显示，但直接访问地址仍然可以访问。 |
 | `displayOptions.name`                    | （可选）项目的显示名称（不会用于搜索）。                                                 |
+| `displayOptions.logo`                    | （可选）项目的图标/logo，为[`Slimefun-Icons`](https://github.com/SlimefunGuguProject/Slimefun-Icons)项目文件的地址。 |
 | `displayOptions.authors`                 | （可选）项目的作者列表。以`@`开头为 GitHub 用户，会链接到 GitHub。                       |
+| `displayOptions.wiki`                    | （可选）项目的Wiki链接。|
 | `displayOptions.keywords`                | （可选）项目的关键词列表，搜索内容如果包含关键词的某一部分，则项目会被列入搜索列表中。   |
 | `displayOptions.requirements`            | （可选）项目的运行要求。详见下方运行要求。                                               |
 
@@ -53,3 +56,11 @@
 | `{date}`       | 构建项目时处于当前月份中的第几天，前面无补 0。    |
 
 ## 运行要求
+
+运行要求为运行该项目的最低要求。
+
+每一个键值对的键名为要求名称。  
+要求名称可以是`java`, `minecraft`, `paper`, `slimefun`，这些要求可以被筛选系统识别。  
+其他要求名称无法被筛选系统识别，会直接展示出来。
+
+在示例中，该`java`要求为从构建#1开始为8，构建#10开始为16。
