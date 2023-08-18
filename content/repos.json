@@ -680,7 +680,7 @@
 	"CrispyXYZ/GeneticChickengineering-CN-RC30-Extended:master": {
 		"type": "maven",
 		"buildOptions": {
-			"name": "SlimeCustomizer",
+			"name": "GeneticChickengineering",
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
