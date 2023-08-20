@@ -45,16 +45,17 @@ export default defineNuxtConfig({
         file: "en-US.json"
       },
       {
-        code: "zh-Hans",
+        code: "zh-CN",
         iso: "zh-CN",
         name: "简体中文",
-        file: "zh-Hans.json"
+        file: "zh-CN.json",
+        isCatchallLocale: true
       },
       {
-        code: "zh-Hant",
+        code: "zh-TW",
         iso: "zh-TW",
         name: "繁體中文",
-        file: "zh-Hant.json"
+        file: "zh-TW.json"
       }
     ],
     lazy: true,
