@@ -9,11 +9,11 @@ export default defineNuxtPlugin(() => {
   return {
     provide: {
       dayjs: (cfg?: ConfigType) => {
-        switch(useI18n().locale.value) {
-          case "zh-Hans":
+        switch (useI18n().locale.value) {
+          case "zh-CN":
             dayjs.locale("zh-cn");
             break;
-          case "zh-Hant":
+          case "zh-TW":
             dayjs.locale("zh-tw");
             break;
           default:
