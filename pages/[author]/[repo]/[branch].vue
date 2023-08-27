@@ -12,17 +12,17 @@ await verify(route);
 async function verify(to: RouteLocationNormalized) {
   if (!project.value) {
     throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
-  } else if (
-    to.params.author !== project.value.author ||
-    to.params.repo !== project.value.repository ||
-    to.params.branch !== project.value.branch
-  ) {
-    const newPath = to.fullPath
-      .replace(to.params.author as string, project.value.author)
-      .replace(to.params.repo as string, project.value.repository)
-      .replace(to.params.branch as string, project.value.branch);
+  } else if (to.params.author !== project.value.author || to.params.repo !== project.value.repository || to.params.branch !== project.value.branch) {
+    const newPath = project.value.author + "/" + project.value.repository + "/" + project.value.branch;
     console.debug("Redirect to " + newPath + " from (" + to.fullPath + ")");
-    await navigateTo(newPath);
+    await navigateTo({
+      name: "project",
+      params: {
+        author: project.value.author,
+        repo: project.value.repository,
+        branch: project.value.branch
+      }
+    });
   }
 }
 

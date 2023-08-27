@@ -75,43 +75,35 @@ function updatePage(newPage: number) {
   emit("update:page", newPage);
 }
 
-watch(
-  fastAccess,
-  () => {
-    if (fastAccess.value === "-1") {
-      return;
-    }
-    const buildId = Number(fastAccess.value);
-    if (isNaN(buildId)) {
-      return;
-    }
-    const build = props.builds?.find((b) => b.id === buildId);
-    if (!build) {
-      return;
-    }
-    router.push({
-      name: "build",
-      params: {
-        author: props.project.author,
-        repo: props.project.repository,
-        branch: props.project.branch,
-        build: build.id
-      }
-    });
+watch(fastAccess, () => {
+  if (fastAccess.value === "-1") {
+    return;
   }
-);
+  const buildId = Number(fastAccess.value);
+  if (isNaN(buildId)) {
+    return;
+  }
+  const build = props.builds?.find((b) => b.id === buildId);
+  if (!build) {
+    return;
+  }
+  router.push({
+    name: "build",
+    params: {
+      author: props.project.author,
+      repo: props.project.repository,
+      branch: props.project.branch,
+      build: build.id
+    }
+  });
+});
 </script>
 
 <template>
   <div v-if="totalPages > 0" class="flex flex-col gap-4">
     <!-- 快速访问构建 -->
     <div class="">
-      <InputSelect
-        v-model="fastAccess"
-        :values="fastAccessBuilds"
-        item-text="label"
-        item-value="id"
-      />
+      <InputSelect v-model="fastAccess" :values="fastAccessBuilds" item-text="label" item-value="id" />
     </div>
     <div v-for="build in slicedBuilds" :key="build.id">
       <ProjectBuildCard :project="props.project" :build="build" />

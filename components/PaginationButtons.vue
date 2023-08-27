@@ -46,29 +46,31 @@ const pageOptions = computed(() => {
 });
 
 // 键盘控制
-onKeyStroke("ArrowLeft", (e) => {
-  e.preventDefault();
-  if (page.value > 1) {
-    gotoPage(page.value - 1);
-  }
-}, { dedupe: false });
-onKeyStroke("ArrowRight", (e) => {
-  e.preventDefault();
-  if (page.value < props.pages) {
-    gotoPage(page.value + 1);
-  }
-}, { dedupe: false });
+onKeyStroke(
+  "ArrowLeft",
+  (e) => {
+    e.preventDefault();
+    if (page.value > 1) {
+      gotoPage(page.value - 1);
+    }
+  },
+  { dedupe: false }
+);
+onKeyStroke(
+  "ArrowRight",
+  (e) => {
+    e.preventDefault();
+    if (page.value < props.pages) {
+      gotoPage(page.value + 1);
+    }
+  },
+  { dedupe: false }
+);
 </script>
 
 <template>
   <div v-if="pages > 1" class="flex justify-center gap-2">
-    <button
-      class="pagination-button"
-      :style="visible(page !== 1)"
-      :disabled="page === 1"
-      :aria-label="t('components.pagination.first')"
-      @click="gotoPage(1)"
-    >
+    <button class="pagination-button" :style="visible(page !== 1)" :disabled="page === 1" :aria-label="t('components.pagination.first')" @click="gotoPage(1)">
       <Icon name="ic:round-first-page" class="icon" />
     </button>
 

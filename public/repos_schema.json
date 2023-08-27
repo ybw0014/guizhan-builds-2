@@ -1,77 +1,77 @@
 {
-  "type": "object",
-  "additionalProperties": false,
-  "patternProperties": {
-    "^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+:[/A-Za-z0-9_-]+$": {
-      "type": "object",
-      "required": ["type", "buildOptions"],
-      "additionalProperties": false,
-      "properties": {
-        "type": {
-          "type": "string"
-        },
-        "alias": {
-          "type": "array"
-        },
-        "buildOptions": {
-          "type": "object",
-          "required": ["name", "version"],
-          "additionalProperties": false,
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "version": {
-              "type": "string"
-            },
-            "maven": {
-              "type": "object"
-            },
-            "gradle": {
-              "type": "object"
-            }
-          }
-        },
-        "displayOptions": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "officialList": {
-              "type": "boolean"
-            },
-            "hidden": {
-              "type": "boolean"
-            },
-            "name": {
-              "type": "string"
-            },
-            "logo": {
-              "type": "string"
-            },
-            "authors": {
-              "type": "array"
-            },
-            "keywords": {
-              "type": "array"
-            },
-            "wiki": {
-              "type": "string"
-            },
-            "requirements": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "object",
-                "additionalProperties": false,
-                "patternProperties": {
-                  "^[0-9]+$": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+	"type": "object",
+	"additionalProperties": false,
+	"patternProperties": {
+		"^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+:[/A-Za-z0-9_-]+$": {
+			"type": "object",
+			"required": ["type", "buildOptions"],
+			"additionalProperties": false,
+			"properties": {
+				"type": {
+					"type": "string"
+				},
+				"alias": {
+					"type": "array"
+				},
+				"buildOptions": {
+					"type": "object",
+					"required": ["name", "version"],
+					"additionalProperties": false,
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"version": {
+							"type": "string"
+						},
+						"maven": {
+							"type": "object"
+						},
+						"gradle": {
+							"type": "object"
+						}
+					}
+				},
+				"displayOptions": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"officialList": {
+							"type": "boolean"
+						},
+						"hidden": {
+							"type": "boolean"
+						},
+						"name": {
+							"type": "string"
+						},
+						"logo": {
+							"type": "string"
+						},
+						"authors": {
+							"type": "array"
+						},
+						"keywords": {
+							"type": "array"
+						},
+						"wiki": {
+							"type": "string"
+						},
+						"requirements": {
+							"type": "object",
+							"additionalProperties": {
+								"type": "object",
+								"additionalProperties": false,
+								"patternProperties": {
+									"^[0-9]+$": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

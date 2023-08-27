@@ -18,13 +18,10 @@ export default defineNuxtRouteMiddleware(async (to, _) => {
     if (!project.value) {
       throw createError({ statusCode: 404, message: "Not Found" });
     }
-    navigateTo(
-      new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, `https://${r2Host}/`).toString(),
-      {
-        redirectCode: 302,
-        external: true
-      }
-    );
+    navigateTo(new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, `https://${r2Host}/`).toString(), {
+      redirectCode: 302,
+      external: true
+    });
   } else if (path[path.length - 1] === "badge.svg") {
     // 构建信息badge，直接重定向至R2
     navigateTo(new URL(to.fullPath, `https://${r2Host.value}/`).toString(), {

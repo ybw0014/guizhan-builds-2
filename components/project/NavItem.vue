@@ -6,15 +6,18 @@ import { RouteLocationRaw } from "vue-router";
 
 const router = useRouter();
 
-const props = withDefaults(defineProps<{
-  to?: RouteLocationRaw;
-  active?: boolean;
-  external?: boolean;
-}>(), {
-  to: "/",
-  active: false,
-  external: false,
-});
+const props = withDefaults(
+  defineProps<{
+    to?: RouteLocationRaw;
+    active?: boolean;
+    external?: boolean;
+  }>(),
+  {
+    to: "/",
+    active: false,
+    external: false
+  }
+);
 
 function navigate() {
   if (typeof props.to === "string") {

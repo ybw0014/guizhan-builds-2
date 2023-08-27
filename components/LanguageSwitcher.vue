@@ -18,11 +18,7 @@ const availableLocales = computed(() => {
     <Transition name="dropdown-menu">
       <MenuItems class="menu-items right-0 bg-default border-t-2 border-blue-500">
         <MenuItem v-for="aLocale in availableLocales" :key="aLocale.code">
-          <a
-            href="javascript:void(0)"
-            :class="{ 'menu-item link-box': true, active: currentLocale == aLocale.code }"
-            @click="setLocale(aLocale.code)"
-          >
+          <a href="javascript:void(0)" :class="{ 'menu-item link-box': true, active: currentLocale == aLocale.code }" @click="setLocale(aLocale.code)">
             {{ aLocale.name }}
           </a>
         </MenuItem>

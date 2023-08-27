@@ -8,11 +8,7 @@ const path = `/${locale.value.toLowerCase()}/${props.page}`;
 
 <template>
   <ContentDoc :path="path" tag="article" class="markdown">
-    <template #empty>
-      Loading...
-    </template>
-    <template #not-found>
-      Error
-    </template>
+    <template #empty> Loading... </template>
+    <template #not-found> Error </template>
   </ContentDoc>
 </template>
