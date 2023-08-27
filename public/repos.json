@@ -1308,7 +1308,7 @@
 	"SlimefunGuguProject/Gastronomicon:master": {
 		"type": "maven",
 		"buildOptions": {
-			"name": "SpiritsUnchained",
+			"name": "Gastronomicon",
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
