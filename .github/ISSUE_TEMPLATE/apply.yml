@@ -1,42 +1,44 @@
-﻿name: 申请接入
+---
+name: 申请接入
 description: 申请接入构建站
 title: "[申请接入]"
-labels: ["application"]
+labels:
+  - application
 assignees:
   - ybw0014
 body:
-- type: input
-  id: owner
-  attributes:
-    label: 仓库所有者
-    description: 仓库所有者的 GitHub 用户名
-    placeholder: ybw0014
-  validations:
-    required: true
-- type: input
-  id: repo
-  attributes:
-    label: 仓库名
-    description: 仓库名
-    placeholder: AwesomeProject
-  validations:
-    required: true
-- type: input
-  id: branch
-  attributes:
-    label: 分支
-    description: 仓库分支名（千万不要填错，`master`和`main`是两个不同的分支，不可相互替代）
-    placeholder: master
-  validations:
-    required: true
-- type: textarea
-  id: description
-  attributes:
-    label: 描述
-    description: |
-      对该项目的简单描述
-    placeholder: |
-      示例:
-      粘液匠魂汉化版
-  validations:
-    required: true
+  - type: input
+    id: owner
+    attributes:
+      label: 仓库所有者
+      description: 仓库所有者的 GitHub 用户名
+      placeholder: ybw0014
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: 仓库名
+      description: 仓库名
+      placeholder: AwesomeProject
+    validations:
+      required: true
+  - type: input
+    id: branch
+    attributes:
+      label: 分支
+      description: 仓库分支名（千万不要填错，`master`和`main`是两个不同的分支，不可相互替代）
+      placeholder: master
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 描述
+      description: |
+        对该项目的简单描述
+      placeholder: |
+        示例:
+        粘液匠魂汉化版
+    validations:
+      required: true
