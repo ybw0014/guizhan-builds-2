@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "nuxt-icon",
     "nuxt-lodash",
-    "nuxt-cloudflare-analytics"
+    "nuxt-cloudflare-analytics",
+    "nuxt-vitest"
   ],
   devtools: { enabled: true },
   devServer: {
