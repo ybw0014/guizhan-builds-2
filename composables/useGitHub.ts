@@ -15,13 +15,6 @@ export function isMainBranch(branch: string): boolean {
 }
 
 export async function useGitHubReadme(project: Project): Promise<Ref<string | null>> {
-  // 从 raw.githubusercontent.com 获取
-  // const { data } = await useFetch(`https://raw.githubusercontent.com/${project.author}/${project.repository}/${project.branch}/README.md`);
-  // useProjectReadmeLog(`fetched from raw.githubusercontent.com, ${data.value !== null ? "success" : "failed"}`);
-  // if (data.value) {
-  //   return ref(data.value as string);
-  // }
-
   // 从 jsdelivr 获取
   const { data: data2 } = await useFetch(`https://cdn.jsdelivr.net/gh/${project.author}/${project.repository}@${project.branch}/README.md`);
   useProjectReadmeLog(`fetched from cdn.jsdelivr.net, ${data2.value !== null ? "success" : "failed"}`);

@@ -155,7 +155,7 @@ async function devDownload() {
 
   const url = new URL(devDownloadLink.value);
   const filename = url.pathname.split("/").pop() as string;
-  useNewWinDownload(url, filename);
+  useDownloadHelper(url, filename);
 }
 </script>
 

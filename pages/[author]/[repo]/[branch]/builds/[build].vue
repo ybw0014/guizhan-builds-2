@@ -62,7 +62,7 @@ function getBuildRes(filename: string) {
 
 function download() {
   const path = getBuildRes(build.value?.target || "");
-  useNewWinDownload(new URL(path));
+  useDownloadHelper(new URL(path));
 }
 
 // Checksum 部分
