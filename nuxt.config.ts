@@ -19,6 +19,9 @@ export default defineNuxtConfig({
   devServer: {
     host: "0.0.0.0"
   },
+  nitro: {
+    preset: "cloudflare-pages"
+  },
   css: ["@/assets/styles/main.scss"],
   app: {
     head: {
