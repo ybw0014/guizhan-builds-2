@@ -7,6 +7,17 @@ labels:
 assignees:
   - ybw0014
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 欢迎提交接入构建站申请
+        在提交申请之前，你需要知道：  
+        - 构建站的项目为粘液科技以及附属。不过，你也可以提交非粘液相关的项目。
+        - 构建站支持Maven与Gradle项目。
+        - 本表单仅提供部分选项可供填写。如果你需要更多的选项，请直接提交PR。
+
+        <strong><i>你必须填写标注为星号（*）的表单项</i></strong>
+
   - type: input
     id: owner
     attributes:
@@ -15,6 +26,7 @@ body:
       placeholder: ybw0014
     validations:
       required: true
+
   - type: input
     id: repo
     attributes:
@@ -23,6 +35,7 @@ body:
       placeholder: AwesomeProject
     validations:
       required: true
+
   - type: input
     id: branch
     attributes:
@@ -31,12 +44,78 @@ body:
       placeholder: master
     validations:
       required: true
+
+  - type: input
+    id: build-type
+    attributes:
+      label: 构建类型
+      description: 可选 `maven` 或 `gradle`
+      placeholder: maven
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        很好，你已经填写了项目的基本信息。  
+        现在，你还需要提供一些其他的选填信息。
+
+        ### 构建信息
+
+  - type: input
+    id: build-name
+    attributes:
+      label: 构建时的项目名称
+      description: 这会影响构建文件的名称。一般情况下，与仓库名称保持一致，不用进行填写。
+      placeholder: 保留仓库名称则留空即可
+
+  - type: input
+    id: build-name
+    attributes:
+      label: 构建时的版本格式
+      description: 可用变量可在[此处](https://github.com/ybw0014/guizhan-builds-2-frontend/blob/master/README_repos.md#%E7%89%88%E6%9C%AC%E5%8F%98%E9%87%8F)查看，默认为`Build {version} (git {git_commit})`。
+      placeholder: 保留默认格式时留空即可
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 展示信息
+
+  - type: input
+    id: display-name
+    attributes:
+      label: 展示名称
+      description: |
+        项目在构建站展示时所显示的名称。一般情况下，与仓库名称保持一致，不用进行填写。
+        **_该名称不会用于搜索_**
+      placeholder: 保留仓库名称时留空即可
+
+  - type: input
+    id: display-authors
+    attributes:
+      label: 作者列表
+      description: |
+        项目的作者列表，GitHub用户名，使用逗号（`,`）分隔。  
+        如果你是该项目的原作者，且拥有该仓库，你可以留空。如果是汉化项目，则填写原项目的作者列表。
+      placeholder: TheBusyBiscuit, WalshyDev
+
+  - type: input
+    id: display-tags
+    attributes:
+      label: 标签列表
+      description: |
+        项目的标签列表，使用逗号（`,`）分隔。  
+        已添加项目的标签列表基本是项目的中文名称。  
+        **标签可用于搜索**
+      placeholder: 项目中文名
+
   - type: textarea
     id: description
     attributes:
       label: 描述
       description: |
-        对该项目的简单描述
+        对该项目的简单描述。如果是汉化项目，则可在此提供原项目的链接。  
+        **_该描述仅用于审核_**
       placeholder: |
         示例:
         粘液匠魂汉化版
