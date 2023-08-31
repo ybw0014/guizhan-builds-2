@@ -35,6 +35,7 @@ definePageMeta({
           <Icon name="ion:warning-outline" />
           {{ t("pages.project.readmeWarning") }}
         </div>
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <article v-html="readme"></article>
       </div>
       <div v-else>{{ t("pages.project.readmeFail") }}</div>
