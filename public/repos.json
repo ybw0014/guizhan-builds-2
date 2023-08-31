@@ -1443,6 +1443,7 @@
 	},
 	"ybw0014/GuizhanCraft:master": {
 		"type": "maven",
+		"alias": ["GuizhanCraft/GuizhanCraft:master"],
 		"buildOptions": {
 			"name": "GuizhanCraft",
 			"version": "Build {version} (git {git_commit})"
