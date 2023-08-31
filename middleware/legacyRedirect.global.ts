@@ -18,7 +18,7 @@ export default defineNuxtRouteMiddleware(async (to, _) => {
     if (!project.value) {
       throw createError({ statusCode: 404, message: "Not Found" });
     }
-    navigateTo(new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, `https://${r2Host}/`).toString(), {
+    navigateTo(new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, `https://${r2Host.value}/`).toString(), {
       redirectCode: 302,
       external: true
     });
