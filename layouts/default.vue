@@ -2,7 +2,11 @@
 import { useRoute } from "vue-router";
 
 const route = useRoute();
-const { t } = useI18n();
+const { t, locale } = useI18n();
+const i18nLang = useCookie("i18n_lang");
+if (!i18nLang.value) {
+  i18nLang.value = locale.value;
+}
 
 const head = useLocaleHead({
   addDirAttribute: true,
