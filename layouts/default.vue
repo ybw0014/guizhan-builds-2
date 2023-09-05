@@ -3,15 +3,16 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const { t, locale } = useI18n();
-const i18nLang = useCookie("i18n_lang");
-if (!i18nLang.value) {
-  i18nLang.value = locale.value;
-}
 
 const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: "id",
   addSeoAttributes: true
+});
+
+onMounted(() => {
+  const i18nLang = useCookie("i18n_lang");
+  i18nLang.value = i18nLang.value || locale.value;
 });
 
 useHead({
