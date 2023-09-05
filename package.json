@@ -73,7 +73,7 @@
 		"nuxt-cloudflare-analytics": "^1.0.8",
 		"pinia": "^2.1.4",
 		"qs": "^6.11.2",
-		"rehype-highlight": "^6.0.0",
+		"rehype-highlight": "^7.0.0",
 		"rehype-raw": "^6.1.1",
 		"rehype-sanitize": "^5.0.1",
 		"rehype-stringify": "^9.0.3",
