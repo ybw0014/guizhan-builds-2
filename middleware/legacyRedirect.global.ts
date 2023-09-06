@@ -22,12 +22,6 @@ export default defineNuxtRouteMiddleware(async (to, _) => {
       redirectCode: 302,
       external: true
     });
-  } else if (path[path.length - 1] === "badge.svg") {
-    // 构建信息badge，直接重定向至R2
-    navigateTo(new URL(to.fullPath, `https://${r2Host.value}/`).toString(), {
-      redirectCode: 302,
-      external: true
-    });
   } else if (path.length === 4) {
     // 旧版访问指定构建版本，重定向至新版路径
     const [author, repo, branch, build] = path;

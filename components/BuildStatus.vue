@@ -9,7 +9,7 @@ const props = defineProps<{
 const imgSource = computed(() => {
   const { project } = props;
   const dir = `${project.author}/${project.repository}/${project.branch}`;
-  return `/${dir}/badge.svg`;
+  return `/f/${dir}/badge.svg`;
 });
 </script>
 
