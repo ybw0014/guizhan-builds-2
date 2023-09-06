@@ -78,7 +78,7 @@
 		"projects": {
 			"title": "项目列表",
 			"subTitle": "在此搜索项目并下载构建结果。",
-			"query": "在 {0} 个项目中搜索..."
+			"query": "在 {num} 个项目中搜索..."
 		},
 		"authors": {
 			"title": "作者列表",

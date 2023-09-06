@@ -78,7 +78,7 @@
 		"projects": {
 			"title": "Projects",
 			"subTitle": "Search projects and download build artifacts.",
-			"query": "Search in {0} projects..."
+			"query": "Search in {num} projects..."
 		},
 		"authors": {
 			"title": "Authors",
