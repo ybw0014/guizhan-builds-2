@@ -13,8 +13,6 @@ module.exports = {
     "eslint:recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "@vue/typescript/recommended",
-    "plugin:eslint-comments/recommended",
     "prettier"
   ],
   rules: {

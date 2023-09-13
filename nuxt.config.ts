@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "nuxt-lodash",
     "nuxt-cloudflare-analytics",
-    "nuxt-vitest"
+    "nuxt-vitest",
+    "@nuxtjs/eslint-module"
   ],
   devtools: { enabled: true },
   devServer: {

@@ -43,6 +43,9 @@ jobs:
 
       - name: Installing dependencies
         run: pnpm install
+      
+      - name: Run eslint
+        run: pnpm run lint
 
       - name: Run nuxt build
         run: pnpm run build

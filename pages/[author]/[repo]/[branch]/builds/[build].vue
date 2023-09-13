@@ -30,8 +30,7 @@ const downloadConfirm = ref<boolean>(settingsStore.confirmDownload);
 const checksumResult = ref<string>("");
 
 // TODO: use this variable
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { isOverDropZone: isChecksumDropzoneActive } = useDropZone(checksumDropzone, onChecksumFileDrop);
+useDropZone(checksumDropzone, onChecksumFileDrop);
 const { open: openChecksumFile, onChange: onChecksumFileChange } = useFileDialog();
 
 onMounted(() => {
