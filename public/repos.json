@@ -1469,6 +1469,7 @@
 		},
 		"displayOptions": {
 			"authors": ["freeze-dolphin", "LittleQiu233"],
+			"name": "UltimateGenerators",
 			"keywords": ["终极发电机"],
 			"requirements": {
 				"java": {
