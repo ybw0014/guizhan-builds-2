@@ -8,6 +8,7 @@ export const useSettingsStore = defineStore("settings", {
         "github.com",
         "ybw0014.dev",
         "discord.gg",
+        "builds.guizhanss.net",
         "builds.guizhanss.cn",
         "builds.guizhanss.com"
       ]
