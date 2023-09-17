@@ -1,6 +1,6 @@
 import { Project, Projects, useParseProjects, BuildsInfo } from "guizhan-builds-2-data";
-import { MinecraftVersionResponse } from "types/bmclApi";
-import { OrderValidationData, OrderValidationResponse, DownloadResponse, LastUpdateResponse, LastUpdateData } from "types/sfSubscription";
+import { MinecraftVersionResponse } from "@/types/bmclApi";
+import { OrderValidationData, OrderValidationResponse, DownloadResponse, LastUpdateResponse, LastUpdateData } from "@/types/sfSubscription";
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {
   const { data } = await useContentApi<Projects>("repos");
