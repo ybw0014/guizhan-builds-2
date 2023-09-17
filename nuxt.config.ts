@@ -35,6 +35,9 @@ export default defineNuxtConfig({
       ]
     }
   },
+  routeRules: {
+    "/r2/**": { proxy: "https://builds-r2.gzassets.net/**" },
+  },
   postcss: {
     plugins: {
       tailwindcss: {},

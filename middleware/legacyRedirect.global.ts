@@ -1,7 +1,4 @@
 export default defineNuxtRouteMiddleware(async (to, _) => {
-  // 获取 host
-  const r2Host = useR2Host();
-
   // 根路径时不需要重定向
   if (!to.path.slice(1).includes("/")) {
     return;
@@ -18,7 +15,7 @@ export default defineNuxtRouteMiddleware(async (to, _) => {
     if (!project.value) {
       throw createError({ statusCode: 404, message: "Not Found" });
     }
-    await navigateTo(new URL(`${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, `https://${r2Host.value}/`).toString(), {
+    await navigateTo(`/r2/${project.value.author}/${project.value.repository}/${project.value.branch}/${rest.join("/")}`, {
       redirectCode: 302,
       external: true
     });

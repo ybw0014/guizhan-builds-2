@@ -1,5 +1,6 @@
+
 export function useR2AssetPath(path: string): Ref<string> {
-  return ref(new URL(path, `https://${useR2Host().value}/`).toString());
+  return ref("/r2/" + path);
 }
 
 export function useR2Host(): Ref<string> {
