@@ -29,7 +29,6 @@ const checksumDropzone = ref<HTMLDivElement>();
 const downloadConfirm = ref<boolean>(settingsStore.confirmDownload);
 const checksumResult = ref<string>("");
 
-// TODO: use this variable
 useDropZone(checksumDropzone, onChecksumFileDrop);
 const { open: openChecksumFile, onChange: onChecksumFileChange } = useFileDialog();
 
@@ -61,7 +60,7 @@ function getBuildRes(filename: string) {
 
 function download() {
   const path = getBuildRes(build.value?.target || "");
-  useDownloadHelper(new URL(path));
+  useDownloadHelper(new URL(path, window.location.origin));
 }
 
 // Checksum 部分
