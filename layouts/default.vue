@@ -11,7 +11,7 @@ const head = useLocaleHead({
 });
 
 onMounted(() => {
-  const i18nLang = useCookie("i18n_lang", { maxAge: 60 * 60 * 24 * 30 });
+  const i18nLang = useCookie("i18n_locale", { maxAge: 60 * 60 * 24 * 365 });
   i18nLang.value = i18nLang.value || locale.value;
 });
 
