@@ -75,7 +75,7 @@
 		"remark-github": "^11.2.4",
 		"remark-heading-id": "^1.0.0",
 		"remark-parse": "^10.0.2",
-		"remark-rehype": "^10.1.0",
+		"remark-rehype": "^11.0.0",
 		"vue-tippy": "^6.2.0"
 	}
 }
