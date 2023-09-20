@@ -34,7 +34,7 @@
 			"noResult": "没有找到符合条件的项目。"
 		},
 		"projectRequirements": {
-			"title": "最低要求",
+			"title": "运行需求",
 			"required": "需要"
 		},
 		"projectHeader": {
@@ -105,9 +105,10 @@
 			"title": "{name} ({branch})",
 			"readmeWarning": "以下文档来自项目 GitHub 的 README.md。文档中可能包含指向本页面的下载链接，请使用右上角的下载按钮进行下载。",
 			"readmeFail": "加载 README.md 失败",
+			"showReadme": "显示项目介绍（README.md）",
 			"buildStatus": "构建状态",
 			"information": "信息",
-			"requirements": "最低要求",
+			"requirements": "运行需求",
 			"authors": "作者"
 		},
 		"builds": {

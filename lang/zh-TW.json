@@ -34,7 +34,7 @@
 			"noResult": "沒有找到符合條件的項目。"
 		},
 		"projectRequirements": {
-			"title": "最低要求",
+			"title": "運行需求",
 			"required": "需要"
 		},
 		"projectHeader": {
@@ -44,7 +44,7 @@
 			"introduction": "介紹",
 			"builds": "所有構建",
 			"issues": "問題追蹤器",
-			"source": "原始碼",
+			"source": "源代碼",
 			"wiki": "Wiki"
 		},
 		"projectBuilds": {
@@ -68,8 +68,8 @@
 	},
 	"pages": {
 		"external": {
-			"title": "外部連結警告",
-			"content": "你正在訪問外部連結。鬼斬構建站不對任何外部連結的內容進行負責。",
+			"title": "外部鏈接警告",
+			"content": "你正在訪問外部鏈接。鬼斬構建站不對任何外部鏈接的內容進行負責。",
 			"trust": "信任該域名並繼續",
 			"continue": "僅繼續",
 			"cancel": "取消",
@@ -103,11 +103,12 @@
 		},
 		"project": {
 			"title": "{name} ({branch})",
-			"readmeWarning": "以下文檔來自項目 GitHub 的 README.md。文檔中可能包含指向本頁面的下載連結，請使用右上角的下載按鈕進行下載。",
+			"readmeWarning": "以下文檔來自項目 GitHub 的 README.md。文檔中可能包含指向本頁面的下載鏈接，請使用右上角的下載按鈕進行下載。",
 			"readmeFail": "加載 README.md 失敗",
+			"showReadme": "顯示項目介紹（README.md）",
 			"buildStatus": "構建狀態",
 			"information": "信息",
-			"requirements": "最低要求",
+			"requirements": "運行需求",
 			"authors": "作者"
 		},
 		"builds": {
@@ -118,7 +119,7 @@
 			"title": "構建 #{build} - {name} ({branch})",
 			"build": "構建 #{build}",
 			"buildAt": "構建於 {time}",
-			"logs": "日誌",
+			"logs": "日志",
 			"download": "下載構建",
 			"commitAt": "{author} 於 {time} 提交",
 			"checksum": {
@@ -138,7 +139,7 @@
 		},
 		"sfSubscription": {
 			"title": "粘液科技訂閱計劃",
-			"description": "提前獲取中文版粘液科技的最新內容與問題修復，甚至是優先技術支持！",
+			"description": "提前獲取中文版粘液科技的最新內容與問題修複，甚至是優先技術支持！",
 			"download": "立即獲取",
 			"subscribe": "訂閱",
 			"subscribeAlready": "已經訂閱？在此下載最新內測版",
@@ -162,7 +163,7 @@
 				"priorTechSupport": "優先技術支持",
 				"newFeatures": "提前獲取新功能"
 			},
-			"footnotes": "訂閱價格僅供參考，以愛發電內實際價格為準。",
+			"footnotes": "訂閱價格僅供參考，以愛發電內實際價格為准。",
 			"devCheck": {
 				"title": "獲取最新的內測版構建",
 				"description": "提供愛發電訂單號，經過驗證後可下載最新的內測版構建。",
@@ -177,7 +178,7 @@
 				"error": {
 					"malformedOrderId": "訂單號格式不正確",
 					"invalidOrderId": "訂單不存在或已過期",
-					"cannotGetLink": "無法獲取下載連結，請稍後再試"
+					"cannotGetLink": "無法獲取下載鏈接，請稍後再試"
 				},
 				"close": "關閉"
 			}
