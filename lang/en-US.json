@@ -34,7 +34,7 @@
 			"noResult": "No results found."
 		},
 		"projectRequirements": {
-			"title": "Min. Req.",
+			"title": "Requirements",
 			"required": "Required"
 		},
 		"projectHeader": {
@@ -105,9 +105,10 @@
 			"title": "{name} ({branch})",
 			"readmeWarning": "The following document is loaded from README.md on GitHub. It may contain a download link to current page, please click on the download button on the top right corner to download.",
 			"readmeFail": "Failed to load README.md.",
+			"showReadme": "Show project introduction (README.md)",
 			"buildStatus": "Build Status",
 			"information": "Information",
-			"requirements": "Min. Requirements",
+			"requirements": "Requirements",
 			"authors": "Authors"
 		},
 		"builds": {

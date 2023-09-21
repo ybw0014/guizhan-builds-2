@@ -11,12 +11,16 @@ const props = defineProps<{
 if (!props.project) {
   throw createError({ statusCode: 500, statusMessage: "Project does not exist." });
 }
-const project: Ref<Project> = ref(props.project);
-
+const project = ref(props.project);
 const name = ref(project.value.repository || "");
 const branch = ref(project.value.branch || "");
+const showReadme = ref(false);
 const readme = await useGitHubReadmeParsed(project.value);
 const authors = await useProjectAuthors(project.value);
+
+function displayReadme() {
+  showReadme.value = true;
+}
 
 definePageMeta({
   name: "project"
@@ -30,7 +34,7 @@ definePageMeta({
   <div class="flex flex-col md:flex-row gap-4">
     <!-- 左侧项目 README.md -->
     <div class="card bg-default grow">
-      <div v-if="readme">
+      <div v-if="showReadme && readme">
         <div class="p-4 mb-4 text-md text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300">
           <Icon name="ion:warning-outline" />
           {{ t("pages.project.readmeWarning") }}
@@ -38,7 +42,13 @@ definePageMeta({
         <!-- eslint-disable-next-line vue/no-v-html -->
         <article v-html="readme"></article>
       </div>
-      <div v-else>{{ t("pages.project.readmeFail") }}</div>
+      <div v-else-if="showReadme">{{ t("pages.project.readmeFail") }}</div>
+      <div v-else class="flex flex-col items-center">
+        <button class="button secondary mb-4" @click="displayReadme">
+          <Icon name="gg:readme" class="text-xl" />
+          {{ t("pages.project.showReadme") }}
+        </button>
+      </div>
     </div>
     <!-- 右侧多卡片信息栏 -->
     <div class="flex flex-col gap-4 basis-80">
