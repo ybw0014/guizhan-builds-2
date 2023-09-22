@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import InputWrapper from "~/components/ui/InputWrapper.vue";
 const props = defineProps<{
   disabled?: boolean;
   label?: string;
@@ -16,9 +15,9 @@ const value = computed({
 </script>
 
 <template>
-  <InputWrapper :value="value" :label="label" :disabled="disabled">
+  <UiInputWrapper :value="value" :label="label" :disabled="disabled">
     <input v-model="value" type="text" :disabled="disabled" class="input-text" />
-  </InputWrapper>
+  </UiInputWrapper>
 </template>
 
 <style scoped lang="scss">

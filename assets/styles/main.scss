@@ -33,7 +33,7 @@ body {
 }
 
 .card {
-  @apply shadow-md rounded-md w-full p-4 flex flex-col gap-2 overflow-x-hidden border-gray-300 dark:border-gray-800;
+  @apply shadow-md rounded-md p-4 flex flex-col gap-2 overflow-x-hidden border-gray-300 dark:border-gray-800;
 }
 
 .link-box {

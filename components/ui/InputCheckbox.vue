@@ -15,14 +15,14 @@ const value = computed({
 </script>
 
 <template>
-  <label class="form-checkbox">
-    <input v-model="value" type="checkbox" :value="value" :disabled="disabled" class="input-checkbox" />
+  <label class="input-checkbox">
+    <input v-model="value" type="checkbox" :value="value" :disabled="disabled" />
     <span v-if="label">{{ label }}</span>
   </label>
 </template>
 
 <style scoped lang="scss">
-.form-checkbox {
+.input-checkbox {
   @apply flex items-center gap-2;
 
   input[type="checkbox"] {

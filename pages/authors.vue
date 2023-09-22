@@ -3,7 +3,6 @@ import { Author } from "guizhan-builds-2-data-extra";
 import { watchDebounced } from "@vueuse/core";
 import _ from "lodash";
 import { Header } from "~/types/dataTable";
-import InputText from "~/components/ui/InputText.vue";
 
 const { t } = useI18n();
 
@@ -56,7 +55,7 @@ function filterList() {
   </Head>
   <div class="flex flex-col gap-4">
     <PageTitle>{{ t("pages.authors.title") }}</PageTitle>
-    <InputText v-model="query" :label="t('pages.authors.username')" />
+    <UiInputText v-model="query" :label="t('pages.authors.username')" />
     <DataTable :headers="headers" :items="filteredList" :size-per-page="15">
       <template #col-name="{ item }">
         <NuxtLink :to="{ name: 'author', params: { author: item.name } }" class="author-link">

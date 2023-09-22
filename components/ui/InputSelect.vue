@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import InputWrapper from "~/components/ui/InputWrapper.vue";
 import { Option } from "~/types/components/ui/InputSelect";
 
 const { t } = useI18n();
@@ -33,7 +32,7 @@ const value = computed({
 </script>
 
 <template>
-  <InputWrapper :value="value" :label="label" :disabled="disabled">
+  <UiInputWrapper :value="value" :label="label" :disabled="disabled">
     <select v-model="value" :disabled="disabled" class="input-select">
       <option
         v-for="val in values"
@@ -46,7 +45,7 @@ const value = computed({
       </option>
     </select>
     <Icon name="mdi:menu-down" class="absolute flex right-2 self-center" />
-  </InputWrapper>
+  </UiInputWrapper>
 </template>
 
 <style scoped lang="scss">

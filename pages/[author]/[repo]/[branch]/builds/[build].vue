@@ -3,7 +3,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { useDropZone, useFileDialog } from "@vueuse/core";
 import CryptoJS from "crypto-js";
 import { Project } from "guizhan-builds-2-data";
-import FormCheckBox from "~/components/ui/FormCheckbox.vue";
 import { useSettingsStore } from "~/stores/useSettingsStore";
 
 const { t } = useI18n();
@@ -150,10 +149,10 @@ definePageMeta({
         <Disclosure>
           <DisclosureButton
             v-slot="{ open }"
-            class="flex w-full justify-between rounded-lg bg-blue-100 px-4 py-2 text-left text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75"
+            class="flex w-full justify-between rounded-lg bg-blue-100 px-4 py-2 text-left text-sm font-medium text-blue-900 hover:bg-blue-200 dark:bg-blue-800 dark:text-blue-100 dark:hover:bg-blue-700 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75"
           >
             {{ t("pages.build.checksum.check") }}
-            <Icon :name="open ? 'icon-park:up' : 'icon-park:down'" class="h-5 w-5 text-blue-500" />
+            <Icon :name="open ? 'icon-park:up' : 'icon-park:down'" class="h-5 w-5 text-blue-500 dark:text-blue-100" />
           </DisclosureButton>
           <DisclosurePanel class="text-gray-500 flex flex-col gap-2">
             <div ref="checksumDropzone" class="flex items-center justify-center w-full" @click="openChecksumFile()">
@@ -189,7 +188,7 @@ definePageMeta({
           <NuxtLink :to="{ name: 'terms' }" class="a-link" target="_blank">{{ t("pages.terms.title") }}</NuxtLink>
           <NuxtLink :to="{ name: 'privacy' }" class="a-link" target="_blank">{{ t("pages.privacy.title") }}</NuxtLink>
         </div>
-        <FormCheckBox v-model="downloadConfirm" :label="t('pages.build.warning.confirmForever')" />
+        <UiInputCheckbox v-model="downloadConfirm" :label="t('pages.build.warning.confirmForever')" />
         <div class="flex gap-2 flex-wrap mt-4">
           <button type="button" class="button primary" @click="handleDownloadConfirm">
             {{ t("pages.build.warning.confirm") }}
@@ -205,6 +204,6 @@ definePageMeta({
 
 <style scoped lang="scss">
 .file-dropzone {
-  @apply flex flex-col items-center justify-center w-full h-28 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500;
+  @apply flex flex-col items-center justify-center w-full h-28 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500;
 }
 </style>

@@ -2,8 +2,6 @@
 import { Project } from "guizhan-builds-2-data";
 import { watchDebounced } from "@vueuse/core";
 import _ from "lodash";
-import InputText from "~/components/ui/InputText.vue";
-import InputSelect from "~/components/ui/InputSelect.vue";
 
 const { t } = useI18n();
 const route = useRoute();
@@ -126,8 +124,8 @@ definePageMeta({
       </div>
       <hr class="w-full my-1 border-gray-400 dark:border-gray-500" />
       <div class="flex gap-4">
-        <InputText v-model="query" :label="t('pages.author.searchName')" />
-        <InputSelect v-model="activeSortType" :values="sortTypes" item-text="label" item-value="id" :label="t('pages.author.sortBy')" />
+        <UiInputText v-model="query" :label="t('pages.author.searchName')" />
+        <UiInputSelect v-model="activeSortType" :values="sortTypes" item-text="label" item-value="id" :label="t('pages.author.sortBy')" />
       </div>
       <div v-if="filteredList" class="min-w-0 mb-5 flex flex-col gap-2 lg:mb-0">
         <ProjectList ref="projectList" :projects="filteredList" :page="page" @update:page="updatePage" />
