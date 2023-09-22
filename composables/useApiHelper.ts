@@ -1,5 +1,4 @@
 import { Project, Projects, useParseProjects, BuildsInfo } from "guizhan-builds-2-data";
-import { MinecraftVersionResponse } from "@/types/bmclApi";
 import { OrderValidationData, OrderValidationResponse, DownloadResponse, LastUpdateResponse, LastUpdateData } from "@/types/sfSubscription";
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {
@@ -15,24 +14,9 @@ export async function useBuilds(project: Project): Promise<Ref<BuildsInfo | null
   return data;
 }
 
-export async function useMinecraftVersions(minimumVersion: string): Promise<Ref<string[] | null>> {
-  const { data } = await useExternalApi<MinecraftVersionResponse>("https://bmclapi2.bangbang93.com/mc/game/version_manifest_v2.json");
-  const response = data.value;
-  const versions: string[] = [];
-  if (!response) {
-    return ref(versions);
-  }
-  for (let i = 0; i < response.versions.length; i++) {
-    const version = response.versions[i];
-    if (version.type !== "release") {
-      continue;
-    }
-    versions.push(version.id);
-    if (version.id === minimumVersion) {
-      break;
-    }
-  }
-  return ref(versions);
+export async function useMinecraftVersions(minimumVersion: string = "1.16.5"): Promise<Ref<string[] | null>> {
+  const { data } = await useExternalApi<string[]>("https://api.guizhanss.net/minecraft-versions?minimum=" + minimumVersion);
+  return ref(data.value);
 }
 
 export async function useSubValidation(orderId: string): Promise<Ref<OrderValidationData | null>> {
