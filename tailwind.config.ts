@@ -12,9 +12,13 @@ export default <Partial<Config>>{
     "./app.vue"
   ],
   theme: {
+    fontFamily: {
+      "sans-sc": ["Noto Sans SC", ...defaultTheme.fontFamily.sans],
+      "sans-tc": ["Noto Sans TC", ...defaultTheme.fontFamily.sans],
+    },
     extend: {
       fontFamily: {
-        sans: ["AlibabaPuHuiTi", ...defaultTheme.fontFamily.sans]
+        sans: ["Noto Sans", ...defaultTheme.fontFamily.sans]
       }
     }
   },

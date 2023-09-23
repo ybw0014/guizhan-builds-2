@@ -18,9 +18,18 @@ body::-webkit-scrollbar-button {
   @apply hidden;
 }
 
+html {
+  @apply font-sans;
+}
+.lang-zh-CN {
+  @apply font-sans-sc;
+}
+.lang-zh-TW {
+  @apply font-sans-tc;
+}
+
 body {
-  @apply text-base font-sans;
-  @apply bg-[--color-bg-body] text-[--color-text];
+  @apply text-base bg-[--color-bg-body] text-[--color-text];
   @apply dark:bg-[--color-bg-body-dark] dark:text-[--color-text-dark];
 }
 

@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
+    "@nuxtjs/google-fonts",
     "@nuxtjs/robots",
     "@nuxtjs/i18n",
     "@nuxt/content",
@@ -24,26 +25,9 @@ export default defineNuxtConfig({
     preset: "cloudflare-pages"
   },
   css: ["@/assets/styles/main.scss"],
-  app: {
-    head: {
-      link: [
-        {
-          type: "text/css",
-          rel: "stylesheet",
-          href: "https://gzassets.cn/fonts/AlibabaPuHuiTi.css"
-        }
-      ]
-    }
-  },
   routeRules: {
     "/r2/**": { proxy: "https://builds-r2.gzassets.net/**" },
     "/eapi/**": { proxy: "https://api.guizhanss.net/**" },
-  },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
   },
   i18n: {
     locales: [
@@ -88,6 +72,15 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  googleFonts: {
+    families: {
+      "Noto+Sans": true,
+      "Noto+Sans+SC": true,
+      "Noto+Sans+TC": true
+    },
+    display: "swap",
+    download: true
   },
   cloudflareAnalytics: {
     token: "643ef977d859464ba3617c7cda04fdf3"
