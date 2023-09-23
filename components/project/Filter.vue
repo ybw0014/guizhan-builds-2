@@ -33,8 +33,7 @@ const value = computed({
       <div :class="['filter-radio', checked ? 'checked' : '']">
         <Icon name="mdi:circle" class="inner" />
       </div>
-      <span v-if="i18n">{{ t(`filters.${filter}.${val}`) }}</span>
-      <span v-else>{{ val }}</span>
+      <span>{{ i18n ? t(`filters.${filter}.${val}`) : val }}</span>
     </RadioGroupOption>
   </RadioGroup>
 </template>
