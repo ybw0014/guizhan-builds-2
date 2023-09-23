@@ -80,7 +80,7 @@ export default defineNuxtConfig({
       "Noto+Sans+TC": true
     },
     display: "swap",
-    download: true
+    download: false
   },
   cloudflareAnalytics: {
     token: "643ef977d859464ba3617c7cda04fdf3"
