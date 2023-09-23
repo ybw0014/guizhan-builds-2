@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import InputText from "~/components/ui/InputText.vue";
-import FormCheckbox from "~/components/ui/FormCheckbox.vue";
 import { useCacheStore } from "~/stores/useCacheStore";
 
 const { $dayjsR } = useNuxtApp();
@@ -214,9 +212,9 @@ async function devDownload() {
             {{ t("pages.sfSubscription.devCheck.navigateToOrders") }}
           </a>
           <div v-if="!devDownloadLink" class="flex flex-col gap-4">
-            <InputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
+            <UiInputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
             <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
-            <FormCheckbox v-model="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
+            <UiInputCheckbox v-model="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
             <button ref="queryBtn" type="button" class="button primary" @click="checkOrder">
               <Icon name="ic:round-search" class="w-6 h-6" />
               {{ t("pages.sfSubscription.devCheck.query") }}

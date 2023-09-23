@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Project, BuildInfo } from "guizhan-builds-2-data";
-import InputSelect from "~/components/ui/InputSelect.vue";
 
 const { t } = useI18n();
 const router = useRouter();
@@ -103,7 +102,7 @@ watch(fastAccess, () => {
   <div v-if="totalPages > 0" class="flex flex-col gap-4">
     <!-- 快速访问构建 -->
     <div class="">
-      <InputSelect v-model="fastAccess" :values="fastAccessBuilds" item-text="label" item-value="id" />
+      <UiInputSelect v-model="fastAccess" :values="fastAccessBuilds" item-text="label" item-value="id" />
     </div>
     <div v-for="build in slicedBuilds" :key="build.id">
       <ProjectBuildCard :project="props.project" :build="build" />
