@@ -105,13 +105,12 @@ async function filterList() {
     filtered = _.filter(filtered, (project: Project) => {
       const requirements = useProjectRequirements(project);
       if (requirements.has("minecraft")) {
-        // 获取最新版本的
         return useMcVersionAtLeast(
           activeFilters.value.mcVersion,
           requirements.get("minecraft")!
         );
       }
-      return false;
+      return true;
     });
   }
 
