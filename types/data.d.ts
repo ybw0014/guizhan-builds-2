@@ -3,4 +3,10 @@ declare module "guizhan-builds-2-data-extra" {
     name: string;
     projects: number;
   }
+
+  interface MinecraftVersionString {
+    major: number;
+    minor: number;
+    appendix?: string;
+  }
 }

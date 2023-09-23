@@ -29,7 +29,7 @@ function handleCardClick() {
         <BuildStatusIcon :success="build.success" />
       </div>
       <div class="text-sm text-gray-600 dark:text-gray-400">{{ $dayjs(build.buildTimestamp).format("lll") }}</div>
-      <ProjectRequirements :requirements="props.project.displayOptions?.requirements" :title="true" :before="build.id" />
+      <ProjectRequirements :project="project" :title="true" :before="build.id" />
     </div>
   </div>
 </template>

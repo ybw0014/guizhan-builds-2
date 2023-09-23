@@ -134,7 +134,7 @@ definePageMeta({
           {{ t("pages.project.requirements") }}
         </h3>
         <div class="flex">
-          <ProjectRequirements :requirements="project.displayOptions?.requirements" :vertical="true" size="xl" :before="buildId" />
+          <ProjectRequirements :project="project" :vertical="true" size="xl" :before="buildId" />
         </div>
       </div>
       <div class="card bg-default">

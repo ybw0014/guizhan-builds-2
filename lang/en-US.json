@@ -53,12 +53,25 @@
 		},
 		"projectBuildCard": {
 			"build": "Build #{build}"
+		},
+		"projectFilter": {
+			"clear": "Clear"
 		}
 	},
 	"sortTypes": {
 		"name": "Name",
 		"newest": "Recently Added",
 		"updated": "Recently Updated"
+	},
+	"filters": {
+		"server": {
+			"title": "Server software",
+			"spigot": "Spigot",
+			"paper": "Paper and its forks"
+		},
+		"mcVersion": {
+			"title": "Minecraft version"
+		}
 	},
 	"error": {
 		"401": "Unauthorized",

@@ -1,5 +1,6 @@
 import { Project, Projects, useParseProjects, BuildsInfo } from "guizhan-builds-2-data";
 import { OrderValidationData, OrderValidationResponse, DownloadResponse, LastUpdateResponse, LastUpdateData } from "@/types/sfSubscription";
+import { useCacheStore } from "@/stores/useCacheStore";
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {
   const { data } = await useContentApi<Projects>("repos");
@@ -15,8 +16,14 @@ export async function useBuilds(project: Project): Promise<Ref<BuildsInfo | null
 }
 
 export async function useMinecraftVersions(minimumVersion: string = "1.16.5"): Promise<Ref<string[] | null>> {
-  const { data } = await useExternalApi<string[]>("https://api.guizhanss.net/minecraft-versions?minimum=" + minimumVersion);
-  return ref(data.value);
+  const cacheStore = useCacheStore();
+  if (cacheStore.mcVersions && cacheStore.mcVersionsLastFetchedAt + 1000 * 60 * 60 * 24 > Date.now()) {
+    return ref(cacheStore.mcVersions);
+  } else {
+    const { data } = await useLocalApi<string[]>("/eapi/minecraft-versions?minimum=" + minimumVersion);
+    cacheStore.setMinecraftVersions(data.value || []);
+    return ref(data.value);
+  }
 }
 
 export async function useSubValidation(orderId: string): Promise<Ref<OrderValidationData | null>> {

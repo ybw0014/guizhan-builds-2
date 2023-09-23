@@ -50,3 +50,29 @@ export async function useLatestSuccessfulBuild(project: Project): Promise<Ref<Bu
   }
   return ref(builds.value.builds.findLast((build) => build.success) || null);
 }
+
+/**
+ * 获取项目指定构建版本的要求
+ * @param project 项目
+ * @param before 构建版本
+ * @returns 该版本的运行需求
+ */
+export function useProjectRequirements(project: Project, before: number = 0): Map<string, string>{
+  const result: Map<string, string> = new Map();
+  if (!project.displayOptions?.requirements) {
+    return result;
+  }
+  for (const [key, value] of Object.entries(project.displayOptions?.requirements)) {
+    const latestVer =
+      _.max(
+        _.filter(Object.keys(value), (val) => {
+          if (before === 0) {
+            return true;
+          }
+          return parseInt(val) <= before;
+        })
+      ) || 1;
+    result.set(key, value[latestVer]);
+  }
+  return result;
+}

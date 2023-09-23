@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import _ from "lodash";
+import { Project } from "guizhan-builds-2-data";
 import LazyLoadImage from "~/components/LazyLoadImage.vue";
 const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
-    requirements?: Record<string, Record<string, string>>;
+    project: Project;
     vertical?: boolean;
     title?: boolean;
     text?: boolean;
@@ -19,25 +19,7 @@ const props = withDefaults(
     size: "md"
   }
 );
-const req = computed<Map<string, string>>(() => {
-  const result: Map<string, string> = new Map();
-  if (!props.requirements) {
-    return result;
-  }
-  for (const [key, value] of Object.entries(props.requirements)) {
-    const latestVer =
-      _.max(
-        _.filter(Object.keys(value), (val) => {
-          if (props.before === 0) {
-            return true;
-          }
-          return parseInt(val) <= props.before;
-        })
-      ) || 1;
-    result.set(key, value[latestVer]);
-  }
-  return result;
-});
+const req = useProjectRequirements(props.project, props.before);
 
 const requirementSize = computed(() => `text-${props.size}`);
 const iconClass = computed(() => {
