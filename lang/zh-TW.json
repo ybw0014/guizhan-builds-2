@@ -53,12 +53,25 @@
 		},
 		"projectBuildCard": {
 			"build": "構建 #{build}"
+		},
+		"projectFilter": {
+			"clear": "清除"
 		}
 	},
 	"sortTypes": {
 		"name": "名稱",
 		"newest": "最近添加",
 		"updated": "最近更新"
+	},
+	"filters": {
+		"server": {
+			"title": "服務端軟件",
+			"spigot": "Spigot",
+			"paper": "Paper 與衍生服務端"
+		},
+		"mcVersion": {
+			"title": "Minecraft 版本"
+		}
 	},
 	"error": {
 		"401": "未授權",
