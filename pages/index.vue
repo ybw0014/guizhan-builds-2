@@ -210,7 +210,7 @@ onMounted(async () => {
       </div>
     </div>
   </div>
-  <div v-else class="flex flex-col items-center">
+  <div v-else class="flex flex-col items-center mt-4">
     <Icon name="mingcute:loading-fill" class="w-24 h-24 animate-spin" />
   </div>
 </template>
