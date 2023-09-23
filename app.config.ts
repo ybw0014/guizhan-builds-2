@@ -1,8 +1,4 @@
 export default defineAppConfig({
-  ui: {
-    primary: "sky",
-    gray: "neutral"
-  },
   projectSortTypes: ["name", "newest", "updated"],
   projectFilters: [
     {
