@@ -35,23 +35,24 @@ definePageMeta({
     <!-- 左侧项目 README.md -->
     <div class="card bg-default grow">
       <div v-if="showReadme && readme">
-        <div class="p-4 mb-4 text-md text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300">
-          <Icon name="ion:warning-outline" />
-          {{ t("pages.project.readmeWarning") }}
-        </div>
+        <UAlert icon="i-ion-warning-outline" variant="outline" color="teal" :title="t('pages.project.readme.warningTitle')">
+          <template #description>
+            {{ t("pages.project.readme.warning") }}
+          </template>
+        </UAlert>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <article v-html="readme"></article>
       </div>
-      <div v-else-if="showReadme">{{ t("pages.project.readmeFail") }}</div>
+      <div v-else-if="showReadme">{{ t("pages.project.readme.fail") }}</div>
       <div v-else class="flex flex-col items-center">
-        <button class="button secondary mb-4" @click="displayReadme">
+        <UButton color="gray" size="lg" class="mb-4" @click="displayReadme">
           <Icon name="gg:readme" class="text-xl" />
-          {{ t("pages.project.showReadme") }}
-        </button>
+          {{ t("pages.project.readme.show") }}
+        </UButton>
       </div>
     </div>
     <!-- 右侧多卡片信息栏 -->
-    <div class="flex flex-col gap-4 basis-80">
+    <div class="flex flex-col gap-4 min-w-[18rem]">
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
           {{ t("pages.project.buildStatus") }}

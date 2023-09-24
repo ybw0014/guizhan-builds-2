@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export default <Partial<Config>>{
-  darkMode: ["class", ".dark-mode"],
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -21,6 +20,5 @@ export default <Partial<Config>>{
         sans: ["Noto Sans", ...defaultTheme.fontFamily.sans]
       }
     }
-  },
-  plugins: [require("@headlessui/tailwindcss")]
+  }
 };

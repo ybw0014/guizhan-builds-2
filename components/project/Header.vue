@@ -16,28 +16,27 @@ const branch = ref(props.project.branch);
 
 async function download() {
   const latestSuccessfulBuild = await useLatestSuccessfulBuild(props.project);
-  const { build, ...params } = route.params;
   router.push({
     name: "builds",
-    params,
+    params: route.params,
     query: { download: latestSuccessfulBuild.value ? 1 : 0 }
   });
 }
 </script>
 
 <template>
-  <div v-if="project" class="card bg-default project-header">
+  <div v-if="project" class="card w-full bg-default project-header">
     <div class="flex flex-row gap-4">
       <ProjectLogo :project="project" class="w-12 h-12 md:w-24 md:h-24" />
       <div class="flex flex-col">
         <div class="text-lg md:text-xl flex gap-0 md:gap-2 flex-col md:flex-row">
-          <NuxtLink :to="{ name: 'author', params: { author } }" class="link-box rounded-md px-1">
+          <ULink :to="{ name: 'author', params: { author } }" class="link-box rounded-md px-1">
             {{ author }}
-          </NuxtLink>
+          </ULink>
           <span class="text-gray-500 hidden md:inline">/</span>
-          <NuxtLink :to="{ name: 'repo', params: { author, repo } }" class="link-box rounded-md font-bold px-1">
+          <ULink :to="{ name: 'repo', params: { author, repo } }" class="link-box rounded-md font-bold px-1">
             {{ name }}
-          </NuxtLink>
+          </ULink>
         </div>
         <span class="text-sm md:text-base px-1">
           <Icon name="ph:git-branch-light" />
@@ -47,10 +46,10 @@ async function download() {
     </div>
     <div class="grow"></div>
     <div class="flex flex-col justify-center">
-      <button ref="downloadBtn" class="button primary" @click="download">
-        <Icon name="mdi:download-outline" class="text-xl" />
+      <UButton ref="downloadBtn" size="xl" @click="download">
+        <Icon name="mdi:download-outline" class="text-2xl" />
         {{ t("components.projectHeader.download") }}
-      </button>
+      </UButton>
     </div>
   </div>
 </template>

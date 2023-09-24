@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { Project } from "guizhan-builds-2-data";
 import { watchDebounced } from "@vueuse/core";
 import _ from "lodash";
@@ -158,28 +157,26 @@ onMounted(async () => {
       <!-- 输入 -->
       <input v-model="query" class="query-input" type="text" :placeholder="t('pages.projects.query', { num: projects?.length })" />
       <!-- 小屏幕排序方式 -->
-      <Menu as="div" class="md:hidden relative flex">
-        <MenuButton class="query-sort">
+      <UPopover class="md:hidden relative flex">
+        <UButton class="query-sort">
           <Icon name="ic:round-sort" class="text-xl pointer-events-none" />
-        </MenuButton>
-        <transition name="dropdown-menu">
-          <MenuItems class="menu-items bg-default top-14 right-0">
-            <MenuItem v-for="sortType in sortTypes" :key="sortType">
-              <a
-                href="javascript:void(0)"
-                :class="{
-                  'menu-item link-box': true,
-                  active: activeSortType === sortType,
-                }"
-                class="px-4 py-2 text-left"
-                @click="activeSortType = sortType"
-              >
-                {{ t(`sortTypes.${sortType}`) }}
-              </a>
-            </MenuItem>
-          </MenuItems>
-        </transition>
-      </Menu>
+        </UButton>
+        <template #panel="{ close }">
+          <div class="flex flex-col">
+            <ULink
+              v-for="sortType in sortTypes"
+              :key="sortType"
+              :class="{
+                'px-4 py-2 text-left link-box': true,
+                active: activeSortType === sortType,
+              }"
+              @click="activeSortType = sortType;close();"
+            >
+              {{ t(`sortTypes.${sortType}`) }}
+            </ULink>
+          </div>
+        </template>
+      </UPopover>
     </div>
     <!-- 大屏幕排序方式 -->
     <div class="justify-center md:flex gap-2 hidden">

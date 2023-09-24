@@ -34,8 +34,8 @@ const subscriptions = [
   }
 ];
 
-const devModal = ref();
-const queryBtn = ref();
+const devModalOpen = ref(false);
+const queryBtnDisabled = ref(false);
 const orderId = ref<string>(cacheStore.orderNum);
 const devCheckErrMsg = ref<string>("");
 const devDownloadLink = ref<string>("");
@@ -56,41 +56,42 @@ onMounted(() => {
 });
 
 function getDevBuilds() {
-  devModal.value.openModal(async () => {
-    // 获取最后更新时间
-    if (!lastUpdateTime.value) {
+  devModalOpen.value = true;
+
+  // 获取最后更新时间
+  if (!lastUpdateTime.value) {
+    setTimeout(async () => {
+      const lastUpdateRes = await useSubLastUpdate();
+      lastUpdateTime.value = lastUpdateRes.value?.last_update;
+      lastUpdateCommit.value = lastUpdateRes.value?.commit_info || "";
+      checkUpdate();
+    }, 1);
+  } else {
+    checkUpdate();
+  }
+
+  // 如果uuid有缓存，则获取下载链接
+  if (cacheStore.uuidExpireAt !== -1) {
+    useSubLog("has uuid cache");
+    const now = $dayjsR().unix();
+    if (now < cacheStore.uuidExpireAt) {
+      useSubLog("uuid cache not expired");
+      // 直接获取下载链接
       setTimeout(async () => {
-        const lastUpdateRes = await useSubLastUpdate();
-        lastUpdateTime.value = lastUpdateRes.value?.last_update;
-        lastUpdateCommit.value = lastUpdateRes.value?.commit_info || "";
-        checkUpdate();
+        await getDownloadLink(cacheStore.uuid);
       }, 1);
     } else {
-      checkUpdate();
+      useSubLog("uuid cache expired, clearing");
+      cacheStore.setUuidExpireAt(-1);
+      cacheStore.setUuid("");
     }
+  }
 
-    // 如果uuid有缓存，则获取下载链接
-    if (cacheStore.uuidExpireAt !== -1) {
-      useSubLog("has uuid cache");
-      const now = $dayjsR().unix();
-      if (now < cacheStore.uuidExpireAt) {
-        useSubLog("uuid cache not expired");
-        // 直接获取下载链接
-        setTimeout(async () => {
-          await getDownloadLink(cacheStore.uuid);
-        }, 1);
-      } else {
-        useSubLog("uuid cache expired, clearing");
-        cacheStore.setUuidExpireAt(-1);
-        cacheStore.setUuid("");
-      }
-    }
-  });
   devCheckErrMsg.value = "";
 }
 
 function closeDevCheck() {
-  devModal.value.closeModal();
+  devModalOpen.value = false;
 }
 
 function checkUpdate() {
@@ -100,7 +101,6 @@ function checkUpdate() {
 }
 
 async function checkOrder() {
-  if (!queryBtn.value) return;
   if (!orderId.value) return;
 
   if (!/^\d+$/.test(orderId.value)) {
@@ -108,7 +108,7 @@ async function checkOrder() {
     return;
   }
 
-  queryBtn.value.disabled = true;
+  queryBtnDisabled.value = true;
   devCheckErrMsg.value = "";
 
   if (saveOrder.value) {
@@ -119,7 +119,7 @@ async function checkOrder() {
   const orderData = await useSubValidation(orderId.value);
   if (!orderData.value || orderData.value.expired) {
     devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.invalidOrderId");
-    queryBtn.value.disabled = false;
+    queryBtnDisabled.value = false;
     return;
   }
 
@@ -141,7 +141,7 @@ async function getDownloadLink(uuid: string, errorMsg = false) {
     if (errorMsg) {
       devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.cannotGetLink");
     }
-    queryBtn.value.disabled = false;
+    queryBtnDisabled.value = false;
     return;
   }
 
@@ -180,12 +180,12 @@ async function devDownload() {
           </span>
         </div>
         <div class="subscribe">
-          <button v-if="sub.type === 'free'" class="button secondary" @click="getFree">
+          <UButton v-if="sub.type === 'free'" block color="gray" size="xl" variant="solid" @click="getFree">
             {{ t("pages.sfSubscription.download") }}
-          </button>
-          <button v-else class="button primary" @click="subscribe">
+          </UButton>
+          <UButton v-else block size="xl" variant="solid" @click="subscribe">
             {{ t("pages.sfSubscription.subscribe") }}
-          </button>
+          </UButton>
         </div>
         <ul class="divide-y divide-gray-200 text-gray-700 dark:text-gray-300 dark:divide-gray-600">
           <li v-for="priviledge in sub.privileges" :key="priviledge" class="priviledge flex gap-2 items-center py-2">
@@ -198,52 +198,53 @@ async function devDownload() {
     <div class="text-gray-500 text-sm">* {{ t("pages.sfSubscription.footnotes") }}</div>
   </div>
 
-  <CustomModal ref="devModal" :bg-close="false">
-    <template #title>
-      {{ t("pages.sfSubscription.devCheck.title") }}
-    </template>
-    <template #content>
-      {{ t("pages.sfSubscription.devCheck.description") }}
-    </template>
-    <template #footer>
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-col gap-4">
-          <a href="https://afdian.net/dashboard/order" target="_blank" class="a-link" tabindex="-1">
-            {{ t("pages.sfSubscription.devCheck.navigateToOrders") }}
-          </a>
-          <div v-if="!devDownloadLink" class="flex flex-col gap-4">
-            <UiInputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
-            <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
-            <UiInputCheckbox v-model="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
-            <button ref="queryBtn" type="button" class="button primary" @click="checkOrder">
-              <Icon name="ic:round-search" class="w-6 h-6" />
-              {{ t("pages.sfSubscription.devCheck.query") }}
-            </button>
-          </div>
-          <div v-else class="flex flex-col gap-4">
-            <button type="button" class="button primary" @click="devDownload">
-              <Icon name="ic:round-download" class="w-6 h-6" />
-              {{ t("pages.sfSubscription.devCheck.download") }}
-            </button>
-          </div>
-          <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex flex-col gap-2">
-            <div class="flex gap-2">
-              {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: $dayjs(lastUpdateTime).format("lll") }) }}
-              <div v-if="noUpdate">
-                {{ t("pages.sfSubscription.devCheck.noUpdate") }}
-              </div>
-            </div>
-            {{ t("pages.sfSubscription.devCheck.updateInfo", { changelog: lastUpdateCommit }) }}
-          </div>
+  <UModal v-model="devModalOpen" prevent-close>
+    <UCard>
+      <template #header>
+        <div class="text-lg flex justify-between">
+          <h2 class="flex items-center gap-2 font-semibold">
+            <Icon name="mdi:cloud-download-outline" />
+            {{ t("pages.sfSubscription.devCheck.title") }}
+          </h2>
+          <UButton color="gray" variant="link" :padded="false" @click="closeDevCheck">
+            <Icon name="ic:round-close" class="w-6 h-6" />
+          </UButton>
         </div>
-        <div class="flex gap-2 flex-wrap mt-4">
-          <button type="button" class="button secondary" @click="closeDevCheck">
-            {{ t("pages.sfSubscription.devCheck.close") }}
-          </button>
+      </template>
+      {{ t("pages.sfSubscription.devCheck.description") }}
+      <div class="flex flex-col gap-4">
+        <a href="https://afdian.net/dashboard/order" target="_blank" class="a-link" tabindex="-1">
+          {{ t("pages.sfSubscription.devCheck.navigateToOrders") }}
+        </a>
+        <div v-if="!devDownloadLink" class="flex flex-col gap-4">
+          <UiInputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
+          <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
+          <UCheckbox v-model="saveOrder" name="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
+          <UButton block size="lg" :disabled="queryBtnDisabled" @click="checkOrder">
+            <Icon name="ic:round-search" class="w-6 h-6" />
+            {{ t("pages.sfSubscription.devCheck.query") }}
+          </UButton>
+        </div>
+        <div v-else class="flex flex-col gap-4">
+          <UButton block size="lg" @click="devDownload">
+            <Icon name="ic:round-download" class="w-6 h-6" />
+            {{ t("pages.sfSubscription.devCheck.download") }}
+          </UButton>
         </div>
       </div>
-    </template>
-  </CustomModal>
+      <template #footer>
+        <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex flex-col gap-2">
+          <div class="flex gap-2">
+            {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: $dayjs(lastUpdateTime).format("lll") }) }}
+            <div v-if="noUpdate">
+              {{ t("pages.sfSubscription.devCheck.noUpdate") }}
+            </div>
+          </div>
+          {{ t("pages.sfSubscription.devCheck.updateInfo", { changelog: lastUpdateCommit }) }}
+        </div>
+      </template>
+    </UCard>
+  </UModal>
 </template>
 
 <style scoped lang="scss">
