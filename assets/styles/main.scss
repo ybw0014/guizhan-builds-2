@@ -1,4 +1,3 @@
-@import "variables";
 @import "markdown";
 
 // https://gist.github.com/spemer/a0e218bbb45433bd611e68446523a00b
@@ -40,10 +39,10 @@ body {
 }
 
 .link-box {
-  @apply transition-colors hover:bg-gray-200 dark:hover:bg-gray-700;
+  @apply hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-150;
 
   &.active {
-    @apply bg-primary-500 text-gray-100;
+    @apply bg-primary-500 text-gray-100 dark:hover:bg-primary-500;
   }
 }
 
