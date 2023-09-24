@@ -12,6 +12,7 @@ jobs:
 
     env:
       NITRO_PRESET: cloudflare_pages
+      NODE_OPTIONS: "--max-old-space-size=4096"
 
     steps:
       - name: Checking out repository

@@ -116,9 +116,12 @@
 		},
 		"project": {
 			"title": "{name} ({branch})",
-			"readmeWarning": "以下文檔來自項目 GitHub 的 README.md。文檔中可能包含指向本頁面的下載鏈接，請使用右上角的下載按鈕進行下載。",
-			"readmeFail": "加載 README.md 失敗",
-			"showReadme": "顯示項目介紹（README.md）",
+			"readme": {
+				"warningTitle": "項目介紹警告",
+				"warning": "以下內容來自項目倉庫中的 README.md 文件。文檔中可能包含指向本頁面的下載鏈接，請使用右上角的下載按鈕進行下載。",
+				"show": "顯示項目介紹（README.md）",
+				"fail": "無法加載項目介紹（README.md）。"
+			},
 			"buildStatus": "構建狀態",
 			"information": "信息",
 			"requirements": "運行需求",

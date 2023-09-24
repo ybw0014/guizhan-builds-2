@@ -116,9 +116,12 @@
 		},
 		"project": {
 			"title": "{name} ({branch})",
-			"readmeWarning": "以下文档来自项目 GitHub 的 README.md。文档中可能包含指向本页面的下载链接，请使用右上角的下载按钮进行下载。",
-			"readmeFail": "加载 README.md 失败",
-			"showReadme": "显示项目介绍（README.md）",
+			"readme": {
+				"warningTitle": "项目介绍警告",
+				"warning": "以下内容来自项目仓库中的 README.md 文件。文档中可能包含指向本页面的下载链接，请使用右上角的下载按钮进行下载。",
+				"show": "显示项目介绍（README.md）",
+				"fail": "无法加载项目介绍（README.md）。"
+			},
 			"buildStatus": "构建状态",
 			"information": "信息",
 			"requirements": "运行需求",

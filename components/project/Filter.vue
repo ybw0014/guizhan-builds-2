@@ -25,9 +25,9 @@ const value = computed({
   <RadioGroup v-model="value" class="flex flex-col gap-1">
     <RadioGroupLabel v-if="label" class="font-semibold mb-1">
       {{ label }}
-      <a v-if="value" href="javascript:void(0)" class="font-normal text-sm text-gray-500 dark:text-gray-400 hover:underline" @click="value = ''">
+      <UButton v-if="value" color="gray" size="sm" variant="link" :padded="false" @click="value = ''">
         {{ t("components.projectFilter.clear") }}
-      </a>
+      </UButton>
     </RadioGroupLabel>
     <RadioGroupOption v-for="val in values" :key="val" v-slot="{ checked }" :value="val" class="filter-option flex gap-1 items-center cursor-pointer">
       <div :class="['filter-radio', checked ? 'checked' : '']">
@@ -40,7 +40,7 @@ const value = computed({
 
 <style scoped lang="scss">
 .filter-radio {
-  @apply w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600;
+  @apply w-4 h-4 rounded-full transition-colors bg-gray-300 dark:bg-gray-600;
 
   & .inner {
     @apply absolute w-4 h-4 p-1 text-transparent;

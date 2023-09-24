@@ -14,16 +14,16 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
+		"@iconify/json": "^2.2.119",
 		"@nuxt/content": "^2.7.0",
 		"@nuxt/devtools": "^0.8.0",
 		"@nuxt/types": "^2.17.0",
 		"@nuxt/typescript-build": "^3.0.1",
-		"@nuxtjs/color-mode": "^3.3.0",
+		"@nuxt/ui": "^2.8.1",
 		"@nuxtjs/eslint-config-typescript": "^12.0.0",
 		"@nuxtjs/eslint-module": "^4.1.0",
 		"@nuxtjs/google-fonts": "^3.0.2",
 		"@nuxtjs/i18n": "8.0.0-rc.4",
-		"@nuxtjs/tailwindcss": "^6.8.0",
 		"@pinia-plugin-persistedstate/nuxt": "^1.1.1",
 		"@pinia/nuxt": "^0.4.11",
 		"@types/crypto-js": "^4.1.1",

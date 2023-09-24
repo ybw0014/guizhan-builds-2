@@ -1,4 +1,11 @@
 export default defineAppConfig({
+  ui: {
+    primary: "blue",
+    gray: "neutral",
+    popover: {
+      ring: "border-t-2 border-primary-500 py-1"
+    }
+  },
   projectSortTypes: ["name", "newest", "updated"],
   projectFilters: [
     {

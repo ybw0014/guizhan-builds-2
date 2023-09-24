@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const modes: Array<string> = ["system", "light", "dark"];
+const modes = ["system", "light", "dark"];
 const icons: Record<string, string> = {
   system: "grommet-icons:system",
   light: "ph:sun-fill",
@@ -9,7 +9,6 @@ const icons: Record<string, string> = {
 const { t } = useI18n();
 const colorMode = useColorMode();
 
-const pageLoaded = ref(false);
 const currentMode = computed(() => colorMode.preference);
 const currentIcon = computed(() => icons[currentMode.value]);
 const nextMode = computed(() => modes[(modes.indexOf(currentMode.value) + 1) % modes.length]);
@@ -22,10 +21,6 @@ const modeTooltip = computed(() => {
   });
 });
 
-onMounted(() => {
-  pageLoaded.value = true;
-});
-
 function switchThemePreference() {
   const next = nextMode.value;
   colorMode.preference = next;
@@ -33,7 +28,9 @@ function switchThemePreference() {
 </script>
 
 <template>
-  <a v-if="pageLoaded" href="javascript:void(0)" class="button link-box" :title="modeTooltip" @click="switchThemePreference">
-    <Icon :name="currentIcon" class="icon" />
-  </a>
+  <ClientOnly>
+    <a href="javascript:void(0)" class="button link-box" :title="modeTooltip" @click="switchThemePreference">
+      <Icon :name="currentIcon" class="icon" />
+    </a>
+  </ClientOnly>
 </template>

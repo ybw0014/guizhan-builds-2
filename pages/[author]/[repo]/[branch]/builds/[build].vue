@@ -23,7 +23,7 @@ if (!build.value) {
   throw createError({ statusCode: 404 });
 }
 
-const downloadModal = ref();
+const downloadModalOpen = ref(false);
 const checksumDropzone = ref<HTMLDivElement>();
 const downloadConfirm = ref<boolean>(settingsStore.confirmDownload);
 const checksumResult = ref<string>("");
@@ -39,18 +39,18 @@ onMounted(() => {
 
 function handleDownload() {
   if (!settingsStore.confirmDownload) {
-    downloadModal.value.openModal();
+    downloadModalOpen.value = true;
   } else {
     download();
   }
 }
 function handleDownloadConfirm() {
   settingsStore.setConfirmDownload(downloadConfirm.value);
-  downloadModal.value.closeModal();
+  downloadModalOpen.value = false;
   download();
 }
 function handleDownloadCancel() {
-  downloadModal.value.closeModal();
+  downloadModalOpen.value = false;
 }
 
 function getBuildRes(filename: string) {
@@ -112,10 +112,10 @@ definePageMeta({
         </div>
         <div class="grow"></div>
         <div class="flex flex-col justify-center">
-          <button class="button primary" :disabled="!build.success" @click="handleDownload">
+          <UButton size="lg" :disabled="!build.success" @click="handleDownload">
             <Icon name="mdi:download-outline" class="text-xl" />
             {{ t("pages.build.download") }}
-          </button>
+          </UButton>
         </div>
       </div>
       <div class="card bg-default flex-col items-center">
@@ -149,10 +149,10 @@ definePageMeta({
         <Disclosure>
           <DisclosureButton
             v-slot="{ open }"
-            class="flex w-full justify-between rounded-lg bg-blue-100 px-4 py-2 text-left text-sm font-medium text-blue-900 hover:bg-blue-200 dark:bg-blue-800 dark:text-blue-100 dark:hover:bg-blue-700 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75"
+            class="flex w-full justify-between rounded-lg bg-primary-100 px-4 py-2 text-left text-sm font-medium text-primary-900 hover:bg-primary-200 dark:bg-primary-800 dark:text-primary-100 dark:hover:bg-primary-700 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-opacity-75"
           >
             {{ t("pages.build.checksum.check") }}
-            <Icon :name="open ? 'icon-park:up' : 'icon-park:down'" class="h-5 w-5 text-blue-500 dark:text-blue-100" />
+            <Icon :name="open ? 'icon-park:up' : 'icon-park:down'" class="h-5 w-5 text-primary-500 dark:text-primary-100" />
           </DisclosureButton>
           <DisclosurePanel class="text-gray-500 flex flex-col gap-2">
             <div ref="checksumDropzone" class="flex items-center justify-center w-full" @click="openChecksumFile()">
@@ -175,31 +175,36 @@ definePageMeta({
     </div>
   </div>
 
-  <CustomModal ref="downloadModal">
-    <template #title>
-      {{ t("pages.build.warning.title") }}
-    </template>
-    <template #content>
-      {{ t("pages.build.warning.content") }}
-    </template>
-    <template #footer>
+  <UModal v-model="downloadModalOpen" prevent-close>
+    <UCard>
+      <template #header>
+        <div class="text-lg flex justify-between">
+          <h2 class="flex items-center gap-2 font-semibold">
+            <Icon name="mdi:alert" />
+            {{ t("pages.build.warning.title") }}
+          </h2>
+        </div>
+      </template>
       <div class="flex flex-col gap-2">
+        <p>{{ t("pages.build.warning.content") }}</p>
         <div class="flex flex-col">
-          <NuxtLink :to="{ name: 'terms' }" class="a-link" target="_blank">{{ t("pages.terms.title") }}</NuxtLink>
-          <NuxtLink :to="{ name: 'privacy' }" class="a-link" target="_blank">{{ t("pages.privacy.title") }}</NuxtLink>
+          <ULink :to="{ name: 'terms' }" class="a-link" target="_blank">{{ t("pages.terms.title") }}</ULink>
+          <ULink :to="{ name: 'privacy' }" class="a-link" target="_blank">{{ t("pages.privacy.title") }}</ULink>
         </div>
-        <UiInputCheckbox v-model="downloadConfirm" :label="t('pages.build.warning.confirmForever')" />
-        <div class="flex gap-2 flex-wrap mt-4">
-          <button type="button" class="button primary" @click="handleDownloadConfirm">
-            {{ t("pages.build.warning.confirm") }}
-          </button>
-          <button type="button" class="button secondary" @click="handleDownloadCancel">
-            {{ t("pages.build.warning.cancel") }}
-          </button>
-        </div>
+        <UCheckbox v-model="downloadConfirm" name="downloadConfirm" :label="t('pages.build.warning.confirmForever')" />
       </div>
-    </template>
-  </CustomModal>
+      <template #footer>
+        <div class="flex gap-2 flex-wrap justify-end">
+          <UButton size="lg" @click="handleDownloadConfirm">
+            {{ t("pages.build.warning.confirm") }}
+          </UButton>
+          <UButton color="gray" size="lg" @click="handleDownloadCancel">
+            {{ t("pages.build.warning.cancel") }}
+          </UButton>
+        </div>
+      </template>
+    </UCard>
+  </UModal>
 </template>
 
 <style scoped lang="scss">

@@ -3,8 +3,7 @@ import { defineNuxtConfig } from "nuxt/config";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
+    "@nuxt/ui",
     "@nuxtjs/google-fonts",
     "@nuxtjs/robots",
     "@nuxtjs/i18n",
@@ -72,6 +71,9 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  ui: {
+    icons: "all"
   },
   googleFonts: {
     families: {

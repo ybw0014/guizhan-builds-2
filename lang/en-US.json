@@ -116,9 +116,12 @@
 		},
 		"project": {
 			"title": "{name} ({branch})",
-			"readmeWarning": "The following document is loaded from README.md on GitHub. It may contain a download link to current page, please click on the download button on the top right corner to download.",
-			"readmeFail": "Failed to load README.md.",
-			"showReadme": "Show project introduction (README.md)",
+			"readme": {
+				"warningTitle": "Project Introduction Warning",
+				"warning": "The following document is loaded from README.md on GitHub. It may contain a download link to current page, please click on the download button on the top right corner to download.",
+				"show": "Show project introduction (README.md)",
+				"fail": "Failed to load project introduction (README.md)."
+			},
 			"buildStatus": "Build Status",
 			"information": "Information",
 			"requirements": "Requirements",

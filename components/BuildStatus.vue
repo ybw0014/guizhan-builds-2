@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Project } from "guizhan-builds-2-data";
-import LazyLoadImage from "./LazyLoadImage.vue";
+import LazyLoadImage from "~/components/LazyLoadImage.vue";
 
 const props = defineProps<{
   project: Project;
