@@ -62,17 +62,17 @@ async function back() {
       {{ externalLink }}
     </div>
     <div class="flex flex-row gap-2">
-      <button class="button primary" @click="trust">
+      <UButton size="lg" @click="trust">
         {{ t("pages.external.trust") }}
-      </button>
+      </UButton>
 
-      <button class="button primary" @click="go">
+      <UButton size="lg" @click="go">
         {{ t("pages.external.continue") }}
-      </button>
+      </UButton>
 
-      <button class="button secondary" @click="back">
+      <UButton color="gray" size="lg" @click="back">
         {{ t("pages.external.cancel") }}
-      </button>
+      </UButton>
     </div>
   </div>
   <div v-else>
