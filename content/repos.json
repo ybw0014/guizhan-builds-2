@@ -1295,6 +1295,7 @@
 		"displayOptions": {
 			"officialList": true,
 			"authors": ["Sefiraat", "J3fftw1"],
+			"logo": "Cultivation/logo.png",
 			"keywords": ["农耕工艺"],
 			"requirements": {
 				"java": {
@@ -2088,6 +2089,7 @@
 		},
 		"displayOptions": {
 			"authors": ["LordIdra"],
+			"logo": "Quaptics/logo.png",
 			"keywords": ["量子光学"],
 			"requirements": {
 				"java": {
