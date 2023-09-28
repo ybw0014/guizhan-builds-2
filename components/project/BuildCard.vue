@@ -2,7 +2,6 @@
 import { Project, BuildInfo } from "guizhan-builds-2-data";
 const { t } = useI18n();
 const router = useRouter();
-const dayjs = useDayjsLocalized();
 
 const props = defineProps<{
   project: Project;
@@ -29,7 +28,7 @@ function handleCardClick() {
         {{ t("components.projectBuildCard.build", { build: build.id }) }}
         <BuildStatusIcon :success="build.success" />
       </div>
-      <div class="text-sm text-gray-600 dark:text-gray-400">{{ dayjs(build.buildTimestamp).format("lll") }}</div>
+      <div class="text-sm text-gray-600 dark:text-gray-400">{{ $dayjs(build.buildTimestamp).format("lll") }}</div>
       <ProjectRequirements :project="project" :title="true" :before="build.id" />
     </div>
   </div>
