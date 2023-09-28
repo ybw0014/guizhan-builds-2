@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "nuxt-icon",
     "nuxt-lodash",
+    "dayjs-nuxt",
     "nuxt-cloudflare-analytics",
     "nuxt-vitest",
     "@nuxtjs/eslint-module"
@@ -86,5 +87,10 @@ export default defineNuxtConfig({
   },
   cloudflareAnalytics: {
     token: "643ef977d859464ba3617c7cda04fdf3"
+  },
+  dayjs: {
+    locales: ["en", "zh-cn", "zh-tw"],
+    plugins: ["utc", "timezone", "localizedFormat"],
+    defaultLocale: "en",
   }
 });

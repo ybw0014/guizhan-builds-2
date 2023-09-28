@@ -8,6 +8,7 @@ import { useSettingsStore } from "~/stores/useSettingsStore";
 const { t } = useI18n();
 const route = useRoute();
 const settingsStore = useSettingsStore();
+const dayjs = useDayjsLocalized();
 
 const props = defineProps<{
   project: Project;
@@ -106,7 +107,7 @@ definePageMeta({
             <BuildStatusIcon :success="build.success" />
           </div>
           <div class="text-md text-gray-600 dark:text-gray-400">
-            {{ t("pages.build.buildAt", { time: $dayjs(build.buildTimestamp).format("lll") }) }}
+            {{ t("pages.build.buildAt", { time: dayjs(build.buildTimestamp).format("lll") }) }}
             <a :href="getBuildRes(`Build-${buildId}.log`)" class="a-link" target="_blank">{{ t("pages.build.logs") }}</a>
           </div>
         </div>
@@ -120,7 +121,7 @@ definePageMeta({
       </div>
       <div class="card bg-default flex-col items-center">
         <span class="text-gray-400">
-          {{ t("pages.build.commitAt", { author: build.author, time: $dayjs(build.timestamp).format("lll") }) }}
+          {{ t("pages.build.commitAt", { author: build.author, time: dayjs(build.timestamp).format("lll") }) }}
           (<a :href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`" class="a-link" target="_blank">
             {{ build.commit.slice(0, 7) }} </a
           >):

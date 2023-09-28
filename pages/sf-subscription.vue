@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useCacheStore } from "~/stores/useCacheStore";
 
-const { $dayjsR } = useNuxtApp();
 const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 const cacheStore = useCacheStore();
+const dayjs = useDayjsLocalized();
 
 const subscriptions = [
   {
@@ -73,7 +73,7 @@ function getDevBuilds() {
   // 如果uuid有缓存，则获取下载链接
   if (cacheStore.uuidExpireAt !== -1) {
     useSubLog("has uuid cache");
-    const now = $dayjsR().unix();
+    const now = dayjs().unix();
     if (now < cacheStore.uuidExpireAt) {
       useSubLog("uuid cache not expired");
       // 直接获取下载链接
@@ -126,7 +126,7 @@ async function checkOrder() {
   const uuid = orderData.value.uuid as string;
 
   // 缓存订单信息
-  const uuidExpireAt = $dayjsR().add(1, "hour").unix();
+  const uuidExpireAt = dayjs().add(1, "hour").unix();
   cacheStore.setOrderExpireAt(orderData.value.expire_time);
   cacheStore.setUuid(uuid);
   cacheStore.setUuidExpireAt(uuidExpireAt);
@@ -235,7 +235,7 @@ async function devDownload() {
       <template #footer>
         <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex flex-col gap-2">
           <div class="flex gap-2">
-            {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: $dayjs(lastUpdateTime).format("lll") }) }}
+            {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: dayjs(lastUpdateTime).format("lll") }) }}
             <div v-if="noUpdate">
               {{ t("pages.sfSubscription.devCheck.noUpdate") }}
             </div>
