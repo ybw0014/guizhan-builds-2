@@ -13,6 +13,9 @@ jobs:
       BOT_NAME: ${{ secrets.BOT_NAME }}
       BOT_EMAIL: ${{ secrets.BOT_EMAIL }}
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
