@@ -23,7 +23,7 @@ jobs:
       - name: Fetch Minecraft versions
         id: fetch-versions
         run: |
-          fetched_versions=$(curl -s https://api.guizhanss.net/mc-versions)
+          fetched_versions=$(curl -s https://api.guizhanss.net/minecraft-versions)
           existing_versions=$(cat content/mc-versions.json || echo "[]")
           
           if [ "$fetched_versions" != "$existing_versions" ]; then
