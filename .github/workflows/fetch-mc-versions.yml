@@ -41,8 +41,8 @@ jobs:
             git add content/mc-versions.json
             git commit -m "chore(content): update minecraft versions"
             git push
-            echo "::set-output name=updated::true"
+            echo "updated=true" >> $GITHUB_OUTPUT
           else
             echo "Minecraft 版本列表无更新。"
-            echo "::set-output name=updated::false"
+            echo "updated=false" >> $GITHUB_OUTPUT
           fi
