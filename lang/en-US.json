@@ -151,6 +151,12 @@
 				"confirm": "Confirm",
 				"confirmForever": "Confirm, and never show this again",
 				"cancel": "Cancel"
+			},
+			"downloadDialog": {
+				"title": "Download",
+				"content": "The download will start soon.",
+				"manual": "If the download does not start or throws an error, please use the links below instead.",
+				"link": "Download Link {n}"
 			}
 		},
 		"sfSubscription": {

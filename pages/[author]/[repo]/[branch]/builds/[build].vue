@@ -23,9 +23,10 @@ if (!build.value) {
   throw createError({ statusCode: 404 });
 }
 
+const downloadConfirmModalOpen = ref(false);
+const downloadConfirm = ref<boolean>(settingsStore.confirmDownload);
 const downloadModalOpen = ref(false);
 const checksumDropzone = ref<HTMLDivElement>();
-const downloadConfirm = ref<boolean>(settingsStore.confirmDownload);
 const checksumResult = ref<string>("");
 
 useDropZone(checksumDropzone, onChecksumFileDrop);
@@ -39,26 +40,32 @@ onMounted(() => {
 
 function handleDownload() {
   if (!settingsStore.confirmDownload) {
-    downloadModalOpen.value = true;
+    downloadConfirmModalOpen.value = true;
   } else {
     download();
   }
 }
 function handleDownloadConfirm() {
   settingsStore.setConfirmDownload(downloadConfirm.value);
-  downloadModalOpen.value = false;
+  downloadConfirmModalOpen.value = false;
   download();
 }
 function handleDownloadCancel() {
-  downloadModalOpen.value = false;
+  downloadConfirmModalOpen.value = false;
 }
 
-function getBuildRes(filename: string) {
-  return useR2AssetPath(`${props.project.author}/${props.project.repository}/${props.project.branch}/${filename}`).value;
+function getBuildResource(filename: string, external = false) {
+  const path = `${props.project.author}/${props.project.repository}/${props.project.branch}/${filename}`;
+  return external ? useR2ExternalPath(path).value : useR2AssetPath(path).value;
 }
 
 function download() {
-  const path = getBuildRes(build.value?.target || "");
+  downloadModalOpen.value = true;
+  downloadManual(false);
+}
+
+function downloadManual(external: boolean) {
+  const path = getBuildResource(build.value?.target || "", external);
   useDownloadHelper(new URL(path, window.location.origin));
 }
 
@@ -107,7 +114,7 @@ definePageMeta({
           </div>
           <div class="text-md text-gray-600 dark:text-gray-400">
             {{ t("pages.build.buildAt", { time: $dayjs(build.buildTimestamp).format("lll") }) }}
-            <a :href="getBuildRes(`Build-${buildId}.log`)" class="a-link" target="_blank">{{ t("pages.build.logs") }}</a>
+            <a :href="getBuildResource(`Build-${buildId}.log`)" class="a-link" target="_blank">{{ t("pages.build.logs") }}</a>
           </div>
         </div>
         <div class="grow"></div>
@@ -175,7 +182,7 @@ definePageMeta({
     </div>
   </div>
 
-  <UModal v-model="downloadModalOpen" prevent-close>
+  <UModal v-model="downloadConfirmModalOpen" prevent-close>
     <UCard>
       <template #header>
         <div class="text-lg flex justify-between">
@@ -201,6 +208,36 @@ definePageMeta({
           <UButton color="gray" size="lg" @click="handleDownloadCancel">
             {{ t("pages.build.warning.cancel") }}
           </UButton>
+        </div>
+      </template>
+    </UCard>
+  </UModal>
+
+  <UModal v-model="downloadModalOpen">
+    <UCard>
+      <template #header>
+        <div class="text-lg flex justify-between">
+          <h2 class="flex items-center gap-2 font-semibold">
+            <Icon name="material-symbols:download" />
+            {{ t("pages.build.downloadDialog.title") }}
+          </h2>
+          <UButton color="gray" variant="link" :padded="false" @click="downloadModalOpen = false">
+            <Icon name="ic:round-close" class="w-6 h-6" />
+          </UButton>
+        </div>
+      </template>
+      <div class="flex flex-col gap-2">
+        <p>{{ t("pages.build.downloadDialog.content") }}</p>
+        <p>{{ t("pages.build.downloadDialog.manual") }}</p>
+      </div>
+      <template #footer>
+        <div class="flex gap-2 flex-wrap justify-end">
+          <UButton color="gray" size="lg" @click="downloadManual(true)">
+            {{ t("pages.build.downloadDialog.link", { n: 1 }) }}
+          </UButton>
+          <UButton color="gray" size="lg" @click="downloadManual(false)">
+              {{ t("pages.build.downloadDialog.link", { n: 2 }) }}
+            </UButton>
         </div>
       </template>
     </UCard>

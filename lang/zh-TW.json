@@ -151,6 +151,12 @@
 				"confirm": "確認",
 				"confirmForever": "確認，並不再顯示",
 				"cancel": "取消"
+			},
+			"downloadDialog": {
+				"title": "下載",
+				"content": "下載即將開始。",
+				"manual": "如果下載未開始或報錯，請使用以下鏈接嘗試下載。",
+				"link": "下載鏈接 {n}"
 			}
 		},
 		"sfSubscription": {
