@@ -24,7 +24,7 @@
 		"type": "maven",
 		"buildOptions": {
 			"name": "Slimefun",
-			"version": "{Year}.{Month}-release"
+			"version": "{Year}.{Month}.{Date}-release"
 		},
 		"displayOptions": {
 			"officialList": true,
