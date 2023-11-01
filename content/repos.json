@@ -1110,6 +1110,7 @@
 			"officialList": true,
 			"authors": ["Sefiraat", "J3fftw1"],
 			"keywords": ["下界乌托邦"],
+			"logo": "Netheopoiesis/logo.png",
 			"wiki": "https://slimefun-addons-wiki.guizhanss.cn/netheopoiesis/",
 			"requirements": {
 				"java": {
