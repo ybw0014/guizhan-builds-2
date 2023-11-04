@@ -18,10 +18,10 @@ body::-webkit-scrollbar-button {
 html {
   @apply font-sans;
 }
-.lang-zh-CN {
+html[lang=zh-CN] {
   @apply font-sans-sc;
 }
-.lang-zh-TW {
+html[lang=zh-TW] {
   @apply font-sans-tc;
 }
 

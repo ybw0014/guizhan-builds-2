@@ -24,7 +24,7 @@ useHead({
 </script>
 
 <template>
-  <Html :lang="head.htmlAttrs?.lang" :dir="head.htmlAttrs?.dir" :class="`lang-${locale}`">
+  <Html :lang="head.htmlAttrs?.lang" :dir="head.htmlAttrs?.dir">
     <Head>
       <template v-for="link in head.link" :key="link.id">
         <Link :id="link.id" :rel="link.rel" :href="link.href" :hreflang="link.hreflang" />
