@@ -2101,5 +2101,23 @@
 				}
 			}
 		}
+	},
+	"ybw0014/FastMachines:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "FastMachines",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["快捷机器"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
 	}
 }
