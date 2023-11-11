@@ -11,7 +11,19 @@ await verify(route);
 
 async function verify(to: RouteLocationNormalized) {
   if (!project.value) {
-    throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+    // 如果项目没有查询到，则尝试查询跳转到仓库页面
+    const repos = await useProjectRepository(author.value, repository.value);
+    if (!repos.value || repos.value.length === 0) {
+      throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+    }
+    
+    await navigateTo({
+      name: "repo",
+      params: {
+        author: author.value,
+        repo: repository.value
+      }
+    });
   } else if (to.params.author !== project.value.author || to.params.repo !== project.value.repository || to.params.branch !== project.value.branch) {
     const newPath = project.value.author + "/" + project.value.repository + "/" + project.value.branch;
     console.debug("Redirect to " + newPath + " from (" + to.fullPath + ")");
