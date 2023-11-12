@@ -6,11 +6,11 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value: boolean | boolean[] | string[] | [] | undefined): void;
+  (e: 'update:modelValue', value: boolean | boolean[] | string[] | [] | undefined): void;
 }>();
 const value = computed({
   get: () => props.modelValue,
-  set: (val) => emit("update:modelValue", val)
+  set: (val) => emit('update:modelValue', val)
 });
 </script>
 

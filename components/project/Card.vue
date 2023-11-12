@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from "guizhan-builds-2-data";
+import { Project } from 'guizhan-builds-2-data';
 const router = useRouter();
 
 const props = defineProps<{
@@ -12,7 +12,7 @@ const branch: string | null = isMainBranch(props.project.branch) ? null : props.
 
 function handleCardClick() {
   router.push({
-    name: "project",
+    name: 'project',
     params: {
       author: props.project.author,
       repo: props.project.repository,

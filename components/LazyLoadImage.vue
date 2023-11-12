@@ -5,8 +5,8 @@ const props = withDefaults(
     brokenImage?: string;
   }>(),
   {
-    source: "",
-    brokenImage: ""
+    source: '',
+    brokenImage: ''
   }
 );
 

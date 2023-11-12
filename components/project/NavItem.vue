@@ -2,7 +2,7 @@
 /**
  * 此处链接必须使用点击事件 + router.push()，否则会出现路由参数丢失导致页面失效的问题
  */
-import { RouteLocationRaw } from "vue-router";
+import { RouteLocationRaw } from 'vue-router';
 
 const router = useRouter();
 
@@ -13,17 +13,17 @@ const props = withDefaults(
     external?: boolean;
   }>(),
   {
-    to: "/",
+    to: '/',
     active: false,
     external: false
   }
 );
 
 function navigate() {
-  if (typeof props.to === "string") {
-    window.open(props.to as string, "_blank", "noopener noreferrer");
+  if (typeof props.to === 'string') {
+    window.open(props.to as string, '_blank', 'noopener noreferrer');
   } else if (props.external) {
-    window.open(router.resolve(props.to).href, "_blank", "noopener noreferrer");
+    window.open(router.resolve(props.to).href, '_blank', 'noopener noreferrer');
   } else {
     router.push(props.to);
   }

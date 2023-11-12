@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/require-default-prop -->
 <script setup lang="ts" generic="T extends Record<string, any>">
-import { Header } from "~/types/dataTable";
+import { Header } from '~/types/dataTable';
 const props = withDefaults(
   defineProps<{
     headers: Header[];
@@ -9,7 +9,7 @@ const props = withDefaults(
     initSort?: string;
   }>(),
   {
-    initSort: "",
+    initSort: '',
     sizePerPage: 10
   }
 );
@@ -18,7 +18,7 @@ const sliced = ref<T[]>();
 const page = ref(1);
 const activeSorter = ref<string>(props.initSort);
 const activeSortCol = computed(() => {
-  if (activeSorter.value.startsWith("-")) {
+  if (activeSorter.value.startsWith('-')) {
     return activeSorter.value.substring(1);
   } else {
     return activeSorter.value;
@@ -28,7 +28,7 @@ const activeSortOrder = computed(() => {
   if (!activeSorter.value) {
     return 0;
   } else {
-    return activeSorter.value.startsWith("-") ? -1 : 1;
+    return activeSorter.value.startsWith('-') ? -1 : 1;
   }
 });
 const totalPages = computed(() => {
@@ -64,7 +64,7 @@ function sort(header: Header) {
     if (activeSortOrder.value === 1) {
       activeSorter.value = `-${header.name}`;
     } else {
-      activeSorter.value = "";
+      activeSorter.value = '';
     }
   } else {
     activeSorter.value = header.name;

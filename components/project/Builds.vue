@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project, BuildInfo } from "guizhan-builds-2-data";
+import { Project, BuildInfo } from 'guizhan-builds-2-data';
 
 const { t } = useI18n();
 const router = useRouter();
@@ -17,19 +17,19 @@ const props = withDefaults(
   }
 );
 const emit = defineEmits<{
-  (e: "update:page", page: number): void;
+  (e: 'update:page', page: number): void;
 }>();
 
 const slicedBuilds = ref<BuildInfo[] | null>();
 const page = ref(props.page);
-const fastAccess = ref("-1");
+const fastAccess = ref('-1');
 
 const fastAccessBuilds = computed(() => {
   if (!props.builds) {
     return [];
   }
   const builds = [];
-  builds.push({ id: -1, label: t("components.projectBuilds.fastAccess") });
+  builds.push({ id: -1, label: t('components.projectBuilds.fastAccess') });
   for (const build of props.builds) {
     builds.push({ id: build.id, label: `#${build.id}` });
   }
@@ -71,11 +71,11 @@ onMounted(() => {
 function updatePage(newPage: number) {
   page.value = newPage;
   sliceProjects();
-  emit("update:page", newPage);
+  emit('update:page', newPage);
 }
 
 watch(fastAccess, () => {
-  if (fastAccess.value === "-1") {
+  if (fastAccess.value === '-1') {
     return;
   }
   const buildId = Number(fastAccess.value);
@@ -87,7 +87,7 @@ watch(fastAccess, () => {
     return;
   }
   router.push({
-    name: "build",
+    name: 'build',
     params: {
       author: props.project.author,
       repo: props.project.repository,

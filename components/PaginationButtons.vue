@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { onKeyStroke } from "@vueuse/core";
+import { onKeyStroke } from '@vueuse/core';
 const { t } = useI18n();
 const props = defineProps<{
   page: number;
   pages: number;
 }>();
 const emit = defineEmits<{
-  (e: "update:page", page: number): void;
+  (e: 'update:page', page: number): void;
 }>();
 const page = computed({
   get: () => props.page,
-  set: (value) => emit("update:page", value)
+  set: (value) => emit('update:page', value)
 });
 
 function gotoPage(newPage: number) {
@@ -18,7 +18,7 @@ function gotoPage(newPage: number) {
 }
 
 function visible(condition: boolean) {
-  return condition ? "" : "visibility: hidden";
+  return condition ? '' : 'visibility: hidden';
 }
 
 const pageOptions = computed(() => {
@@ -47,7 +47,7 @@ const pageOptions = computed(() => {
 
 // 键盘控制
 onKeyStroke(
-  "ArrowLeft",
+  'ArrowLeft',
   (e) => {
     e.preventDefault();
     if (page.value > 1) {
@@ -57,7 +57,7 @@ onKeyStroke(
   { dedupe: false }
 );
 onKeyStroke(
-  "ArrowRight",
+  'ArrowRight',
   (e) => {
     e.preventDefault();
     if (page.value < props.pages) {

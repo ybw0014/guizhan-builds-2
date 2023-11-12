@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const modes = ["system", "light", "dark"];
+const modes = ['system', 'light', 'dark'];
 const icons: Record<string, string> = {
-  system: "grommet-icons:system",
-  light: "ph:sun-fill",
-  dark: "ph:moon-stars-fill"
+  system: 'grommet-icons:system',
+  light: 'ph:sun-fill',
+  dark: 'ph:moon-stars-fill'
 };
 
 const { t } = useI18n();
@@ -15,7 +15,7 @@ const nextMode = computed(() => modes[(modes.indexOf(currentMode.value) + 1) % m
 const modeTooltip = computed(() => {
   const current = currentMode.value;
   const next = nextMode.value;
-  return t("components.header.theme-switcher.tooltip", {
+  return t('components.header.theme-switcher.tooltip', {
     next: t(`components.header.theme-switcher.${next}`),
     current: t(`components.header.theme-switcher.${current}`)
   });

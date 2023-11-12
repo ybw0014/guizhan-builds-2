@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from "guizhan-builds-2-data";
+import { Project } from 'guizhan-builds-2-data';
 const { t } = useI18n();
 
 const sizePerPage = 10;
@@ -14,7 +14,7 @@ const props = withDefaults(
   }
 );
 const emit = defineEmits<{
-  (e: "update:page", page: number): void;
+  (e: 'update:page', page: number): void;
 }>();
 
 const slicedProjects = ref<Project[] | null>();
@@ -56,7 +56,7 @@ onMounted(() => {
 function updatePage(newPage: number) {
   page.value = newPage;
   sliceProjects();
-  emit("update:page", newPage);
+  emit('update:page', newPage);
 }
 </script>
 

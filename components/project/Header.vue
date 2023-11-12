@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from "guizhan-builds-2-data";
+import { Project } from 'guizhan-builds-2-data';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -17,7 +17,7 @@ const branch = ref(props.project.branch);
 async function download() {
   const latestSuccessfulBuild = await useLatestSuccessfulBuild(props.project);
   router.push({
-    name: "builds",
+    name: 'builds',
     params: route.params,
     query: { download: latestSuccessfulBuild.value ? 1 : 0 }
   });

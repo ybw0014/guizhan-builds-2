@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const props = defineProps<{
   href: string;
-  target?: "_blank" | "_self" | "_parent" | "_top";
+  target?: '_blank' | '_self' | '_parent' | '_top';
 }>();
 
 const isExternal = computed(() => {
-  return props.href.startsWith("http");
+  return props.href.startsWith('http');
 });
 </script>
 

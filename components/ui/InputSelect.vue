@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Option } from "~/types/components/ui/InputSelect";
+import { Option } from '~/types/components/ui/InputSelect';
 
 const { t } = useI18n();
 
@@ -14,20 +14,20 @@ const props = withDefaults(
     i18nText?: boolean;
   }>(),
   {
-    label: "",
-    modelValue: "",
-    itemValue: "value",
-    itemText: "text",
+    label: '',
+    modelValue: '',
+    itemValue: 'value',
+    itemText: 'text',
     i18nText: false
   }
 );
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value?: string | null): void;
+  (e: 'update:modelValue', value?: string | null): void;
 }>();
 const value = computed({
   get: () => props.modelValue,
-  set: (val) => emit("update:modelValue", val)
+  set: (val) => emit('update:modelValue', val)
 });
 </script>
 

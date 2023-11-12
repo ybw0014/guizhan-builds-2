@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RadioGroup, RadioGroupLabel, RadioGroupOption } from "@headlessui/vue";
+import { RadioGroup, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue';
 
 const { t } = useI18n();
 
@@ -13,11 +13,11 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value?: string): void;
+  (e: 'update:modelValue', value?: string): void;
 }>();
 const value = computed({
   get: () => props.modelValue,
-  set: (val) => emit("update:modelValue", val)
+  set: (val) => emit('update:modelValue', val)
 });
 </script>
 

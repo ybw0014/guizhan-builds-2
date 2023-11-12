@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Project } from "guizhan-builds-2-data";
-import LazyLoadImage from "~/components/LazyLoadImage.vue";
+import { Project } from 'guizhan-builds-2-data';
+import LazyLoadImage from '~/components/LazyLoadImage.vue';
 const { t } = useI18n();
 
 const props = withDefaults(
@@ -10,13 +10,13 @@ const props = withDefaults(
     title?: boolean;
     text?: boolean;
     before?: number;
-    size?: "sm" | "md" | "lg" | "xl";
+    size?: 'sm' | 'md' | 'lg' | 'xl';
   }>(),
   {
     title: false,
     text: false,
     before: 0,
-    size: "md"
+    size: 'md'
   }
 );
 const req = useProjectRequirements(props.project, props.before);
@@ -24,14 +24,14 @@ const req = useProjectRequirements(props.project, props.before);
 const requirementSize = computed(() => `text-${props.size}`);
 const iconClass = computed(() => {
   switch (props.size) {
-    case "sm":
-      return "w-4 h-4";
-    case "md":
-      return "w-5 h-5";
-    case "lg":
-      return "w-6 h-6";
-    case "xl":
-      return "w-7 h-7";
+    case 'sm':
+      return 'w-4 h-4';
+    case 'md':
+      return 'w-5 h-5';
+    case 'lg':
+      return 'w-6 h-6';
+    case 'xl':
+      return 'w-7 h-7';
   }
 });
 </script>
