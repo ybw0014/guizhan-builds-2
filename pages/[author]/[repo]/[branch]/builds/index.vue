@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Project } from "guizhan-builds-2-data";
-import _ from "lodash";
-import { watchDebounced } from "@vueuse/core";
-import { RouteParams } from "vue-router";
+import { Project } from 'guizhan-builds-2-data';
+import _ from 'lodash';
+import { watchDebounced } from '@vueuse/core';
+import { RouteParams } from 'vue-router';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -64,7 +64,7 @@ async function handleDownload(params: RouteParams) {
     return;
   }
   router.replace({
-    name: "build",
+    name: 'build',
     params: {
       ...params,
       build: latestSuccessfulBuild.value.id
@@ -76,7 +76,7 @@ async function handleDownload(params: RouteParams) {
 }
 
 definePageMeta({
-  name: "builds"
+  name: 'builds'
 });
 </script>
 

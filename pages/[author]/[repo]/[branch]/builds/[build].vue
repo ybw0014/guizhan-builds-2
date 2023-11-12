@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import { useDropZone, useFileDialog } from "@vueuse/core";
-import CryptoJS from "crypto-js";
-import { Project } from "guizhan-builds-2-data";
-import { useSettingsStore } from "~/stores/useSettingsStore";
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import { useDropZone, useFileDialog } from '@vueuse/core';
+import CryptoJS from 'crypto-js';
+import { Project } from 'guizhan-builds-2-data';
+import { useSettingsStore } from '~/stores/useSettingsStore';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -13,8 +13,8 @@ const props = defineProps<{
   project: Project;
 }>();
 
-const name = ref(props.project?.repository || "");
-const branch = ref(props.project?.branch || "");
+const name = ref(props.project?.repository || '');
+const branch = ref(props.project?.branch || '');
 const buildId = ref(parseInt(route.params.build as string));
 
 const build = await useBuild(props.project, buildId.value);
@@ -27,7 +27,7 @@ const downloadConfirmModalOpen = ref(false);
 const downloadConfirm = ref<boolean>(settingsStore.confirmDownload);
 const downloadModalOpen = ref(false);
 const checksumDropzone = ref<HTMLDivElement>();
-const checksumResult = ref<string>("");
+const checksumResult = ref<string>('');
 
 useDropZone(checksumDropzone, onChecksumFileDrop);
 const { open: openChecksumFile, onChange: onChecksumFileChange } = useFileDialog();
@@ -65,7 +65,7 @@ function download() {
 }
 
 function downloadManual(external: boolean) {
-  const path = getBuildResource(build.value?.target || "", external);
+  const path = getBuildResource(build.value?.target || '', external);
   useDownloadHelper(new URL(path, window.location.origin));
 }
 
@@ -93,7 +93,7 @@ function validateChecksum(file: File) {
 }
 
 definePageMeta({
-  name: "build",
+  name: 'build',
   validate: async (route) => {
     return /^\d+$/.test(route.params.build as string) && parseInt(route.params.build as string) > 0;
   }

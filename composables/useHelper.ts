@@ -1,13 +1,13 @@
-import { RouteLocationRaw } from "vue-router";
-import { useSettingsStore } from "~/stores/useSettingsStore";
+import { RouteLocationRaw } from 'vue-router';
+import { useSettingsStore } from '~/stores/useSettingsStore';
 
 export function useDownloadHelper(url: URL, filename?: string) {
-  const aLink = document.createElement("a");
+  const aLink = document.createElement('a');
   aLink.href = url.toString();
-  aLink.target = "_blank";
-  aLink.rel = "noopener noreferrer";
+  aLink.target = '_blank';
+  aLink.rel = 'noopener noreferrer';
   if (filename) {
-    aLink.setAttribute("download", filename);
+    aLink.setAttribute('download', filename);
   }
   document.body.appendChild(aLink);
   aLink.click();
@@ -15,7 +15,7 @@ export function useDownloadHelper(url: URL, filename?: string) {
 }
 
 export function useExternalLinkHelper(to: RouteLocationRaw | string): RouteLocationRaw | string {
-  if (typeof to !== "string") {
+  if (typeof to !== 'string') {
     return to;
   }
   const settingsStore = useSettingsStore();
@@ -31,7 +31,7 @@ export function useExternalLinkHelper(to: RouteLocationRaw | string): RouteLocat
   }
 
   return {
-    name: "external",
+    name: 'external',
     query: {
       link: to
     }

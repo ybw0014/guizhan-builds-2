@@ -1,22 +1,22 @@
 export default defineAppConfig({
   ui: {
-    primary: "blue",
-    gray: "neutral",
+    primary: 'blue',
+    gray: 'neutral',
     popover: {
-      ring: "border-t-2 border-primary-500 py-1"
+      ring: 'border-t-2 border-primary-500 py-1'
     }
   },
-  projectSortTypes: ["name", "newest", "updated"],
+  projectSortTypes: ['name', 'newest', 'updated'],
   projectFilters: [
     {
-      id: "server",
-      type: "single",
+      id: 'server',
+      type: 'single',
       i18n: true,
-      values: ["spigot", "paper"]
+      values: ['spigot', 'paper']
     },
     {
-      id: "mcVersion",
-      type: "single",
+      id: 'mcVersion',
+      type: 'single',
       i18n: false,
       values: [] // 将在运行时填充
     }

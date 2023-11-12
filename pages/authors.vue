@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Author } from "guizhan-builds-2-data-extra";
-import { watchDebounced } from "@vueuse/core";
-import _ from "lodash";
-import { Header } from "~/types/dataTable";
+import { Author } from 'guizhan-builds-2-data-extra';
+import { watchDebounced } from '@vueuse/core';
+import _ from 'lodash';
+import { Header } from '~/types/dataTable';
 
 const { t } = useI18n();
 
@@ -14,13 +14,13 @@ filterList();
 
 const headers: Header[] = [
   {
-    name: "name",
-    title: t("pages.authors.name"),
+    name: 'name',
+    title: t('pages.authors.name'),
     sortable: true
   },
   {
-    name: "projects",
-    title: t("pages.authors.projects"),
+    name: 'projects',
+    title: t('pages.authors.projects'),
     sortable: true
   }
 ];

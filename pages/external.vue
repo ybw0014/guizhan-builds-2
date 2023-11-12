@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSettingsStore } from "~/stores/useSettingsStore";
+import { useSettingsStore } from '~/stores/useSettingsStore';
 
 const { t } = useI18n();
 const route = useRoute();

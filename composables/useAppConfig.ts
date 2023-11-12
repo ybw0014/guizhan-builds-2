@@ -7,7 +7,7 @@ export async function useProjectFilters() {
   const appConfig = useAppConfig();
   const mcVersions = await useMinecraftVersions();
   const filters = appConfig.projectFilters.map((filter) => {
-    if (filter.id === "mcVersion") {
+    if (filter.id === 'mcVersion') {
       filter.values = mcVersions.value || [];
     }
     return filter;

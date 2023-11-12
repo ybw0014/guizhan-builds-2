@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Project } from "guizhan-builds-2-data";
-import { watchDebounced } from "@vueuse/core";
-import _ from "lodash";
+import { Project } from 'guizhan-builds-2-data';
+import { watchDebounced } from '@vueuse/core';
+import _ from 'lodash';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -10,9 +10,9 @@ const router = useRouter();
 const author = ref<string>(route.params.author as string);
 const query = ref();
 const sortTypes = computed(() => [
-  { id: "name", label: t("sortTypes.name") },
-  { id: "newest", label: t("sortTypes.newest") },
-  { id: "updated", label: t("sortTypes.updated") }
+  { id: 'name', label: t('sortTypes.name') },
+  { id: 'newest', label: t('sortTypes.newest') },
+  { id: 'updated', label: t('sortTypes.updated') }
 ]);
 const activeSortType = ref<string>((route.query.sortBy as string) || sortTypes.value[0].id);
 const page = ref(route.query.page ? Number(route.query.page) : 1);
@@ -20,7 +20,7 @@ const filteredList = ref<Project[] | null>();
 const pageResetAnchor = ref<Element | null>(null);
 
 const projects = await useAuthorProjects(author.value);
-const buildTime = await useR2Asset<Record<string, number>>("buildTimestamp.json");
+const buildTime = await useR2Asset<Record<string, number>>('buildTimestamp.json');
 await verify();
 
 const queryParams = computed(() => {
@@ -49,7 +49,7 @@ watchDebounced(
 
 async function verify() {
   if (!projects.value || projects.value.length === 0) {
-    throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
   } else {
     filterList();
   }
@@ -78,13 +78,13 @@ function filterList() {
     });
   }
   switch (activeSortType.value) {
-    case "name":
+    case 'name':
       filtered = _.sortBy(filtered, (project: Project) => project.repository.toLowerCase());
       break;
-    case "newest":
+    case 'newest':
       filtered = _.cloneDeep(filtered).reverse();
       break;
-    case "updated":
+    case 'updated':
       if (buildTime.data) {
         const buildTimestamp = buildTime.data.value as Record<string, number>;
         filtered = _.sortBy(filtered, (project: Project) => buildTimestamp[project.key]).reverse();
@@ -97,7 +97,7 @@ function filterList() {
 }
 
 definePageMeta({
-  name: "author"
+  name: 'author'
 });
 </script>
 

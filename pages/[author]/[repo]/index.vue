@@ -14,11 +14,11 @@ async function verify() {
     // 如果没有结果则尝试仅查询作者并跳转到作者页面
     const authorProjects = await useAuthorProjects(author.value);
     if (!authorProjects.value || authorProjects.value.length === 0) {
-      throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+      throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
     }
 
     await navigateTo({
-      name: "author",
+      name: 'author',
       params: {
         author: author.value
       }
@@ -27,7 +27,7 @@ async function verify() {
     const project = projects.value[0];
     // 如果只有1个结果则直接重定向
     router.replace({
-      name: "project",
+      name: 'project',
       params: {
         author: project.author,
         repo: project.repository,
@@ -38,7 +38,7 @@ async function verify() {
 }
 
 definePageMeta({
-  name: "repo"
+  name: 'repo'
 });
 </script>
 

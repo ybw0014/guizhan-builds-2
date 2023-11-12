@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const { t, locale } = useI18n();
 
 const head = useLocaleHead({
   addDirAttribute: true,
-  identifierAttribute: "id",
+  identifierAttribute: 'id',
   addSeoAttributes: true
 });
 
 onMounted(() => {
-  const i18nLang = useCookie("i18n_locale", { maxAge: 60 * 60 * 24 * 365 });
+  const i18nLang = useCookie('i18n_locale', { maxAge: 60 * 60 * 24 * 365 });
   i18nLang.value = i18nLang.value || locale.value;
 });
 
 useHead({
   titleTemplate: (titleChunk) => {
-    const siteTitle = t("title");
+    const siteTitle = t('title');
     return titleChunk ? `${titleChunk} - ${siteTitle}` : siteTitle;
   }
 });

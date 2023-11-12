@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Project } from "guizhan-builds-2-data";
-import { watchDebounced } from "@vueuse/core";
-import _ from "lodash";
+import { Project } from 'guizhan-builds-2-data';
+import { watchDebounced } from '@vueuse/core';
+import _ from 'lodash';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -10,12 +10,12 @@ const router = useRouter();
 const sortTypes = useProjectSortTypes();
 const filters = await useProjectFilters();
 
-const query = ref((route.query.q as string) || "");
+const query = ref((route.query.q as string) || '');
 const activeSortType = ref((route.query.sortBy as string) || sortTypes.value[0]);
 // 不设置类型的话，没法使用 string index
 const activeFilters = ref<any>({
-  server: route.query.server as string || "",
-  mcVersion: route.query.mcVersion as string || "",
+  server: route.query.server as string || '',
+  mcVersion: route.query.mcVersion as string || '',
 });
 const page = ref(route.query.page ? Number(route.query.page) : 1);
 const filteredList = ref<Project[] | null>();
@@ -24,7 +24,7 @@ const projectList = ref<Element | null>(null);
 const pageResetAnchor = ref<Element | null>(null);
 
 const projects = await useProjects();
-const buildTime = await useR2Asset<Record<string, number>>("buildTimestamp.json");
+const buildTime = await useR2Asset<Record<string, number>>('buildTimestamp.json');
 
 const queryParams = computed(() => {
   const params: Record<string, any> = {};
@@ -92,8 +92,8 @@ async function filterList() {
   if (activeFilters.value.server) {
     filtered = _.filter(filtered, (project: Project) => {
       const requirements = useProjectRequirements(project);
-      if (requirements.has("paper")) {
-        return activeFilters.value.server === "paper";
+      if (requirements.has('paper')) {
+        return activeFilters.value.server === 'paper';
       }
       return true;
     });
@@ -103,10 +103,10 @@ async function filterList() {
   if (activeFilters.value.mcVersion) {
     filtered = _.filter(filtered, (project: Project) => {
       const requirements = useProjectRequirements(project);
-      if (requirements.has("minecraft")) {
+      if (requirements.has('minecraft')) {
         return useMcVersionAtLeast(
           activeFilters.value.mcVersion,
-          requirements.get("minecraft")!
+          requirements.get('minecraft')!
         );
       }
       return true;
@@ -115,15 +115,15 @@ async function filterList() {
 
   // 排序
   switch (activeSortType.value) {
-    case "name":
+    case 'name':
       filtered = _.sortBy(filtered, (project: Project) =>
         project.repository.toLowerCase()
       );
       break;
-    case "newest":
+    case 'newest':
       filtered = _.cloneDeep(filtered).reverse();
       break;
-    case "updated":
+    case 'updated':
       if (buildTime.data) {
         const buildTimestamp = buildTime.data.value as Record<string, number>;
         filtered = _.sortBy(

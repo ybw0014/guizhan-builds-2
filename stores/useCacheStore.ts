@@ -1,12 +1,12 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-export const useCacheStore = defineStore("cache", {
+export const useCacheStore = defineStore('cache', {
   state: () => {
     return {
       // 订阅计划相关
-      orderNum: "",
+      orderNum: '',
       orderExpireAt: -1,
-      uuid: "",
+      uuid: '',
       uuidExpireAt: -1,
       lastUpdateAt: -1,
       // mc版本信息相关

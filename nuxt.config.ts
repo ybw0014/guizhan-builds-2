@@ -1,90 +1,90 @@
-import { defineNuxtConfig } from "nuxt/config";
+import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    "@nuxt/ui",
-    "@nuxtjs/google-fonts",
-    "@nuxtjs/robots",
-    "@nuxtjs/i18n",
-    "@nuxt/content",
-    "@pinia/nuxt",
-    "@pinia-plugin-persistedstate/nuxt",
-    "nuxt-icon",
-    "nuxt-lodash",
-    "nuxt-cloudflare-analytics",
-    "nuxt-vitest",
-    "@nuxtjs/eslint-module"
+    '@nuxt/ui',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/robots',
+    '@nuxtjs/i18n',
+    '@nuxt/content',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    'nuxt-icon',
+    'nuxt-lodash',
+    'nuxt-cloudflare-analytics',
+    'nuxt-vitest',
+    '@nuxtjs/eslint-module'
   ],
   devtools: { enabled: true },
   devServer: {
-    host: "0.0.0.0"
+    host: '0.0.0.0'
   },
   nitro: {
-    preset: "cloudflare-pages"
+    preset: 'cloudflare-pages'
   },
-  css: ["@/assets/styles/main.scss"],
+  css: ['@/assets/styles/main.scss'],
   routeRules: {
-    "/r2/**": { proxy: "https://builds-r2.gzassets.net/**" },
-    "/eapi/**": { proxy: "https://api.guizhanss.net/**" },
+    '/r2/**': { proxy: 'https://builds-r2.gzassets.net/**' },
+    '/eapi/**': { proxy: 'https://api.guizhanss.net/**' },
   },
   i18n: {
     locales: [
       {
-        code: "en",
-        iso: "en-US",
-        name: "English",
-        file: "en-US.json"
+        code: 'en',
+        iso: 'en-US',
+        name: 'English',
+        file: 'en-US.json'
       },
       {
-        code: "zh-CN",
-        iso: "zh-CN",
-        name: "简体中文",
-        file: "zh-CN.json",
+        code: 'zh-CN',
+        iso: 'zh-CN',
+        name: '简体中文',
+        file: 'zh-CN.json',
         isCatchallLocale: true
       },
       {
-        code: "zh-TW",
-        iso: "zh-TW",
-        name: "繁體中文",
-        file: "zh-TW.json"
+        code: 'zh-TW',
+        iso: 'zh-TW',
+        name: '繁體中文',
+        file: 'zh-TW.json'
       }
     ],
     lazy: true,
-    strategy: "no_prefix",
-    langDir: "lang",
-    defaultLocale: "en",
+    strategy: 'no_prefix',
+    langDir: 'lang',
+    defaultLocale: 'en',
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: "i18n_locale",
+      cookieKey: 'i18n_locale',
       alwaysRedirect: true,
-      fallbackLocale: "en"
+      fallbackLocale: 'en'
     }
   },
   content: {
     markdown: {
-      remarkPlugins: ["remark-heading-id"],
+      remarkPlugins: ['remark-heading-id'],
       rehypePlugins: {
-        "rehype-external-links": {
-          target: "_blank",
-          rel: ["noopener", "noreferrer"]
+        'rehype-external-links': {
+          target: '_blank',
+          rel: ['noopener', 'noreferrer']
         }
       }
     }
   },
   ui: {
-    icons: "all"
+    icons: 'all'
   },
   googleFonts: {
     families: {
-      "Noto+Sans": true,
-      "Noto+Sans+SC": true,
-      "Noto+Sans+TC": true
+      'Noto+Sans': true,
+      'Noto+Sans+SC': true,
+      'Noto+Sans+TC': true
     },
-    display: "swap",
+    display: 'swap',
     download: false
   },
   cloudflareAnalytics: {
-    token: "643ef977d859464ba3617c7cda04fdf3"
+    token: '643ef977d859464ba3617c7cda04fdf3'
   }
 });

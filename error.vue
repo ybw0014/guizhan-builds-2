@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { NuxtError } from "nuxt/app";
+import { NuxtError } from 'nuxt/app';
 
 const props = defineProps<{
   error: NuxtError;
@@ -9,7 +9,7 @@ let i18n: any;
 try {
   i18n = useI18n();
 } catch (e) {
-  console.error("cannot load i18n", e);
+  console.error('cannot load i18n', e);
 }
 
 const statusCode = computed(() => {
@@ -19,11 +19,11 @@ const statusCode = computed(() => {
 const text = computed(() => {
   switch (statusCode.value) {
     case 404:
-      return i18n?.t("error.404") || "404";
+      return i18n?.t('error.404') || '404';
     case 401:
-      return i18n?.t("error.401") || "401";
+      return i18n?.t('error.401') || '401';
     case 403:
-      return i18n?.t("error.403") || "403";
+      return i18n?.t('error.403') || '403';
     default:
       return props.error.message;
   }
@@ -36,7 +36,7 @@ const title = computed(() => {
     case 403:
       return statusCode.value;
     default:
-      return i18n?.t("error.unknown") || "Unknown error";
+      return i18n?.t('error.unknown') || 'Unknown error';
   }
 });
 </script>

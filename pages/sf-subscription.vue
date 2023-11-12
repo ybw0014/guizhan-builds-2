@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCacheStore } from "~/stores/useCacheStore";
+import { useCacheStore } from '~/stores/useCacheStore';
 
 const { $dayjsR } = useNuxtApp();
 const { t } = useI18n();
@@ -9,50 +9,50 @@ const cacheStore = useCacheStore();
 
 const subscriptions = [
   {
-    type: "free",
-    icon: "arcticons:canary",
+    type: 'free',
+    icon: 'arcticons:canary',
     price: 0,
-    privileges: ["canaryBuilds", "issuesSupport"]
+    privileges: ['canaryBuilds', 'issuesSupport']
   },
   {
-    type: "monthly",
-    icon: "ic:baseline-brightness-2",
+    type: 'monthly',
+    icon: 'ic:baseline-brightness-2',
     price: 6,
-    privileges: ["devBuilds", "newFeatures"]
+    privileges: ['devBuilds', 'newFeatures']
   },
   {
-    type: "seasonly",
-    icon: "ic:baseline-brightness-4",
+    type: 'seasonly',
+    icon: 'ic:baseline-brightness-4',
     price: 15,
-    privileges: ["devBuilds", "newFeatures"]
+    privileges: ['devBuilds', 'newFeatures']
   },
   {
-    type: "annually",
-    icon: "bx:brightness",
+    type: 'annually',
+    icon: 'bx:brightness',
     price: 80,
-    privileges: ["devBuilds", "techSupport", "newFeatures"]
+    privileges: ['devBuilds', 'techSupport', 'newFeatures']
   }
 ];
 
 const devModalOpen = ref(false);
 const queryBtnDisabled = ref(false);
 const orderId = ref<string>(cacheStore.orderNum);
-const devCheckErrMsg = ref<string>("");
-const devDownloadLink = ref<string>("");
+const devCheckErrMsg = ref<string>('');
+const devDownloadLink = ref<string>('');
 const lastUpdateTime = ref<number | null>();
-const lastUpdateCommit = ref<string>("");
+const lastUpdateCommit = ref<string>('');
 const saveOrder = ref(false);
 const noUpdate = ref(false);
 
 function getFree() {
-  router.push({ name: "builds", params: { author: "StarWishsama", repo: "Slimefun4", branch: "master" } });
+  router.push({ name: 'builds', params: { author: 'StarWishsama', repo: 'Slimefun4', branch: 'master' } });
 }
 function subscribe() {
-  window.open("https://afdian.net/a/nora1ncity", "_blank", "noopener noreferrer");
+  window.open('https://afdian.net/a/nora1ncity', '_blank', 'noopener noreferrer');
 }
 
 onMounted(() => {
-  route.hash === "#getdev" && getDevBuilds();
+  route.hash === '#getdev' && getDevBuilds();
 });
 
 function getDevBuilds() {
@@ -63,7 +63,7 @@ function getDevBuilds() {
     setTimeout(async () => {
       const lastUpdateRes = await useSubLastUpdate();
       lastUpdateTime.value = lastUpdateRes.value?.last_update;
-      lastUpdateCommit.value = lastUpdateRes.value?.commit_info || "";
+      lastUpdateCommit.value = lastUpdateRes.value?.commit_info || '';
       checkUpdate();
     }, 1);
   } else {
@@ -72,22 +72,22 @@ function getDevBuilds() {
 
   // 如果uuid有缓存，则获取下载链接
   if (cacheStore.uuidExpireAt !== -1) {
-    useSubLog("has uuid cache");
+    useSubLog('has uuid cache');
     const now = $dayjsR().unix();
     if (now < cacheStore.uuidExpireAt) {
-      useSubLog("uuid cache not expired");
+      useSubLog('uuid cache not expired');
       // 直接获取下载链接
       setTimeout(async () => {
         await getDownloadLink(cacheStore.uuid);
       }, 1);
     } else {
-      useSubLog("uuid cache expired, clearing");
+      useSubLog('uuid cache expired, clearing');
       cacheStore.setUuidExpireAt(-1);
-      cacheStore.setUuid("");
+      cacheStore.setUuid('');
     }
   }
 
-  devCheckErrMsg.value = "";
+  devCheckErrMsg.value = '';
 }
 
 function closeDevCheck() {
@@ -104,12 +104,12 @@ async function checkOrder() {
   if (!orderId.value) return;
 
   if (!/^\d+$/.test(orderId.value)) {
-    devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.malformedOrderId");
+    devCheckErrMsg.value = t('pages.sfSubscription.devCheck.error.malformedOrderId');
     return;
   }
 
   queryBtnDisabled.value = true;
-  devCheckErrMsg.value = "";
+  devCheckErrMsg.value = '';
 
   if (saveOrder.value) {
     cacheStore.setOrderNum(orderId.value);
@@ -118,7 +118,7 @@ async function checkOrder() {
   // 查询订单
   const orderData = await useSubValidation(orderId.value);
   if (!orderData.value || orderData.value.expired) {
-    devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.invalidOrderId");
+    devCheckErrMsg.value = t('pages.sfSubscription.devCheck.error.invalidOrderId');
     queryBtnDisabled.value = false;
     return;
   }
@@ -126,7 +126,7 @@ async function checkOrder() {
   const uuid = orderData.value.uuid as string;
 
   // 缓存订单信息
-  const uuidExpireAt = $dayjsR().add(1, "hour").unix();
+  const uuidExpireAt = $dayjsR().add(1, 'hour').unix();
   cacheStore.setOrderExpireAt(orderData.value.expire_time);
   cacheStore.setUuid(uuid);
   cacheStore.setUuidExpireAt(uuidExpireAt);
@@ -139,7 +139,7 @@ async function getDownloadLink(uuid: string, errorMsg = false) {
   const downloadLink = await useSubDownload(uuid);
   if (!downloadLink.value) {
     if (errorMsg) {
-      devCheckErrMsg.value = t("pages.sfSubscription.devCheck.error.cannotGetLink");
+      devCheckErrMsg.value = t('pages.sfSubscription.devCheck.error.cannotGetLink');
     }
     queryBtnDisabled.value = false;
     return;
@@ -152,7 +152,7 @@ async function devDownload() {
   cacheStore.setLastUpdateAt(lastUpdateTime.value || -1);
 
   const url = new URL(devDownloadLink.value);
-  const filename = url.pathname.split("/").pop() as string;
+  const filename = url.pathname.split('/').pop() as string;
   useDownloadHelper(url, filename);
 }
 </script>

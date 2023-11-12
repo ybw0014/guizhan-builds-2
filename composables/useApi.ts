@@ -3,7 +3,7 @@ export async function useLocalApi<T>(path: string) {
   // 同时支持浏览器与SSR
   if (process.server) {
     host = useNuxtApp().ssrContext?.event.node.req.headers.host as string;
-    protocol = process.env.NODE_ENV === "production" ? "https:" : "http:";
+    protocol = process.env.NODE_ENV === 'production' ? 'https:' : 'http:';
   } else {
     host = window.location.host;
     protocol = window.location.protocol;
