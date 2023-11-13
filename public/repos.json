@@ -2119,5 +2119,26 @@
 				}
 			}
 		}
+	},
+	"ybw0014/GeneticChickengineering-Reborn:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "GeneticChickengineering",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["鸡因工程多语言版"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				},
+				"paper": {
+					"1": "Required"
+				}
+			}
+		}
 	}
 }
