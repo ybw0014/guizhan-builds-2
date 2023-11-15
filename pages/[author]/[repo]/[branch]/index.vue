@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-data';
 import { useGitHubReadmeParsed } from '~/composables/useGitHub';
 
 const { t } = useI18n();
@@ -46,7 +46,7 @@ definePageMeta({
       <div v-else-if="showReadme">{{ t("pages.project.readme.fail") }}</div>
       <div v-else class="flex flex-col items-center">
         <UButton color="gray" size="lg" class="mb-4" @click="displayReadme">
-          <Icon name="gg:readme" class="text-xl" />
+          <UIcon name="i-gg-readme" class="text-xl" />
           {{ t("pages.project.readme.show") }}
         </UButton>
       </div>

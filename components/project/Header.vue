@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-data';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -39,15 +39,14 @@ async function download() {
           </ULink>
         </div>
         <span class="text-sm md:text-base px-1">
-          <Icon name="ph:git-branch-light" />
+          <UIcon name="i-ph-git-branch-light" />
           {{ branch }}
         </span>
       </div>
     </div>
     <div class="grow"></div>
     <div class="flex flex-col justify-center">
-      <UButton ref="downloadBtn" size="xl" @click="download">
-        <Icon name="mdi:download-outline" class="text-2xl" />
+      <UButton ref="downloadBtn" icon="i-mdi-download-outline" size="xl" @click="download">
         {{ t("components.projectHeader.download") }}
       </UButton>
     </div>
