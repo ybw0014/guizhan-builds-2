@@ -1,4 +1,4 @@
-import { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-data';
 import { Author } from 'guizhan-builds-2-data-extra';
 import _ from 'lodash';
 

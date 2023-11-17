@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/require-default-prop -->
 <script setup lang="ts" generic="T extends Record<string, any>">
-import { Header } from '~/types/dataTable';
+import type { Header } from '~/types/dataTable';
 const props = withDefaults(
   defineProps<{
     headers: Header[];

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Option } from '~/types/components/ui/InputSelect';
+import type { Option } from '~/types/components/ui/InputSelect';
 
 const { t } = useI18n();
 

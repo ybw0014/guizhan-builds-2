@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Author } from 'guizhan-builds-2-data-extra';
+import type { Author } from 'guizhan-builds-2-data-extra';
 import { watchDebounced } from '@vueuse/core';
 import _ from 'lodash';
-import { Header } from '~/types/dataTable';
+import type { Header } from '~/types/dataTable';
 
 const { t } = useI18n();
 

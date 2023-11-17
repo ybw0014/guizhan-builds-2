@@ -2,7 +2,7 @@
 /**
  * 此处链接必须使用点击事件 + router.push()，否则会出现路由参数丢失导致页面失效的问题
  */
-import { RouteLocationRaw } from 'vue-router';
+import type { RouteLocationRaw } from 'vue-router';
 
 const router = useRouter();
 

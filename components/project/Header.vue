@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-data';
 
 const { t } = useI18n();
 const route = useRoute();

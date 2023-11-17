@@ -2,7 +2,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { useDropZone, useFileDialog } from '@vueuse/core';
 import CryptoJS from 'crypto-js';
-import { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-data';
 import { useSettingsStore } from '~/stores/useSettingsStore';
 
 const { t } = useI18n();

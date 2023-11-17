@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LocaleObject } from 'vue-i18n-routing';
+import type { LocaleObject } from 'vue-i18n-routing';
 const { locale, setLocale, locales } = useI18n();
 const currentLocale = computed(() => locale.value);
 const availableLocales = computed(() => {
