@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { LocaleObject } from 'vue-i18n-routing';
+import { LocaleObject } from 'vue-i18n-routing';
 const { locale, setLocale, locales } = useI18n();
 const currentLocale = computed(() => locale.value);
 const availableLocales = computed(() => {
@@ -10,7 +10,7 @@ const availableLocales = computed(() => {
 <template>
   <UPopover as="div" class="relative inline-block text-left">
     <UButton variant="link" color="black" class="link-box">
-      <UIcon name="i-dashicons-translation" class="text-lg" />
+      <Icon name="dashicons:translation" class="text-lg" />
     </UButton>
 
     <template #panel="{ close }">

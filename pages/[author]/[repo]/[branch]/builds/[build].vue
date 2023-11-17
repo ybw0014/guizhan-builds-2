@@ -2,7 +2,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { useDropZone, useFileDialog } from '@vueuse/core';
 import CryptoJS from 'crypto-js';
-import type { Project } from 'guizhan-builds-2-data';
+import { Project } from 'guizhan-builds-2-data';
 import { useSettingsStore } from '~/stores/useSettingsStore';
 
 const { t } = useI18n();
@@ -108,7 +108,7 @@ definePageMeta({
     <div class="flex flex-col gap-2 grow">
       <div class="flex grow-0">
         <div class="flex flex-col gap-2">
-          <div class="text-3xl flex gap-2 items-center">
+          <div class="text-3xl">
             {{ t("pages.build.build", { name, branch, build: buildId }) }}
             <BuildStatusIcon :success="build.success" />
           </div>
@@ -119,7 +119,8 @@ definePageMeta({
         </div>
         <div class="grow"></div>
         <div class="flex flex-col justify-center">
-          <UButton size="lg" icon="i-mdi-download-outline" :disabled="!build.success" @click="handleDownload">
+          <UButton size="lg" :disabled="!build.success" @click="handleDownload">
+            <Icon name="mdi:download-outline" class="text-xl" />
             {{ t("pages.build.download") }}
           </UButton>
         </div>
@@ -158,13 +159,13 @@ definePageMeta({
             class="flex w-full justify-between rounded-lg bg-primary-100 px-4 py-2 text-left text-sm font-medium text-primary-900 hover:bg-primary-200 dark:bg-primary-800 dark:text-primary-100 dark:hover:bg-primary-700 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-opacity-75"
           >
             {{ t("pages.build.checksum.check") }}
-            <UIcon :name="open ? 'i-icon-park-up' : 'i-icon-park-down'" class="h-5 w-5 text-primary-500 dark:text-primary-100" />
+            <Icon :name="open ? 'icon-park:up' : 'icon-park:down'" class="h-5 w-5 text-primary-500 dark:text-primary-100" />
           </DisclosureButton>
           <DisclosurePanel class="text-gray-500 flex flex-col gap-2">
             <div ref="checksumDropzone" class="flex items-center justify-center w-full" @click="openChecksumFile()">
               <div for="checksum-file" class="file-dropzone">
                 <div class="flex flex-col gap-3 items-center justify-center p-6">
-                  <UIcon name="i-mdi-file-upload-outline" class="w-10 h-10 text-gray-400" />
+                  <Icon name="mdi:file-upload-outline" class="w-10 h-10 text-gray-400" />
                   <p class="text-sm text-gray-500 dark:text-gray-400">
                     <span class="font-semibold">{{ t("pages.build.checksum.click") }}</span>
                     {{ t("pages.build.checksum.drag") }}
@@ -186,7 +187,7 @@ definePageMeta({
       <template #header>
         <div class="text-lg flex justify-between">
           <h2 class="flex items-center gap-2 font-semibold">
-            <UIcon name="i-mdi-alert" />
+            <Icon name="mdi:alert" />
             {{ t("pages.build.warning.title") }}
           </h2>
         </div>
@@ -217,11 +218,11 @@ definePageMeta({
       <template #header>
         <div class="text-lg flex justify-between">
           <h2 class="flex items-center gap-2 font-semibold">
-            <UIcon name="i-material-symbols-download" />
+            <Icon name="material-symbols:download" />
             {{ t("pages.build.downloadDialog.title") }}
           </h2>
           <UButton color="gray" variant="link" :padded="false" @click="downloadModalOpen = false">
-            <UIcon name="i-ic-round-close" class="w-6 h-6" />
+            <Icon name="ic:round-close" class="w-6 h-6" />
           </UButton>
         </div>
       </template>
@@ -235,8 +236,8 @@ definePageMeta({
             {{ t("pages.build.downloadDialog.link", { n: 1 }) }}
           </UButton>
           <UButton color="gray" size="lg" @click="downloadManual(false)">
-            {{ t("pages.build.downloadDialog.link", { n: 2 }) }}
-          </UButton>
+              {{ t("pages.build.downloadDialog.link", { n: 2 }) }}
+            </UButton>
         </div>
       </template>
     </UCard>

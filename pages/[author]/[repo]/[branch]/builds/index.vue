@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Project } from 'guizhan-builds-2-data';
+import { Project } from 'guizhan-builds-2-data';
 import _ from 'lodash';
 import { watchDebounced } from '@vueuse/core';
-import type { RouteParams } from 'vue-router';
+import { RouteParams } from 'vue-router';
 
 const { t } = useI18n();
 const route = useRoute();

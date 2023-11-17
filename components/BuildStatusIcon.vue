@@ -5,6 +5,6 @@ defineProps<{
 </script>
 
 <template>
-  <UIcon v-if="success" name="i-mdi-tick-circle" class="text-green-500" />
-  <UIcon v-else name="i-mdi-close-circle" class="text-red-500" />
+  <Icon v-if="success" name="mdi:tick-circle" class="text-green-500" />
+  <Icon v-else name="mdi:close-circle" class="text-red-500" />
 </template>

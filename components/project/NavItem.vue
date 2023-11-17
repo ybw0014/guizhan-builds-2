@@ -2,7 +2,7 @@
 /**
  * 此处链接必须使用点击事件 + router.push()，否则会出现路由参数丢失导致页面失效的问题
  */
-import type { RouteLocationRaw } from 'vue-router';
+import { RouteLocationRaw } from 'vue-router';
 
 const router = useRouter();
 
@@ -34,7 +34,7 @@ function navigate() {
   <div v-if="to" class="mb-[-2px]">
     <NuxtLink href="javascript:void(0)" :class="{ 'project-nav-item': true, active: active }" @click="navigate">
       <slot></slot>
-      <UIcon v-if="external" name="i-dashicons-external" class="icon ml-1" />
+      <Icon v-if="external" name="dashicons:external" class="icon ml-1" />
     </NuxtLink>
   </div>
 </template>

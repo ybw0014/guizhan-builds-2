@@ -71,7 +71,7 @@ onKeyStroke(
 <template>
   <div v-if="pages > 1" class="flex justify-center gap-2">
     <button class="pagination-button" :style="visible(page !== 1)" :disabled="page === 1" :aria-label="t('components.pagination.first')" @click="gotoPage(1)">
-      <UIcon name="i-ic-round-first-page" class="icon" />
+      <Icon name="ic:round-first-page" class="icon" />
     </button>
 
     <button
@@ -81,7 +81,7 @@ onKeyStroke(
       :aria-label="t('components.pagination.prev')"
       @click="gotoPage(page - 1)"
     >
-      <UIcon name="i-ic-baseline-chevron-left" class="icon" />
+      <Icon name="ic:baseline-chevron-left" class="icon" />
     </button>
 
     <button
@@ -102,7 +102,7 @@ onKeyStroke(
       :aria-label="t('components.pagination.next')"
       @click="gotoPage(page + 1)"
     >
-      <UIcon name="i-ic-baseline-chevron-right" class="icon" />
+      <Icon name="ic:baseline-chevron-right" class="icon" />
     </button>
 
     <button
@@ -112,7 +112,7 @@ onKeyStroke(
       :aria-label="t('components.pagination.last')"
       @click="gotoPage(pages)"
     >
-      <UIcon name="i-ic-round-last-page" class="icon" />
+      <Icon name="ic:round-last-page" class="icon" />
     </button>
   </div>
 </template>

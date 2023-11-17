@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
+    'nuxt-icon',
     'nuxt-lodash',
     'nuxt-cloudflare-analytics',
     'nuxt-vitest',

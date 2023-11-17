@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from 'guizhan-builds-2-data';
+import { Project } from 'guizhan-builds-2-data';
 const router = useRouter();
 
 const props = defineProps<{
@@ -34,14 +34,14 @@ function handleCardClick() {
         <div class="font-semibold text-lg">
           {{ name }}
           <span v-if="branch !== null" class="ml-2 font-light text-base whitespace-nowrap">
-            <UIcon name="i-ph-git-branch-light" />
+            <Icon name="ph:git-branch-light" />
             {{ branch }}
           </span>
         </div>
         <Authors :project="project" />
         <div v-if="keywords" class="flex text-sm text-gray-600 dark:text-gray-400">
           <div class="flex flex-col justify-center mr-1">
-            <UIcon name="i-mdi-tag-outline" />
+            <Icon name="mdi:tag-outline" />
           </div>
           <span>
             <span v-for="(keyword, index) in keywords" :key="keyword">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from 'guizhan-builds-2-data';
+import { Project } from 'guizhan-builds-2-data';
 const { t } = useI18n();
 
 const sizePerPage = 10;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from 'guizhan-builds-2-data';
+import { Project } from 'guizhan-builds-2-data';
 import { watchDebounced } from '@vueuse/core';
 import _ from 'lodash';
 
@@ -158,7 +158,9 @@ onMounted(async () => {
       <input v-model="query" class="query-input" type="text" :placeholder="t('pages.projects.query', { num: projects?.length })" />
       <!-- 小屏幕排序方式 -->
       <UPopover class="md:hidden relative flex">
-        <UButton icon="i-ic-round-sort" class="query-sort" />
+        <UButton class="query-sort">
+          <Icon name="ic:round-sort" class="text-xl pointer-events-none" />
+        </UButton>
         <template #panel="{ close }">
           <div class="flex flex-col">
             <ULink
@@ -206,7 +208,7 @@ onMounted(async () => {
     </div>
   </div>
   <div v-else class="flex flex-col items-center mt-8">
-    <UIcon name="i-mingcute-loading-line" class="w-24 h-24 animate-spin" />
+    <Icon name="mingcute:loading-line" class="w-24 h-24 animate-spin" />
   </div>
 </template>
 

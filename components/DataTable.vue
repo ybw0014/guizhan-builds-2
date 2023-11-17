@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/require-default-prop -->
 <script setup lang="ts" generic="T extends Record<string, any>">
-import type { Header } from '~/types/dataTable';
+import { Header } from '~/types/dataTable';
 const props = withDefaults(
   defineProps<{
     headers: Header[];
@@ -105,10 +105,10 @@ function updatePage(newPage: number) {
         <th v-for="header in headers" :key="header.name" @click="sort(header)">
           {{ header.title }}
           <span v-if="header.sortable" class="ml-1">
-            <UIcon v-if="activeSortCol !== header.name" name="i-iconoir-sort" />
+            <Icon v-if="activeSortCol !== header.name" name="iconoir:sort" />
             <span v-else>
-              <UIcon v-if="activeSortOrder === 1" name="i-iconoir-sort-down" />
-              <UIcon v-else name="i-iconoir-sort-up" />
+              <Icon v-if="activeSortOrder === 1" name="iconoir:sort-down" />
+              <Icon v-else name="iconoir:sort-up" />
             </span>
           </span>
         </th>

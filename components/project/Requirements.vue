@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from 'guizhan-builds-2-data';
+import { Project } from 'guizhan-builds-2-data';
 import LazyLoadImage from '~/components/LazyLoadImage.vue';
 const { t } = useI18n();
 
@@ -42,7 +42,7 @@ const iconClass = computed(() => {
     <!-- java -->
     <div v-if="req.has('java')" v-tippy="'Java'" :class="['requirement', requirementSize]">
       <span class="icon">
-        <UIcon name="i-mdi-language-java" :class="iconClass" title="Java" aria-label="Java" />
+        <Icon name="mdi:language-java" :class="iconClass" title="Java" aria-label="Java" />
         <span v-if="text">Java</span>
       </span>
       <span>{{ req.get("java") }}+</span>
@@ -66,7 +66,7 @@ const iconClass = computed(() => {
     <!-- slimefun -->
     <div v-if="req.has('slimefun')" v-tippy="'Slimefun'" :class="['requirement', requirementSize]">
       <span class="icon">
-        <UIcon name="i-ph-package-light" :class="iconClass" title="Slimefun" aria-label="Slimefun" />
+        <Icon name="ph:package-light" :class="iconClass" title="Slimefun" aria-label="Slimefun" />
       </span>
       <span>{{ req.get("slimefun") }}</span>
     </div>
