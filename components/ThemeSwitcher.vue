@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const modes = ['system', 'light', 'dark'];
 const icons: Record<string, string> = {
-  system: 'grommet-icons:system',
-  light: 'ph:sun-fill',
-  dark: 'ph:moon-stars-fill'
+  system: 'i-ic-baseline-computer',
+  light: 'i-ph-sun-fill',
+  dark: 'i-ph-moon-stars-fill'
 };
 
 const { t } = useI18n();
@@ -30,7 +30,7 @@ function switchThemePreference() {
 <template>
   <ClientOnly>
     <a href="javascript:void(0)" class="button link-box" :title="modeTooltip" @click="switchThemePreference">
-      <Icon :name="currentIcon" class="icon" />
+      <UIcon :name="currentIcon" class="icon" />
     </a>
   </ClientOnly>
 </template>

@@ -44,7 +44,7 @@ const value = computed({
         {{ props.i18nText ? t(val[itemText] || val) : val[itemText] || val }}
       </option>
     </select>
-    <Icon name="mdi:menu-down" class="absolute flex right-2 self-center" />
+    <UIcon name="i-mdi-menu-down" class="absolute flex right-2 self-center" />
   </UiInputWrapper>
 </template>
 

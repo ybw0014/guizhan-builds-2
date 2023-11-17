@@ -2,7 +2,7 @@
 import type { Project } from 'guizhan-builds-2-data';
 import _ from 'lodash';
 import { watchDebounced } from '@vueuse/core';
-import { RouteParams } from 'vue-router';
+import type { RouteParams } from 'vue-router';
 
 const { t } = useI18n();
 const route = useRoute();

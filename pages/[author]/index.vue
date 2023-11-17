@@ -113,7 +113,7 @@ definePageMeta({
           <div class="text-xl px-1">{{ author }}</div>
           <div class="px-1 author-links">
             <NuxtLink :to="`https://github.com/${author}`" target="_blank">
-              <Icon name="mdi:github" class="w-6 h-6" />
+              <UIcon name="i-mdi-github" class="w-6 h-6" />
             </NuxtLink>
           </div>
         </div>

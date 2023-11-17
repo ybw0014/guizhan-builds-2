@@ -10,25 +10,25 @@ const cacheStore = useCacheStore();
 const subscriptions = [
   {
     type: 'free',
-    icon: 'arcticons:canary',
+    icon: 'i-arcticons-canary',
     price: 0,
     privileges: ['canaryBuilds', 'issuesSupport']
   },
   {
     type: 'monthly',
-    icon: 'ic:baseline-brightness-2',
+    icon: 'i-ic-baseline-brightness-2',
     price: 6,
     privileges: ['devBuilds', 'newFeatures']
   },
   {
     type: 'seasonly',
-    icon: 'ic:baseline-brightness-4',
+    icon: 'i-ic-baseline-brightness-4',
     price: 15,
     privileges: ['devBuilds', 'newFeatures']
   },
   {
     type: 'annually',
-    icon: 'bx:brightness',
+    icon: 'i-bx-brightness',
     price: 80,
     privileges: ['devBuilds', 'techSupport', 'newFeatures']
   }
@@ -170,7 +170,7 @@ async function devDownload() {
     <div class="flex flex-col lg:flex-row gap-6">
       <section v-for="sub in subscriptions" :key="sub.type" class="pricing-card card bg-default">
         <div class="text-base">
-          <Icon :name="sub.icon" />
+          <UIcon :name="sub.icon" />
           {{ t(`pages.sfSubscription.subscription.${sub.type}`) }}
         </div>
         <div>
@@ -189,7 +189,7 @@ async function devDownload() {
         </div>
         <ul class="divide-y divide-gray-200 text-gray-700 dark:text-gray-300 dark:divide-gray-600">
           <li v-for="priviledge in sub.privileges" :key="priviledge" class="priviledge flex gap-2 items-center py-2">
-            <Icon name="mdi:tick-circle-outline" class="w-6 h-6 text-blue-400" />
+            <UIcon name="i-mdi-tick-circle-outline" class="w-6 h-6 text-blue-400" />
             {{ t(`pages.sfSubscription.priviledge.${priviledge}`) }}
           </li>
         </ul>
@@ -203,11 +203,11 @@ async function devDownload() {
       <template #header>
         <div class="text-lg flex justify-between">
           <h2 class="flex items-center gap-2 font-semibold">
-            <Icon name="mdi:cloud-download-outline" />
+            <UIcon name="i-mdi-cloud-download-outline" />
             {{ t("pages.sfSubscription.devCheck.title") }}
           </h2>
           <UButton color="gray" variant="link" :padded="false" @click="closeDevCheck">
-            <Icon name="ic:round-close" class="w-6 h-6" />
+            <UIcon name="i-ic-round-close" class="w-6 h-6" />
           </UButton>
         </div>
       </template>
@@ -221,13 +221,13 @@ async function devDownload() {
           <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
           <UCheckbox v-model="saveOrder" name="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
           <UButton block size="lg" :disabled="queryBtnDisabled" @click="checkOrder">
-            <Icon name="ic:round-search" class="w-6 h-6" />
+            <UIcon name="i-ic-round-search" class="w-6 h-6" />
             {{ t("pages.sfSubscription.devCheck.query") }}
           </UButton>
         </div>
         <div v-else class="flex flex-col gap-4">
           <UButton block size="lg" @click="devDownload">
-            <Icon name="ic:round-download" class="w-6 h-6" />
+            <UIcon name="i-ic-round-download" class="w-6 h-6" />
             {{ t("pages.sfSubscription.devCheck.download") }}
           </UButton>
         </div>

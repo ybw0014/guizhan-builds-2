@@ -10,7 +10,7 @@ const availableLocales = computed(() => {
 <template>
   <UPopover as="div" class="relative inline-block text-left">
     <UButton variant="link" color="black" class="link-box">
-      <Icon name="dashicons:translation" class="text-lg" />
+      <UIcon name="i-dashicons-translation" class="text-lg" />
     </UButton>
 
     <template #panel="{ close }">
