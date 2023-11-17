@@ -24,8 +24,7 @@ export default defineNuxtConfig({
   },
   css: ['@/assets/styles/main.scss'],
   routeRules: {
-    '/r2/**': { proxy: 'https://builds-r2.gzassets.net/**' },
-    '/eapi/**': { proxy: 'https://api.guizhanss.net/**' },
+    '/r2/**': { proxy: 'https://builds-r2.gzassets.net/**' }
   },
   i18n: {
     locales: [
