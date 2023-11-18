@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-data';
 import { watchDebounced } from '@vueuse/core';
 import _ from 'lodash';
 
@@ -113,7 +113,7 @@ definePageMeta({
           <div class="text-xl px-1">{{ author }}</div>
           <div class="px-1 author-links">
             <NuxtLink :to="`https://github.com/${author}`" target="_blank">
-              <Icon name="mdi:github" class="w-6 h-6" />
+              <UIcon name="i-mdi-github" class="w-6 h-6" />
             </NuxtLink>
           </div>
         </div>

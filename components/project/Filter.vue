@@ -31,7 +31,7 @@ const value = computed({
     </RadioGroupLabel>
     <RadioGroupOption v-for="val in values" :key="val" v-slot="{ checked }" :value="val" class="filter-option flex gap-1 items-center cursor-pointer">
       <div :class="['filter-radio', checked ? 'checked' : '']">
-        <Icon name="mdi:circle" class="inner" />
+        <UIcon name="i-mdi-circle" class="inner" />
       </div>
       <span>{{ i18n ? t(`filters.${filter}.${val}`) : val }}</span>
     </RadioGroupOption>
@@ -43,7 +43,7 @@ const value = computed({
   @apply w-4 h-4 rounded-full transition-colors bg-gray-300 dark:bg-gray-600;
 
   & .inner {
-    @apply absolute w-4 h-4 p-1 text-transparent;
+    @apply absolute w-3 h-3 translate-x-0.5 translate-y-0.5 text-transparent;
   }
 
   &.checked {

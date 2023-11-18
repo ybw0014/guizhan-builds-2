@@ -15,8 +15,8 @@ const navLinks = [
       <div class="flex items-center gap-4">
         <!-- 小屏幕导航 -->
         <UPopover class="relative inline-block sm:hidden">
-          <UButton variant="link" color="gray">
-            <Icon name="ic:round-menu" class="text-lg" />
+          <UButton variant="link" color="gray" class="link-box">
+            <UIcon name="i-ic-round-menu" class="text-lg" />
           </UButton>
 
           <template #panel="{ close }">
