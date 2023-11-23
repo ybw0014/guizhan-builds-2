@@ -197,6 +197,7 @@
 				"lastUpdate": "Last updated on {time}",
 				"updateInfo": "Latest commit log {changelog}",
 				"noUpdate": "No updates since last download.",
+				"checking": "Checking version...",
 				"error": {
 					"malformedOrderId": "Invalid order number format",
 					"invalidOrderId": "Invalid order",

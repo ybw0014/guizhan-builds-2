@@ -1,0 +1,36 @@
+name: Nuxt Build on Pull Request
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Nuxt build
+    runs-on: ubuntu-latest
+
+    env:
+      NITRO_PRESET: cloudflare_pages
+      NODE_OPTIONS: "--max-old-space-size=4096"
+
+    steps:
+      - name: Checking out repository
+        uses: actions/checkout@v4
+
+      - name: Setting up node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.3.0"
+
+      - name: Setting up bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Installing dependencies
+        run: bun install
+      
+      - name: Run eslint
+        run: bun run lint
+
+      - name: Run nuxt build
+        run: bun run build
