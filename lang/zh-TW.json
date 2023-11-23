@@ -197,6 +197,7 @@
 				"lastUpdate": "最後更新於 {time}",
 				"updateInfo": "最新提交記錄 {changelog}",
 				"noUpdate": "距離上次下載暫無更新",
+				"checking": "正在檢查版本信息...",
 				"error": {
 					"malformedOrderId": "訂單號格式不正確",
 					"invalidOrderId": "訂單不存在或已過期",

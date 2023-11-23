@@ -220,8 +220,7 @@ async function devDownload() {
           <UiInputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
           <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
           <UCheckbox v-model="saveOrder" name="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
-          <UButton block size="lg" :disabled="queryBtnDisabled" @click="checkOrder">
-            <UIcon name="i-ic-round-search" class="w-6 h-6" />
+          <UButton block size="lg" icon="i-ic-round-search" :loading="queryBtnDisabled" @click="checkOrder">
             {{ t("pages.sfSubscription.devCheck.query") }}
           </UButton>
         </div>
@@ -236,11 +235,16 @@ async function devDownload() {
         <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex flex-col gap-2">
           <div class="flex gap-2">
             {{ t("pages.sfSubscription.devCheck.lastUpdate", { time: $dayjs(lastUpdateTime).format("lll") }) }}
-            <div v-if="noUpdate">
+            <div v-if="noUpdate" class="font-bold">
               {{ t("pages.sfSubscription.devCheck.noUpdate") }}
             </div>
           </div>
-          {{ t("pages.sfSubscription.devCheck.updateInfo", { changelog: lastUpdateCommit }) }}
+          <div class="truncate">
+            {{ t("pages.sfSubscription.devCheck.updateInfo", { changelog: lastUpdateCommit }) }}
+          </div>
+        </div>
+        <div v-else class="text-gray-500 text-sm">
+          {{ t("pages.sfSubscription.devCheck.checking") }}
         </div>
       </template>
     </UCard>
