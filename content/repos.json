@@ -2141,7 +2141,7 @@
 			}
 		}
 	},
-	"ybw0014/Slimefun-e2e-tester:master": {
+	"ybw0014/Slimefun-e2e-tester:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "Slimefun-e2e-tester",
