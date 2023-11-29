@@ -24,7 +24,8 @@ export default defineNuxtConfig({
   },
   css: ['@/assets/styles/main.scss'],
   routeRules: {
-    '/r2/**': { proxy: 'https://builds-r2.gzassets.net/**' }
+    '/r2/**': { proxy: 'https://builds-r2.gzassets.net/**' },
+    '/api/**': { proxy: 'https://guizhan-builds-2-api-production.guizhanss.workers.dev/**' }
   },
   i18n: {
     locales: [
@@ -60,6 +61,9 @@ export default defineNuxtConfig({
     }
   },
   content: {
+    api: {
+      baseURL: '/content-api'
+    },
     markdown: {
       remarkPlugins: ['remark-heading-id'],
       rehypePlugins: {
