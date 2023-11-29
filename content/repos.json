@@ -2140,5 +2140,15 @@
 				}
 			}
 		}
+	},
+	"ybw0014/Slimefun-e2e-tester:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Slimefun-e2e-tester",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["E2E测试插件"]
+		}
 	}
 }
