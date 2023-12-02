@@ -94,7 +94,7 @@ function validateChecksum(file: File) {
 
 definePageMeta({
   name: 'build',
-  validate: async (route) => {
+  validate: (route) => {
     return /^\d+$/.test(route.params.build as string) && parseInt(route.params.build as string) > 0;
   }
 });

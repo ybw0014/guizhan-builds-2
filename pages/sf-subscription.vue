@@ -148,7 +148,7 @@ async function getDownloadLink(uuid: string, errorMsg = false) {
   devDownloadLink.value = downloadLink.value;
 }
 
-async function devDownload() {
+function devDownload() {
   cacheStore.setLastUpdateAt(lastUpdateTime.value || -1);
 
   const url = new URL(devDownloadLink.value);

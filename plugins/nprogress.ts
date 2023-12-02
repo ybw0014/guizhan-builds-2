@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import NProgress from 'nprogress';
 import { nextTick } from 'vue';
 import 'nprogress/nprogress.css';

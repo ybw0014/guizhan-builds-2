@@ -1,5 +1,5 @@
 import type { Project } from 'guizhan-builds-2-data';
-import { Author } from 'guizhan-builds-2-data-extra';
+import type { Author } from 'guizhan-builds-2-data-extra';
 import _ from 'lodash';
 
 export async function useAuthorList(): Promise<Ref<Author[] | null>> {
@@ -47,7 +47,7 @@ export async function useAuthorProjects(author: string): Promise<Ref<Project[] |
   );
 }
 
-export async function useProjectAuthors(project: Project): Promise<Ref<Author[] | null>> {
+export function useProjectAuthors(project: Project): Ref<Author[] | null> {
   const authors = project.displayOptions?.authors || project.author;
   if (_.isArray(authors)) {
     const result: Author[] = [];

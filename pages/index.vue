@@ -66,7 +66,7 @@ function updatePage(newPage: number) {
   }
 }
 
-async function filterList() {
+function filterList() {
   if (!projects.value) {
     return;
   }
