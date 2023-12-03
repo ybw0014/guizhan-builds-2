@@ -12,7 +12,6 @@ export const useCacheStore = defineStore('cache', {
       // mc版本信息相关
       mcVersions: [] as string[],
       mcVersionsLastFetchedAt: -1
-
     };
   },
   actions: {

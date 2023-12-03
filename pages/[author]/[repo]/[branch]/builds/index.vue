@@ -82,10 +82,10 @@ definePageMeta({
 
 <template>
   <Head>
-    <Title>{{ t("pages.builds.title", { name: project?.repository || "", branch: project?.branch || "" }) }}</Title>
+    <Title>{{ t('pages.builds.title', { name: project?.repository || '', branch: project?.branch || '' }) }}</Title>
   </Head>
   <div>
     <ProjectBuilds v-if="builds" :project="project" :builds="reversedBuilds" :page="page" @update:page="updatePage" />
-    <div v-else>{{ t("pages.builds.notFound") }}</div>
+    <div v-else>{{ t('pages.builds.notFound') }}</div>
   </div>
 </template>

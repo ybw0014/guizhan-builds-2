@@ -10,11 +10,11 @@ export interface OrderValidationData {
   uuid: string | null;
 }
 
-export interface OrderValidationResponse extends Omit<SubResponse, "data"> {
+export interface OrderValidationResponse extends Omit<SubResponse, 'data'> {
   data: OrderValidationData;
 }
 
-export interface DownloadResponse extends Omit<SubResponse, "data"> {
+export interface DownloadResponse extends Omit<SubResponse, 'data'> {
   data: string | null;
 }
 
@@ -24,6 +24,6 @@ export interface LastUpdateData {
   sha: string | null;
 }
 
-export interface LastUpdateResponse extends Omit<SubResponse, "data"> {
+export interface LastUpdateResponse extends Omit<SubResponse, 'data'> {
   data: LastUpdateData;
 }

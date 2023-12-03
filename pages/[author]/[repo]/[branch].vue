@@ -16,7 +16,7 @@ async function verify(to: RouteLocationNormalized) {
     if (!repos.value || repos.value.length === 0) {
       throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
     }
-    
+
     await navigateTo({
       name: 'repo',
       params: {

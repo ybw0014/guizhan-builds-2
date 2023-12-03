@@ -12,7 +12,7 @@ jobs:
 
     env:
       NITRO_PRESET: cloudflare_pages
-      NODE_OPTIONS: "--max-old-space-size=4096"
+      NODE_OPTIONS: '--max-old-space-size=4096'
 
     steps:
       - name: Checking out repository
@@ -21,14 +21,14 @@ jobs:
       - name: Setting up node
         uses: actions/setup-node@v4
         with:
-          node-version: "20.3.0"
+          node-version: '20.3.0'
 
       - name: Setting up bun
         uses: oven-sh/setup-bun@v1
 
       - name: Installing dependencies
         run: bun install
-      
+
       - name: Run eslint
         run: bun run lint
 

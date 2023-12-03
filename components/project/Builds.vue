@@ -110,6 +110,6 @@ watch(fastAccess, () => {
     <PaginationButtons v-show="slicedBuilds" :page="page" :pages="totalPages" @update:page="updatePage" />
   </div>
   <div v-else>
-    {{ t("components.projectBuilds.noResult") }}
+    {{ t('components.projectBuilds.noResult') }}
   </div>
 </template>

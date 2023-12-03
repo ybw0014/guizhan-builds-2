@@ -2,7 +2,7 @@ name: Fetch minecraft versions
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -25,14 +25,14 @@ jobs:
         run: |
           fetched_versions=$(curl -s --fail https://builds.guizhanss.com/api/mc-versions | jq '.data')
           exit_code=$?
-          
+
           if [ $exit_code -ne 0 ]; then
             echo "无法获取 Minecraft 版本，curl返回：$exit_code"
             exit 1
           fi
-          
+
           existing_versions=$(cat content/mc-versions.json || echo "[]")
-          
+
           if [ "$fetched_versions" != "$existing_versions" ]; then
             echo "检测到 Minecraft 版本列表有更新。"
             echo "$fetched_versions" > content/mc-versions.json

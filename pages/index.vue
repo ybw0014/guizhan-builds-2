@@ -14,8 +14,8 @@ const query = ref((route.query.q as string) || '');
 const activeSortType = ref((route.query.sortBy as string) || sortTypes.value[0]);
 // 不设置类型的话，没法使用 string index
 const activeFilters = ref<any>({
-  server: route.query.server as string || '',
-  mcVersion: route.query.mcVersion as string || '',
+  server: (route.query.server as string) || '',
+  mcVersion: (route.query.mcVersion as string) || ''
 });
 const page = ref(route.query.page ? Number(route.query.page) : 1);
 const filteredList = ref<Project[] | null>();
@@ -72,19 +72,14 @@ function filterList() {
   }
 
   // 隐藏的项目不显示
-  let filtered: Project[] = _.filter(
-    projects.value,
-    (project: Project) => !project.displayOptions?.hidden
-  );
+  let filtered: Project[] = _.filter(projects.value, (project: Project) => !project.displayOptions?.hidden);
 
   // 名称
   if (query.value) {
     filtered = _.filter(filtered, (project: Project) => {
       const q = query.value.toLowerCase();
       return (project.repository.toLowerCase().includes(q) ||
-        project.displayOptions?.keywords?.some((keyword: string) =>
-          keyword.toLowerCase().includes(q)
-        )) as boolean;
+        project.displayOptions?.keywords?.some((keyword: string) => keyword.toLowerCase().includes(q))) as boolean;
     });
   }
 
@@ -104,10 +99,7 @@ function filterList() {
     filtered = _.filter(filtered, (project: Project) => {
       const requirements = useProjectRequirements(project);
       if (requirements.has('minecraft')) {
-        return useMcVersionAtLeast(
-          activeFilters.value.mcVersion,
-          requirements.get('minecraft')!
-        );
+        return useMcVersionAtLeast(activeFilters.value.mcVersion, requirements.get('minecraft')!);
       }
       return true;
     });
@@ -116,9 +108,7 @@ function filterList() {
   // 排序
   switch (activeSortType.value) {
     case 'name':
-      filtered = _.sortBy(filtered, (project: Project) =>
-        project.repository.toLowerCase()
-      );
+      filtered = _.sortBy(filtered, (project: Project) => project.repository.toLowerCase());
       break;
     case 'newest':
       filtered = _.cloneDeep(filtered).reverse();
@@ -126,10 +116,7 @@ function filterList() {
     case 'updated':
       if (buildTime.data) {
         const buildTimestamp = buildTime.data.value as Record<string, number>;
-        filtered = _.sortBy(
-          filtered,
-          (project: Project) => buildTimestamp[project.key]
-        ).reverse();
+        filtered = _.sortBy(filtered, (project: Project) => buildTimestamp[project.key]).reverse();
       } else {
         filtered = _.cloneDeep(filtered).reverse();
       }
@@ -145,13 +132,13 @@ onMounted(async () => {
 
 <template>
   <Head>
-    <Title>{{ t("pages.projects.title") }}</Title>
+    <Title>{{ t('pages.projects.title') }}</Title>
   </Head>
   <div class="flex flex-col gap-4 items-center">
     <h1 ref="pageResetAnchor" class="text-3xl font-bold mt-4">
-      {{ t("pages.projects.title") }}
+      {{ t('pages.projects.title') }}
     </h1>
-    <h2 class="text-xl">{{ t("pages.projects.subTitle") }}</h2>
+    <h2 class="text-xl">{{ t('pages.projects.subTitle') }}</h2>
     <!-- 搜索框 -->
     <div class="relative rounded-md flex shadow-md w-full max-w-screen-md">
       <!-- 输入 -->
@@ -166,9 +153,12 @@ onMounted(async () => {
               :key="sortType"
               :class="{
                 'px-4 py-2 text-left link-box': true,
-                active: activeSortType === sortType,
+                active: activeSortType === sortType
               }"
-              @click="activeSortType = sortType;close();"
+              @click="
+                activeSortType = sortType;
+                close();
+              "
             >
               {{ t(`sortTypes.${sortType}`) }}
             </ULink>
@@ -192,16 +182,17 @@ onMounted(async () => {
   <div v-if="filteredList" class="flex items-start justify-center mt-4 flex-col md:flex-row gap-6">
     <!-- 项目列表 -->
     <div class="w-full max-w-4xl min-w-0 mb-5 flex flex-col lg:mb-0">
-      <ProjectList
-        ref="projectList"
-        :projects="filteredList"
-        :page="page"
-        @update:page="updatePage"
-      />
+      <ProjectList ref="projectList" :projects="filteredList" :page="page" @update:page="updatePage" />
     </div>
     <div class="card bg-default min-w-[300px] flex flex-col gap-4 border-t-4 !border-blue-500 w-full md:w-auto">
       <div v-for="filter in filters" :key="filter.id">
-        <ProjectFilter v-model="activeFilters[filter.id]" :label="t(`filters.${filter.id}.title`)" :filter="filter.id" :values="filter.values" :i18n="filter.i18n" />
+        <ProjectFilter
+          v-model="activeFilters[filter.id]"
+          :label="t(`filters.${filter.id}.title`)"
+          :filter="filter.id"
+          :values="filter.values"
+          :i18n="filter.i18n"
+        />
       </div>
     </div>
   </div>

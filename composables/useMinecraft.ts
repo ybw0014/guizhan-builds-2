@@ -14,7 +14,7 @@ export function useMinecraftVersion(version: string): Ref<MinecraftVersionString
 
   return ref({
     major: parseInt(match[1]),
-    minor: parseInt(match[2] || '0'),
+    minor: parseInt(match[2] || '0')
   } as MinecraftVersionString);
 }
 

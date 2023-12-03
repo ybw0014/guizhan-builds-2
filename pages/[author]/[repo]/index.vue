@@ -44,7 +44,7 @@ definePageMeta({
 
 <template>
   <Head>
-    <Title>{{ t("pages.repo.title", { repo }) }}</Title>
+    <Title>{{ t('pages.repo.title', { repo }) }}</Title>
   </Head>
   <div class="flex flex-col items-center">
     <div class="flex flex-col gap-4 w-full max-w-4xl">

@@ -4,7 +4,7 @@ const { t } = useI18n();
 
 <template>
   <Head>
-    <Title>{{ t("pages.terms.title") }}</Title>
+    <Title>{{ t('pages.terms.title') }}</Title>
   </Head>
   <MarkdownContent page="terms" />
 </template>

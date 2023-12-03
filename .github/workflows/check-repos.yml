@@ -5,12 +5,12 @@ on:
     branches:
       - master
     paths:
-      - "public/repos.json"
+      - 'public/repos.json'
   pull_request:
     branches:
       - master
     paths:
-      - "public/repos.json"
+      - 'public/repos.json'
 
 jobs:
   validate-repos:

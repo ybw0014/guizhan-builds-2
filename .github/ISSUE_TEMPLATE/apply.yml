@@ -1,7 +1,7 @@
 ---
 name: 申请接入
 description: 申请接入构建站
-title: "[申请接入]"
+title: '[申请接入]'
 labels:
   - application
 assignees:

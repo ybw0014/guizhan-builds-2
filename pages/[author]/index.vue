@@ -103,7 +103,7 @@ definePageMeta({
 
 <template>
   <Head>
-    <Title>{{ t("pages.author.title", { author }) }}</Title>
+    <Title>{{ t('pages.author.title', { author }) }}</Title>
   </Head>
   <div class="flex flex-col items-center">
     <div class="flex flex-col gap-4 w-full max-w-4xl">
@@ -119,7 +119,7 @@ definePageMeta({
         </div>
         <div class="grow"></div>
         <div class="flex flex-col">
-          {{ t("pages.author.numProjects", { num: projects?.length || 0 }) }}
+          {{ t('pages.author.numProjects', { num: projects?.length || 0 }) }}
         </div>
       </div>
       <hr class="w-full my-1 border-gray-400 dark:border-gray-500" />

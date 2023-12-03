@@ -29,7 +29,7 @@ definePageMeta({
 
 <template>
   <Head>
-    <Title>{{ t("pages.project.title", { name, branch }) }}</Title>
+    <Title>{{ t('pages.project.title', { name, branch }) }}</Title>
   </Head>
   <div class="flex flex-col md:flex-row gap-4">
     <!-- 左侧项目 README.md -->
@@ -37,17 +37,17 @@ definePageMeta({
       <div v-if="showReadme && readme">
         <UAlert icon="i-ion-warning-outline" variant="outline" color="red" :title="t('pages.project.readme.warningTitle')">
           <template #description>
-            {{ t("pages.project.readme.warning") }}
+            {{ t('pages.project.readme.warning') }}
           </template>
         </UAlert>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <article v-html="readme"></article>
       </div>
-      <div v-else-if="showReadme">{{ t("pages.project.readme.fail") }}</div>
+      <div v-else-if="showReadme">{{ t('pages.project.readme.fail') }}</div>
       <div v-else class="flex flex-col items-center">
         <UButton color="gray" size="lg" class="mb-4" @click="displayReadme">
           <UIcon name="i-gg-readme" class="text-xl" />
-          {{ t("pages.project.readme.show") }}
+          {{ t('pages.project.readme.show') }}
         </UButton>
       </div>
     </div>
@@ -55,7 +55,7 @@ definePageMeta({
     <div class="flex flex-col gap-4 min-w-[18rem]">
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t("pages.project.buildStatus") }}
+          {{ t('pages.project.buildStatus') }}
         </h3>
         <div class="flex justify-center">
           <BuildStatus :project="project" />
@@ -63,7 +63,7 @@ definePageMeta({
       </div>
       <div class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t("pages.project.requirements") }}
+          {{ t('pages.project.requirements') }}
         </h3>
         <div class="flex">
           <ProjectRequirements :project="project" :vertical="true" size="xl" />
@@ -71,7 +71,7 @@ definePageMeta({
       </div>
       <div v-if="authors" class="card bg-default">
         <h3 class="text-xl font-bold mb-2">
-          {{ t("pages.project.authors") }}
+          {{ t('pages.project.authors') }}
         </h3>
         <div class="authors">
           <NuxtLink

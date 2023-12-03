@@ -38,14 +38,14 @@ const iconClass = computed(() => {
 
 <template>
   <div v-if="req.size > 0" :class="{ 'project-requirements': true, vertical: props.vertical }">
-    <div v-if="title" class="title">{{ t("components.projectRequirements.title") }}</div>
+    <div v-if="title" class="title">{{ t('components.projectRequirements.title') }}</div>
     <!-- java -->
     <div v-if="req.has('java')" v-tippy="'Java'" :class="['requirement', requirementSize]">
       <span class="icon">
         <UIcon name="i-mdi-language-java" :class="iconClass" title="Java" aria-label="Java" />
         <span v-if="text">Java</span>
       </span>
-      <span>{{ req.get("java") }}+</span>
+      <span>{{ req.get('java') }}+</span>
     </div>
     <!-- minecraft -->
     <div v-if="req.has('minecraft')" v-tippy="'Minecraft'" :class="['requirement', requirementSize]">
@@ -53,7 +53,7 @@ const iconClass = computed(() => {
         <LazyLoadImage source="/images/minecraft.svg" :class="iconClass" title="Minecraft" aria-label="Minecraft" />
         <span v-if="text">Minecraft</span>
       </span>
-      <span>{{ req.get("minecraft") }}+</span>
+      <span>{{ req.get('minecraft') }}+</span>
     </div>
     <!-- paper -->
     <div v-if="req.has('paper')" v-tippy="'Paper'" :class="['requirement', requirementSize]">
@@ -61,14 +61,14 @@ const iconClass = computed(() => {
         <LazyLoadImage source="/images/paper-256x.webp" :class="iconClass" title="paper" aria-label="paper" />
         <span v-if="text">Paper</span>
       </span>
-      <span>{{ t("components.projectRequirements.required") }}</span>
+      <span>{{ t('components.projectRequirements.required') }}</span>
     </div>
     <!-- slimefun -->
     <div v-if="req.has('slimefun')" v-tippy="'Slimefun'" :class="['requirement', requirementSize]">
       <span class="icon">
         <UIcon name="i-ph-package-light" :class="iconClass" title="Slimefun" aria-label="Slimefun" />
       </span>
-      <span>{{ req.get("slimefun") }}</span>
+      <span>{{ req.get('slimefun') }}</span>
     </div>
   </div>
 </template>

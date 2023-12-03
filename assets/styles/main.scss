@@ -1,4 +1,4 @@
-@import "markdown";
+@import 'markdown';
 
 // https://gist.github.com/spemer/a0e218bbb45433bd611e68446523a00b
 body::-webkit-scrollbar {
@@ -18,10 +18,10 @@ body::-webkit-scrollbar-button {
 html {
   @apply font-sans;
 }
-html[lang=zh-CN] {
+html[lang='zh-CN'] {
   @apply font-sans-sc;
 }
-html[lang=zh-TW] {
+html[lang='zh-TW'] {
   @apply font-sans-tc;
 }
 

@@ -49,33 +49,33 @@ async function back() {
 
 <template>
   <Head>
-    <Title>{{ t("pages.external.title") }}</Title>
+    <Title>{{ t('pages.external.title') }}</Title>
   </Head>
   <div v-if="!isTrustedDomain" class="card bg-default flex flex-col gap-4">
     <div class="text-xl font-bold">
-      {{ t("pages.external.title") }}
+      {{ t('pages.external.title') }}
     </div>
     <div class="text-md">
-      {{ t("pages.external.content") }}
+      {{ t('pages.external.content') }}
     </div>
     <div class="text-md text-gray-500">
       {{ externalLink }}
     </div>
     <div class="flex flex-row gap-2">
       <UButton size="lg" @click="trust">
-        {{ t("pages.external.trust") }}
+        {{ t('pages.external.trust') }}
       </UButton>
 
       <UButton size="lg" @click="go">
-        {{ t("pages.external.continue") }}
+        {{ t('pages.external.continue') }}
       </UButton>
 
       <UButton color="gray" size="lg" @click="back">
-        {{ t("pages.external.cancel") }}
+        {{ t('pages.external.cancel') }}
       </UButton>
     </div>
   </div>
   <div v-else>
-    {{ t("pages.external.redirecting") }}
+    {{ t('pages.external.redirecting') }}
   </div>
 </template>

@@ -47,7 +47,7 @@ async function download() {
     <div class="grow"></div>
     <div class="flex flex-col justify-center">
       <UButton ref="downloadBtn" icon="i-mdi-download-outline" size="xl" @click="download">
-        {{ t("components.projectHeader.download") }}
+        {{ t('components.projectHeader.download') }}
       </UButton>
     </div>
   </div>

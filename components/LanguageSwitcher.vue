@@ -15,7 +15,15 @@ const availableLocales = computed(() => {
 
     <template #panel="{ close }">
       <div class="flex flex-col">
-        <ULink v-for="aLocale in availableLocales" :key="aLocale.code" :class="{ 'px-4 py-2 link-box': true, active: currentLocale == aLocale.code }" @click="setLocale(aLocale.code);close();">
+        <ULink
+          v-for="aLocale in availableLocales"
+          :key="aLocale.code"
+          :class="{ 'px-4 py-2 link-box': true, active: currentLocale == aLocale.code }"
+          @click="
+            setLocale(aLocale.code);
+            close();
+          "
+        >
           {{ aLocale.name }}
         </ULink>
       </div>

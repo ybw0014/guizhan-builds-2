@@ -51,10 +51,10 @@ function filterList() {
 
 <template>
   <Head>
-    <Title>{{ t("pages.authors.title") }}</Title>
+    <Title>{{ t('pages.authors.title') }}</Title>
   </Head>
   <div class="flex flex-col gap-4">
-    <PageTitle>{{ t("pages.authors.title") }}</PageTitle>
+    <PageTitle>{{ t('pages.authors.title') }}</PageTitle>
     <UiInputText v-model="query" :label="t('pages.authors.username')" />
     <DataTable :headers="headers" :items="filteredList" :size-per-page="15">
       <template #col-name="{ item }">

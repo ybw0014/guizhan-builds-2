@@ -25,7 +25,7 @@ const navLinks = [
                 v-for="navLink in navLinks"
                 :key="navLink.link"
                 :to="{ name: navLink.link }"
-                :class="{ 'link-box px-4 py-2': true, 'active': navLink.link === route.name }"
+                :class="{ 'link-box px-4 py-2': true, active: navLink.link === route.name }"
                 @click="close"
               >
                 {{ $t(`components.header.nav.${navLink.label}`) }}
@@ -36,7 +36,7 @@ const navLinks = [
         <!-- 首页链接 -->
         <ULink to="/" class="text-lg flex gap-2 font-semibold py-2 items-center">
           <img src="/images/brand.jpg" class="max-h-6 rounded-full" />
-          {{ $t("title") }}
+          {{ $t('title') }}
         </ULink>
         <!-- 导航 -->
         <div class="nav-links">

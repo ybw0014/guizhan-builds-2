@@ -68,6 +68,6 @@ function updatePage(newPage: number) {
     <PaginationButtons v-show="slicedProjects" :page="page" :pages="totalPages" @update:page="updatePage" />
   </div>
   <div v-else>
-    {{ t("components.projectList.noResult") }}
+    {{ t('components.projectList.noResult') }}
   </div>
 </template>

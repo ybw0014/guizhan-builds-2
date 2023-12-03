@@ -3,7 +3,7 @@ name: Copy reops.json
 on:
   push:
     paths:
-      - "public/repos.json"
+      - 'public/repos.json'
     branches:
       - master
   workflow_dispatch:

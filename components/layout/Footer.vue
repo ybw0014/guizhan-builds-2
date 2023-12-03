@@ -3,10 +3,10 @@
     <div class="footer-items">
       <div class="footer-items__list">
         <NuxtLink :href="useExternalLinkHelper('https://github.com/ybw0014/guizhan-builds-2')" class="link-box" target="_blank">
-          {{ $t("components.footer.github") }}
+          {{ $t('components.footer.github') }}
         </NuxtLink>
-        <NuxtLink :to="{ name: 'terms' }" class="link-box">{{ $t("components.footer.terms") }}</NuxtLink>
-        <NuxtLink :to="{ name: 'privacy' }" class="link-box">{{ $t("components.footer.privacy") }}</NuxtLink>
+        <NuxtLink :to="{ name: 'terms' }" class="link-box">{{ $t('components.footer.terms') }}</NuxtLink>
+        <NuxtLink :to="{ name: 'privacy' }" class="link-box">{{ $t('components.footer.privacy') }}</NuxtLink>
       </div>
       <p class="font-bold">
         &copy; {{ new Date().getFullYear() }}

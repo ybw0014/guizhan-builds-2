@@ -26,7 +26,7 @@ const value = computed({
     <RadioGroupLabel v-if="label" class="font-semibold mb-1">
       {{ label }}
       <UButton v-if="value" color="gray" size="sm" variant="link" :padded="false" @click="value = ''">
-        {{ t("components.projectFilter.clear") }}
+        {{ t('components.projectFilter.clear') }}
       </UButton>
     </RadioGroupLabel>
     <RadioGroupOption v-for="val in values" :key="val" v-slot="{ checked }" :value="val" class="filter-option flex gap-1 items-center cursor-pointer">

@@ -57,7 +57,7 @@ export async function useLatestSuccessfulBuild(project: Project): Promise<Ref<Bu
  * @param before 构建版本
  * @returns 该版本的运行需求
  */
-export function useProjectRequirements(project: Project, before: number = 0): Map<string, string>{
+export function useProjectRequirements(project: Project, before: number = 0): Map<string, string> {
   const result: Map<string, string> = new Map();
   if (!project.displayOptions?.requirements) {
     return result;
