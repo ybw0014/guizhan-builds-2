@@ -14,7 +14,7 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
-		"@guizhan/eslint-config": "^0.1.1",
+		"@guizhan/eslint-config": "^0.2.0",
 		"@iconify/json": "^2.2.119",
 		"@nuxt/content": "^2.7.0",
 		"@nuxt/devtools": "^1.0.3",
