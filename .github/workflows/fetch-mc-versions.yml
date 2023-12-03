@@ -23,7 +23,7 @@ jobs:
       - name: Fetch Minecraft versions
         id: fetch-versions
         run: |
-          fetched_versions=$(curl -s --fail https://builds.guizhanss.com/api/mc-versions)
+          fetched_versions=$(curl -s --fail https://builds.guizhanss.com/api/mc-versions | jq '.data' )
           exit_code=$?
           
           if [ $exit_code -ne 0 ]; then
