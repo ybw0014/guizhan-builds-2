@@ -4,12 +4,13 @@ import LazyLoadImage from '~/components/LazyLoadImage.vue';
 
 const props = defineProps<{
   project: Project;
+  build?: number;
 }>();
 
 const imgSource = computed(() => {
   const { project } = props;
   const dir = `${project.author}/${project.repository}/${project.branch}`;
-  return `/f/${dir}/badge.svg`;
+  return `/api/badge/${dir}/${props.build ?? 'latest'}`;
 });
 </script>
 
