@@ -5,7 +5,10 @@ export default defineNuxtRouteMiddleware(async (to, _) => {
   }
 
   const path = to.path.slice(1).split('/');
-  if (path[0] === 'f') {
+  if (path[path.length - 1].toLowerCase() === 'badge.svg') {
+    const [author, repo, branch] = path.slice(path.length - 4, path.length - 1);
+    await navigateTo(`/api/badge/${author}/${repo}/${branch}/latest`, { redirectCode: 301, external: true });
+  } else if (path[0] === 'f') {
     // 旧版构建信息存储，重定向至R2
     if (path.length < 5) {
       throw createError({ statusCode: 404, message: 'Not Found' });
@@ -20,16 +23,10 @@ export default defineNuxtRouteMiddleware(async (to, _) => {
       external: true
     });
   } else if (path.length === 4) {
-    if (path[path.length - 1].toLowerCase() === 'badge.svg') {
-      // v2初代徽章路径，重定向至R2统一路径
-      const [author, repo, branch] = path.slice(0, -1);
-      await navigateTo(`/f/${author}/${repo}/${branch}/badge.svg`, { redirectCode: 301, external: true });
-    } else {
-      // 旧版访问指定构建版本，重定向至新版路径
-      const [author, repo, branch, build] = path;
-      if (/^\d+$/.test(build)) {
-        await navigateTo(`/${author}/${repo}/${branch}/builds/${build}`, { redirectCode: 301, external: true });
-      }
+    // 旧版访问指定构建版本，重定向至新版路径
+    const [author, repo, branch, build] = path;
+    if (/^\d+$/.test(build)) {
+      await navigateTo(`/${author}/${repo}/${branch}/builds/${build}`, { redirectCode: 301, external: true });
     }
   }
 });
