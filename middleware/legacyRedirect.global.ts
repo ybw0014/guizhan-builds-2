@@ -7,7 +7,11 @@ export default defineNuxtRouteMiddleware(async (to, _) => {
   const path = to.path.slice(1).split('/');
   if (path[path.length - 1].toLowerCase() === 'badge.svg') {
     const [author, repo, branch] = path.slice(path.length - 4, path.length - 1);
-    await navigateTo(`/api/badge/${author}/${repo}/${branch}/latest`, { redirectCode: 301, external: true });
+    const project = await useProject(author, repo, branch);
+    if (!project.value) {
+      throw createError({ statusCode: 404, message: 'Not Found' });
+    }
+    await navigateTo(`/api/badge/${project.value.author}/${project.value.repository}/${project.value.branch}/latest`, { redirectCode: 301, external: true });
   } else if (path[0] === 'f') {
     // 旧版构建信息存储，重定向至R2
     if (path.length < 5) {
