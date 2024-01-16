@@ -1,0 +1,47 @@
+name: (CI) Automatic Build
+
+on:
+  workflow_dispatch: {}
+  schedule:
+  - cron: '*/10 * * * *'
+
+jobs:
+  build:
+    name: Automatic Build
+    runs-on: ubuntu-latest
+
+    env:
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+      ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+      ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+      SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+      BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+      WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+      WEBHOOK_KEY: ${{ secrets.WEBHOOK_KEY }}
+
+    steps:
+    - name: Checking out Repository
+      uses: actions/checkout@v4
+
+    - name: Setting up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Setting up node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.3.0'
+
+    - name: Setting up bun
+      uses: oven-sh/setup-bun@v1
+
+    - name: Switch to ci directory
+      run: cd ci
+
+    - name: Installing dependencies
+      run: bun install
+
+    - name: Run automatic build
+      run: bun run start
