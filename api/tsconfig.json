@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"lib": ["esnext"],
+		"types": ["@cloudflare/workers-types/experimental", "@types/node"],
+		"baseUrl": "./",
+		"outDir": "./dist",
+		"allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+		"resolveJsonModule": true,
+		"paths": {
+			"~/*": ["./src/*"],
+			"~/shared/*": ["../src/*"]
+		}
+	}
+}
