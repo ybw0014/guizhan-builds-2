@@ -1,16 +1,16 @@
-name: Validate repos.json
+name: (Frontend) Validate repos.json
 
 on:
   push:
     branches:
       - master
     paths:
-      - 'public/repos.json'
+      - 'frontend/public/repos.json'
   pull_request:
     branches:
       - master
     paths:
-      - 'public/repos.json'
+      - 'frontend/public/repos.json'
 
 jobs:
   validate-repos:
@@ -19,8 +19,9 @@ jobs:
     steps:
       - name: Checking out repository
         uses: actions/checkout@master
+
       - name: Validate repos.json
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
-          INPUT_SCHEMA: /public/repos_schema.json
-          INPUT_JSONS: /public/repos.json
+          INPUT_SCHEMA: /frontend/public/repos_schema.json
+          INPUT_JSONS: /frontend/public/repos.json

@@ -1,4 +1,4 @@
-name: Fetch minecraft versions
+name: (Frontend) Fetch minecraft versions
 
 on:
   schedule:

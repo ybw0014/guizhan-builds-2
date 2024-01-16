@@ -1,9 +1,9 @@
-name: Copy reops.json
+name: (Frontend) Copy reops.json
 
 on:
   push:
     paths:
-      - 'public/repos.json'
+      - 'frontend/public/repos.json'
     branches:
       - master
   workflow_dispatch:
