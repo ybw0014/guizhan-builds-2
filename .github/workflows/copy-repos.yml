@@ -1,9 +1,9 @@
-name: Copy reops.json
+name: (Frontend) Copy reops.json
 
 on:
   push:
     paths:
-      - 'public/repos.json'
+      - 'frontend/public/repos.json'
     branches:
       - master
   workflow_dispatch:
@@ -21,11 +21,11 @@ jobs:
 
     steps:
       - name: Checking out repository
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4
 
       - name: Copy repos.json
         run: |
-          cp "$GITHUB_WORKSPACE/public/repos.json" "$GITHUB_WORKSPACE/content/repos.json"
+          cp "$GITHUB_WORKSPACE/frontend/ublic/repos.json" "$GITHUB_WORKSPACE/frontend/content/repos.json"
 
       - name: Commit changes
         run: |
