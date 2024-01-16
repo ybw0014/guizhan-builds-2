@@ -37,11 +37,10 @@ jobs:
     - name: Setting up bun
       uses: oven-sh/setup-bun@v1
 
-    - name: Switch to ci directory
-      run: cd ci
-
     - name: Installing dependencies
       run: bun install
+      working-directory: ci
 
     - name: Run automatic build
       run: bun run start
+      working-directory: ci

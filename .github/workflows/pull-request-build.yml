@@ -28,14 +28,14 @@ jobs:
       - name: Setting up bun
         uses: oven-sh/setup-bun@v1
 
-      - name: Switch to frontend directory
-        run: cd frontend
-
       - name: Installing dependencies
         run: bun install
+        working-directory: frontend
 
       - name: Run eslint
         run: bun run lint
+        working-directory: frontend
 
       - name: Run nuxt build
         run: bun run build
+        working-directory: frontend
