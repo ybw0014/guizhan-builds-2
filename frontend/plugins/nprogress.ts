@@ -1,5 +1,5 @@
 /* eslint-disable import/no-named-as-default */
-import NProgress from 'frontend/plugins/nprogress';
+import NProgress from 'nprogress';
 import { nextTick } from 'vue';
 import 'nprogress/nprogress.css';
 import { defineNuxtPlugin, useRouter } from '#imports';

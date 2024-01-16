@@ -1,5 +1,5 @@
 /* eslint-disable import/no-named-as-default-member */
-import dayjs, { type ConfigType } from 'frontend/plugins/dayjs';
+import dayjs, { type ConfigType } from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import 'dayjs/locale/zh-cn';
 import 'dayjs/locale/zh-tw';
