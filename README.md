@@ -1,17 +1,15 @@
-# 鬼斩构建站 v2 - 前端
+# 鬼斩构建站 v2
 
 拿来练手的项目，[鬼斩构建站](https://github.com/ybw0014/guizhan-builds)的第二版。
 
+鬼斩构建站利用 GitHub Actions 自动构建所有项目，并上传至 Cloudflare R2。  
+前端页面使用 Nuxt.js 框架并部署到 Cloudflare Pages。  
+API 使用 Cloudflare Workers 部署。
+
 ## 添加你的项目
 
-你可以将任意 Maven/Gradle 项目添加到构建站。
+目前，issue 的自动添加项目暂未实现，所以你需要通过提交 Pull Request 来添加你的项目。
 
-Fork 本仓库，并在 `public/repos.json` 文件中修改或添加你的项目信息。
-
-具体的配置项可以在此[文档](./README_repos.md)中查看。
-
-## 构建
-
-构建站基于 GitHub Actions 每 10 分钟运行一次（具体时间可能会有一定的浮动），检测仓库的最新 commit 与最新构建的，如果不匹配则会触发构建。
-
-具体的流程可以在[后端项目](https://github.com/ybw0014/guizhan-builds-2-backend)中查看。
+1. Fork 本仓库
+2. 在 `frontend/public/repos.json` 中添加你的项目（查阅此[文档](./README_repos.md)）
+3. 提交 Pull Request
