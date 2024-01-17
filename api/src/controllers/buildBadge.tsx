@@ -1,4 +1,4 @@
-import { Ctx } from '~/types/hono'
+import type { Ctx } from '~/types/hono'
 import { fetchBuild, fetchBuilds, fetchProject } from '~/utils/external/guizhanBuilds'
 import { Field, getLanguage, getText } from '~/services/i18n'
 import { Badge } from '~/components/badge'

@@ -11,6 +11,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
 		"resolveJsonModule": true,
+		"verbatimModuleSyntax": true,
 		"paths": {
 			"~/*": ["./src/*"],
 			"~/shared/*": ["../src/*"]

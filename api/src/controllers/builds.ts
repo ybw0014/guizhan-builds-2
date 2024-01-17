@@ -1,4 +1,4 @@
-import { Ctx } from '~/types/hono'
+import type { Ctx } from '~/types/hono'
 import { fetchBuild, fetchBuilds, fetchProject } from '~/utils/external/guizhanBuilds'
 import { response, responseOk } from '~/utils/response'
 

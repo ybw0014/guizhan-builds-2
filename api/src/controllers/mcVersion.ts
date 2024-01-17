@@ -1,4 +1,4 @@
-import { Ctx } from '~/types/hono'
+import type { Ctx } from '~/types/hono'
 import { fetchMcVersions } from '~/utils/external/mojangApi'
 import { responseOk } from '~/utils/response'
 import { compareVersions } from 'compare-versions'

@@ -1,5 +1,5 @@
 import type { FC } from 'hono/jsx'
-import { BadgeProps } from '~/types/builds'
+import type { BadgeProps } from '~/types/builds'
 
 export const Badge: FC<BadgeProps> = (props: BadgeProps) => {
   return (

@@ -1,5 +1,5 @@
-import { MiddlewareHandler } from 'hono'
-import { Ctx } from '~/types/hono'
+import type { MiddlewareHandler } from 'hono'
+import type { Ctx } from '~/types/hono'
 
 export const badgeCache = (options: {
   cacheControl: string

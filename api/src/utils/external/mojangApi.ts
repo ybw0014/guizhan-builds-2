@@ -1,4 +1,4 @@
-import { Response as MinecraftVersionManifestResponse } from '~/types/mcVersion'
+import type { Response as MinecraftVersionManifestResponse } from '~/types/mcVersion'
 import { requestJson } from '~/utils/request'
 
 export async function fetchMcVersions() {
