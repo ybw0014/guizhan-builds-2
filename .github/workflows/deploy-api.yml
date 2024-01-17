@@ -23,6 +23,10 @@ jobs:
       - name: Setting up bun
         uses: oven-sh/setup-bun@v1
 
+      - name: Installing dependencies
+        run: bun install
+        working-directory: api
+
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
