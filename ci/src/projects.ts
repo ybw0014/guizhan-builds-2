@@ -10,7 +10,7 @@ export async function getProjects(): Promise<Project[]> {
   const projects: Project[] = []
   try {
     const { data: rawProjects } = await request.get<Projects>(
-      `https://raw.githubusercontent.com/ybw0014/guizhan-builds-2-frontend/master/public/repos.json?t=${new Date().getTime()}`
+      `https://raw.githubusercontent.com/ybw0014/guizhan-builds-2-frontend/master/frontend/public/repos.json?t=${new Date().getTime()}`
     )
     return useParseProjects(rawProjects)
   } catch (err) {
