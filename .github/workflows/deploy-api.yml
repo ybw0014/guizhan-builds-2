@@ -15,6 +15,14 @@ jobs:
       - name: Checking out Repository
         uses: actions/checkout@v4
 
+      - name: Setting up node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.3.0'
+
+      - name: Setting up bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:

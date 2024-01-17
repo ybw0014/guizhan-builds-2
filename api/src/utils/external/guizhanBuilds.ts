@@ -3,7 +3,7 @@ import { BuildsInfo, Projects, Project, useParseProjects, BuildInfo } from 'guiz
 
 export async function fetchProjects(): Promise<Project[]> {
   const rawProjects = await requestJson<Projects>(
-    'https://raw.githubusercontent.com/ybw0014/guizhan-builds-2/master/public/repos.json'
+    'https://raw.githubusercontent.com/ybw0014/guizhan-builds-2/master/frontend/public/repos.json'
   )
   return useParseProjects(rawProjects)
 }
