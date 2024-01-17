@@ -1,5 +1,5 @@
-import { Project, Projects, useParseProjects, BuildsInfo } from 'guizhan-builds-2-data';
-import { OrderValidationData, OrderValidationResponse, DownloadResponse, LastUpdateResponse, LastUpdateData } from '@/types/sfSubscription';
+import { type Project, type Projects, type BuildsInfo, useParseProjects } from 'guizhan-builds-2-data';
+import type { OrderValidationData, OrderValidationResponse, DownloadResponse, LastUpdateResponse, LastUpdateData } from '@/types/sfSubscription';
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {
   const { data } = await useContentApi<Projects>('repos');

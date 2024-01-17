@@ -8,15 +8,15 @@ export async function useLocalApi<T>(path: string) {
     host = window.location.host;
     protocol = window.location.protocol;
   }
-  return await useAsyncData<T>(path, () => $fetch(`${protocol}//${host}${path}`));
+  return useAsyncData<T>(path, () => $fetch(`${protocol}//${host}${path}`));
 }
 
 export async function useContentApi<T>(path: string) {
-  return await useAsyncData<T>(path, () => queryContent<T>(path).findOne());
+  return useAsyncData<T>(path, () => queryContent<T>(path).findOne());
 }
 
 export async function useExternalApi<T>(path: string) {
-  return await useAsyncData<T>(path, () => $fetch(path));
+  return useAsyncData<T>(path, () => $fetch(path));
 }
 
 export async function useR2Asset<T>(path: string) {
