@@ -1,9 +1,11 @@
-name: Nuxt Build on Pull Request
+name: (Frontend) Nuxt Build on Pull Request
 
 on:
   pull_request:
     branches:
       - master
+    paths:
+      - 'frontend/**'
 
 jobs:
   build:
@@ -28,9 +30,12 @@ jobs:
 
       - name: Installing dependencies
         run: bun install
+        working-directory: frontend
 
       - name: Run eslint
         run: bun run lint
+        working-directory: frontend
 
       - name: Run nuxt build
         run: bun run build
+        working-directory: frontend

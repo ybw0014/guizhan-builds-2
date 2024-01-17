@@ -1,0 +1,23 @@
+name = "guizhan-builds-2-api"
+main = "src/index.ts"
+compatibility_date = "2023-11-21"
+compatibility_flags = ["nodejs_compat"]
+
+[env.dev]
+[env.dev.vars]
+ENVIRONMENT = "dev"
+
+[[env.dev.r2_buckets]]
+binding = 'R2'
+bucket_name = 'guizhan-builds'
+preview_bucket_name = 'guizhan-builds'
+
+
+[env.production]
+[env.production.vars]
+ENVIRONMENT = "production"
+
+[[env.production.r2_buckets]]
+binding = 'R2'
+bucket_name = 'guizhan-builds'
+preview_bucket_name = 'guizhan-builds'

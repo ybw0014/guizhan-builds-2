@@ -1,4 +1,4 @@
-name: Fetch minecraft versions
+name: (Frontend) Fetch minecraft versions
 
 on:
   schedule:
@@ -31,14 +31,14 @@ jobs:
             exit 1
           fi
 
-          existing_versions=$(cat content/mc-versions.json || echo "[]")
+          existing_versions=$(cat frontend/content/mc-versions.json || echo "[]")
 
           if [ "$fetched_versions" != "$existing_versions" ]; then
             echo "检测到 Minecraft 版本列表有更新。"
-            echo "$fetched_versions" > content/mc-versions.json
+            echo "$fetched_versions" > frontend/content/mc-versions.json
             git config user.name "${BOT_NAME}"
             git config user.email "${BOT_EMAIL}"
-            git add content/mc-versions.json
+            git add frontend/content/mc-versions.json
             git commit -m "chore(content): update minecraft versions"
             git push
             echo "updated=true" >> $GITHUB_OUTPUT
