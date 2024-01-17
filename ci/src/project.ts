@@ -2,10 +2,8 @@
  * 单个项目相关
  */
 import { BuildInfo, BuildsInfo, Project } from 'guizhan-builds-2-data'
-import fs from 'fs/promises'
-import { resolve } from 'path'
 import { BuildTask } from '@/types'
-import { getJson, upload, uploadJson } from '@/r2'
+import { getJson, uploadJson } from '@/r2'
 import { sleep } from '@/utils'
 
 export async function getBuilds(project: Project): Promise<BuildsInfo | null> {
@@ -35,14 +33,14 @@ export async function getBuilds(project: Project): Promise<BuildsInfo | null> {
 export async function uploadBuilds(task: BuildTask) {
   const buildInfo: BuildInfo = {
     id: task.version as number,
-    commit: task.commit?.sha || '',
-    author: task.commit?.author || '',
-    timestamp: task.commit?.timestamp || task.buildTime,
-    message: task.commit?.message || '',
-    success: task.success || false,
+    commit: task.commit?.sha ?? '',
+    author: task.commit?.author ?? '',
+    timestamp: task.commit?.timestamp ?? task.buildTime,
+    message: task.commit?.message ?? '',
+    success: task.success ?? false,
     buildTimestamp: task.buildTime,
-    target: task.target || '',
-    sha1: task.sha1 || ''
+    target: task.target ?? '',
+    sha1: task.sha1 ?? ''
   }
 
   let buildsInfo = await getBuilds(task.project)
@@ -61,19 +59,6 @@ export async function uploadBuilds(task: BuildTask) {
   }
 
   await uploadJson(`${task.project.author}/${task.project.repository}/${task.project.branch}/builds.json`, buildsInfo)
-}
-
-export async function uploadBadge(task: BuildTask) {
-  let badge = await fs.readFile(resolve(__dirname, '../assets/images/badge.svg'), 'utf-8')
-  if (task.success) {
-    badge = badge.replace('${status}', '成功')
-      .replace('${color}', '#009688')
-  } else {
-    badge = badge.replace('${status}', '失败')
-      .replace('${color}', '#f34436')
-  }
-
-  await upload(`${task.project.author}/${task.project.repository}/${task.project.branch}/badge.svg`, badge, 'image/svg+xml')
 }
 
 export async function updateBuildTime(task: BuildTask) {

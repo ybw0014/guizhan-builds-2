@@ -2,17 +2,19 @@
  * 项目入口
  */
 import 'dotenv/config'
-import { getProjects } from './projects'
-import { BuildTask } from './types'
-import { buildTask } from './task'
-import { getLatestCommit } from './github'
-import { getBuilds, updateBuildTime, uploadBadge, uploadBuilds } from './project'
-import { dayjs } from './date'
 import fs from 'fs/promises'
-import { gitClone } from './git'
-import maven from './mavenB'
-import gradle from './gradleB'
-import { notify } from './webhook'
+import { BuildTask } from '@/types'
+import { getProjects } from '@/projects'
+import { buildTask } from '@/task'
+import { getLatestCommit } from '@/github'
+import { getBuilds, updateBuildTime, uploadBuilds } from '@/project'
+import { dayjs } from '@/date'
+import { gitClone } from '@/git'
+import maven from '@/mavenB'
+import gradle from '@/gradleB'
+import { notify } from '@/webhook'
+
+const env = process.env.NODE_ENV ?? 'development'
 
 async function main() {
   console.log('> 初始化项目')
@@ -21,7 +23,9 @@ async function main() {
   console.log(`> 已加载 ${projects.length} 个项目`)
 
   for (let i = 0; i < projects.length; i++) {
-    // if (i >= 1) break;
+    if (env === 'development' && i >= 1) {
+      break
+    }
     const project = projects[i]
     console.log('')
     console.log(`> 开始处理项目: ${project.key} (${i + 1}/${projects.length})`)
@@ -86,7 +90,7 @@ async function prepare(task: BuildTask, version: number) {
 
   task.finalVersion = task.project.buildOptions.version
     .replace('{version}', version.toString())
-    .replace('{git_commit}', task.commit?.sha.slice(0, 7) || '')
+    .replace('{git_commit}', task.commit?.sha.slice(0, 7) ?? '')
     .replace('{Year}', date.year().toString())
     .replace('{year}', date.year().toString().slice(2))
     .replace('{Month}', (date.month() + 1).toString().padStart(2, '0'))
@@ -139,8 +143,6 @@ async function cleanup(task: BuildTask) {
 
   console.log('正在上传构建信息')
   await uploadBuilds(task)
-  console.log('正在上传构建标识')
-  await uploadBadge(task)
   console.log('正在更新构建时间记录')
   await updateBuildTime(task)
 
