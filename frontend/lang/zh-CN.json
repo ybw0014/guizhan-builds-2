@@ -188,20 +188,26 @@
 			"footnotes": "订阅价格仅供参考，以爱发电内实际价格为准。",
 			"devCheck": {
 				"title": "获取最新的内测版构建",
-				"description": "提供爱发电订单号，经过验证后可下载最新的内测版构建。",
-				"navigateToOrders": "查找爱发电订单",
-				"label": "爱发电订单号",
-				"saveOrder": "保存订单号于浏览器中，以方便后续查询",
-				"query": "验证订单",
-				"download": "下载内测版构建",
-				"lastUpdate": "最后更新于 {time}",
-				"updateInfo": "最新提交记录 {changelog}",
-				"noUpdate": "距离上次下载暂无更新",
-				"checking": "正在检查版本信息...",
+				"form": {
+					"description": "提供爱发电订单号，经过验证后可下载最新的内测版构建。",
+					"orders": "查找爱发电订单",
+					"label": "爱发电订单号",
+					"save": "保存订单号于浏览器中，以方便后续查询",
+					"query": "验证订单",
+					"download": "下载内测版构建"
+				},
+				"version": {
+					"checking": "正在检查版本信息...",
+					"fail": "无法获取最新版本信息。",
+					"lastUpdate": "最后更新于 {time}",
+					"updateInfo": "最新提交记录 {changelog}",
+					"noUpdate": "距离上次下载暂无更新"
+				},
 				"error": {
 					"malformedOrderId": "订单号格式不正确",
 					"invalidOrderId": "订单不存在或已过期",
-					"cannotGetLink": "无法获取下载链接，请稍后再试"
+					"cannotGetLink": "无法获取下载链接，请稍后再试",
+					"http": "处理请求时发生错误"
 				},
 				"close": "关闭"
 			}

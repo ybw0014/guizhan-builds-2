@@ -121,7 +121,12 @@ async function checkOrder() {
 
   // 查询订单
   const orderData = await useSubValidation(orderId.value);
-  if (!orderData.value || orderData.value.expired) {
+  if (!orderData.value) {
+    devCheckErrMsg.value = t('pages.sfSubscription.devCheck.error.http');
+    queryBtnDisabled.value = false;
+    return;
+  }
+  if (orderData.value.expired) {
     devCheckErrMsg.value = t('pages.sfSubscription.devCheck.error.invalidOrderId');
     queryBtnDisabled.value = false;
     return;
@@ -215,43 +220,43 @@ function devDownload() {
           </UButton>
         </div>
       </template>
-      {{ t('pages.sfSubscription.devCheck.description') }}
+      {{ t('pages.sfSubscription.devCheck.form.description') }}
       <div class="flex flex-col gap-4">
         <a href="https://afdian.net/dashboard/order" target="_blank" class="a-link" tabindex="-1">
-          {{ t('pages.sfSubscription.devCheck.navigateToOrders') }}
+          {{ t('pages.sfSubscription.devCheck.form.orders') }}
         </a>
         <div v-if="!devDownloadLink" class="flex flex-col gap-4">
-          <UiInputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
+          <UiInputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.form.label')" />
           <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
-          <UCheckbox v-model="saveOrder" name="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
+          <UCheckbox v-model="saveOrder" name="saveOrder" :label="t('pages.sfSubscription.devCheck.form.save')" />
           <UButton block size="lg" icon="i-heroicons-magnifying-glass" :loading="queryBtnDisabled" @click="checkOrder">
-            {{ t('pages.sfSubscription.devCheck.query') }}
+            {{ t('pages.sfSubscription.devCheck.form.query') }}
           </UButton>
         </div>
         <div v-else class="flex flex-col gap-4">
           <UButton block size="lg" @click="devDownload">
             <UIcon name="i-heroicons-arrow-down-tray" class="w-6 h-6" />
-            {{ t('pages.sfSubscription.devCheck.download') }}
+            {{ t('pages.sfSubscription.devCheck.form.download') }}
           </UButton>
         </div>
       </div>
       <template #footer>
         <div v-if="lastUpdateTime && lastUpdateTime !== -1" class="text-gray-500 text-sm flex flex-col gap-2">
           <div class="flex gap-2">
-            {{ t('pages.sfSubscription.devCheck.lastUpdate', { time: $dayjs(lastUpdateTime).format('lll') }) }}
+            {{ t('pages.sfSubscription.devCheck.version.lastUpdate', { time: $dayjs(lastUpdateTime).format('lll') }) }}
             <div v-if="noUpdate" class="font-bold">
-              {{ t('pages.sfSubscription.devCheck.noUpdate') }}
+              {{ t('pages.sfSubscription.devCheck.version.noUpdate') }}
             </div>
           </div>
           <div class="truncate">
-            {{ t('pages.sfSubscription.devCheck.updateInfo', { changelog: lastUpdateCommit }) }}
+            {{ t('pages.sfSubscription.devCheck.version.updateInfo', { changelog: lastUpdateCommit }) }}
           </div>
         </div>
         <div v-else-if="lastUpdateTime && lastUpdateTime === -1" class="text-gray-500 text-sm">
-          {{ t('pages.sfSubscription.devCheck.checkFailed') }}
+          {{ t('pages.sfSubscription.devCheck.version.fail') }}
         </div>
         <div v-else class="text-gray-500 text-sm">
-          {{ t('pages.sfSubscription.devCheck.checking') }}
+          {{ t('pages.sfSubscription.devCheck.version.checking') }}
         </div>
       </template>
     </UCard>

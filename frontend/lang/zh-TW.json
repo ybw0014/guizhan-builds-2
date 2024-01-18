@@ -188,20 +188,26 @@
 			"footnotes": "訂閱價格僅供參考，以愛發電內實際價格為准。",
 			"devCheck": {
 				"title": "獲取最新的內測版構建",
-				"description": "提供愛發電訂單號，經過驗證後可下載最新的內測版構建。",
-				"navigateToOrders": "查找愛發電訂單",
-				"label": "愛發電訂單號",
-				"saveOrder": "保存訂單號於瀏覽器中，以方便後續查詢",
-				"query": "驗證訂單",
-				"download": "下載內測版構建",
-				"lastUpdate": "最後更新於 {time}",
-				"updateInfo": "最新提交記錄 {changelog}",
-				"noUpdate": "距離上次下載暫無更新",
-				"checking": "正在檢查版本信息...",
+				"form": {
+					"description": "提供愛發電訂單號，經過驗證後可下載最新的內測版構建。",
+					"orders": "查找愛發電訂單",
+					"label": "愛發電訂單號",
+					"save": "保存訂單號於瀏覽器中，以方便後續查詢",
+					"query": "驗證訂單",
+					"download": "下載內測版構建"
+				},
+				"version": {
+					"checking": "正在檢查版本信息...",
+					"fail": "無法獲取最新版本信息。",
+					"lastUpdate": "最後更新於 {time}",
+					"updateInfo": "最新提交記錄 {changelog}",
+					"noUpdate": "距離上次下載暫無更新"
+				},
 				"error": {
 					"malformedOrderId": "訂單號格式不正確",
 					"invalidOrderId": "訂單不存在或已過期",
-					"cannotGetLink": "無法獲取下載鏈接，請稍後再試"
+					"cannotGetLink": "無法獲取下載鏈接，請稍後再試",
+					"http": "處理請求時發生錯誤"
 				},
 				"close": "關閉"
 			}
