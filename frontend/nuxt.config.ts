@@ -75,7 +75,7 @@ export default defineNuxtConfig({
     }
   },
   ui: {
-    icons: 'all'
+    icons: ['heroicons', 'mdi']
   },
   googleFonts: {
     families: {

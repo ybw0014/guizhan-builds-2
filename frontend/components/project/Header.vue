@@ -39,7 +39,7 @@ async function download() {
           </ULink>
         </div>
         <span class="text-sm md:text-base px-1">
-          <UIcon name="i-ph-git-branch-light" />
+          <UIcon name="i-mdi-source-branch" />
           {{ branch }}
         </span>
       </div>

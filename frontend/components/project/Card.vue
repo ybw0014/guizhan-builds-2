@@ -34,7 +34,7 @@ function handleCardClick() {
         <div class="font-semibold text-lg">
           {{ name }}
           <span v-if="branch !== null" class="ml-2 font-light text-base whitespace-nowrap">
-            <UIcon name="i-ph-git-branch-light" />
+            <UIcon name="i-mdi-source-branch" />
             {{ branch }}
           </span>
         </div>

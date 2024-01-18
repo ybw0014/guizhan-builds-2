@@ -51,7 +51,7 @@ watchDebounced(
   async () => {
     filteredList.value = null;
     await router.replace({ query: queryParams.value });
-    await filterList();
+    filterList();
   },
   { deep: true, debounce: 250 }
 );
@@ -125,8 +125,8 @@ function filterList() {
   filteredList.value = filtered;
 }
 
-onMounted(async () => {
-  await filterList();
+onMounted(() => {
+  filterList();
 });
 </script>
 
@@ -197,7 +197,7 @@ onMounted(async () => {
     </div>
   </div>
   <div v-else class="flex flex-col items-center mt-8">
-    <UIcon name="i-mingcute-loading-line" class="w-24 h-24 animate-spin" />
+    <UIcon name="i-mdi-loading" class="w-24 h-24 animate-spin" />
   </div>
 </template>
 

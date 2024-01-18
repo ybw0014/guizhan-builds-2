@@ -105,10 +105,10 @@ function updatePage(newPage: number) {
         <th v-for="header in headers" :key="header.name" @click="sort(header)">
           {{ header.title }}
           <span v-if="header.sortable" class="ml-1">
-            <UIcon v-if="activeSortCol !== header.name" name="i-iconoir-sort" />
+            <UIcon v-if="activeSortCol !== header.name" name="i-mdi-sort" />
             <span v-else>
-              <UIcon v-if="activeSortOrder === 1" name="i-iconoir-sort-down" />
-              <UIcon v-else name="i-iconoir-sort-up" />
+              <UIcon v-if="activeSortOrder === 1" name="i-mdi-sort-descending" />
+              <UIcon v-else name="i-mdi-sort-ascending" />
             </span>
           </span>
         </th>

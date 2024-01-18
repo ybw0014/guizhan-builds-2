@@ -158,7 +158,7 @@ definePageMeta({
             class="flex w-full justify-between rounded-lg bg-primary-100 px-4 py-2 text-left text-sm font-medium text-primary-900 hover:bg-primary-200 dark:bg-primary-800 dark:text-primary-100 dark:hover:bg-primary-700 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-opacity-75"
           >
             {{ t('pages.build.checksum.check') }}
-            <UIcon :name="open ? 'i-icon-park-up' : 'i-icon-park-down'" class="h-5 w-5 text-primary-500 dark:text-primary-100" />
+            <UIcon :name="open ? 'i-mdi-chevron-up' : 'i-mdi-chevron-down'" class="h-5 w-5 text-primary-500 dark:text-primary-100" />
           </DisclosureButton>
           <DisclosurePanel class="text-gray-500 flex flex-col gap-2">
             <div ref="checksumDropzone" class="flex items-center justify-center w-full" @click="openChecksumFile()">

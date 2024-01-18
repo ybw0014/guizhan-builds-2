@@ -14,8 +14,9 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
-		"@guizhan/eslint-config": "^0.2.0",
-		"@iconify/json": "^2.2.119",
+		"@guizhan/eslint-config": "^0.2.1",
+		"@iconify-json/heroicons": "^1.1.19",
+		"@iconify-json/mdi": "^1.1.64",
 		"@nuxt/content": "^2.7.0",
 		"@nuxt/devtools": "^1.0.3",
 		"@nuxt/types": "^2.17.0",
@@ -78,5 +79,8 @@
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.0.0",
 		"vue-tippy": "^6.2.0"
+	},
+	"resolutions": {
+		"vue": "3.3.13"
 	}
 }

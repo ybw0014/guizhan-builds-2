@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const modes = ['system', 'light', 'dark'];
 const icons: Record<string, string> = {
-  system: 'i-ic-baseline-computer',
-  light: 'i-ph-sun-fill',
-  dark: 'i-ph-moon-stars-fill'
+  system: 'i-heroicons-computer-desktop',
+  light: 'i-mdi-weather-sunny',
+  dark: 'i-mdi-weather-night'
 };
 
 const { t } = useI18n();
@@ -22,8 +22,7 @@ const modeTooltip = computed(() => {
 });
 
 function switchThemePreference() {
-  const next = nextMode.value;
-  colorMode.preference = next;
+  colorMode.preference = nextMode.value;
 }
 </script>
 

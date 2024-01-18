@@ -10,25 +10,25 @@ const cacheStore = useCacheStore();
 const subscriptions = [
   {
     type: 'free',
-    icon: 'i-arcticons-canary',
+    icon: 'i-mdi-package-variant-closed-check',
     price: 0,
     privileges: ['canaryBuilds', 'issuesSupport']
   },
   {
     type: 'monthly',
-    icon: 'i-ic-baseline-brightness-2',
+    icon: 'i-mdi-brightness-2',
     price: 6,
     privileges: ['devBuilds', 'newFeatures']
   },
   {
     type: 'seasonly',
-    icon: 'i-ic-baseline-brightness-4',
+    icon: 'i-mdi-brightness-4',
     price: 15,
     privileges: ['devBuilds', 'newFeatures']
   },
   {
     type: 'annually',
-    icon: 'i-bx-brightness',
+    icon: 'i-mdi-brightness-7',
     price: 80,
     privileges: ['devBuilds', 'techSupport', 'newFeatures']
   }
@@ -62,6 +62,10 @@ function getDevBuilds() {
   if (!lastUpdateTime.value) {
     setTimeout(async () => {
       const lastUpdateRes = await useSubLastUpdate();
+      if (!lastUpdateRes.value) {
+        lastUpdateTime.value = -1;
+        return;
+      }
       lastUpdateTime.value = lastUpdateRes.value?.last_update;
       lastUpdateCommit.value = lastUpdateRes.value?.commit_info || '';
       checkUpdate();
@@ -207,7 +211,7 @@ function devDownload() {
             {{ t('pages.sfSubscription.devCheck.title') }}
           </h2>
           <UButton color="gray" variant="link" :padded="false" @click="closeDevCheck">
-            <UIcon name="i-ic-round-close" class="w-6 h-6" />
+            <UIcon name="i-heroicons-x-mark" class="w-6 h-6" />
           </UButton>
         </div>
       </template>
@@ -220,19 +224,19 @@ function devDownload() {
           <UiInputText ref="getdev" v-model="orderId" :label="t('pages.sfSubscription.devCheck.label')" />
           <div v-if="devCheckErrMsg" class="text-red-500">{{ devCheckErrMsg }}</div>
           <UCheckbox v-model="saveOrder" name="saveOrder" :label="t('pages.sfSubscription.devCheck.saveOrder')" />
-          <UButton block size="lg" icon="i-ic-round-search" :loading="queryBtnDisabled" @click="checkOrder">
+          <UButton block size="lg" icon="i-heroicons-magnifying-glass" :loading="queryBtnDisabled" @click="checkOrder">
             {{ t('pages.sfSubscription.devCheck.query') }}
           </UButton>
         </div>
         <div v-else class="flex flex-col gap-4">
           <UButton block size="lg" @click="devDownload">
-            <UIcon name="i-ic-round-download" class="w-6 h-6" />
+            <UIcon name="i-heroicons-arrow-down-tray" class="w-6 h-6" />
             {{ t('pages.sfSubscription.devCheck.download') }}
           </UButton>
         </div>
       </div>
       <template #footer>
-        <div v-if="lastUpdateTime" class="text-gray-500 text-sm flex flex-col gap-2">
+        <div v-if="lastUpdateTime && lastUpdateTime !== -1" class="text-gray-500 text-sm flex flex-col gap-2">
           <div class="flex gap-2">
             {{ t('pages.sfSubscription.devCheck.lastUpdate', { time: $dayjs(lastUpdateTime).format('lll') }) }}
             <div v-if="noUpdate" class="font-bold">
@@ -242,6 +246,9 @@ function devDownload() {
           <div class="truncate">
             {{ t('pages.sfSubscription.devCheck.updateInfo', { changelog: lastUpdateCommit }) }}
           </div>
+        </div>
+        <div v-else-if="lastUpdateTime && lastUpdateTime === -1" class="text-gray-500 text-sm">
+          {{ t('pages.sfSubscription.devCheck.checkFailed') }}
         </div>
         <div v-else class="text-gray-500 text-sm">
           {{ t('pages.sfSubscription.devCheck.checking') }}

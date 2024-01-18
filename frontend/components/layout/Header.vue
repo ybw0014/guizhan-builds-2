@@ -16,7 +16,7 @@ const navLinks = [
         <!-- 小屏幕导航 -->
         <UPopover class="relative inline-block sm:hidden">
           <UButton variant="link" color="gray" class="link-box">
-            <UIcon name="i-ic-round-menu" class="text-lg" />
+            <UIcon name="i-mdi-menu" class="text-lg" />
           </UButton>
 
           <template #panel="{ close }">

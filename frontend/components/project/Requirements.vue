@@ -66,7 +66,7 @@ const iconClass = computed(() => {
     <!-- slimefun -->
     <div v-if="req.has('slimefun')" v-tippy="'Slimefun'" :class="['requirement', requirementSize]">
       <span class="icon">
-        <UIcon name="i-ph-package-light" :class="iconClass" title="Slimefun" aria-label="Slimefun" />
+        <UIcon name="i-mdi-package-variant-closed" :class="iconClass" title="Slimefun" aria-label="Slimefun" />
       </span>
       <span>{{ req.get('slimefun') }}</span>
     </div>
