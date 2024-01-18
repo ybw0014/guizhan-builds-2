@@ -18,6 +18,7 @@ jobs:
       R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
       WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
       WEBHOOK_KEY: ${{ secrets.WEBHOOK_KEY }}
+      NODE_ENV: production
 
     steps:
     - name: Checking out Repository
