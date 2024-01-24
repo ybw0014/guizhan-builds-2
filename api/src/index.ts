@@ -27,7 +27,7 @@ app.get('/mc-versions', getMcVersions)
 
 // projects
 app.get('/projects', getProjects)
-app.get('/projects/:author/:repository/:branch', getProject)
+app.get('/project/:author/:repository/:branch', getProject)
 
 // builds
 app.get('/builds/:author/:repository/:branch', getBuilds)
