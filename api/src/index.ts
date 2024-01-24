@@ -16,8 +16,12 @@ app.onError((err) => {
   return InternalError.toResponse()
 })
 
-app.get('/', () => success('Guizhan Builds 2 API. Visit /docs for API documentation'))
-app.get('/docs', (ctx: Ctx) => ctx.redirect('https://docs.ybw0014.dev/guizhan-builds/api/reference/'))
+app.get('/', () => success(
+  'Guizhan Builds 2 API',
+  {
+    'api_reference_url': 'https://docs.ybw0014.dev/guizhan-builds/api/reference/'
+  }
+))
 
 app.get('/mc-versions', getMcVersions)
 
@@ -26,9 +30,8 @@ app.get('/projects', getProjects)
 app.get('/projects/:author/:repository/:branch', getProject)
 
 // builds
-// app.openapi(projectRoute, getProject)
-// app.openapi(buildsRoute, getBuilds)
-// app.openapi(buildRoute, getBuild)
+app.get('/builds/:author/:repository/:branch', getBuilds)
+app.get('/build/:author/:repository/:branch/:build', getBuild)
 app.get('/download/:author/:repository/:branch/:build', downloadBuild)
 
 app.get('/badge/*', badgeCache({ cacheControl: 'max-age=3600' }))
