@@ -6,7 +6,6 @@ import { success } from '~/api/response'
 import { getMcVersions } from '~/controllers/mcVersion'
 import { getBuildBadge } from '~/controllers/buildBadge'
 import { badgeCache } from '~/middlewares/badgeCache'
-import type { Ctx } from '~/types/hono'
 
 const app = new Hono()
 
