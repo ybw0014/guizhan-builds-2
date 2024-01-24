@@ -1,9 +1,8 @@
 import type { Ctx } from '~/types/hono'
 
-export function parseNumber(str: string | undefined, defaultVal: number, min = 1, max = Math.max()) {
-  if (str === null || str === undefined) return defaultVal
+export function parseNumber(str: string | undefined, defaultVal: number, min = 1, max = Number.MAX_SAFE_INTEGER) {
   let num = parseInt(str)
-  if (Number.isNaN(num)) return defaultVal
+  if (!Number.isInteger(num)) return defaultVal
   if (num < min) num = min
   if (num > max) num = max
   return num
