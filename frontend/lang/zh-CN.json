@@ -5,6 +5,7 @@
 			"nav": {
 				"projects": "项目列表",
 				"authors": "作者列表",
+				"docs": "API 文档",
 				"sfSubscription": "粘液科技订阅计划"
 			},
 			"theme-switcher": {

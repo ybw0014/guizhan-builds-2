@@ -5,6 +5,7 @@
 			"nav": {
 				"projects": "Projects",
 				"authors": "Authors",
+				"docs": "API Documentation",
 				"sfSubscription": " "
 			},
 			"theme-switcher": {

@@ -4,6 +4,7 @@ const route = useRoute();
 const navLinks = [
   { link: 'index', label: 'projects' },
   { link: 'authors', label: 'authors' },
+  { link: 'docs', label: 'docs' },
   { link: 'sf-subscription', label: 'sfSubscription' }
 ];
 </script>
@@ -23,7 +24,7 @@ const navLinks = [
             <div class="flex flex-col">
               <ULink
                 v-for="navLink in navLinks"
-                :key="navLink.link"
+                :key="navLink.label"
                 :to="{ name: navLink.link }"
                 :class="{ 'link-box px-4 py-2': true, active: navLink.link === route.name }"
                 @click="close"
