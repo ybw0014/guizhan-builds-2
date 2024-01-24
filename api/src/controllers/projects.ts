@@ -1,26 +1,25 @@
+import { ProjectNotFound } from '~/api/errors'
+import { success } from '~/api/response'
 import type { Ctx } from '~/types/hono'
-import { response, responseOk } from '~/utils/response'
+import { paginate } from '~/utils'
 import { fetchProjects, fetchProject } from '~/utils/external/guizhanBuilds'
 
 export async function getProjects(ctx: Ctx) {
   const projects = await fetchProjects()
 
-  const result = []
-  for (const project of projects) {
-    result.push({
-      author: project.author,
-      repository: project.repository,
-      branch: project.branch
-    })
-  }
+  const result = projects.map(project => ({
+    author: project.author,
+    repository: project.repository,
+    branch: project.branch
+  }))
 
-  return ctx.jsonT(responseOk('Success', result))
+  return success('OK', paginate(result, ctx, 30))
 }
 
 export async function getProject(ctx: Ctx) {
   const project = await fetchProject(ctx.req.param('author'), ctx.req.param('repository'), ctx.req.param('branch'))
   if (!project) {
-    return ctx.jsonT(response(404, 'Project not found!'), 404)
+    return ProjectNotFound.toResponse()
   }
-  return ctx.jsonT(responseOk('Success', project))
+  return success('OK', project)
 }

@@ -1,5 +1,5 @@
 import { requestJson } from '~/utils/request'
-import { type BuildsInfo, type Projects, type Project, type BuildInfo, useParseProjects } from 'guizhan-builds-2-data';
+import { type BuildsInfo, type Projects, type Project, type BuildInfo, useParseProjects } from 'guizhan-builds-2-data'
 
 export async function fetchProjects(): Promise<Project[]> {
   const rawProjects = await requestJson<Projects>(

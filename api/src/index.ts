@@ -1,43 +1,34 @@
-import { OpenAPIHono } from '@hono/zod-openapi'
-import { swaggerUI } from '@hono/swagger-ui'
-import { response } from '~/utils/response'
+import { Hono } from 'hono'
 import { getProject, getProjects } from '~/controllers/projects'
 import { getBuilds, getBuild, downloadBuild } from '~/controllers/builds'
+import { InternalError, RouteNotFound } from '~/api/errors'
+import { success } from '~/api/response'
 import { getMcVersions } from '~/controllers/mcVersion'
 import { getBuildBadge } from '~/controllers/buildBadge'
 import { badgeCache } from '~/middlewares/badgeCache'
-import { projectsRoute, projectRoute } from '~/routes/projects'
-import { mcVersionsRoute } from '~/routes/mcVersions'
-import { buildRoute, buildsRoute } from '~/routes/builds'
-import { version } from '~/../package.json'
+import type { Ctx } from '~/types/hono'
 
-const app = new OpenAPIHono()
+const app = new Hono()
 
-app.notFound((ctx) => ctx.json(response(404, 'Route not found!'), 404))
-app.onError((err, ctx) => {
+app.notFound(() => RouteNotFound.toResponse())
+app.onError((err) => {
   console.error(`${err}`)
-  return ctx.json(response(500, 'Internal server error!'), 500)
+  return InternalError.toResponse()
 })
 
-app.get('/', (ctx) => ctx.json(
-  response(0, 'Guizhan Builds 2 API. See /openapi for OpenAPI endpoints, /docs for readable docs')
-))
-app.doc('/openapi', {
-  openapi: '3.1.0',
-  info: {
-    title: 'Guizhan Builds 2 API',
-    version
-  }
-})
-app.use('/docs', swaggerUI({ url: './openapi' }))
+app.get('/', () => success('Guizhan Builds 2 API. Visit /docs for API documentation'))
+app.get('/docs', (ctx: Ctx) => ctx.redirect('https://docs.ybw0014.dev/guizhan-builds/api/reference/'))
 
-app.openapi(mcVersionsRoute, getMcVersions)
-app.openapi(projectsRoute, getProjects)
-app.openapi(projectRoute, getProject)
-app.openapi(buildsRoute, getBuilds)
-app.openapi(buildRoute, getBuild)
+app.get('/mc-versions', getMcVersions)
 
-// special endpoints that do not return json
+// projects
+app.get('/projects', getProjects)
+app.get('/projects/:author/:repository/:branch', getProject)
+
+// builds
+// app.openapi(projectRoute, getProject)
+// app.openapi(buildsRoute, getBuilds)
+// app.openapi(buildRoute, getBuild)
 app.get('/download/:author/:repository/:branch/:build', downloadBuild)
 
 app.get('/badge/*', badgeCache({ cacheControl: 'max-age=3600' }))

@@ -11,8 +11,6 @@
     "lint:fix": "eslint --ext .ts,.js,.vue --ignore-path .gitignore --fix ."
   },
   "dependencies": {
-    "@hono/swagger-ui": "^0.2.1",
-    "@hono/zod-openapi": "^0.9.5",
     "compare-versions": "^6.1.0",
     "guizhan-builds-2-data": "^0.6.0",
     "hono": "^3.10.3",
