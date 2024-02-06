@@ -217,11 +217,11 @@ definePageMeta({
       <template #header>
         <div class="text-lg flex justify-between">
           <h2 class="flex items-center gap-2 font-semibold">
-            <UIcon name="i-material-symbols-download" />
+            <UIcon name="i-mdi-tray-download" />
             {{ t('pages.build.downloadDialog.title') }}
           </h2>
           <UButton color="gray" variant="link" :padded="false" @click="downloadModalOpen = false">
-            <UIcon name="i-ic-round-close" class="w-6 h-6" />
+            <UIcon name="i-heroicons-x-mark" class="w-6 h-6" />
           </UButton>
         </div>
       </template>

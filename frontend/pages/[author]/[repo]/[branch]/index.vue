@@ -46,7 +46,7 @@ definePageMeta({
       <div v-else-if="showReadme">{{ t('pages.project.readme.fail') }}</div>
       <div v-else class="flex flex-col items-center">
         <UButton color="gray" size="lg" class="mb-4" @click="displayReadme">
-          <UIcon name="i-gg-readme" class="text-xl" />
+          <UIcon name="i-heroicons-document" class="text-xl" />
           {{ t('pages.project.readme.show') }}
         </UButton>
       </div>
