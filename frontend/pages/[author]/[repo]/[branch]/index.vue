@@ -35,7 +35,7 @@ definePageMeta({
     <!-- 左侧项目 README.md -->
     <div class="card bg-default grow">
       <div v-if="showReadme && readme">
-        <UAlert icon="i-ion-warning-outline" variant="outline" color="red" :title="t('pages.project.readme.warningTitle')">
+        <UAlert icon="i-heroicons-exclamation-triangle" variant="outline" color="red" :title="t('pages.project.readme.warningTitle')">
           <template #description>
             {{ t('pages.project.readme.warning') }}
           </template>
