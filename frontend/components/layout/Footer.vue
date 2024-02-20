@@ -18,7 +18,7 @@
 
 <style scoped lang="scss">
 .footer-items {
-  @apply flex flex-wrap flex-row-reverse grow gap-4 justify-around items-center my-3 container text-sm;
+  @apply flex flex-wrap flex-row-reverse grow gap-4 justify-around items-center my-3 max-w-screen-xl text-sm;
 
   .footer-items__list {
     @apply flex flex-row flex-wrap justify-center gap-1;

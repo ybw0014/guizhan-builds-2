@@ -11,7 +11,7 @@ const navLinks = [
 
 <template>
   <header class="bg-default shadow-md text-base py-2 md:px-2">
-    <nav class="mx-2 sm:mx-auto container flex flex-wrap justify-center gap-2 w-auto">
+    <nav class="mx-2 sm:mx-auto max-w-screen-xl flex flex-wrap justify-center gap-2 w-auto">
       <!-- 左侧顶部菜单 -->
       <div class="flex items-center gap-4">
         <!-- 小屏幕导航 -->
