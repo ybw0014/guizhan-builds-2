@@ -21,7 +21,7 @@
     "@cloudflare/workers-types": "^4.20231121.0",
     "@guizhan/eslint-config": "^0.2.0",
     "@types/node": "^20.10.1",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@vitest/ui": "^1.0.0",
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.2",
