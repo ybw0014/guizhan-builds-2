@@ -99,13 +99,16 @@ export async function build(task: BuildTask) {
 }
 
 export async function cleanup(task: BuildTask) {
+  const path = `${task.project.author}/${task.project.repository}/${task.project.branch}`
   // 构建成功时上传构建结果
   if (task.success) {
     const suffix = task.project.buildOptions.gradle?.shadowJar ? '-all' : ''
-    const target = `${task.project.buildOptions.name}-${task.finalVersion}${suffix}.jar`
+    const targetFormat = task.project.buildOptions.gradle?.target ?? `{name}-{version}-${suffix}`
+    const target = targetFormat.replace('{name}', task.project.buildOptions.name)
+      .replace('{version}', task.finalVersion ?? '') + '.jar'
     const targetFinal = `${task.project.buildOptions.name}-${task.finalVersion}.jar`
     const targetPath = resolve(task.workspace, './build/libs', target)
-    await uploadFile(`${task.project.author}/${task.project.repository}/${task.project.branch}/${targetFinal}`, targetPath)
+    await uploadFile(`${path}/${targetFinal}`, targetPath)
 
     // 获取checksum
     task.target = targetFinal
@@ -114,7 +117,7 @@ export async function cleanup(task: BuildTask) {
 
   // 上传日志
   const logPath = resolve(task.workspace, './gradle.log')
-  await uploadFile(`${task.project.author}/${task.project.repository}/${task.project.branch}/Build-${task.version}.log`, logPath, 'text/plain')
+  await uploadFile(`${path}/Build-${task.version}.log`, logPath, 'text/plain')
 }
 
 export default { setVersion, build, cleanup }

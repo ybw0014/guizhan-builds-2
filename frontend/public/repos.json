@@ -1081,7 +1081,8 @@
 			"name": "Bump",
 			"version": "Build {version} (git {git_commit})",
 			"gradle": {
-				"shadowJar": true
+				"shadowJar": true,
+				"target": "{name}-{version}-all"
 			}
 		},
 		"displayOptions": {
@@ -2157,7 +2158,8 @@
 			"name": "SlimefunTranslation",
 			"version": "Build {version} (git {git_commit})",
 			"gradle": {
-				"shadowJar": true
+				"shadowJar": true,
+				"target": "{name}"
 			}
 		},
 		"displayOptions": {
