@@ -2150,5 +2150,32 @@
 		"displayOptions": {
 			"keywords": ["E2E测试插件"]
 		}
+	},
+	"ybw0014/SlimefunTranslation:master": {
+		"type": "gradle",
+		"buildOptions": {
+			"name": "SlimefunTranslation",
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"shadowJar": true
+			}
+		},
+		"displayOptions": {
+			"keywords": ["粘液翻译"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				},
+				"ProtocollLib": {
+					"1": "Required"
+				},
+				"PlaceholderAPI": {
+					"1": "Required"
+				}
+			}
+		}
 	}
 }
