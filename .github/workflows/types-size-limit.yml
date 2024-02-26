@@ -1,0 +1,31 @@
+name: (Types) Size limit check
+on: [pull_request]
+jobs:
+  size:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['18.x', '20.x']
+    env:
+      CI_JOB_NUMBER: 1
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Setting up bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Installing dependencies
+        run: bun install
+        working-directory: types
+
+      - name: Check size limit
+        uses: andresz1/size-limit-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: types
