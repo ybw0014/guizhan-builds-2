@@ -1,0 +1,36 @@
+name: (Types) Build
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'types/**'
+jobs:
+  build:
+    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: ['18.x', '20.x']
+        os: [ubuntu-latest]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Setting up bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Installing dependencies
+        run: bun install
+        working-directory: types
+
+      - name: Run build
+        run: bun run build
+        working-directory: types
