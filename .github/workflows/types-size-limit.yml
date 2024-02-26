@@ -1,5 +1,10 @@
 name: (Types) Size limit check
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'types/**'
 jobs:
   size:
     runs-on: ubuntu-latest
