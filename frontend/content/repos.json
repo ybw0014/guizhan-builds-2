@@ -829,11 +829,16 @@
 		}
 	},
 	"SlimefunGuguProject/Galactifun:master": {
-		"type": "maven",
+		"type": "gradle",
 		"alias": ["baoad/Galactifun:master"],
 		"buildOptions": {
 			"name": "Galactifun",
-			"version": "Build {version} (git {git_commit})"
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"kotlin": true,
+				"shadowJar": true,
+				"target": "{name}-{version}"
+			}
 		},
 		"displayOptions": {
 			"officialList": true,
