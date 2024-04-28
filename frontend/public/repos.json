@@ -2207,5 +2207,28 @@
 				}
 			}
 		}
+	},
+	"ybw0014/BlockLimiter:master": {
+		"type": "gradle",
+		"buildOptions": {
+			"name": "BlockLimiter",
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"kotlin": true,
+				"shadowJar": true,
+				"target": "{name}-{version}"
+			}
+		},
+		"displayOptions": {
+			"keywords": ["方块限制"],
+			"requirements": {
+				"java": {
+					"1": "17"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
 	}
 }
