@@ -2231,7 +2231,7 @@
 			}
 		}
 	},
-	"https://github.com/SlimefunReloadingProject/RykenSlimeCustomizer/": {
+	"SlimefunReloadingProject/RykenSlimeCustomizer:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "RykenSlimeCustomizer",
