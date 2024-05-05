@@ -2251,5 +2251,19 @@
 				}
 			}
 		}
+	},
+	"SlimefunGuguProject/SlimefunServerEssentials:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimefunServerEssentials",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"requirements": {
+				"minecraft": {
+					"1": "1.19"
+				}
+			}
+		}
 	}
 }
