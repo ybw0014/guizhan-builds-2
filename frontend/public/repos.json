@@ -2260,8 +2260,28 @@
 		},
 		"displayOptions": {
 			"requirements": {
+				"java": {
+					"1": "16"
+				},
 				"minecraft": {
 					"1": "1.19"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/MapJammers:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "MapJammers",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.20"
 				}
 			}
 		}
