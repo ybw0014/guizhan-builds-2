@@ -2276,6 +2276,7 @@
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
+			"keywords": ["地图干扰"],
 			"requirements": {
 				"java": {
 					"1": "16"
