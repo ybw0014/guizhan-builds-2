@@ -2,12 +2,13 @@
  * Maven 相关方法
  */
 import { resolve } from 'path'
-import { readFile, rm, stat, writeFile } from 'fs/promises'
+import { readFile, writeFile, rm } from 'fs/promises'
 import { js2xml, xml2js } from 'xml-js'
 import maven from 'maven'
 import { BuildTask } from '@/types'
 import { uploadFile } from '@/r2'
 import { getFileSha1 } from '@/checksum'
+import { fileExists } from '@/utils'
 
 export async function setVersion(task: BuildTask) {
   const pom = resolve(task.workspace, './pom.xml')
@@ -33,7 +34,7 @@ export async function setVersion(task: BuildTask) {
 export async function build(task: BuildTask) {
   const mvnDir = resolve(task.workspace, './.mvn')
   // 如有.mvn目录则移除
-  if (await stat(mvnDir).then(() => true).catch(() => false)) {
+  if (await fileExists(mvnDir)) {
     await rm(mvnDir, { recursive: true })
   }
 
@@ -60,7 +61,7 @@ export async function cleanup(task: BuildTask) {
 
   // 上传日志
   const logPath = resolve(task.workspace, './maven.log')
-  if (await stat(logPath).then(() => true).catch(() => false)) {
+  if (await fileExists(logPath)) {
     await uploadFile(`${r2Dir}/Build-${task.version}.log`, logPath, 'text/plain')
   }
 }

@@ -30,9 +30,8 @@ async function main() {
       break
     }
     const project = projects[i]
-    console.log('')
-    console.log(`> 开始处理项目: ${project.key} (${i + 1}/${projects.length})`)
-    const task = await buildTask(projects[i])
+    console.log(`\n> 开始处理项目: ${project.key} (${i + 1}/${projects.length})`)
+    const task = await buildTask(project)
 
     const buildVersion = await check(task)
     if (!buildVersion) {
@@ -73,6 +72,11 @@ function environmentCheck() {
   console.log('> 环境变量检查完成\n')
 }
 
+/**
+ * 检查版本是否需要构建
+ * @param task 构建任务
+ * @returns 最新版本或跳过构建时返回 null，否则返回应构建的版本
+ */
 async function check(task: BuildTask): Promise<number | null> {
   console.log('获取最新 commit')
   const commit = await getLatestCommit(task.project)

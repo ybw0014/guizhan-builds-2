@@ -2,11 +2,12 @@
  * Gradle 项目相关方法
  */
 import { resolve } from 'path'
-import fs from 'fs/promises'
+import { readFile, writeFile, open } from 'fs/promises'
 import { spawnSync, SpawnSyncOptions } from 'child_process'
 import { uploadFile } from '@/r2'
 import { getFileSha1 } from '@/checksum'
 import { BuildTask } from '@/types'
+import { fileExists } from '@/utils'
 
 export async function setVersion(task: BuildTask) {
   // 去除 build.gradle(.kts) 版本信息
@@ -20,7 +21,7 @@ export async function setVersion(task: BuildTask) {
 async function removeBuildVersion(task: BuildTask) {
   const buildGradle = task.project.buildOptions?.gradle?.kotlin ? 'build.gradle.kts' : 'build.gradle'
   const filePath = resolve(task.workspace, `./${buildGradle}`)
-  const config = await fs.readFile(filePath, 'utf8')
+  const config = await readFile(filePath, 'utf8')
   const newConfig = config
     .replace('\r\n', '\n')
     .split('\n')
@@ -29,15 +30,15 @@ async function removeBuildVersion(task: BuildTask) {
     })
     .join('\n')
 
-  await fs.writeFile(filePath, newConfig, 'utf8')
+  await writeFile(filePath, newConfig, 'utf8')
 }
 
 async function setupProperties(task: BuildTask) {
   const filePath = resolve(task.workspace, './gradle.properties')
   const line = 'version = ' + task.finalVersion
 
-  if (await fs.stat(filePath).then(() => true).catch(() => false)) {
-    const config = await fs.readFile(filePath, 'utf8')
+  if (await fileExists(filePath)) {
+    const config = await readFile(filePath, 'utf8')
     const newConfigs = config
       .replace('\r\n', '\n')
       .split('\n')
@@ -48,10 +49,10 @@ async function setupProperties(task: BuildTask) {
     newConfigs.push(line)
     const newConfig = newConfigs.join('\n')
 
-    await fs.writeFile(filePath, newConfig, 'utf8')
+    await writeFile(filePath, newConfig, 'utf8')
   } else {
     const newConfig = line + '\n'
-    await fs.writeFile(filePath, newConfig, 'utf8')
+    await writeFile(filePath, newConfig, 'utf8')
   }
 }
 
@@ -59,8 +60,8 @@ async function setupSettings(task: BuildTask) {
   const filePath = resolve(task.workspace, './settings.gradle')
   const line = `rootProject.name = '${task.project.buildOptions.name}'`
 
-  if (await fs.stat(filePath).then(() => true).catch(() => false)) {
-    const config = await fs.readFile(filePath, 'utf8')
+  if (await fileExists(filePath)) {
+    const config = await readFile(filePath, 'utf8')
     const newConfigs = config
       .replace('\r\n', '\n')
       .split('\n')
@@ -71,16 +72,16 @@ async function setupSettings(task: BuildTask) {
     newConfigs.push(line)
     const newConfig = newConfigs.join('\n')
 
-    await fs.writeFile(filePath, newConfig, 'utf8')
+    await writeFile(filePath, newConfig, 'utf8')
   } else {
     const newConfig = line + '\n'
-    await fs.writeFile(filePath, newConfig, 'utf8')
+    await writeFile(filePath, newConfig, 'utf8')
   }
 }
 
 export async function build(task: BuildTask) {
   const logFilename = resolve(task.workspace, './gradle.log')
-  const logFile = await fs.open(logFilename, 'w')
+  const logFile = await open(logFilename, 'w')
   const logStream = logFile.createReadStream()
 
   const args = ['clean', 'build']
@@ -117,7 +118,9 @@ export async function cleanup(task: BuildTask) {
 
   // 上传日志
   const logPath = resolve(task.workspace, './gradle.log')
-  await uploadFile(`${path}/Build-${task.version}.log`, logPath, 'text/plain')
+  if (await fileExists(logPath)) {
+    await uploadFile(`${path}/Build-${task.version}.log`, logPath, 'text/plain')
+  }
 }
 
 export default { setVersion, build, cleanup }
