@@ -60,7 +60,9 @@ export async function cleanup(task: BuildTask) {
 
   // 上传日志
   const logPath = resolve(task.workspace, './maven.log')
-  await uploadFile(`${r2Dir}/Build-${task.version}.log`, logPath, 'text/plain')
+  if (await stat(logPath).then(() => true).catch(() => false)) {
+    await uploadFile(`${r2Dir}/Build-${task.version}.log`, logPath, 'text/plain')
+  }
 }
 
 export default { setVersion, build, cleanup }
