@@ -13,17 +13,20 @@ import { gitClone } from '@/git'
 import maven from '@/mavenB'
 import gradle from '@/gradleB'
 import { notify } from '@/webhook'
+import { envHas } from './environment'
 
-const env = process.env.NODE_ENV ?? 'development'
+const nodeEnv = process.env.NODE_ENV ?? 'development'
 
 async function main() {
+  environmentCheck()
   console.log('> 初始化项目')
 
   const projects = await getProjects()
   console.log(`> 已加载 ${projects.length} 个项目`)
 
   for (let i = 0; i < projects.length; i++) {
-    if (env === 'development' && i >= 1) {
+    // 开发环境仅构建第一个项目
+    if (nodeEnv === 'development' && i >= 1) {
       break
     }
     const project = projects[i]
@@ -55,6 +58,19 @@ async function main() {
     console.log('执行清理工作')
     await cleanup(task)
   }
+}
+
+function environmentCheck() {
+  console.log(`> 当前运行环境为: ${nodeEnv}`)
+  console.log('> 正在检查环境变量')
+  envHas('R2_ACCOUNT_ID')
+  envHas('R2_ACCESS_KEY_ID')
+  envHas('R2_SECRET_ACCESS_KEY')
+  envHas('R2_BUCKET_NAME')
+  envHas('BOT_TOKEN')
+  envHas('WEBHOOK_URL')
+  envHas('WEBHOOK_KEY')
+  console.log('> 环境变量检查完成\n')
 }
 
 async function check(task: BuildTask): Promise<number | null> {

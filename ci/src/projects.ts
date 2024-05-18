@@ -7,7 +7,6 @@ import { Project, Projects, useParseProjects } from 'guizhan-builds-2-data'
 import { request } from '@/request'
 
 export async function getProjects(): Promise<Project[]> {
-  const projects: Project[] = []
   try {
     const { data: rawProjects } = await request.get<Projects>(
       // eslint-disable-next-line max-len
@@ -16,6 +15,6 @@ export async function getProjects(): Promise<Project[]> {
     return useParseProjects(rawProjects)
   } catch (err) {
     console.error('> 获取项目列表失败')
-    return projects
+    return []
   }
 }
