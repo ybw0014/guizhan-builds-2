@@ -14,7 +14,7 @@ async function verify(to: RouteLocationNormalized) {
     // 如果项目没有查询到，则尝试查询跳转到仓库页面
     const repos = await useProjectRepository(author.value, repository.value);
     if (!repos.value || repos.value.length === 0) {
-      throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
+      throw createError({ statusCode: 404 });
     }
 
     await navigateTo({

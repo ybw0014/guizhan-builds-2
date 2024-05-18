@@ -14,7 +14,7 @@ async function verify() {
     // 如果没有结果则尝试仅查询作者并跳转到作者页面
     const authorProjects = await useAuthorProjects(author.value);
     if (!authorProjects.value || authorProjects.value.length === 0) {
-      throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
+      throw createError({ statusCode: 404 });
     }
 
     await navigateTo({

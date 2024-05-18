@@ -49,7 +49,7 @@ watchDebounced(
 
 async function verify() {
   if (!projects.value || projects.value.length === 0) {
-    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
+    throw createError({ statusCode: 404 });
   } else {
     await filterList();
   }
