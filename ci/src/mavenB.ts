@@ -2,7 +2,8 @@
  * Maven 相关方法
  */
 import { resolve } from 'path'
-import { readFile, writeFile, rm } from 'fs/promises'
+import { readFile, writeFile, rm, open } from 'fs/promises'
+import { spawnSync, SpawnSyncOptions } from 'child_process'
 import { js2xml, xml2js } from 'xml-js'
 import maven from 'maven'
 import { BuildTask } from '@/types'
@@ -38,12 +39,24 @@ export async function build(task: BuildTask) {
     await rm(mvnDir, { recursive: true })
   }
 
-  const mvn = maven.create({
+  const logFilename = resolve(task.workspace, './maven.log')
+  const logFile = await open(logFilename, 'w')
+  const logStream = logFile.createReadStream()
+
+  // const mvn = maven.create({
+  //   cwd: task.workspace,
+  //   batchMode: true,
+  //   logFile: resolve(task.workspace, './maven.log')
+  // })
+  // return await mvn.execute(['clean', 'package'])
+  const mavenOptions: Partial<SpawnSyncOptions> = {
     cwd: task.workspace,
-    batchMode: true,
-    logFile: resolve(task.workspace, './maven.log')
-  })
-  return await mvn.execute(['clean', 'package'])
+    env: process.env,
+    stdio: [process.stdin, logStream, logStream],
+    encoding: 'utf-8'
+  }
+
+  spawnSync('maven', ['clean', 'package'], mavenOptions)
 }
 
 export async function cleanup(task: BuildTask) {

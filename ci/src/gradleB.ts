@@ -96,7 +96,7 @@ export async function build(task: BuildTask) {
     encoding: 'utf-8'
   }
 
-  await spawnSync('./gradlew', args, gradleOptions)
+  spawnSync('./gradlew', args, gradleOptions)
 }
 
 export async function cleanup(task: BuildTask) {
