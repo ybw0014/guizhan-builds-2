@@ -25,12 +25,9 @@ async function main() {
   console.log(`> 已加载 ${projects.length} 个项目`)
 
   for (let i = 0; i < projects.length; i++) {
-    // 开发环境仅构建第一个项目
-    if (nodeEnv === 'development' && i >= 1) {
-      break
-    }
     const project = projects[i]
-    console.log(`\n> 开始处理项目: ${project.key} (${i + 1}/${projects.length})`)
+    console.log('')
+    console.log(`> 开始处理项目: ${project.key} (${i + 1}/${projects.length})`)
     const task = await buildTask(project)
 
     const buildVersion = await check(task)

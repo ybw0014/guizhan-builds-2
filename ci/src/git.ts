@@ -1,22 +1,15 @@
 /**
  * 本地 Git 相关
  */
-import { spawnSync, SpawnSyncOptions } from 'child_process'
-import _ from 'lodash'
+import { SpawnOptions } from 'child_process'
 import { BuildTask } from '@/types'
+import { spawnProcess } from '@/utils'
 
-const defaultGitOptions: Partial<SpawnSyncOptions> = {
-  cwd: process.cwd(),
-  env: process.env,
-  stdio: [process.stdin, process.stdout, process.stderr],
-  encoding: 'utf-8'
-}
-
-export function gitExec(params: string[], options?: Partial<SpawnSyncOptions>) {
-  return spawnSync(
+export async function gitExec(params: string[], options?: Partial<SpawnOptions>) {
+  await spawnProcess(
     'git',
     params,
-    _.defaults(options, defaultGitOptions)
+    options ?? {}
   )
 }
 

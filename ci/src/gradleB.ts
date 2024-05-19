@@ -3,11 +3,12 @@
  */
 import { resolve } from 'path'
 import { readFile, writeFile, open } from 'fs/promises'
-import { spawnSync, SpawnSyncOptions } from 'child_process'
+import { SpawnOptions } from 'child_process'
 import { uploadFile } from '@/r2'
 import { getFileSha1 } from '@/checksum'
 import { BuildTask } from '@/types'
-import { fileExists } from '@/utils'
+import { fileExists, spawnProcess } from '@/utils'
+import { MultiStream } from '@/utils/MultiStream'
 
 export async function setVersion(task: BuildTask) {
   // 去除 build.gradle(.kts) 版本信息
@@ -82,21 +83,20 @@ async function setupSettings(task: BuildTask) {
 export async function build(task: BuildTask) {
   const logFilename = resolve(task.workspace, './gradle.log')
   const logFile = await open(logFilename, 'w')
-  const logStream = logFile.createReadStream()
+  const logStream = logFile.createWriteStream()
+  const logStdoutStream = new MultiStream([process.stdout, logStream])
+  const logStderrStream = new MultiStream([process.stderr, logStream])
 
   const args = ['clean', 'build']
   if (task.project.buildOptions.gradle?.shadowJar) {
     args.push('shadowJar')
   }
 
-  const gradleOptions: Partial<SpawnSyncOptions> = {
-    cwd: task.workspace,
-    env: process.env,
-    stdio: [process.stdin, logStream, logStream],
-    encoding: 'utf-8'
+  const gradleOptions: Partial<SpawnOptions> = {
+    cwd: task.workspace
   }
 
-  spawnSync('./gradlew', args, gradleOptions)
+  await spawnProcess('./gradlew', args, gradleOptions, logStdoutStream, logStderrStream)
 }
 
 export async function cleanup(task: BuildTask) {

@@ -3,13 +3,13 @@
  */
 import { resolve } from 'path'
 import { readFile, writeFile, rm, open } from 'fs/promises'
-import { spawnSync, SpawnSyncOptions } from 'child_process'
 import { js2xml, xml2js } from 'xml-js'
-import maven from 'maven'
+import { SpawnOptions } from 'child_process'
 import { BuildTask } from '@/types'
 import { uploadFile } from '@/r2'
 import { getFileSha1 } from '@/checksum'
-import { fileExists } from '@/utils'
+import { fileExists, spawnProcess } from '@/utils'
+import { MultiStream } from '@/utils/MultiStream'
 
 export async function setVersion(task: BuildTask) {
   const pom = resolve(task.workspace, './pom.xml')
@@ -41,22 +41,21 @@ export async function build(task: BuildTask) {
 
   const logFilename = resolve(task.workspace, './maven.log')
   const logFile = await open(logFilename, 'w')
-  const logStream = logFile.createReadStream()
+  const logStream = logFile.createWriteStream()
+  const logStdoutStream = new MultiStream([process.stdout, logStream])
+  const logStderrStream = new MultiStream([process.stderr, logStream])
 
-  // const mvn = maven.create({
-  //   cwd: task.workspace,
-  //   batchMode: true,
-  //   logFile: resolve(task.workspace, './maven.log')
-  // })
-  // return await mvn.execute(['clean', 'package'])
-  const mavenOptions: Partial<SpawnSyncOptions> = {
-    cwd: task.workspace,
-    env: process.env,
-    stdio: [process.stdin, logStream, logStream],
-    encoding: 'utf-8'
+  const mavenOptions: Partial<SpawnOptions> = {
+    cwd: task.workspace
   }
 
-  spawnSync('maven', ['clean', 'package'], mavenOptions)
+  try {
+    await spawnProcess('mvn', ['clean', 'package'], mavenOptions, logStdoutStream, logStderrStream)
+  } catch (e) {
+    logFile.close()
+    console.error('Maven 构建失败', e)
+    throw e
+  }
 }
 
 export async function cleanup(task: BuildTask) {
