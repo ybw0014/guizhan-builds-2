@@ -1,6 +1,9 @@
 /**
  * 环境变量相关
  */
+import { Logger } from '@/utils/Logger'
+
+const logger = new Logger('env')
 
 /**
  * 检查环境变量是否存在
@@ -13,6 +16,6 @@ export function envHas(envName: string) {
 }
 
 function envExit(message: string) {
-  console.error(message)
+  logger.error(message)
   process.exit(1)
 }

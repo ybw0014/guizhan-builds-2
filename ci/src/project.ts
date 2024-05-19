@@ -1,13 +1,14 @@
 /**
  * 单个项目相关
  */
-import { BuildInfo, BuildsInfo, Project } from 'guizhan-builds-2-data'
+import { BuildInfo, BuildsInfo } from 'guizhan-builds-2-data'
 import { BuildTask } from '@/types'
 import { getJson, uploadJson } from '@/r2'
 import { sleep } from '@/utils'
 
-export async function getBuilds(project: Project): Promise<BuildsInfo | null> {
-  console.log(`获取项目构建信息: ${project.key}`)
+export async function getBuilds(task: BuildTask): Promise<BuildsInfo | null> {
+  const project = task.project
+  task.logger.info(`获取项目构建信息: ${project.key}`)
 
   let retryTimes = 0
   const maxRetryTimes = 3
@@ -20,13 +21,13 @@ export async function getBuilds(project: Project): Promise<BuildsInfo | null> {
       }
       return data
     } catch (e) {
-      console.log(`?> 获取项目构建信息失败，已重试 ${retryTimes} 次`)
+      task.logger.warn(`获取项目构建信息失败，已重试 ${retryTimes} 次`)
       retryTimes++
       await sleep(1500)
     }
   }
 
-  console.log('?> 获取项目构建信息失败，已达到最大重试次数')
+  task.logger.warn('获取项目构建信息失败，已达到最大重试次数')
   return null
 }
 
@@ -43,15 +44,15 @@ export async function uploadBuilds(task: BuildTask) {
     sha1: task.sha1 ?? ''
   }
 
-  let buildsInfo = await getBuilds(task.project)
+  let buildsInfo = await getBuilds(task)
   if (buildsInfo === null) {
-    console.log('生成全新构建信息')
+    task.logger.info('生成全新构建信息')
     buildsInfo = {
       latest: buildInfo.commit,
       builds: [buildInfo]
     } as BuildsInfo
   } else {
-    console.log('更新构建信息')
+    task.logger.info('更新构建信息')
     buildsInfo = {
       latest: buildInfo.commit,
       builds: [...buildsInfo.builds, buildInfo]

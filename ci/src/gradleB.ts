@@ -96,7 +96,13 @@ export async function build(task: BuildTask) {
     cwd: task.workspace
   }
 
-  await spawnProcess('./gradlew', args, gradleOptions, logStdoutStream, logStderrStream)
+  try {
+    await spawnProcess('./gradlew', args, gradleOptions, logStdoutStream, logStderrStream)
+  } catch (e) {
+    logFile.close()
+    task.logger.error('Gradle 构建失败', e)
+    throw e
+  }
 }
 
 export async function cleanup(task: BuildTask) {

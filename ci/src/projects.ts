@@ -5,6 +5,9 @@
  */
 import { Project, Projects, useParseProjects } from 'guizhan-builds-2-data'
 import { request } from '@/request'
+import { Logger } from '@/utils/Logger'
+
+const logger = new Logger('projects')
 
 export async function getProjects(): Promise<Project[]> {
   try {
@@ -14,7 +17,7 @@ export async function getProjects(): Promise<Project[]> {
     )
     return useParseProjects(rawProjects)
   } catch (err) {
-    console.error('> 获取项目列表失败')
+    logger.error('获取项目列表失败')
     return []
   }
 }

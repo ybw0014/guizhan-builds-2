@@ -28,7 +28,7 @@ export async function setVersion(task: BuildTask) {
     pomContent.project.version._text = task.finalVersion
     await writeFile(pom, js2xml(pomContent, { compact: true }))
   } catch (e) {
-    console.error('设置 Maven 版本失败', e)
+    task.logger.error('设置 Maven 版本失败', e)
   }
 }
 
@@ -53,7 +53,7 @@ export async function build(task: BuildTask) {
     await spawnProcess('mvn', ['clean', 'package'], mavenOptions, logStdoutStream, logStderrStream)
   } catch (e) {
     logFile.close()
-    console.error('Maven 构建失败', e)
+    task.logger.error('Maven 构建失败', e)
     throw e
   }
 }

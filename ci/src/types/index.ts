@@ -1,4 +1,5 @@
 import { Project } from 'guizhan-builds-2-data'
+import { Logger } from '@/utils/Logger'
 
 export interface TaskCommit {
   timestamp: number
@@ -9,6 +10,7 @@ export interface TaskCommit {
 
 export interface BuildTask {
   project: Project
+  logger: Logger
   buildTime: number // 构建时间
   workspace: string // 源代码根目录
   version?: number // 构建自增版本号

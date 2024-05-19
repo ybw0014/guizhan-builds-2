@@ -13,52 +13,56 @@ import { gitClone } from '@/git'
 import maven from '@/mavenB'
 import gradle from '@/gradleB'
 import { notify } from '@/webhook'
-import { envHas } from './environment'
+import { envHas } from '@/environment'
+import { Logger } from '@/utils/Logger'
 
 const nodeEnv = process.env.NODE_ENV ?? 'development'
+const logger = new Logger('main')
 
 async function main() {
   environmentCheck()
-  console.log('> 初始化项目')
+  logger.info('初始化项目')
 
   const projects = await getProjects()
-  console.log(`> 已加载 ${projects.length} 个项目`)
+  logger.info(`已加载 ${projects.length} 个项目`)
 
   for (let i = 0; i < projects.length; i++) {
     const project = projects[i]
-    console.log('')
-    console.log(`> 开始处理项目: ${project.key} (${i + 1}/${projects.length})`)
+    console.log()
+    logger.info(`开始处理项目: ${project.key} (${i + 1}/${projects.length})`)
     const task = await buildTask(project)
 
     const buildVersion = await check(task)
     if (!buildVersion) {
-      console.log('!> 已是最新/无需构建')
+      task.logger.info('已是最新版本或跳过构建')
       continue
     }
     task.version = buildVersion
 
-    console.log(`!> 开始执行构建 #${buildVersion}`)
-    console.log('正在进行准备任务')
+    task.logger.info(`开始执行构建 #${buildVersion}`)
+    task.logger.info('进行准备任务')
     await prepare(task, buildVersion)
 
-    console.log('开始构建')
+    task.logger.info('开始构建')
     try {
       await build(task)
-      console.log('构建成功')
+      task.logger.success('构建成功')
       task.success = true
     } catch (e) {
       task.success = false
-      console.error('构建失败')
+      task.logger.error('构建失败')
     }
 
-    console.log('执行清理工作')
+    task.logger.info('进行清理任务')
     await cleanup(task)
+
+    logger.info(`项目处理完成: ${project.key}`)
   }
 }
 
 function environmentCheck() {
-  console.log(`> 当前运行环境为: ${nodeEnv}`)
-  console.log('> 正在检查环境变量')
+  logger.info(`当前运行环境为: ${nodeEnv}`)
+  logger.info('正在检查环境变量')
   envHas('R2_ACCOUNT_ID')
   envHas('R2_ACCESS_KEY_ID')
   envHas('R2_SECRET_ACCESS_KEY')
@@ -66,7 +70,7 @@ function environmentCheck() {
   envHas('BOT_TOKEN')
   envHas('WEBHOOK_URL')
   envHas('WEBHOOK_KEY')
-  console.log('> 环境变量检查完成\n')
+  logger.info('环境变量检查完成\n')
 }
 
 /**
@@ -75,16 +79,16 @@ function environmentCheck() {
  * @returns 最新版本或跳过构建时返回 null，否则返回应构建的版本
  */
 async function check(task: BuildTask): Promise<number | null> {
-  console.log('获取最新 commit')
-  const commit = await getLatestCommit(task.project)
+  task.logger.info('获取最新 commit')
+  const commit = await getLatestCommit(task)
   if (commit == null) {
     return null
   }
   if (commit.commit.message.toLowerCase().startsWith('[ci skip]')) {
-    console.log('项目跳过构建')
+    task.logger.info('项目跳过构建')
     return null
   }
-  const buildsInfo = await getBuilds(task.project)
+  const buildsInfo = await getBuilds(task)
 
   task.commit = {
     timestamp: dayjs(commit.commit.author?.date as string || Date.now()).valueOf(),
@@ -117,22 +121,22 @@ async function prepare(task: BuildTask, version: number) {
 
   try {
     await fs.access(task.workspace)
-    console.log('工作目录已存在，正在清理')
+    task.logger.info('工作目录已存在，正在清理')
     await fs.rm(task.workspace, { recursive: true })
     await fs.mkdir(task.workspace, { recursive: true })
   } catch (ignored) {
     try {
       await fs.mkdir(task.workspace, { recursive: true })
     } catch (e) {
-      console.error('创建工作目录失败')
+      task.logger.error('创建工作目录失败', e)
       process.exit(1)
     }
   }
 
-  console.log('克隆仓库中')
+  task.logger.info('克隆仓库')
   await gitClone(task)
 
-  console.log('设置版本信息')
+  task.logger.info('设置版本信息')
   if (task.project.type === 'maven') {
     await maven.setVersion(task)
   } else if (task.project.type === 'gradle') {
@@ -155,15 +159,15 @@ async function cleanup(task: BuildTask) {
     await gradle.cleanup(task)
   }
 
-  console.log('正在清理工作目录')
+  task.logger.info('正在清理工作目录')
   await fs.rm(task.workspace, { recursive: true })
 
-  console.log('正在上传构建信息')
+  task.logger.info('正在上传构建信息')
   await uploadBuilds(task)
-  console.log('正在更新构建时间记录')
+  task.logger.info('正在更新构建时间记录')
   await updateBuildTime(task)
 
-  console.log('正在推送通知')
+  task.logger.info('正在推送通知')
   await notify(task)
 }
 

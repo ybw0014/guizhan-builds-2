@@ -20,8 +20,8 @@ export async function notify(task: BuildTask) {
       headers: { Authorization: WEBHOOK_KEY },
       data: build
     })
-    console.log('推送通知成功')
+    task.logger.success('推送通知成功')
   } catch (e) {
-    console.log('推送通知失败')
+    task.logger.error('推送通知失败')
   }
 }
