@@ -2304,5 +2304,23 @@
 				}
 			}
 		}
+  },
+	"TimetownDev/InfinityExpansionAutomation:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "InfinityExpansionAutomation",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["无尽", "自动"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
   }
 }
