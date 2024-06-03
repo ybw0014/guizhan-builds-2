@@ -2026,24 +2026,6 @@
 			}
 		}
 	},
-	"TimetownDev/GuguSlimefunLib:master": {
-		"type": "maven",
-		"buildOptions": {
-			"name": "GuguSlimefunLib",
-			"version": "Build {version} (git {git_commit})"
-		},
-		"displayOptions": {
-			"keywords": ["GuguSlimefunLib前置库"],
-			"requirements": {
-				"java": {
-					"1": "16"
-				},
-				"minecraft": {
-					"1": "1.16.5"
-				}
-			}
-		}
-  },
 	"SlimefunGuguProject/SlimeFrame:main": {
 		"type": "maven",
 		"buildOptions": {
@@ -2304,5 +2286,23 @@
 				}
 			}
 		}
-	}
+	},
+	"TimetownDev/GuguSlimefunLib:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "GuguSlimefunLib",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"keywords": ["GuguSlimefunLib前置库"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.16.5"
+				}
+			}
+		}
+  },
 }
