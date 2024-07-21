@@ -15,11 +15,13 @@
     "guizhan-builds-2-data": "^0.6.0",
     "hono": "^3.10.3",
     "itty-router": "^4.0.23",
+    "lodash": "^4.17.21",
     "resolve-accept-language": "^2.1.9"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231121.0",
     "@guizhan/eslint-config": "^0.2.0",
+    "@types/lodash": "^4.17.7",
     "@types/node": "^20.10.1",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@vitest/ui": "^1.0.0",

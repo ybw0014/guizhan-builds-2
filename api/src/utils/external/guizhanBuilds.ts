@@ -1,5 +1,6 @@
 import { requestJson } from '~/utils/request'
 import { type BuildsInfo, type Projects, type Project, type BuildInfo, useParseProjects } from 'guizhan-builds-2-data'
+import _ from 'lodash'
 
 export async function fetchProjects(): Promise<Project[]> {
   const rawProjects = await requestJson<Projects>(
@@ -26,7 +27,19 @@ export async function fetchBuilds(r2: R2Bucket, project: Project): Promise<Build
   return await file.json<BuildsInfo>()
 }
 
-export async function fetchBuild(buildsInfo: BuildsInfo, build: string): Promise<BuildInfo | undefined> {
-  const buildNum = build !== 'latest' ? parseInt(build) - 1 : buildsInfo.builds.length - 1
-  return buildsInfo.builds[buildNum]
+export async function fetchBuild(
+  buildsInfo: BuildsInfo,
+  build: string,
+  status?: string
+): Promise<BuildInfo | undefined> {
+  if (build === 'latest') {
+    if (status) {
+      const isSuccess = status === 'success'
+      return buildsInfo.builds.findLast(build => build.success === isSuccess)
+    } else {
+      return buildsInfo.builds[buildsInfo.builds.length - 1]
+    }
+  }
+  const buildNum = parseInt(build) - 1
+  return _.isNaN(buildNum) ? buildsInfo.builds[buildNum] : undefined
 }

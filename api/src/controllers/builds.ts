@@ -29,7 +29,7 @@ export async function getBuild(ctx: Ctx) {
     return BuildNotFound.toResponse()
   }
 
-  const build = await fetchBuild(buildsInfo, ctx.req.param('build'))
+  const build = await fetchBuild(buildsInfo, ctx.req.param('build'), ctx.req.query('status'))
   if (!build) {
     return BuildNotFound.toResponse()
   }
@@ -48,7 +48,7 @@ export async function downloadBuild(ctx: Ctx) {
     return BuildNotFound.toResponse()
   }
 
-  const build = await fetchBuild(buildsInfo, ctx.req.param('build'))
+  const build = await fetchBuild(buildsInfo, ctx.req.param('build'), ctx.req.query('status'))
   if (!build) {
     return BuildNotFound.toResponse()
   }
@@ -57,7 +57,7 @@ export async function downloadBuild(ctx: Ctx) {
     return BuildArtifactNotFound.toResponse()
   }
 
-  const url = 
+  const url =
     `https://builds-r2.gzassets.net/${project.author}/${project.repository}/${project.branch}/${build.target}`
   const artifact = await fetch(url)
   if (artifact.status !== 200) {
