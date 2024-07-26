@@ -23,7 +23,7 @@ export async function useMinecraftVersions(): Promise<Ref<string[] | null>> {
 }
 
 export async function useSubValidation(orderId: string): Promise<Ref<OrderValidationData | null>> {
-  const { data } = await useExternalApi<OrderValidationResponse>(`https://afdian-validator.norain.city/validate/${orderId}`);
+  const { data } = await useExternalApi<OrderValidationResponse>(`/afdian-validator/validate/${orderId}`);
   useSubLog('validation response:');
   useSubLog(data.value);
   if (!data.value || data.value.code !== 200) {
@@ -34,7 +34,7 @@ export async function useSubValidation(orderId: string): Promise<Ref<OrderValida
 
 export async function useSubDownload(uuid: string): Promise<Ref<string | null>> {
   useSubLog(`download with uuid: ${uuid}`);
-  const { data } = await useExternalApi<DownloadResponse>(`https://afdian-validator.norain.city/download/${uuid}`);
+  const { data } = await useExternalApi<DownloadResponse>(`/afdian-validator/download/${uuid}`);
   useSubLog('download response:');
   useSubLog(data.value);
   if (!data.value || data.value.code !== 200) {
@@ -44,7 +44,7 @@ export async function useSubDownload(uuid: string): Promise<Ref<string | null>> 
 }
 
 export async function useSubLastUpdate(): Promise<Ref<LastUpdateData | null>> {
-  const { data } = await useExternalApi<LastUpdateResponse>('https://afdian-validator.norain.city/last_update');
+  const { data } = await useExternalApi<LastUpdateResponse>('/afdian-validator/last_update');
   useSubLog('last update response:');
   useSubLog(data.value);
   if (!data.value || data.value.code !== 200) {

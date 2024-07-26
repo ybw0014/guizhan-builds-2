@@ -48,7 +48,7 @@ function getFree() {
   router.push({ name: 'builds', params: { author: 'StarWishsama', repo: 'Slimefun4', branch: 'master' } });
 }
 function subscribe() {
-  window.open('https://afdian.net/a/nora1ncity', '_blank', 'noopener noreferrer');
+  window.open('https://afdian.com/a/nora1ncity', '_blank', 'noopener noreferrer');
 }
 
 onMounted(() => {
@@ -167,6 +167,7 @@ function devDownload() {
 </script>
 
 <template>
+
   <Head>
     <Title>{{ t('pages.sfSubscription.title') }}</Title>
   </Head>
