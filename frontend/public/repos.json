@@ -275,11 +275,16 @@
 		}
 	},
 	"SlimefunGuguProject/MobCapturer:master": {
-		"type": "maven",
+		"type": "gradle",
 		"alias": ["ybw0014/MobCapturer-CN:master"],
 		"buildOptions": {
 			"name": "MobCapturer",
-			"version": "Build {version} (git {git_commit})"
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"kotlin": true,
+				"shadowJar": true,
+				"target": "{name}-{version}"
+			}
 		},
 		"displayOptions": {
 			"officialList": true,
@@ -287,9 +292,11 @@
 			"keywords": ["生物捕捉"],
 			"requirements": {
 				"java": {
+					"18": "21",
 					"1": "16"
 				},
 				"minecraft": {
+					"18": "1.18",
 					"1": "1.16.5"
 				}
 			}
