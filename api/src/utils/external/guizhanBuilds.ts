@@ -40,6 +40,6 @@ export async function fetchBuild(
       return buildsInfo.builds[buildsInfo.builds.length - 1]
     }
   }
-  const buildNum = parseInt(build) - 1
-  return _.isNaN(buildNum) ? buildsInfo.builds[buildNum] : undefined
+  const buildNum = parseInt(build)
+  return !_.isNaN(buildNum) ? buildsInfo.builds.findLast(build => build.id === buildNum) : undefined
 }
