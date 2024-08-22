@@ -2349,5 +2349,25 @@
 				}
 			}
 		}
+	},
+	"ytdd9527/NetworksExpansion:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "NetworksExpansion",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "NetworksExpansion",
+			"authors": ["ytdd9527", "balugaq"],
+			"keywords": ["网络拓展"],
+			"requirements": {
+				"java": {
+					"1": "16"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
