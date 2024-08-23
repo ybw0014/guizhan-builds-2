@@ -223,7 +223,7 @@ function devDownload() {
       </template>
       {{ t('pages.sfSubscription.devCheck.form.description') }}
       <div class="flex flex-col gap-4">
-        <a href="https://afdian.net/dashboard/order" target="_blank" class="a-link" tabindex="-1">
+        <a href="https://afdian.com/dashboard/order" target="_blank" class="a-link" tabindex="-1">
           {{ t('pages.sfSubscription.devCheck.form.orders') }}
         </a>
         <div v-if="!devDownloadLink" class="flex flex-col gap-4">
