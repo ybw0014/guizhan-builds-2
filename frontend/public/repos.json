@@ -2371,25 +2371,25 @@
 		}
 	},
 	"m1919810/LogiTech:master": {
-    "type": "maven",
-    "alias": ["m1919810/Logitech:master", "m1919810/LogicTech:master","m1919810/Logictech:master"],
-    "buildOptions": {
-      "name": "LogicTech",
-      "version": "Build {version} (git {git_commit})"
-    },
-    "displayOptions": {
-      "hidden": false,
-      "name": "LogicTech",
-      "author": ["@m1919810"],
-      "keywords": ["逻辑", "逻辑工艺"],
-      "requirements": {
-        "java": {
+		"type": "maven",
+		"alias": ["m1919810/Logictech:master"],
+		"buildOptions": {
+			"name": "LogicTech",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "LogicTech",
+			"authors": ["m1919810"],
+			"keywords": ["逻辑","逻辑工艺"],
+			"requirements": {
+				"java": {
 					"1": "16"
 				},
 				"minecraft": {
 					"1": "1.20"
 				}
-      }
-    }
-  }
+			}
+		}
+	}
 }
