@@ -2372,7 +2372,6 @@
 	},
 	"m1919810/LogiTech:master": {
 		"type": "maven",
-		"alias": ["m1919810/Logictech:master"],
 		"buildOptions": {
 			"name": "LogicTech",
 			"version": "Build {version} (git {git_commit})"
