@@ -2373,7 +2373,7 @@
 	"m1919810/LogiTech:master": {
 		"type": "maven",
 		"buildOptions": {
-			"name": "LogicTech",
+			"name": "LogiTech",
 			"version": "Build {version} (git {git_commit})"
 		},
 		"displayOptions": {
