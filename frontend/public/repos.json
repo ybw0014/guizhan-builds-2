@@ -1,9 +1,11 @@
 {
 	"SlimefunGuguProject/Slimefun4:master": {
 		"type": "maven",
+		"alias": ["StarWishsama/Slimefun4:master"],
 		"buildOptions": {
 			"name": "Slimefun",
-			"version": "{git_commit}-Beta"
+			"version": "{git_commit}-Beta",
+			"customDir": "StarWishsama/Slimefun4/master"
 		},
 		"displayOptions": {
 			"officialList": true,
@@ -22,9 +24,11 @@
 	},
 	"SlimefunGuguProject/Slimefun4:release": {
 		"type": "maven",
+		"alias": ["StarWishsama/Slimefun4:release"],
 		"buildOptions": {
 			"name": "Slimefun",
-			"version": "{Year}.{Month}-release"
+			"version": "{Year}.{Month}-release",
+			"customDir": "StarWishsama/Slimefun4/release"
 		},
 		"displayOptions": {
 			"officialList": true,
