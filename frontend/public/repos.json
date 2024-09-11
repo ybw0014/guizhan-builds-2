@@ -1,5 +1,5 @@
 {
-	"StarWishsama/Slimefun4:master": {
+	"SlimefunGuguProject/Slimefun4:master": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "Slimefun",
@@ -20,7 +20,7 @@
 			}
 		}
 	},
-	"StarWishsama/Slimefun4:release": {
+	"SlimefunGuguProject/Slimefun4:release": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "Slimefun",
