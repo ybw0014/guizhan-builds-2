@@ -4,8 +4,7 @@
 		"alias": ["StarWishsama/Slimefun4:master"],
 		"buildOptions": {
 			"name": "Slimefun",
-			"version": "{git_commit}-Beta",
-			"customDir": "StarWishsama/Slimefun4/master"
+			"version": "{git_commit}-Beta"
 		},
 		"displayOptions": {
 			"officialList": true,
@@ -27,8 +26,7 @@
 		"alias": ["StarWishsama/Slimefun4:release"],
 		"buildOptions": {
 			"name": "Slimefun",
-			"version": "{Year}.{Month}-release",
-			"customDir": "StarWishsama/Slimefun4/release"
+			"version": "{Year}.{Month}-release"
 		},
 		"displayOptions": {
 			"officialList": true,
