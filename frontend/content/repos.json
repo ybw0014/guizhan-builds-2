@@ -1,6 +1,7 @@
 {
-	"StarWishsama/Slimefun4:master": {
+	"SlimefunGuguProject/Slimefun4:master": {
 		"type": "maven",
+		"alias": ["StarWishsama/Slimefun4:master"],
 		"buildOptions": {
 			"name": "Slimefun",
 			"version": "{git_commit}-Beta"
@@ -20,8 +21,9 @@
 			}
 		}
 	},
-	"StarWishsama/Slimefun4:release": {
+	"SlimefunGuguProject/Slimefun4:release": {
 		"type": "maven",
+		"alias": ["StarWishsama/Slimefun4:release"],
 		"buildOptions": {
 			"name": "Slimefun",
 			"version": "{Year}.{Month}-release"
