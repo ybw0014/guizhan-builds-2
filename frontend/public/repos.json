@@ -2392,5 +2392,26 @@
 				}
 			}
 		}
+	},
+	"SlimefunGuguProject/Magic-8-Ball:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Magic-8-Ball",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "Magic-8-Ball",
+			"authors": ["m1919810"],
+			"keywords": ["魔法8号球","8号球"],
+			"requirements": {
+				"java": {
+					"1": "21"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
