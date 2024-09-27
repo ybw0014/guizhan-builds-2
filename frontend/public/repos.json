@@ -2402,7 +2402,7 @@
 		"displayOptions": {
 			"hidden": false,
 			"name": "Magic-8-Ball",
-			"authors": ["m1919810"],
+			"authors": ["SlimefunGuguProject"],
 			"keywords": ["魔法8号球","8号球"],
 			"requirements": {
 				"java": {
