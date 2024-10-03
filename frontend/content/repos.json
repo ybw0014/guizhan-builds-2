@@ -2020,10 +2020,15 @@
 		}
 	},
 	"ybw0014/GuizhanLibPlugin:master": {
-		"type": "maven",
+		"type": "gradle",
 		"buildOptions": {
 			"name": "GuizhanLibPlugin",
-			"version": "Build {version} (git {git_commit})"
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"kotlin": true,
+				"shadowJar": true,
+				"target": "{name}-{version}"
+			}
 		},
 		"displayOptions": {
 			"keywords": ["鬼斩前置库"],
