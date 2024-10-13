@@ -2182,7 +2182,8 @@
 			"version": "Build {version} (git {git_commit})",
 			"gradle": {
 				"shadowJar": true,
-				"target": "{name}-{version}"
+				"target": "{name}-{version}",
+				"kotlin": true,
 			}
 		},
 		"displayOptions": {
