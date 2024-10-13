@@ -2183,7 +2183,7 @@
 			"gradle": {
 				"shadowJar": true,
 				"target": "{name}-{version}",
-				"kotlin": true,
+				"kotlin": true
 			}
 		},
 		"displayOptions": {
