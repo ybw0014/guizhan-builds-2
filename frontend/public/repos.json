@@ -2421,5 +2421,26 @@
 				}
 			}
 		}
+	},
+	"balugaq/JustEnoughGuide:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "JustEnoughGuide",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "JustEnoughGuide",
+			"authors": ["balugaq"],
+			"keywords": ["JEG", "jeg", "搜索优化"],
+			"requirements": {
+				"java": {
+					"1": "17"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
 	}
 }
