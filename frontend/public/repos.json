@@ -2462,5 +2462,25 @@
 				}
 			}
 		}
+	},
+	"LobbyTech-MC/FinalTECH-Changed:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "FinalTECH-Changed",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"name": "FinalTECH-Changed",
+			"authors": ["ecro-fun", "QYhB05", "LobbyTech-MC"],
+			"keywords": ["乱序技艺，乱序"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
