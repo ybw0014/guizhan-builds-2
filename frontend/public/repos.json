@@ -2463,7 +2463,7 @@
 			}
 		}
 	},
-	"balugaq/SFWorldEdit:master": {
+	"balugaq/SFWorldEdit:main": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "SFWorldEdit",
