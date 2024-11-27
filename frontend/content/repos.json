@@ -2462,5 +2462,26 @@
 				}
 			}
 		}
+	},
+	"balugaq/SFWorldEdit:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SFWorldEdit",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "SFWorldEdit",
+			"authors": ["balugaq"],
+			"keywords": ["粘液创世神"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
