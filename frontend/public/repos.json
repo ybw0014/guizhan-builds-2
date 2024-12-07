@@ -2473,6 +2473,25 @@
 			"name": "FinalTECH-Changed",
 			"authors": ["ecro-fun", "QYhB05", "LobbyTech-MC"],
 			"keywords": ["乱序技艺，乱序"],
+      "requirements": {
+        "java": {
+          "1": "20"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+	"balugaq/SFWorldEdit:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SFWorldEdit",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "SFWorldEdit",
+			"authors": ["balugaq"],
+			"keywords": ["粘液创世神"],
 			"requirements": {
 				"java": {
 					"1": "20"
