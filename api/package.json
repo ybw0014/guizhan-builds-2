@@ -14,7 +14,7 @@
     "compare-versions": "^6.1.0",
     "guizhan-builds-2-data": "^0.6.0",
     "hono": "^3.10.3",
-    "itty-router": "^4.0.23",
+    "itty-router": "^5.0.0",
     "lodash": "^4.17.21",
     "resolve-accept-language": "^2.1.9"
   },
