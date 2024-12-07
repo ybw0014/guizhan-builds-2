@@ -2483,5 +2483,26 @@
 				}
 			}
 		}
+	},
+	"balugaq/RSCEditor:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "RSCEditor",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "RSCEditor",
+			"authors": ["balugaq"],
+			"keywords": ["RSC编辑器"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
