@@ -2504,5 +2504,26 @@
 				}
 			}
 		}
+	},
+	"balugaq/BuildingStaff:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "BuildingStaff",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "BuildingStaff",
+			"authors": ["balugaq"],
+			"keywords": ["建筑魔杖"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
