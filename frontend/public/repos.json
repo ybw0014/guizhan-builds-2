@@ -2484,7 +2484,7 @@
 			}
 		}
 	},
-	"balugaq/RSCEditor:main": {
+	"balugaq/RSCEditor:master": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "RSCEditor",
