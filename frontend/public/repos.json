@@ -2525,5 +2525,26 @@
 				}
 			}
 		}
+	},
+	"balugaq/SummaryHelper:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SummaryHelper",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "SummaryHelper",
+			"authors": ["balugaq"],
+			"keywords": ["SummaryHelper", "寻找粘液刻延迟最高的机器"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
