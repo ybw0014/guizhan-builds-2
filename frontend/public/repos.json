@@ -2547,7 +2547,7 @@
 			}
 		}
 	},
-	"balugaq/ClayTech-fixed:master": {
+	"balugaq/ClayTech:master": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "ClayTech-fixed",
