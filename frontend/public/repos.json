@@ -2546,5 +2546,26 @@
 				}
 			}
 		}
+	},
+	"balugaq/ClayTech-fixed:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "ClayTech-fixed",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "ClayTech-fixed",
+			"authors": ["balugaq"],
+			"keywords": ["ClayTech", "粘土科技", "粘土"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
