@@ -2567,5 +2567,68 @@
 				}
 			}
 		}
+	},
+	"balugaq/SpaceTech:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SpaceTech-fixed",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "SpaceTech-fixed",
+			"authors": ["balugaq","Narcissu14"],
+			"keywords": ["SpaceTech", "太空科技", "太空"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"LobbyTech-MC/PomaExpansion:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "PomaExpansion",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "PomaExpansion",
+			"authors": ["LobbyTech-MC"],
+			"keywords": ["PomaExpansion", "高级机器人", "机器人"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"balugaq/TsingshanTechnology:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "TsingshanTechnology",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "TsingshanTechnology",
+			"authors": ["balugaq","yitoudaidai","CrankyGouDan"],
+			"keywords": ["TsingshanTechnology", "天山工艺", "天山"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
