@@ -2625,10 +2625,31 @@
 				"java": {
 					"1": "20"
 				},
-				"minecraft": {
-					"1": "1.20"
-				}
-			}
-		}
-	}
+"minecraft": {
+                    "1": "1.20"
+                }
+            }
+        }
+    },
+    "xmk2333/EnchantmentLimit-Slimefun:master": {
+        "type": "maven",
+        "buildOptions": {
+            "name": "EnchantmentLimit-Slimefun",
+            "version": "Build {version} (git {git_commit})"
+        },
+        "displayOptions": {
+            "hidden": false,
+            "name": "EnchantmentLimit-Slimefun",
+            "authors": ["白陌"],
+            "keywords": ["EnchantmentLimit", "附魔限制", "祛魔机", "附魔","限制"],
+            "requirements": {
+                "java": {
+                    "1": "20"
+                },
+                "minecraft": {
+                    "1": "1.20"
+                }
+            }
+        }
+    }
 }
