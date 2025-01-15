@@ -2653,23 +2653,25 @@
 		}
 	},
 	"ziyou3159/SlimefunGrades:master": {
-		"type": "gradlew",
+		"type": "gradle",
 		"buildOptions": {
 			"name": "SlimefunGrades",
-			"version": "Build {version} (git {git_commit})"
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"shadowJar": true,
+				"target": "{name}-{version}",
+				"kotlin": true
+			}
 		},
 		"displayOptions": {
-			"hidden": false,
-			"name": "SlimefunGrades",
-			"authors": ["ziyou3159"],
-			"keywords": ["SlimefunGrades", "粘液科技进度树", "进度"],
+			"keywords": ["粘液科技进度树"],
 			"requirements": {
 				"java": {
-					"1": "20"
+					"1": "18"
 				},
 				"minecraft": {
 					"1": "1.20"
-				}
+				},
 			}
 		}
 	},
