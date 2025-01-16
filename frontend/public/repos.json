@@ -2630,5 +2630,175 @@
 				}
 			}
 		}
+	},
+	"SlimefunGuguProject/SensibleToolboxReborn:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SensibleToolboxReborn",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "SensibleToolboxReborn",
+			"authors": ["Bunnky"],
+			"keywords": ["SensibleToolboxReborn", "STB", "stb"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"ziyou3159/SlimefunGrades:master": {
+		"type": "gradle",
+		"buildOptions": {
+			"name": "SlimefunGrades",
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"shadowJar": true,
+				"target": "{name}-{version}",
+				"kotlin": true
+			}
+		},
+		"displayOptions": {
+			"keywords": ["粘液科技进度树"],
+			"requirements": {
+				"java": {
+					"1": "18"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"QYhB05/FinalTECH-Changed:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "FinalTECH-Changed",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "FinalTECH-Changed",
+			"authors": ["QYhB05"],
+			"keywords": ["FinalTECH-Changed", "乱序技艺", "乱序"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"balugaq/VariousClutter:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "VariousClutter",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "VariousClutter",
+			"authors": ["balugaq"],
+			"keywords": ["VariousClutter", "杂乱物品", "杂乱"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"balugaq/Laboratory:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "Laboratory",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "Laboratory",
+			"authors": ["Freeze_Dolphin","balugaq"],
+			"keywords": ["Laboratory", "Consider实验室", "实验室"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SfBetterChests:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SfBetterChests",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "SfBetterChests",
+			"authors": ["lijinhong11"],
+			"keywords": ["SfBetterChests", "更好的箱子"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/SlimeFoodPlugin:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "SlimeFoodPlugin",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "SlimeFoodPlugin",
+			"authors": ["gamingoninsulin"],
+			"keywords": ["SlimeFoodPlugin", "粘液美食"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
+	},
+	"SlimefunGuguProject/REMI:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "REMI",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "REMI",
+			"authors": ["KakuzatouRemi"],
+			"keywords": ["REMI", "雷米科技"],
+			"requirements": {
+				"java": {
+					"1": "20"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
