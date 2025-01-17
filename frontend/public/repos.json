@@ -2800,5 +2800,26 @@
 				}
 			}
 		}
+	},
+	"m1919810/MomoTech-optimized:main": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "MomoTechvOptimized",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "MomoTechvOptimized",
+			"authors": ["QYhB05"],
+			"keywords": ["MomoTech","MomoTechvOptimized","乱码科技"],
+			"requirements": {
+				"java": {
+					"1": "8"
+				},
+				"minecraft": {
+					"1": "1.20"
+				}
+			}
+		}
 	}
 }
