@@ -2087,11 +2087,16 @@
 		}
 	},
 	"SlimefunGuguProject/ExtraHeads:master": {
-		"type": "maven",
+		"type": "gradle",
 		"alias": ["ybw0014/ExtraHeads-CN:master", "ybw0014/ExtraHeads:master"],
 		"buildOptions": {
 			"name": "ExtraHeads",
-			"version": "Build {version} (git {git_commit})"
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"kotlin": true,
+				"shadowJar": true,
+				"target": "{name}-{version}"
+			}
 		},
 		"displayOptions": {
 			"officialList": true,
@@ -2099,9 +2104,11 @@
 			"keywords": ["额外头颅"],
 			"requirements": {
 				"java": {
+					"4": "17",
 					"1": "16"
 				},
 				"minecraft": {
+					"4": "1.18",
 					"1": "1.16.5"
 				}
 			}
