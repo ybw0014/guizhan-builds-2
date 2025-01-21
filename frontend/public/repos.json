@@ -2486,6 +2486,7 @@
 	},
 	"SlimefunReloadingProject/RSCEditor:master": {
 		"type": "maven",
+		"alias": ["balugaq/Slimefun4:master"],
 		"buildOptions": {
 			"name": "RSCEditor",
 			"version": "Build {version} (git {git_commit})"
