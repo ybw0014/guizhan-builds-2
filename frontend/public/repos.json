@@ -2484,7 +2484,7 @@
 			}
 		}
 	},
-	"balugaq/RSCEditor:master": {
+	"SlimefunReloadingProject/RSCEditor:master": {
 		"type": "maven",
 		"buildOptions": {
 			"name": "RSCEditor",
