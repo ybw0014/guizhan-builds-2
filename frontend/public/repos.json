@@ -2830,5 +2830,26 @@
 				}
 			}
 		}
+	},
+	"TimetownDev/SlimeAE:main": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "SlimeAE",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "SlimeAE",
+		  "authors": ["JWJUN233233"],
+		  "keywords": ["SlimeAE","AE","能源与应用"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
 	}
 }
