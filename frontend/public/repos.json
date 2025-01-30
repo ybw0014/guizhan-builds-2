@@ -2851,5 +2851,236 @@
 			  }
 		  }
 	  }
+	},
+	"SlimefunGuguProject/SlimeVision:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "SlimeVision",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "SlimeVision",
+		  "authors": ["Bunnky"],
+		  "keywords": ["SlimeVision","粘液可视化"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"shixinzia/Mineralgenerator:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "Mineralgenerator",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "Mineralgenerator",
+		  "authors": ["shixinzia"],
+		  "keywords": ["Mineralgenerator","矿物生成器"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"shuz888/MySlimefunAddon:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "MySlimefunAddon",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "MySlimefunAddon",
+		  "authors": ["shuz888"],
+		  "keywords": ["MySlimefunAddon","CAPTAINchad12的自制扩展"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"SlimefunGuguProject/MobSimulationPlus:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "MobSimulationPlus",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "MobSimulationPlus",
+		  "authors": ["JasperChaseTOQ"],
+		  "keywords": ["MobSimulationPlus","生物芯片拓展"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"SlimefunGuguProject/BreweryMenu:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "BreweryMenu",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "BreweryMenu",
+		  "authors": ["Figgnus"],
+		  "keywords": ["BreweryMenu","酿酒菜单"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"balugaq/InfinityCompress:main": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "InfinityCompress",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "InfinityCompress",
+		  "authors": ["balugaq","AcdeAsdff"],
+		  "keywords": ["InfinityCompress","无尽压缩","无尽"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"balugaq/SlimeFrameExtension:main": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "SlimeFrameExtension",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "SlimeFrameExtension",
+		  "authors": ["balugaq","AcdeAsdff"],
+		  "keywords": ["SlimeFrameExtension","粘液战甲拓展"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"balugaq/FutureTech:main": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "FutureTech",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "FutureTech",
+		  "authors": ["balugaq","bxx2004"],
+		  "keywords": ["FutureTech","未来科技"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"balugaq/SlimefunZT:main": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "SlimefunZT",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "SlimefunZT",
+		  "authors": ["balugaq","zimzaza4"],
+		  "keywords": ["SlimefunZT","SC科技"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"SlimefunGuguProject/CraftableEnchantments:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "CraftableEnchantments",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "CraftableEnchantments",
+		  "authors": ["SchnTgaiSpock"],
+		  "keywords": ["CraftableEnchantments","附魔工艺"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.16"
+			  }
+		  }
+	  }
+	},
+	"IgnoreLicensesCN/MinimizeFactory:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "MinimizeFactory",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "MinimizeFactory",
+		  "authors": ["IgnoreLicensesCN"],
+		  "keywords": ["MinimizeFactory","最小化工厂"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.20"
+			  }
+		  }
+	  }
 	}
 }
