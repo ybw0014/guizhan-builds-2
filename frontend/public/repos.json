@@ -2831,7 +2831,7 @@
 			}
 		}
 	},
-	"TimetownDev/SlimeAE:main": {
+	"TimetownDev/SlimeAE:master": {
 	  "type": "maven",
 	  "buildOptions": {
 		  "name": "SlimeAE",
