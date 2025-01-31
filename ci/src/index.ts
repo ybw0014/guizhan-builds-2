@@ -54,7 +54,11 @@ async function main() {
     }
 
     task.logger.info('进行清理任务')
-    await cleanup(task)
+    try {
+      await cleanup(task)
+    } catch (e) {
+      task.logger.error('清理任务失败', e)
+    }
 
     logger.info(`项目处理完成: ${project.key}`)
   }
