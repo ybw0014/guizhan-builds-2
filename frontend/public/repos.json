@@ -2840,6 +2840,7 @@
 	  "displayOptions": {
 		  "hidden": false,
 		  "name": "SlimeAE",
+			"logo": "SlimeAE/SlimeAE_logo.png",
 		  "authors": ["JWJUN233233"],
 		  "keywords": ["SlimeAE","AE","能源与应用"],
 		  "requirements": {
