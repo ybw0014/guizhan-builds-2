@@ -2823,7 +2823,8 @@
 			"keywords": ["MomoTech","MomoTechvOptimized","乱码科技"],
 			"requirements": {
 				"java": {
-					"1": "8"
+					"1": "8",
+					"4": "16"
 				},
 				"minecraft": {
 					"1": "1.20"
