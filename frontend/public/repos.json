@@ -3084,5 +3084,26 @@
 			  }
 		  }
 	  }
+	},
+	"balugaq/AdvancedBan:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "AdvancedBan",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "AdvancedBan",
+		  "authors": ["balugaq"],
+		  "keywords": ["AdvancedBan","高级禁用"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.20"
+			  }
+		  }
+	  }
 	}
 }
