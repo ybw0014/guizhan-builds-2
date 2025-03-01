@@ -3105,5 +3105,47 @@
 			  }
 		  }
 	  }
+	},
+	"balugaq/SlimefunAccelerator:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "SlimefunAccelerator",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "SlimefunAccelerator",
+		  "authors": ["balugaq"],
+		  "keywords": ["SlimefunAccelerator","粘液加速器"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.20"
+			  }
+		  }
+	  }
+	},
+	"balugaq/SlimefunCoreProtect:master": {
+	  "type": "maven",
+	  "buildOptions": {
+		  "name": "SlimefunCoreProtect",
+		  "version": "Build {version} (git {git_commit})"
+	  },
+	  "displayOptions": {
+		  "hidden": false,
+		  "name": "SlimefunCoreProtect",
+		  "authors": ["balugaq"],
+		  "keywords": ["SlimefunCoreProtect","粘液coi"],
+		  "requirements": {
+		  	"java": {
+				  "1": "17"
+			  },
+		  	"minecraft": {
+		  		"1": "1.20"
+			  }
+		  }
+	  }
 	}
 }
