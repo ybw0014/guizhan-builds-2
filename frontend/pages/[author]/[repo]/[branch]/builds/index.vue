@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-types';
 import _ from 'lodash';
 import { watchDebounced } from '@vueuse/core';
 import type { RouteParams } from 'vue-router';
@@ -81,6 +81,7 @@ definePageMeta({
 </script>
 
 <template>
+
   <Head>
     <Title>{{ t('pages.builds.title', { name: project?.repository || '', branch: project?.branch || '' }) }}</Title>
   </Head>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Author } from 'guizhan-builds-2-data-extra';
+import type { Author } from 'guizhan-builds-2-types-extra';
 import { watchDebounced } from '@vueuse/core';
 import _ from 'lodash';
 import type { Header } from '~/types/dataTable';
@@ -50,6 +50,7 @@ function filterList() {
 </script>
 
 <template>
+
   <Head>
     <Title>{{ t('pages.authors.title') }}</Title>
   </Head>

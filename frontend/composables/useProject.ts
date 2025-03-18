@@ -1,4 +1,4 @@
-import type { Project, BuildInfo } from 'guizhan-builds-2-data';
+import type { Project, BuildInfo } from 'guizhan-builds-2-types';
 import _ from 'lodash';
 
 export async function useProjectRepository(author: string, repository: string): Promise<Ref<Project[] | null>> {

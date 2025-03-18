@@ -1,4 +1,4 @@
-import { type Project, type Projects, type BuildsInfo, useParseProjects } from 'guizhan-builds-2-data';
+import { type Project, type Projects, type BuildsInfo, useParseProjects } from 'guizhan-builds-2-types';
 import type { OrderValidationData, OrderValidationResponse, DownloadResponse, LastUpdateResponse, LastUpdateData } from '@/types/sfSubscription';
 
 export async function useProjects(): Promise<Ref<Project[] | null>> {

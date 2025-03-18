@@ -1,4 +1,4 @@
-import type { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-types';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import remarkGemoji from 'remark-gemoji';

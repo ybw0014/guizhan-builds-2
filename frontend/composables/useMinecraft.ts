@@ -1,4 +1,4 @@
-import type { MinecraftVersionString } from 'guizhan-builds-2-data-extra';
+import type { MinecraftVersionString } from 'guizhan-builds-2-types-extra';
 
 const mcVersionRegExp = /^1\.(\d+)(?:\.(\d+))?$/;
 

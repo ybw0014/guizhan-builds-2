@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-types';
 import LazyLoadImage from '~/components/LazyLoadImage.vue';
 const { t } = useI18n();
 

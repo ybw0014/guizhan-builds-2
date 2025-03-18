@@ -1,7 +1,7 @@
 /**
  * 项目任务相关方法
  */
-import { Project } from 'guizhan-builds-2-data'
+import { Project } from 'guizhan-builds-2-types'
 import { resolve } from 'path'
 import { BuildTask } from '@/types'
 import { Logger } from '@/utils/Logger'
