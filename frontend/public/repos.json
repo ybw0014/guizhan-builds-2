@@ -3179,7 +3179,7 @@
       }
     }
   },
-  "Yomicer/MagicExpansion": {
+  "Yomicer/MagicExpansion:master": {
     "type": "maven",
     "buildOptions": {
       "name": "MagicExpansion",
