@@ -3188,7 +3188,7 @@
     "displayOptions": {
       "hidden": false,
       "name": "MagicExpansion",
-      "author": ["@Sefiraat"],
+      "author": ["Yomicer"],
       "keywords": ["MagicExpansion","魔法", "魔法拓展"],
       "requirements": {
         "java": {
