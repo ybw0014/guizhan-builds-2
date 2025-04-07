@@ -3178,5 +3178,26 @@
         }
       }
     }
+  },
+  "Yomicer/MagicExpansion:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "MagicExpansion",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "MagicExpansion",
+      "authors": ["Yomicer"],
+      "keywords": ["MagicExpansion","魔法", "魔法拓展"],
+      "requirements": {
+        "java": {
+          "1": "17"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
   }
 }
