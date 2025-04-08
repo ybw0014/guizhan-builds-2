@@ -3199,5 +3199,26 @@
         }
       }
     }
+  }，
+	"m1919810/SlimefunHopper:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "SlimefunHopper",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "SlimefunHopper",
+      "authors": ["m1919810"],
+      "keywords": ["漏斗", "粘液漏斗"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
   }
 }
