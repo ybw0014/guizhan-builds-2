@@ -3220,5 +3220,320 @@
         }
       }
     }
+  },
+  "balugaq/SlimefunAccessor:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "SlimefunAccessor",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "SlimefunAccessor",
+      "authors": ["balugaq"],
+      "keywords": ["远程访问器"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/ExoticGardenComplex:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "ExoticGardenComplex",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "ExoticGardenComplex",
+      "authors": ["TheBusyBiscuit", "Narcissu14", "wdog5", "ybw0014", "NCBPFluffyBear", "it-dainb", "balugaq", "haiman"],
+      "keywords": ["异域花园", "复合花园"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/magic-powder:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "magic-powder",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "magic-powder",
+      "authors": ["redstone861"],
+      "keywords": ["魔芋工艺"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/Obsidian-Armor:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "Obsidian-Armor",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "Obsidian-Armor",
+      "authors": ["Asriel-dmr"],
+      "keywords": ["黑曜石合金装甲"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/Tofu-Addons:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "Tofu-Addons",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "Tofu-Addons",
+      "authors": ["LunrEclipse"],
+      "keywords": ["豆腐工艺"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/EnderPanda:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "EnderPanda",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "EnderPanda",
+      "authors": ["J3fftw1"],
+      "keywords": ["末地熊猫"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/BloodAlchemy:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "BloodAlchemy",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "BloodAlchemy",
+      "authors": ["Mooy1"],
+      "keywords": ["血炼金工艺"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/hohenheim:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "hohenheim",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "hohenheim",
+      "authors": ["TweepCoding"],
+      "keywords": ["嬗变工艺"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/SlimefunVoid:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "SlimefunVoid",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "SlimefunVoid",
+      "authors": ["BigBadE"],
+      "keywords": ["虚无粘液"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/FireSlime:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "FireSlime",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "FireSlime",
+      "authors": ["balugaq"],
+      "keywords": ["碳泥科技"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/Slimedustry:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "Slimedustry",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "Diamondman121314",
+      "authors": ["balugaq"],
+      "keywords": ["粘液工程"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/betterfarming:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "betterfarming",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "betterfarming",
+      "authors": ["SoraUltimateProgrammer"],
+      "keywords": ["更好农场"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/New-Begginings:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "New-Begginings",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "New-Begginings",
+      "authors": ["TweepCoding"],
+      "keywords": ["新生"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/NetherEnough:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "NetherEnough",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "NetherEnough",
+      "authors": ["Sfiguz7"],
+      "keywords": ["深渊幻章"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
+  },
+  "balugaq/slimestack:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "HALsAddon",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "HALsAddon",
+      "authors": ["SoraUltimateProgrammer", "HAL989"],
+      "keywords": ["终界之地"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
   }
 }
