@@ -3535,5 +3535,26 @@
         }
       }
     }
+  },
+  "balugaq/MSUA:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "MSUA",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "MSUA",
+      "authors": ["balugaq"],
+      "keywords": ["热加载", "热卸载", "MSUA"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.20"
+        }
+      }
+    }
   }
 }
