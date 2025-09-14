@@ -3556,5 +3556,26 @@
         }
       }
     }
+  },
+  "balugaq/SlimefunTimeit:master": {
+    "type": "maven",
+    "buildOptions": {
+      "name": "SlimefunTimeit",
+      "version": "Build {version} (git {git_commit})"
+    },
+    "displayOptions": {
+      "hidden": false,
+      "name": "SlimefunTimeit",
+      "authors": ["balugaq"],
+      "keywords": ["性能监视器"],
+      "requirements": {
+        "java": {
+          "1": "16"
+        },
+        "minecraft": {
+          "1": "1.17"
+        }
+      }
+    }
   }
 }
