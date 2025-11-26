@@ -6,8 +6,11 @@ import { success } from '~/api/response'
 import { getMcVersions } from '~/controllers/mcVersion'
 import { getBuildBadge } from '~/controllers/buildBadge'
 import { badgeCache } from '~/middlewares/badgeCache'
+import { corsMiddleware } from '~/middlewares/cors'
 
 const app = new Hono()
+
+app.use(corsMiddleware())
 
 app.notFound(() => RouteNotFound.toResponse())
 app.onError((err) => {
