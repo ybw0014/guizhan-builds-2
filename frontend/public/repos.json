@@ -3452,7 +3452,7 @@
       }
     }
   },
-  "balugaq/betterfarming:master": {
+  "balugaq/betterfarming:main": {
     "type": "maven",
     "buildOptions": {
       "name": "betterfarming",
