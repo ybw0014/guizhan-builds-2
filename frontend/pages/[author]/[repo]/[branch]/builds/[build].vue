@@ -2,7 +2,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { useDropZone, useFileDialog } from '@vueuse/core';
 import CryptoJS from 'crypto-js';
-import type { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-types';
 import { useSettingsStore } from '~/stores/useSettingsStore';
 
 const { t } = useI18n();
@@ -101,6 +101,7 @@ definePageMeta({
 </script>
 
 <template>
+
   <Head>
     <Title>{{ t('pages.build.title', { name, branch, build: buildId }) }}</Title>
   </Head>
@@ -114,7 +115,8 @@ definePageMeta({
           </div>
           <div class="text-md text-gray-600 dark:text-gray-400">
             {{ t('pages.build.buildAt', { time: $dayjs(build.buildTimestamp).format('lll') }) }}
-            <a :href="getBuildResource(`Build-${buildId}.log`)" class="a-link" target="_blank">{{ t('pages.build.logs') }}</a>
+            <a :href="getBuildResource(`Build-${buildId}.log`)" class="a-link" target="_blank">{{ t('pages.build.logs')
+              }}</a>
           </div>
         </div>
         <div class="grow"></div>
@@ -127,9 +129,9 @@ definePageMeta({
       <div class="card bg-default flex-col items-center">
         <span class="text-gray-400">
           {{ t('pages.build.commitAt', { author: build.author, time: $dayjs(build.timestamp).format('lll') }) }}
-          (<a :href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`" class="a-link" target="_blank">
-            {{ build.commit.slice(0, 7) }} </a
-          >):
+          (<a :href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`" class="a-link"
+            target="_blank">
+            {{ build.commit.slice(0, 7) }} </a>):
         </span>
         <span>{{ build.message }}</span>
       </div>
@@ -153,12 +155,11 @@ definePageMeta({
           </div>
         </div>
         <Disclosure>
-          <DisclosureButton
-            v-slot="{ open }"
-            class="flex w-full justify-between rounded-lg bg-primary-100 px-4 py-2 text-left text-sm font-medium text-primary-900 hover:bg-primary-200 dark:bg-primary-800 dark:text-primary-100 dark:hover:bg-primary-700 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-opacity-75"
-          >
+          <DisclosureButton v-slot="{ open }"
+            class="flex w-full justify-between rounded-lg bg-primary-100 px-4 py-2 text-left text-sm font-medium text-primary-900 hover:bg-primary-200 dark:bg-primary-800 dark:text-primary-100 dark:hover:bg-primary-700 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-opacity-75">
             {{ t('pages.build.checksum.check') }}
-            <UIcon :name="open ? 'i-mdi-chevron-up' : 'i-mdi-chevron-down'" class="h-5 w-5 text-primary-500 dark:text-primary-100" />
+            <UIcon :name="open ? 'i-mdi-chevron-up' : 'i-mdi-chevron-down'"
+              class="h-5 w-5 text-primary-500 dark:text-primary-100" />
           </DisclosureButton>
           <DisclosurePanel class="text-gray-500 flex flex-col gap-2">
             <div ref="checksumDropzone" class="flex items-center justify-center w-full" @click="openChecksumFile()">
@@ -172,7 +173,8 @@ definePageMeta({
                 </div>
               </div>
             </div>
-            <div v-if="checksumResult" :class="[checksumResult === build.sha1 ? 'text-green-500' : 'text-red-500', 'break-words']">
+            <div v-if="checksumResult"
+              :class="[checksumResult === build.sha1 ? 'text-green-500' : 'text-red-500', 'break-words']">
               {{ t('pages.build.checksum.sha1', { checksum: checksumResult }) }}
             </div>
           </DisclosurePanel>

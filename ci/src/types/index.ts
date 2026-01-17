@@ -1,4 +1,4 @@
-import { Project } from 'guizhan-builds-2-data'
+import { Project } from 'guizhan-builds-2-types'
 import { Logger } from '@/utils/Logger'
 
 export interface TaskCommit {

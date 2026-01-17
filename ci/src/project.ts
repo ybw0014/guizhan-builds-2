@@ -1,7 +1,7 @@
 /**
  * 单个项目相关
  */
-import { BuildInfo, BuildsInfo } from 'guizhan-builds-2-data'
+import { BuildInfo, BuildsInfo } from 'guizhan-builds-2-types'
 import { BuildTask } from '@/types'
 import { getJson, uploadJson } from '@/r2'
 import { sleep } from '@/utils'

@@ -1,4 +1,5 @@
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 import { getProject, getProjects } from '~/controllers/projects'
 import { getBuilds, getBuild, downloadBuild } from '~/controllers/builds'
 import { InternalError, RouteNotFound } from '~/api/errors'
@@ -8,6 +9,11 @@ import { getBuildBadge } from '~/controllers/buildBadge'
 import { badgeCache } from '~/middlewares/badgeCache'
 
 const app = new Hono()
+
+app.use('*', cors({
+  origin: '*',
+  allowMethods: ['GET', 'HEAD', 'OPTIONS']
+}))
 
 app.notFound(() => RouteNotFound.toResponse())
 app.onError((err) => {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project } from 'guizhan-builds-2-data';
+import type { Project } from 'guizhan-builds-2-types';
 
 const props = defineProps<{
   project: Project;

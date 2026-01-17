@@ -3,7 +3,7 @@ import { describe, beforeAll, test, expect, expectTypeOf } from 'vitest'
 import { setupWorker } from './utils/testutils'
 import { ApiResponseTyped } from '~/types/api'
 import { ProjectResponse } from '~/types/builds'
-import { Project } from 'guizhan-builds-2-data'
+import { Project } from 'guizhan-builds-2-types'
 
 describe('Test projects', () => {
   let worker: UnstableDevWorker

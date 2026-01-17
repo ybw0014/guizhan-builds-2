@@ -3,7 +3,7 @@
  *
  * repos.json文件存储于前端仓库
  */
-import { Project, Projects, useParseProjects } from 'guizhan-builds-2-data'
+import { Project, Projects, useParseProjects } from 'guizhan-builds-2-types'
 import { request } from '@/request'
 import { Logger } from '@/utils/Logger'
 
