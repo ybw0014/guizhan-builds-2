@@ -187,6 +187,11 @@
 				"newFeatures": "New Features"
 			},
 			"footnotes": "The prices listed on this page are just for reference, the actual price in Afdian shall prevail.",
+			"migrationBanner": {
+				"title": "Service Migration Notice",
+				"description": "We are gradually migrating to Guizhan Resources:",
+				"link": "Go to new site"
+			},
 			"devCheck": {
 				"title": "Get the latest development build",
 				"form": {

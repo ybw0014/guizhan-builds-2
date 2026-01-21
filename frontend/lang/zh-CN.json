@@ -187,6 +187,11 @@
 				"newFeatures": "提前获取新功能"
 			},
 			"footnotes": "订阅价格仅供参考，以爱发电内实际价格为准。",
+			"migrationBanner": {
+				"title": "服务迁移提示",
+				"description": "我们正在逐步迁移至鬼斩资源站：",
+				"link": "前往新站点"
+			},
 			"devCheck": {
 				"title": "获取最新的内测版构建",
 				"form": {
