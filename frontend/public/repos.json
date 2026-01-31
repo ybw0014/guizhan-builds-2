@@ -2387,7 +2387,7 @@
     "displayOptions": {
       "name": "NetworksExpansion",
       "authors": ["ytdd9527", "balugaq"],
-      "keywords": ["网络拓展"],
+      "keywords": ["网络拓展", "网拓", "netex", "网络", "升级网络"],
       "requirements": {
         "java": {
           "1": "16"
