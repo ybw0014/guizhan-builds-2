@@ -2387,7 +2387,7 @@
     "displayOptions": {
       "name": "NetworksExpansion",
       "authors": ["ytdd9527", "balugaq"],
-      "keywords": ["网络拓展"],
+      "keywords": ["网络拓展", "网拓", "netex", "网络", "升级网络"],
       "requirements": {
         "java": {
           "1": "16"
@@ -3577,5 +3577,26 @@
         }
       }
     }
-  }
+  },
+	"m1919810/AdvanceTexture:master": {
+		"type": "maven",
+		"buildOptions": {
+			"name": "AdvanceTexture",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "AdvanceTexture",
+			"authors": ["m1919810"],
+			"keywords": ["材质", "材质包", "资源包", "材质服务"],
+			"requirements": {
+				"java": {
+					"1": "21"
+				},
+				"minecraft": {
+					"1": "1.17"
+				}
+			}
+		}
+	}
 }

@@ -187,6 +187,11 @@
 				"newFeatures": "提前獲取新功能"
 			},
 			"footnotes": "訂閱價格僅供參考，以愛發電內實際價格為准。",
+			"migrationBanner": {
+				"title": "服務遷移提示",
+				"description": "我們正在逐步遷移至鬼斬资源站：",
+				"link": "前往新站點"
+			},
 			"devCheck": {
 				"title": "獲取最新的內測版構建",
 				"form": {

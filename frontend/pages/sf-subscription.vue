@@ -171,6 +171,25 @@ function devDownload() {
   <Head>
     <Title>{{ t('pages.sfSubscription.title') }}</Title>
   </Head>
+  <UAlert
+    icon="i-heroicons-arrow-top-right-on-square"
+    color="blue"
+    variant="subtle"
+    class="mb-6"
+    :title="t('pages.sfSubscription.migrationBanner.title')"
+  >
+    <template #description>
+      {{ t('pages.sfSubscription.migrationBanner.description') }}
+      <a
+        href="https://staging.resources.guizhanss.com/tools/slimefun-insider"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="a-link font-medium"
+      >
+        {{ t('pages.sfSubscription.migrationBanner.link') }}
+      </a>
+    </template>
+  </UAlert>
   <div class="flex flex-col gap-12 mt-14 items-center">
     <div class="text-2xl font-semibold">{{ t('pages.sfSubscription.title') }}</div>
     <div class="text-lg text-gray-600 dark:text-gray-400">{{ t('pages.sfSubscription.description') }}</div>
