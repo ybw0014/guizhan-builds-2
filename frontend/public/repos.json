@@ -2398,27 +2398,6 @@
       }
     }
   },
-  "m1919810/LogiTech:master": {
-    "type": "maven",
-    "buildOptions": {
-      "name": "LogiTech",
-      "version": "Build {version} (git {git_commit})"
-    },
-    "displayOptions": {
-      "hidden": false,
-      "name": "LogiTech",
-      "authors": ["m1919810"],
-      "keywords": ["逻辑", "逻辑工艺"],
-      "requirements": {
-        "java": {
-          "1": "16"
-        },
-        "minecraft": {
-          "1": "1.20"
-        }
-      }
-    }
-  },
   "SlimefunGuguProject/Magic-8-Ball:master": {
     "type": "maven",
     "buildOptions": {
