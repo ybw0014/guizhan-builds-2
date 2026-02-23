@@ -3577,7 +3577,7 @@
 				}
 			}
 		}
-	},
+  },
   "Ruchikanmani/LogiTech:master": {
     "type": "maven",
     "buildOptions": {
