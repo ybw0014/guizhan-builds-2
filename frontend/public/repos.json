@@ -1,10 +1,15 @@
 {
+	"$schema": "https://cdn.jsdelivr.net/gh/ybw0014/guizhan-builds-2@master/frontend/public/repos_schema.json",
   "SlimefunGuguProject/Slimefun4:master": {
-    "type": "maven",
+    "type": "gradle",
     "alias": ["StarWishsama/Slimefun4:master"],
     "buildOptions": {
       "name": "Slimefun",
-      "version": "{git_commit}-Beta"
+      "version": "{git_commit}-Beta",
+			"gradle": {
+				"shadowJar": true,
+				"target": "{name}-DEV-SNAPSHOT"
+			}
     },
     "displayOptions": {
       "officialList": true,
