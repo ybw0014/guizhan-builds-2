@@ -8,6 +8,7 @@ import { uploadFile } from '@/r2'
 import { getFileSha1 } from '@/checksum'
 import { BuildTask } from '@/types'
 import { fileExists, spawnProcess } from '@/utils'
+import { chmod } from 'fs/promises'
 import { MultiStream } from '@/utils/MultiStream'
 
 export async function setVersion(task: BuildTask) {
@@ -97,6 +98,10 @@ export async function build(task: BuildTask) {
   }
 
   try {
+    const gradlewPath = resolve(task.workspace, './gradlew')
+    if (await fileExists(gradlewPath)) {
+      await chmod(gradlewPath, 0o755)
+    }
     await spawnProcess('./gradlew', args, gradleOptions, logStdoutStream, logStderrStream)
   } catch (e) {
     logFile.close()
