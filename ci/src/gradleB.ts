@@ -59,8 +59,11 @@ async function setupProperties(task: BuildTask) {
 }
 
 async function setupSettings(task: BuildTask) {
-  const filePath = resolve(task.workspace, './settings.gradle')
-  const line = `rootProject.name = '${task.project.buildOptions.name}'`
+  const kotlin = task.project.buildOptions?.gradle?.kotlin
+  const fileName = kotlin ? 'settings.gradle.kts' : 'settings.gradle'
+  const filePath = resolve(task.workspace, `./${fileName}`)
+  const quote = kotlin ? '"' : '\''
+  const line = `rootProject.name = ${quote}${task.project.buildOptions.name}${quote}`
 
   if (await fileExists(filePath)) {
     const config = await readFile(filePath, 'utf8')
