@@ -13,14 +13,18 @@ import { gitClone } from '@/git'
 import maven from '@/mavenB'
 import gradle from '@/gradleB'
 import { notify } from '@/webhook'
-import { envHas } from '@/environment'
+import { envHas, setDryRun } from '@/environment'
 import { Logger } from '@/utils/Logger'
 
 const nodeEnv = process.env.NODE_ENV ?? 'development'
+const dryRun = process.argv.includes('--dry-run') || !!process.env.DRY_RUN
 const logger = new Logger('main')
 
 async function main() {
   environmentCheck()
+  if (dryRun) {
+    logger.warn('试运行模式已启用')
+  }
   logger.info('初始化项目')
 
   const projects = await getProjects()
@@ -31,6 +35,7 @@ async function main() {
     console.log()
     logger.info(`开始处理项目: ${project.key} (${i + 1}/${projects.length})`)
     const task = await buildTask(project)
+    task.dryRun = dryRun
 
     const buildVersion = await check(task)
     if (!buildVersion) {
@@ -66,6 +71,9 @@ async function main() {
 
 function environmentCheck() {
   logger.info(`当前运行环境为: ${nodeEnv}`)
+  if (dryRun) {
+    setDryRun(true)
+  }
   logger.info('正在检查环境变量')
   envHas('R2_ACCOUNT_ID')
   envHas('R2_ACCESS_KEY_ID')
@@ -88,14 +96,17 @@ async function check(task: BuildTask): Promise<number | null> {
   if (commit == null) {
     return null
   }
-  if (commit.commit.message.toLowerCase().startsWith('[ci skip]')) {
+  if (
+    commit.commit.message.toLowerCase().indexOf('[ci skip]') !== -1 ||
+    commit.commit.message.toLowerCase().indexOf('[skip ci]') !== -1
+  ) {
     task.logger.info('项目跳过构建')
     return null
   }
   const buildsInfo = await getBuilds(task)
 
   task.commit = {
-    timestamp: dayjs(commit.commit.author?.date as string || Date.now()).valueOf(),
+    timestamp: dayjs((commit.commit.author?.date as string) || Date.now()).valueOf(),
     author: (commit.author?.login ?? commit.commit.author?.name) || '',
     message: commit.commit.message,
     sha: commit.sha
@@ -163,16 +174,24 @@ async function cleanup(task: BuildTask) {
     await gradle.cleanup(task)
   }
 
-  task.logger.info('正在清理工作目录')
-  await fs.rm(task.workspace, { recursive: true })
+  if (task.dryRun) {
+    task.logger.info('[试运行] 跳过清理工作目录')
+  } else {
+    task.logger.info('正在清理工作目录')
+    await fs.rm(task.workspace, { recursive: true })
+  }
 
   task.logger.info('正在上传构建信息')
   await uploadBuilds(task)
   task.logger.info('正在更新构建时间记录')
   await updateBuildTime(task)
 
-  task.logger.info('正在推送通知')
-  await notify(task)
+  if (task.dryRun) {
+    task.logger.info('[试运行] 跳过推送通知')
+  } else {
+    task.logger.info('正在推送通知')
+    await notify(task)
+  }
 }
 
 main()

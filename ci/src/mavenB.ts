@@ -8,7 +8,7 @@ import { SpawnOptions } from 'child_process'
 import { BuildTask } from '@/types'
 import { uploadFile } from '@/r2'
 import { getFileSha1 } from '@/checksum'
-import { fileExists, spawnProcess } from '@/utils'
+import { fileExists, spawnProcess, sanitizeEnv } from '@/utils'
 import { MultiStream } from '@/utils/MultiStream'
 
 export async function setVersion(task: BuildTask) {
@@ -46,7 +46,8 @@ export async function build(task: BuildTask) {
   const logStderrStream = new MultiStream([process.stderr, logStream])
 
   const mavenOptions: Partial<SpawnOptions> = {
-    cwd: task.workspace
+    cwd: task.workspace,
+    env: sanitizeEnv(process.env)
   }
 
   try {
@@ -64,17 +65,29 @@ export async function cleanup(task: BuildTask) {
   if (task.success) {
     const target = `${task.project.buildOptions.name}-${task.finalVersion}.jar`
     const targetPath = resolve(task.workspace, './target', target)
-    await uploadFile(`${r2Dir}/${target}`, targetPath)
 
-    // 获取checksum
-    task.target = target
-    task.sha1 = await getFileSha1(targetPath)
+    if (!(await fileExists(targetPath))) {
+      task.logger.error(`构建产物不存在: ${targetPath}`)
+      task.success = false
+    } else if (task.dryRun) {
+      task.logger.info(`[试运行] 将上传构建产物: ${r2Dir}/${target} (sha1: ${task.sha1})`)
+      task.target = target
+      task.sha1 = await getFileSha1(targetPath)
+    } else {
+      await uploadFile(`${r2Dir}/${target}`, targetPath)
+      task.target = target
+      task.sha1 = await getFileSha1(targetPath)
+    }
   }
 
   // 上传日志
   const logPath = resolve(task.workspace, './maven.log')
   if (await fileExists(logPath)) {
-    await uploadFile(`${r2Dir}/Build-${task.version}.log`, logPath, 'text/plain')
+    if (task.dryRun) {
+      task.logger.info(`[试运行] 将上传构建日志: ${r2Dir}/Build-${task.version}.log`)
+    } else {
+      await uploadFile(`${r2Dir}/Build-${task.version}.log`, logPath, 'text/plain')
+    }
   }
 }
 

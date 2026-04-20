@@ -7,7 +7,7 @@ import { SpawnOptions } from 'child_process'
 import { uploadFile } from '@/r2'
 import { getFileSha1 } from '@/checksum'
 import { BuildTask } from '@/types'
-import { fileExists, spawnProcess } from '@/utils'
+import { fileExists, spawnProcess, sanitizeEnv } from '@/utils'
 import { chmod } from 'fs/promises'
 import { MultiStream } from '@/utils/MultiStream'
 
@@ -62,7 +62,7 @@ async function setupSettings(task: BuildTask) {
   const kotlin = task.project.buildOptions?.gradle?.kotlin
   const fileName = kotlin ? 'settings.gradle.kts' : 'settings.gradle'
   const filePath = resolve(task.workspace, `./${fileName}`)
-  const quote = kotlin ? '"' : '\''
+  const quote = kotlin ? '"' : "'"
   const line = `rootProject.name = ${quote}${task.project.buildOptions.name}${quote}`
 
   if (await fileExists(filePath)) {
@@ -97,7 +97,8 @@ export async function build(task: BuildTask) {
   }
 
   const gradleOptions: Partial<SpawnOptions> = {
-    cwd: task.workspace
+    cwd: task.workspace,
+    env: sanitizeEnv(process.env)
   }
 
   try {
@@ -119,21 +120,33 @@ export async function cleanup(task: BuildTask) {
   if (task.success) {
     const suffix = task.project.buildOptions.gradle?.shadowJar ? '-all' : ''
     const targetFormat = task.project.buildOptions.gradle?.target ?? `{name}-{version}-${suffix}`
-    const target = targetFormat.replace('{name}', task.project.buildOptions.name)
-      .replace('{version}', task.finalVersion ?? '') + '.jar'
+    const target =
+      targetFormat.replace('{name}', task.project.buildOptions.name).replace('{version}', task.finalVersion ?? '') + '.jar'
     const targetFinal = `${task.project.buildOptions.name}-${task.finalVersion}.jar`
     const targetPath = resolve(task.workspace, './build/libs', target)
-    await uploadFile(`${path}/${targetFinal}`, targetPath)
 
-    // 获取checksum
-    task.target = targetFinal
-    task.sha1 = await getFileSha1(targetPath)
+    if (!await fileExists(targetPath)) {
+      task.logger.error(`构建产物不存在: ${targetPath}`)
+      task.success = false
+    } else if (task.dryRun) {
+      task.logger.info(`[试运行] 将上传构建产物: ${path}/${targetFinal} (sha1: ${task.sha1})`)
+      task.target = targetFinal
+      task.sha1 = await getFileSha1(targetPath)
+    } else {
+      await uploadFile(`${path}/${targetFinal}`, targetPath)
+      task.target = targetFinal
+      task.sha1 = await getFileSha1(targetPath)
+    }
   }
 
   // 上传日志
   const logPath = resolve(task.workspace, './gradle.log')
   if (await fileExists(logPath)) {
-    await uploadFile(`${path}/Build-${task.version}.log`, logPath, 'text/plain')
+    if (task.dryRun) {
+      task.logger.info(`[试运行] 将上传构建日志: ${path}/Build-${task.version}.log`)
+    } else {
+      await uploadFile(`${path}/Build-${task.version}.log`, logPath, 'text/plain')
+    }
   }
 }
 

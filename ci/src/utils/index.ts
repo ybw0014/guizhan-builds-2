@@ -3,6 +3,20 @@ import { spawn, SpawnOptions } from 'child_process'
 import { Writable } from 'stream'
 import _ from 'lodash'
 
+const SENSITIVE_ENV_KEYS = [
+  'BOT_TOKEN',
+  'R2_ACCOUNT_ID',
+  'R2_ACCESS_KEY_ID',
+  'R2_SECRET_ACCESS_KEY',
+  'R2_BUCKET_NAME',
+  'WEBHOOK_URL',
+  'WEBHOOK_KEY'
+]
+
+export function sanitizeEnv(env: NodeJS.ProcessEnv): NodeJS.ProcessEnv {
+  return _.omit(env, SENSITIVE_ENV_KEYS)
+}
+
 /**
  * 等待一段时间
  * @param ms 等待的毫秒数

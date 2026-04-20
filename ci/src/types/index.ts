@@ -19,4 +19,5 @@ export interface BuildTask {
   success?: boolean // 构建是否成功
   target?: string // 构建工件的文件名
   sha1?: string // 构建工件的 sha1
+  dryRun?: boolean // 试运行模式
 }

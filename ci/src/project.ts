@@ -59,7 +59,13 @@ export async function uploadBuilds(task: BuildTask) {
     }
   }
 
-  await uploadJson(`${task.project.author}/${task.project.repository}/${task.project.branch}/builds.json`, buildsInfo)
+  const remotePath = `${task.project.author}/${task.project.repository}/${task.project.branch}/builds.json`
+  if (task.dryRun) {
+    task.logger.info(`[试运行] 将上传构建信息到: ${remotePath}`)
+    task.logger.info(`[试运行] 构建信息内容: ${JSON.stringify(buildsInfo, null, 2)}`)
+  } else {
+    await uploadJson(remotePath, buildsInfo)
+  }
 }
 
 export async function updateBuildTime(task: BuildTask) {
@@ -68,5 +74,10 @@ export async function updateBuildTime(task: BuildTask) {
     return
   }
   buildTime[task.project.key] = task.buildTime
-  await uploadJson('buildTimestamp.json', buildTime)
+
+  if (task.dryRun) {
+    task.logger.info(`[试运行] 将更新构建时间: ${task.project.key} = ${task.buildTime}`)
+  } else {
+    await uploadJson('buildTimestamp.json', buildTime)
+  }
 }
