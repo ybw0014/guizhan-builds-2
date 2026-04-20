@@ -9,7 +9,7 @@
 			"gradle": {
 				"kotlin": true,
 				"shadowJar": true,
-				"target": "{name}-DEV-SNAPSHOT"
+				"target": "{name}-{version}"
 			}
     },
     "displayOptions": {
@@ -28,11 +28,16 @@
     }
   },
   "SlimefunGuguProject/Slimefun4:release": {
-    "type": "maven",
+		"type": "gradle",
     "alias": ["StarWishsama/Slimefun4:release"],
     "buildOptions": {
       "name": "Slimefun",
-      "version": "{Year}.{Month}-release"
+			"version": "{Year}.{Month}-release",
+			"gradle": {
+				"kotlin": true,
+				"shadowJar": true,
+				"target": "{name}-{version}"
+			}
     },
     "displayOptions": {
       "officialList": true,
