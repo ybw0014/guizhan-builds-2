@@ -2279,14 +2279,15 @@
       }
     }
   },
-  "SlimefunReloadingProject/RykenSlimeCustomizer:main": {
+  "balugaq/RykenSlimeCustomizer:main": {
     "type": "maven",
+    "alias": ["SlimefunReloadingProject/RykenSlimeCustomizer:main"],
     "buildOptions": {
       "name": "RykenSlimeCustomizer",
-      "version": "b{version} (git {git_commit})"
+      "version": "Build {version} (git {git_commit})"
     },
     "displayOptions": {
-      "keywords": ["ryken自定义附属", "Ryken自定义附属", "RykenSC"],
+      "keywords": ["ryken自定义附属", "Ryken自定义附属", "RykenSC", "RSC"],
       "requirements": {
         "java": {
           "1": "17"

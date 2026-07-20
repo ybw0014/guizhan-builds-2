@@ -2279,11 +2279,12 @@
       }
     }
   },
-  "SlimefunReloadingProject/RykenSlimeCustomizer:main": {
+  "balugaq/RykenSlimeCustomizer:main": {
     "type": "maven",
+    "alias": ["SlimefunReloadingProject/RykenSlimeCustomizer:main"],
     "buildOptions": {
       "name": "RykenSlimeCustomizer",
-      "version": "b{version} (git {git_commit})",
+      "version": "Build {version} (git {git_commit})",
       "gradle": {
 				"kotlin": true,
 				"shadowJar": true,
