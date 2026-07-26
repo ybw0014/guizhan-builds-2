@@ -2396,18 +2396,23 @@
     }
   },
   "ytdd9527/NetworksExpansion:master": {
-    "type": "maven",
+    "type": "gradle",
     "buildOptions": {
       "name": "NetworksExpansion",
-      "version": "Build {version} (git {git_commit})"
+      "version": "Build {version} (git {git_commit})",
+      "gradle": {
+				"kotlin": true,
+				"shadowJar": true,
+				"target": "{name}-{version}"
+			}
     },
     "displayOptions": {
       "name": "NetworksExpansion",
       "authors": ["ytdd9527", "balugaq"],
-      "keywords": ["网络拓展", "网拓", "netex", "网络", "升级网络"],
+      "keywords": ["网络拓展", "网拓", "netex", "网络", "升级网络", "网络扩展"],
       "requirements": {
         "java": {
-          "1": "16"
+          "1": "21"
         },
         "minecraft": {
           "1": "1.20"
@@ -2454,10 +2459,10 @@
       "keywords": ["JEG", "jeg", "搜索优化", "配方补全支持", "超大配方", "拼音搜索"],
       "requirements": {
         "java": {
-          "1": "17"
+          "1": "21"
         },
         "minecraft": {
-          "1": "1.17"
+          "1": "1.20"
         }
       }
     }
@@ -3538,10 +3543,15 @@
     }
   },
   "balugaq/MSUA:master": {
-    "type": "maven",
+    "type": "gradle",
     "buildOptions": {
       "name": "MSUA",
-      "version": "Build {version} (git {git_commit})"
+      "version": "Build {version} (git {git_commit})",
+      "gradle": {
+				"kotlin": true,
+				"shadowJar": true,
+				"target": "{name}-{version}"
+			}
     },
     "displayOptions": {
       "hidden": false,
