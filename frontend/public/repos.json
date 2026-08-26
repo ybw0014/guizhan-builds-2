@@ -3630,5 +3630,26 @@
 				}
 			}
 		}
+	},
+  "ykcgly/WorldTaste-Plugin:master": {
+		"type": "gradle",
+		"buildOptions": {
+			"name": "WorldTaste-Plugin",
+			"version": "Build {version} (git {git_commit})"
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "WorldTaste-Plugin",
+			"authors": ["@ykcgly"],
+			"keywords": ["尘世百味", "美食", "休闲"],
+			"requirements": {
+				"java": {
+					"1": "21"
+				},
+				"minecraft": {
+					"1": "1.21"
+				}
+			}
+		}
 	}
 }
