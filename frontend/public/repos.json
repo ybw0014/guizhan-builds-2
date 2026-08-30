@@ -3651,5 +3651,36 @@
 				}
 			}
 		}
+	},
+	"FxRayHughes/SlimeEasy:main": {
+		"type": "gradle",
+		"buildOptions": {
+			"name": "SlimeEasy",
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"kotlin": true,
+				"target": "{name}-{version}"
+			}
+		},
+		"displayOptions": {
+			"hidden": false,
+			"name": "SlimeEasy",
+			"authors": ["@FxRayHughes"],
+			"keywords": ["SlimeEasy", "粘液科技", "实用机械", "存储系统"],
+			"requirements": {
+				"java": {
+					"1": "25"
+				},
+				"minecraft": {
+					"1": "26.2"
+				},
+				"paper": {
+					"1": "26.2"
+				},
+				"slimefun": {
+					"1": "2026.1"
+				}
+			}
+		}
 	}
 }
