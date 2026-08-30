@@ -3635,7 +3635,10 @@
 		"type": "gradle",
 		"buildOptions": {
 			"name": "WorldTaste-Plugin",
-			"version": "Build {version} (git {git_commit})"
+			"version": "Build {version} (git {git_commit})",
+			"gradle": {
+				"kotlin": true
+			}
 		},
 		"displayOptions": {
 			"hidden": false,
