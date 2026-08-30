@@ -3631,7 +3631,7 @@
 			}
 		}
 	},
-  "ykcgly/WorldTaste-Plugin:master": {
+  "ykcgly/WorldTaste-Plugin:main": {
 		"type": "gradle",
 		"buildOptions": {
 			"name": "WorldTaste-Plugin",
