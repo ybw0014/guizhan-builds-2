@@ -1,13 +1,14 @@
 # 鬼斩构建站 v2
 
 > [!IMPORTANT]
-> 鬼斩构建站 v2 不会再有任何功能性更新。第三代构建站（到时候可能不叫构建站了）已在开发中，会在开发完成后提供便捷的迁移方法。
-> 本仓库仍然接受新项目与现有项目信息更新的 PR。
+> 鬼斩构建站 v2 （本仓库）不会再有任何功能性更新，但仍然接受新项目与现有项目信息更新的 PR。
+>
+> 鬼斩资源站作为下一代 Slimefun/Pylon 资源分享平台，正在公开测试中，已提供从鬼斩构建站v2迁移项目的功能。[点击前往](https://resources.guizhanss.com/project/import/guizhan-builds-v2)
 
 拿来练手的项目，[鬼斩构建站](https://github.com/ybw0014/guizhan-builds)的第二版。
 
-鬼斩构建站利用 GitHub Actions 自动构建所有项目，并上传至 Cloudflare R2。  
-前端页面使用 Nuxt.js 框架并部署到 Cloudflare Pages。  
+鬼斩构建站利用 GitHub Actions 自动构建所有项目，并上传至 Cloudflare R2。
+前端页面使用 Nuxt.js 框架并部署到 Cloudflare Pages。
 API 使用 Cloudflare Workers 部署。
 
 ## 添加你的项目
