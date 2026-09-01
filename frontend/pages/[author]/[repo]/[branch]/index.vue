@@ -36,7 +36,8 @@ definePageMeta({
     <!-- 左侧项目 README.md -->
     <div class="card bg-default grow">
       <div v-if="showReadme && readme">
-        <UAlert icon="i-heroicons-exclamation-triangle" variant="outline" color="red"
+        <UAlert
+icon="i-heroicons-exclamation-triangle" variant="outline" color="red"
           :title="t('pages.project.readme.warningTitle')">
           <template #description>
             {{ t('pages.project.readme.warning') }}
@@ -76,7 +77,8 @@ definePageMeta({
           {{ t('pages.project.authors') }}
         </h3>
         <div class="authors">
-          <NuxtLink v-for="author in authors" :key="author.name"
+          <NuxtLink
+v-for="author in authors" :key="author.name"
             :to="{ name: 'author', params: { author: author.name } }" class="linkbox text-blue-500 hover:underline">
             <GitHubAvatar :username="author.name" class="w-12 h-12" />
             <span>{{ author.name }}</span>

@@ -129,7 +129,8 @@ definePageMeta({
       <div class="card bg-default flex-col items-center">
         <span class="text-gray-400">
           {{ t('pages.build.commitAt', { author: build.author, time: $dayjs(build.timestamp).format('lll') }) }}
-          (<a :href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`" class="a-link"
+          (<a
+:href="`https://github.com/${project.author}/${project.repository}/commit/${build.commit}`" class="a-link"
             target="_blank">
             {{ build.commit.slice(0, 7) }} </a>):
         </span>
@@ -155,10 +156,12 @@ definePageMeta({
           </div>
         </div>
         <Disclosure>
-          <DisclosureButton v-slot="{ open }"
+          <DisclosureButton
+v-slot="{ open }"
             class="flex w-full justify-between rounded-lg bg-primary-100 px-4 py-2 text-left text-sm font-medium text-primary-900 hover:bg-primary-200 dark:bg-primary-800 dark:text-primary-100 dark:hover:bg-primary-700 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-opacity-75">
             {{ t('pages.build.checksum.check') }}
-            <UIcon :name="open ? 'i-mdi-chevron-up' : 'i-mdi-chevron-down'"
+            <UIcon
+:name="open ? 'i-mdi-chevron-up' : 'i-mdi-chevron-down'"
               class="h-5 w-5 text-primary-500 dark:text-primary-100" />
           </DisclosureButton>
           <DisclosurePanel class="text-gray-500 flex flex-col gap-2">
@@ -173,7 +176,8 @@ definePageMeta({
                 </div>
               </div>
             </div>
-            <div v-if="checksumResult"
+            <div
+v-if="checksumResult"
               :class="[checksumResult === build.sha1 ? 'text-green-500' : 'text-red-500', 'break-words']">
               {{ t('pages.build.checksum.sha1', { checksum: checksumResult }) }}
             </div>

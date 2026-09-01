@@ -143,14 +143,16 @@ onMounted(() => {
     <!-- 搜索框 -->
     <div class="relative rounded-md flex shadow-md w-full max-w-screen-md">
       <!-- 输入 -->
-      <input v-model="query" class="query-input" type="text"
+      <input
+v-model="query" class="query-input" type="text"
         :placeholder="t('pages.projects.query', { num: projects?.length })" />
       <!-- 小屏幕排序方式 -->
       <UPopover class="md:hidden relative flex">
         <UButton icon="i-ic-round-sort" class="query-sort" />
         <template #panel="{ close }">
           <div class="flex flex-col">
-            <ULink v-for="sortType in sortTypes" :key="sortType" :class="{
+            <ULink
+v-for="sortType in sortTypes" :key="sortType" :class="{
               'px-4 py-2 text-left link-box': true,
               active: activeSortType === sortType
             }" @click="
@@ -165,7 +167,8 @@ onMounted(() => {
     </div>
     <!-- 大屏幕排序方式 -->
     <div class="justify-center md:flex gap-2 hidden">
-      <a v-for="sortType in sortTypes" :key="sortType" href="javascript:void(0)"
+      <a
+v-for="sortType in sortTypes" :key="sortType" href="javascript:void(0)"
         :class="{ 'link-box sort-type': true, active: activeSortType === sortType }" @click="activeSortType = sortType">
         {{ t(`sortTypes.${sortType}`) }}
       </a>
@@ -178,7 +181,8 @@ onMounted(() => {
     </div>
     <div class="card bg-default min-w-[300px] flex flex-col gap-4 border-t-4 !border-blue-500 w-full md:w-auto">
       <div v-for="filter in filters" :key="filter.id">
-        <ProjectFilter v-model="activeFilters[filter.id]" :label="t(`filters.${filter.id}.title`)" :filter="filter.id"
+        <ProjectFilter
+v-model="activeFilters[filter.id]" :label="t(`filters.${filter.id}.title`)" :filter="filter.id"
           :values="filter.values" :i18n="filter.i18n" />
       </div>
     </div>

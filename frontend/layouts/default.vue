@@ -35,6 +35,7 @@ useHead({
     </Head>
   </Html>
   <main :data-page="route.name">
+    <LayoutSunsetBanner />
     <LayoutHeader />
     <LayoutContainer>
       <slot />

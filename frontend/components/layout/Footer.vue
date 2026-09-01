@@ -7,6 +7,7 @@
         </NuxtLink>
         <NuxtLink :to="{ name: 'terms' }" class="link-box">{{ $t('components.footer.terms') }}</NuxtLink>
         <NuxtLink :to="{ name: 'privacy' }" class="link-box">{{ $t('components.footer.privacy') }}</NuxtLink>
+        <NuxtLink :to="{ name: 'sunset' }" class="link-box">{{ $t('components.footer.sunset') }}</NuxtLink>
       </div>
       <p class="font-bold">
         &copy; {{ new Date().getFullYear() }}

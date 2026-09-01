@@ -1,9 +1,9 @@
 # 鬼斩构建站 v2
 
 > [!IMPORTANT]
-> 鬼斩构建站 v2 （本仓库）不会再有任何功能性更新，但仍然接受新项目与现有项目信息更新的 PR。
+> 鬼斩构建站 v2(本仓库)早已停止功能更新,目前只合并仓库信息相关的 PR。2026-10-18 起将停止接受新项目 PR 并关闭自动构建;2026-11-15 起全面停止服务,域名跳转至鬼斩资源站。
 >
-> 鬼斩资源站作为下一代 Slimefun/Pylon 资源分享平台，正在公开测试中，已提供从鬼斩构建站v2迁移项目的功能。[点击前往](https://resources.guizhanss.com/project/import/guizhan-builds-v2)
+> 鬼斩资源站是计划已久、现已基本可用的下一代 Slimefun/Pylon 资源分享平台。请尽快迁移项目:[点击迁移](https://resources.guizhanss.com/project/import/guizhan-builds-v2)。完整公告见[本站停止服务公告](https://builds.guizhanss.com/sunset)。
 
 拿来练手的项目，[鬼斩构建站](https://github.com/ybw0014/guizhan-builds)的第二版。
 

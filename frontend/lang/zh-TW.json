@@ -18,7 +18,12 @@
 		"footer": {
 			"github": "GitHub",
 			"terms": "服務條款",
-			"privacy": "隱私政策"
+			"privacy": "隱私政策",
+			"sunset": "停止服務公告"
+		},
+		"sunsetBanner": {
+			"text": "鬼斬構建站將於 2026-11-15 停止服務,請儘早遷移至鬼斬資源站。",
+			"link": "瞭解詳情"
 		},
 		"pagination": {
 			"first": "第一頁",
@@ -106,6 +111,9 @@
 		"privacy": {
 			"title": "隱私政策"
 		},
+		"sunset": {
+			"title": "停止服務公告"
+		},
 		"author": {
 			"title": "{author}",
 			"numProjects": "{num} 個項目",
@@ -187,11 +195,6 @@
 				"newFeatures": "提前獲取新功能"
 			},
 			"footnotes": "訂閱價格僅供參考，以愛發電內實際價格為准。",
-			"migrationBanner": {
-				"title": "服務遷移提示",
-				"description": "我們正在逐步遷移至鬼斬资源站：",
-				"link": "前往新站點"
-			},
 			"devCheck": {
 				"title": "獲取最新的內測版構建",
 				"form": {
